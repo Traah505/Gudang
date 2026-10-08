@@ -61,9 +61,10 @@
             button1.BackColor = SystemColors.HotTrack;
             button1.ForeColor = SystemColors.ControlText;
             button1.ImageKey = "(none)";
-            button1.Location = new Point(31, 214);
+            button1.Location = new Point(44, 357);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(237, 30);
+            button1.Size = new Size(339, 50);
             button1.TabIndex = 0;
             button1.Text = "Log in";
             button1.UseVisualStyleBackColor = false;
@@ -71,20 +72,22 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(31, 184);
+            textBox1.Location = new Point(46, 316);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "🔒  Password";
-            textBox1.Size = new Size(237, 23);
+            textBox1.Size = new Size(337, 31);
             textBox1.TabIndex = 2;
             textBox1.UseSystemPasswordChar = true;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(31, 155);
+            textBox2.Location = new Point(44, 275);
+            textBox2.Margin = new Padding(4, 5, 4, 5);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "👤  Username";
-            textBox2.Size = new Size(237, 23);
+            textBox2.Size = new Size(337, 31);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -104,18 +107,20 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(270, 1);
+            panel1.Location = new Point(386, 2);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(393, 334);
+            panel1.Size = new Size(561, 557);
             panel1.TabIndex = 10;
             panel1.Paint += panel1_Paint;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(122, 294);
+            label10.Location = new Point(174, 490);
+            label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new Size(146, 15);
+            label10.Size = new Size(218, 25);
             label10.TabIndex = 18;
             label10.Text = "Gudang - Stok - Penjualan";
             // 
@@ -123,18 +128,20 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(167, 279);
+            label9.Location = new Point(239, 465);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(63, 15);
+            label9.Size = new Size(98, 25);
             label9.TabIndex = 17;
             label9.Text = "SMK Mart";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(31, 268);
+            pictureBox1.Location = new Point(44, 447);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(80, 50);
+            pictureBox1.Size = new Size(114, 83);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
@@ -142,18 +149,20 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(84, 125);
+            label4.Location = new Point(120, 208);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(184, 15);
+            label4.Size = new Size(273, 25);
             label4.TabIndex = 15;
             label4.Text = "Silahkan login untuk melanjutkan";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(44, 247);
+            label12.Location = new Point(63, 412);
+            label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
-            label12.Size = new Size(127, 15);
+            label12.Size = new Size(188, 25);
             label12.TabIndex = 9;
             label12.Text = "Belum memiliki akun? ";
             label12.Click += label12_Click;
@@ -161,11 +170,12 @@
             // label3
             // 
             label3.BackColor = Color.White;
-            label3.Font = new Font("Rockwell Condensed", 28F);
+            label3.Font = new Font("Microsoft Sans Serif", 28F);
             label3.ForeColor = Color.Blue;
-            label3.Location = new Point(170, 34);
+            label3.Location = new Point(232, 57);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(98, 42);
+            label3.Size = new Size(140, 70);
             label3.TabIndex = 14;
             label3.Text = "Mart";
             // 
@@ -173,21 +183,23 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(110, 106);
+            label2.Location = new Point(157, 177);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(120, 19);
+            label2.Size = new Size(170, 28);
             label2.TabIndex = 13;
             label2.Text = "Selamat Datang!";
             // 
             // label1
             // 
-            label1.Font = new Font("Rockwell Condensed", 28F, FontStyle.Bold);
+            label1.Font = new Font("Microsoft Sans Serif", 28F, FontStyle.Bold);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(96, 34);
+            label1.Location = new Point(90, 57);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(86, 42);
+            label1.Size = new Size(161, 70);
             label1.TabIndex = 12;
-            label1.Text = "SMK ";
+            label1.Text = "SMK";
             label1.Click += label1_Click_1;
             // 
             // label7
@@ -195,9 +207,10 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(177, 247);
+            label7.Location = new Point(253, 412);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(75, 15);
+            label7.Size = new Size(119, 25);
             label7.TabIndex = 10;
             label7.Text = "daftar di sini";
             label7.Click += label7_Click;
@@ -205,18 +218,20 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(274, 188);
+            checkBox1.Location = new Point(391, 313);
+            checkBox1.Margin = new Padding(4, 5, 4, 5);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(15, 14);
+            checkBox1.Size = new Size(22, 21);
             checkBox1.TabIndex = 8;
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged_2;
             // 
             // label6
             // 
-            label6.Location = new Point(16, 288);
+            label6.Location = new Point(23, 480);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(262, 30);
+            label6.Size = new Size(374, 50);
             label6.TabIndex = 9;
             label6.Text = "Sistem informasi gudang dan penjualan untuk kebutuhan SMK";
             // 
@@ -228,17 +243,19 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(-4, 1);
+            panel2.Location = new Point(-6, 2);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(281, 334);
+            panel2.Size = new Size(401, 557);
             panel2.TabIndex = 11;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(16, 106);
+            pictureBox3.Location = new Point(23, 177);
+            pictureBox3.Margin = new Padding(4, 5, 4, 5);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(243, 179);
+            pictureBox3.Size = new Size(347, 298);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 17;
             pictureBox3.TabStop = false;
@@ -246,9 +263,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(34, 21);
+            pictureBox2.Location = new Point(49, 35);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 69);
+            pictureBox2.Size = new Size(99, 115);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
@@ -256,33 +274,36 @@
             // label5
             // 
             label5.BackColor = Color.White;
-            label5.Font = new Font("Rockwell Condensed", 28F);
+            label5.Font = new Font("Microsoft Sans Serif", 28F);
             label5.ForeColor = Color.Blue;
-            label5.Location = new Point(186, 34);
+            label5.Location = new Point(266, 57);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(92, 42);
+            label5.Size = new Size(131, 70);
             label5.TabIndex = 15;
             label5.Text = "Mart";
             // 
             // label8
             // 
-            label8.Font = new Font("Rockwell Condensed", 28F, FontStyle.Bold);
+            label8.Font = new Font("Microsoft Sans Serif", 28F, FontStyle.Bold);
             label8.ForeColor = Color.Navy;
-            label8.Location = new Point(109, 34);
+            label8.Location = new Point(156, 57);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(86, 42);
+            label8.Size = new Size(123, 70);
             label8.TabIndex = 16;
             label8.Text = "SMK ";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(612, 328);
+            ClientSize = new Size(874, 547);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;

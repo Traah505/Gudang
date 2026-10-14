@@ -36,40 +36,45 @@
             panel4 = new Panel();
             button5 = new Button();
             panel2 = new Panel();
-            panel3 = new Panel();
-            label2 = new Label();
-            label4 = new Label();
-            panel5 = new Panel();
-            label5 = new Label();
-            label6 = new Label();
-            panel6 = new Panel();
-            label7 = new Label();
-            label8 = new Label();
-            panel7 = new Panel();
-            label9 = new Label();
-            label10 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
+            label4 = new Label();
+            label2 = new Label();
+            panel3 = new Panel();
+            panel10 = new Panel();
+            label12 = new Label();
+            panel9 = new Panel();
             panel8 = new Panel();
             label11 = new Label();
+            panel6 = new Panel();
+            pictureBox2 = new PictureBox();
+            label7 = new Label();
+            label8 = new Label();
+            panel5 = new Panel();
+            pictureBox4 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
+            panel7 = new Panel();
+            pictureBox3 = new PictureBox();
+            label9 = new Label();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
-            panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
+            panel10.SuspendLayout();
+            panel8.SuspendLayout();
+            panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(631, 12);
+            button1.Location = new Point(631, 8);
             button1.Name = "button1";
             button1.Size = new Size(83, 23);
             button1.TabIndex = 0;
@@ -80,7 +85,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Gray;
+            label1.BackColor = Color.DarkGray;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             label1.Location = new Point(204, 12);
             label1.Name = "label1";
@@ -93,7 +98,7 @@
             // 
             lblAdmin.AutoSize = true;
             lblAdmin.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblAdmin.Location = new Point(515, 16);
+            lblAdmin.Location = new Point(515, 12);
             lblAdmin.Name = "lblAdmin";
             lblAdmin.Size = new Size(49, 15);
             lblAdmin.TabIndex = 3;
@@ -104,7 +109,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(33, 16);
+            label3.Location = new Point(15, 12);
             label3.Name = "label3";
             label3.Size = new Size(32, 15);
             label3.TabIndex = 4;
@@ -113,33 +118,35 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gray;
+            panel1.BackColor = Color.DarkGray;
             panel1.Controls.Add(label3);
             panel1.Controls.Add(lblAdmin);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(49, 29);
+            panel1.Location = new Point(49, 31);
             panel1.Name = "panel1";
             panel1.Size = new Size(724, 45);
             panel1.TabIndex = 5;
             // 
             // panel4
             // 
+            panel4.BackColor = Color.White;
             panel4.Controls.Add(button5);
-            panel4.Location = new Point(3, 0);
+            panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(185, 239);
+            panel4.Size = new Size(188, 239);
             panel4.TabIndex = 10;
             panel4.Paint += panel4_Paint;
             // 
             // button5
             // 
+            button5.BackColor = Color.White;
             button5.Location = new Point(33, 22);
             button5.Name = "button5";
             button5.Size = new Size(104, 23);
             button5.TabIndex = 5;
             button5.Text = "[D]Pengguna";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
             // panel2
@@ -154,28 +161,13 @@
             panel2.TabIndex = 9;
             panel2.Paint += panel2_Paint;
             // 
-            // panel3
+            // pictureBox1
             // 
-            panel3.BackColor = Color.FromArgb(192, 192, 255);
-            panel3.Controls.Add(label11);
-            panel3.Controls.Add(panel8);
-            panel3.Controls.Add(panel6);
-            panel3.Controls.Add(panel5);
-            panel3.Controls.Add(panel7);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(panel2);
-            panel3.Location = new Point(49, 70);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(724, 314);
-            panel3.TabIndex = 10;
-            // 
-            // label2
-            // 
-            label2.Location = new Point(3, 31);
-            label2.Name = "label2";
-            label2.Size = new Size(84, 19);
-            label2.TabIndex = 0;
-            label2.Text = "Total Barang";
+            pictureBox1.Location = new Point(9, 11);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(20, 17);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -188,35 +180,75 @@
             label4.TabIndex = 1;
             label4.Text = "0";
             // 
-            // panel5
+            // label2
             // 
-            panel5.BackColor = Color.White;
-            panel5.Controls.Add(pictureBox4);
-            panel5.Controls.Add(label5);
-            panel5.Controls.Add(label6);
-            panel5.Location = new Point(492, 12);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(90, 71);
-            panel5.TabIndex = 10;
+            label2.Location = new Point(3, 31);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 19);
+            label2.TabIndex = 0;
+            label2.Text = "Total Barang";
             // 
-            // label5
+            // panel3
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(192, 0, 192);
-            label5.Location = new Point(9, 51);
-            label5.Name = "label5";
-            label5.Size = new Size(14, 15);
-            label5.TabIndex = 1;
-            label5.Text = "0";
+            panel3.BackColor = Color.Silver;
+            panel3.Controls.Add(panel10);
+            panel3.Controls.Add(panel9);
+            panel3.Controls.Add(panel8);
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel5);
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel4);
+            panel3.Controls.Add(panel2);
+            panel3.Location = new Point(49, 70);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(724, 474);
+            panel3.TabIndex = 10;
             // 
-            // label6
+            // panel10
             // 
-            label6.Location = new Point(3, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(84, 19);
-            label6.TabIndex = 0;
-            label6.Text = "Total Transaksi";
+            panel10.BackColor = Color.White;
+            panel10.Controls.Add(label12);
+            panel10.Location = new Point(204, 262);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(510, 192);
+            panel10.TabIndex = 13;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label12.Location = new Point(3, 9);
+            label12.Name = "label12";
+            label12.Size = new Size(103, 15);
+            label12.TabIndex = 14;
+            label12.Text = "Transaksi Terbaru";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.White;
+            panel9.Location = new Point(515, 104);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(199, 135);
+            panel9.TabIndex = 12;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Controls.Add(label11);
+            panel8.Location = new Point(204, 104);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(279, 135);
+            panel8.TabIndex = 11;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label11.Location = new Point(3, 9);
+            label11.Name = "label11";
+            label11.Size = new Size(98, 15);
+            label11.TabIndex = 0;
+            label11.Text = "Grafik Penjualan";
             // 
             // panel6
             // 
@@ -228,6 +260,14 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(90, 71);
             panel6.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(9, 11);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(20, 17);
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // label7
             // 
@@ -248,6 +288,44 @@
             label8.TabIndex = 0;
             label8.Text = "Stok Tersedia";
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Controls.Add(pictureBox4);
+            panel5.Controls.Add(label5);
+            panel5.Controls.Add(label6);
+            panel5.Location = new Point(492, 12);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(90, 71);
+            panel5.TabIndex = 10;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Location = new Point(9, 11);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(20, 17);
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(192, 0, 192);
+            label5.Location = new Point(9, 51);
+            label5.Name = "label5";
+            label5.Size = new Size(14, 15);
+            label5.TabIndex = 1;
+            label5.Text = "0";
+            // 
+            // label6
+            // 
+            label6.Location = new Point(3, 31);
+            label6.Name = "label6";
+            label6.Size = new Size(84, 19);
+            label6.TabIndex = 0;
+            label6.Text = "Total Transaksi";
+            // 
             // panel7
             // 
             panel7.BackColor = Color.White;
@@ -258,6 +336,14 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(90, 71);
             panel7.TabIndex = 10;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Location = new Point(9, 10);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(20, 17);
+            pictureBox3.TabIndex = 4;
+            pictureBox3.TabStop = false;
             // 
             // label9
             // 
@@ -278,61 +364,12 @@
             label10.TabIndex = 0;
             label10.Text = "Stok Menipis";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(9, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(20, 17);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(9, 11);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(20, 17);
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Location = new Point(9, 10);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(20, 17);
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Location = new Point(9, 11);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(20, 17);
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
-            // 
-            // panel8
-            // 
-            panel8.Location = new Point(204, 104);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(375, 135);
-            panel8.TabIndex = 11;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label11.Location = new Point(204, 86);
-            label11.Name = "label11";
-            label11.Size = new Size(98, 15);
-            label11.TabIndex = 0;
-            label11.Text = "Grafik Penjualan";
-            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Gray;
+            ClientSize = new Size(800, 583);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Name = "Form2";
@@ -343,18 +380,21 @@
             panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -387,5 +427,8 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Label label11;
+        private Label label12;
+        private Panel panel10;
+        private Panel panel9;
     }
 }

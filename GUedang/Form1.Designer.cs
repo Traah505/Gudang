@@ -35,7 +35,6 @@
             panel1 = new Panel();
             label10 = new Label();
             label9 = new Label();
-            pictureBox1 = new PictureBox();
             label4 = new Label();
             label12 = new Label();
             label3 = new Label();
@@ -43,23 +42,15 @@
             label1 = new Label();
             label7 = new Label();
             checkBox1 = new CheckBox();
-            label6 = new Label();
-            panel2 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            label5 = new Label();
-            label8 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = SystemColors.HotTrack;
-            button1.ForeColor = SystemColors.ControlText;
+            button1.ForeColor = Color.White;
             button1.ImageKey = "(none)";
             button1.Location = new Point(31, 214);
             button1.Name = "button1";
@@ -93,7 +84,6 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label10);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label3);
@@ -104,16 +94,16 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(270, 1);
+            panel1.Location = new Point(270, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(393, 334);
+            panel1.Size = new Size(342, 370);
             panel1.TabIndex = 10;
             panel1.Paint += panel1_Paint;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(122, 294);
+            label10.Location = new Point(96, 294);
             label10.Name = "label10";
             label10.Size = new Size(146, 15);
             label10.TabIndex = 18;
@@ -123,26 +113,17 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(167, 279);
+            label9.Location = new Point(136, 279);
             label9.Name = "label9";
             label9.Size = new Size(63, 15);
             label9.TabIndex = 17;
             label9.Text = "SMK Mart";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(31, 268);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(80, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 16;
-            pictureBox1.TabStop = false;
+            label9.Click += label9_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(84, 125);
+            label4.Location = new Point(84, 112);
             label4.Name = "label4";
             label4.Size = new Size(184, 15);
             label4.TabIndex = 15;
@@ -173,7 +154,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(110, 106);
+            label2.Location = new Point(110, 93);
             label2.Name = "label2";
             label2.Size = new Size(120, 19);
             label2.TabIndex = 13;
@@ -195,7 +176,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(177, 247);
+            label7.Location = new Point(167, 247);
             label7.Name = "label7";
             label7.Size = new Size(75, 15);
             label7.TabIndex = 10;
@@ -212,75 +193,23 @@
             checkBox1.UseVisualStyleBackColor = true;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged_2;
             // 
-            // label6
+            // pictureBox1
             // 
-            label6.Location = new Point(16, 288);
-            label6.Name = "label6";
-            label6.Size = new Size(262, 30);
-            label6.TabIndex = 9;
-            label6.Text = "Sistem informasi gudang dan penjualan untuk kebutuhan SMK";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(pictureBox3);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(-4, 1);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(281, 334);
-            panel2.TabIndex = 11;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(16, 106);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(243, 179);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 17;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(34, 21);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 69);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.BackColor = Color.White;
-            label5.Font = new Font("Rockwell Condensed", 28F);
-            label5.ForeColor = Color.Blue;
-            label5.Location = new Point(186, 34);
-            label5.Name = "label5";
-            label5.Size = new Size(92, 42);
-            label5.TabIndex = 15;
-            label5.Text = "Mart";
-            // 
-            // label8
-            // 
-            label8.Font = new Font("Rockwell Condensed", 28F, FontStyle.Bold);
-            label8.ForeColor = Color.Navy;
-            label8.Location = new Point(109, 34);
-            label8.Name = "label8";
-            label8.Size = new Size(86, 42);
-            label8.TabIndex = 16;
-            label8.Text = "SMK ";
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-1, -30);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(277, 397);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
-            ClientSize = new Size(612, 328);
-            Controls.Add(panel2);
+            BackColor = Color.White;
+            ClientSize = new Size(612, 367);
+            Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -288,14 +217,11 @@
             MinimizeBox = false;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Gudang(X RPL 1)";
+            Text = "Login";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -317,9 +243,8 @@
         private Label label12;
         private Label label5;
         private Label label8;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox1;
         private Label label10;
         private Label label9;
+        private PictureBox pictureBox1;
     }
 }

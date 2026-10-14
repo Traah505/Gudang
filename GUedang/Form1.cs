@@ -96,7 +96,9 @@ namespace GUedang
 
         private void label7_Click(object sender, EventArgs e)
         {
-
+            Form4 Register = new Form4();
+            Register.Show();
+            this.Hide();
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -110,6 +112,11 @@ namespace GUedang
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

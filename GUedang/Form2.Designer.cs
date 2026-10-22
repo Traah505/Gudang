@@ -74,9 +74,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(631, 8);
+            button1.Font = new Font("Segoe UI", 10F);
+            button1.Location = new Point(685, 26);
             button1.Name = "button1";
-            button1.Size = new Size(83, 23);
+            button1.Size = new Size(107, 32);
             button1.TabIndex = 0;
             button1.Text = "Logout/Back";
             button1.UseVisualStyleBackColor = true;
@@ -86,10 +87,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.DarkGray;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            label1.Location = new Point(204, 12);
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label1.Location = new Point(207, 26);
             label1.Name = "label1";
-            label1.Size = new Size(160, 20);
+            label1.Size = new Size(231, 30);
             label1.TabIndex = 2;
             label1.Text = "GUDANG SMK MART";
             label1.Click += label1_Click;
@@ -97,10 +98,10 @@
             // lblAdmin
             // 
             lblAdmin.AutoSize = true;
-            lblAdmin.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            lblAdmin.Location = new Point(515, 12);
+            lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblAdmin.Location = new Point(504, 26);
             lblAdmin.Name = "lblAdmin";
-            lblAdmin.Size = new Size(49, 15);
+            lblAdmin.Size = new Size(93, 30);
             lblAdmin.TabIndex = 3;
             lblAdmin.Text = "Admin :";
             lblAdmin.Click += label2_Click;
@@ -108,10 +109,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(15, 12);
+            label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label3.Location = new Point(51, 26);
             label3.Name = "label3";
-            label3.Size = new Size(32, 15);
+            label3.Size = new Size(61, 30);
             label3.TabIndex = 4;
             label3.Text = "Logs";
             label3.Click += label3_Click;
@@ -123,16 +124,16 @@
             panel1.Controls.Add(lblAdmin);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(49, 31);
+            panel1.Location = new Point(-4, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(724, 45);
+            panel1.Size = new Size(806, 78);
             panel1.TabIndex = 5;
             // 
             // panel4
             // 
             panel4.BackColor = Color.White;
             panel4.Controls.Add(button5);
-            panel4.Location = new Point(0, 0);
+            panel4.Location = new Point(3, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(188, 239);
             panel4.TabIndex = 10;
@@ -141,9 +142,9 @@
             // button5
             // 
             button5.BackColor = Color.White;
-            button5.Location = new Point(33, 22);
+            button5.Location = new Point(41, 20);
             button5.Name = "button5";
-            button5.Size = new Size(104, 23);
+            button5.Size = new Size(104, 24);
             button5.TabIndex = 5;
             button5.Text = "[D]Pengguna";
             button5.UseVisualStyleBackColor = false;
@@ -190,7 +191,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Silver;
+            panel3.BackColor = Color.WhiteSmoke;
             panel3.Controls.Add(panel10);
             panel3.Controls.Add(panel9);
             panel3.Controls.Add(panel8);
@@ -199,18 +200,18 @@
             panel3.Controls.Add(panel7);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(panel2);
-            panel3.Location = new Point(49, 70);
+            panel3.Location = new Point(-1, 74);
             panel3.Name = "panel3";
-            panel3.Size = new Size(724, 474);
+            panel3.Size = new Size(800, 513);
             panel3.TabIndex = 10;
             // 
             // panel10
             // 
             panel10.BackColor = Color.White;
             panel10.Controls.Add(label12);
-            panel10.Location = new Point(204, 262);
+            panel10.Location = new Point(3, 262);
             panel10.Name = "panel10";
-            panel10.Size = new Size(510, 192);
+            panel10.Size = new Size(794, 248);
             panel10.TabIndex = 13;
             // 
             // label12

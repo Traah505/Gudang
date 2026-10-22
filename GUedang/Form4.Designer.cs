@@ -126,7 +126,7 @@
             // 
             textBox5.Location = new Point(15, 256);
             textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "📞  No.HP";
+            textBox5.PlaceholderText = "📞  No.HP (Opsional)";
             textBox5.Size = new Size(178, 23);
             textBox5.TabIndex = 23;
             // 
@@ -134,27 +134,27 @@
             // 
             textBox4.Location = new Point(15, 227);
             textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "🔒  Konfirmasi Password";
+            textBox4.PlaceholderText = "🔒  Email";
             textBox4.Size = new Size(178, 23);
             textBox4.TabIndex = 22;
             textBox4.UseSystemPasswordChar = true;
             // 
             // textBox21
             // 
-            textBox21.Location = new Point(15, 198);
+            textBox21.Location = new Point(15, 169);
             textBox21.Name = "textBox21";
-            textBox21.PlaceholderText = "🔒  Password";
+            textBox21.PlaceholderText = " 👤  Username";
             textBox21.Size = new Size(178, 23);
             textBox21.TabIndex = 15;
-            textBox21.UseSystemPasswordChar = true;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(15, 169);
+            textBox3.Location = new Point(15, 198);
             textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "👤  Username";
+            textBox3.PlaceholderText = "🔒  Password";
             textBox3.Size = new Size(178, 23);
             textBox3.TabIndex = 21;
+            textBox3.UseSystemPasswordChar = true;
             // 
             // label2
             // 

@@ -10,9 +10,11 @@ namespace GUedang
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        public Form3(string namaUser)
         {
             InitializeComponent();
+            User1.Text = "Selamat Datang, " + namaUser;
+        
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
@@ -41,6 +43,16 @@ namespace GUedang
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

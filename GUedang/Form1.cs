@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace GUedang
 {
     public partial class Form1 : Form
@@ -34,29 +36,43 @@ namespace GUedang
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text;
-            string password = textBox2.Text;
+            string usernameInput = textBox2.Text.Trim();
+            string passwordInput = textBox1.Text.Trim();
 
-            if (username == "Ditra" && password == "Ditra")
+            string filePath = "Gacor.json";
+
+            if (!File.Exists(filePath))
             {
-                MessageBox.Show("Selamat Datang Admin");
-                Form2 DashboardAdmin = new Form2(username);
-                DashboardAdmin.Show();
-                this.Hide();
+                MessageBox.Show("Belum ada data pendaftaran!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else if (username == "Pengguna" && password == "Pengguna")
+
+            try
             {
-                MessageBox.Show("Selamat Datang");
-                Form3 DashboardPengguna = new Form3();
-                DashboardPengguna.Show();
-                this.Hide();
+                string jsonText = File.ReadAllText(filePath);
+                List<Gacor> listUser = JsonSerializer.Deserialize<List<Gacor>>(jsonText) ?? new List<Gacor>();
+
+                Gacor userCocok = listUser.FirstOrDefault(u => u.Username == usernameInput && u.Password == passwordInput);
+
+                if (userCocok != null)
+                {
+                    MessageBox.Show("Login Berhasil! Selamat Datang, " + userCocok.Username, "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Form2 dashboard = new Form2();
+                    dashboard.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Username atau Password salah!", "Gagal Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -119,6 +135,11 @@ namespace GUedang
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

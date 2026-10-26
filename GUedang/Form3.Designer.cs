@@ -1327,7 +1327,7 @@
             Controls.Add(panel17);
             Controls.Add(panel2);
             Name = "Form3";
-            Text = "DashboardPengguna";
+            Text = "DashboardKasir";
             FormClosed += Form3_FormClosed;
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

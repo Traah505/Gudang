@@ -4,6 +4,8 @@ namespace GUedang
 {
     public partial class Form1 : Form
     {
+        private object textBox2;
+
         public Form1()
         {
             InitializeComponent();
@@ -34,45 +36,11 @@ namespace GUedang
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e, CustomTextBox customTextBox1, CustomTextBox customTextBox2)
         {
-            string usernameInput = textBox2.Text.Trim();
-            string passwordInput = textBox1.Text.Trim();
 
-            string filePath = "Gacor.json";
-
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("Belum ada data pendaftaran!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            try
-            {
-                string jsonText = File.ReadAllText(filePath);
-                List<Gacor> listUser = JsonSerializer.Deserialize<List<Gacor>>(jsonText) ?? new List<Gacor>();
-
-                Gacor userCocok = listUser.FirstOrDefault(u => u.Username == usernameInput && u.Password == passwordInput);
-
-                if (userCocok != null)
-                {
-                    MessageBox.Show("Login Berhasil! Selamat Datang, " + userCocok.Username, "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Form2 dashboard = new Form2();
-                    dashboard.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Username atau Password salah!", "Gagal Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -97,11 +65,11 @@ namespace GUedang
         {
             if (checkBox1.Checked == true)
             {
-                textBox1.UseSystemPasswordChar = false;
+                customTextBox1.UseSystemPasswordChar = false;
             }
             else
             {
-                textBox1.UseSystemPasswordChar = true;
+                customTextBox1.UseSystemPasswordChar = true;
             }
         }
 
@@ -140,6 +108,21 @@ namespace GUedang
         private void label5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

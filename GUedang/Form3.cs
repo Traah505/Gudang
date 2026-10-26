@@ -14,7 +14,7 @@ namespace GUedang
         {
             InitializeComponent();
             User1.Text = "Selamat Datang, " + namaUser;
-        
+
         }
 
         private void Form3_FormClosed(object sender, FormClosedEventArgs e)
@@ -53,6 +53,21 @@ namespace GUedang
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel19_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label39_Click(object sender, EventArgs e)
         {
 
         }

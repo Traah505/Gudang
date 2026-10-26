@@ -4,7 +4,7 @@ namespace GUedang
 {
     public partial class Form1 : Form
     {
-        private object textBox2;
+        private object? textBox2;
 
         public Form1()
         {
@@ -36,10 +36,6 @@ namespace GUedang
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e, CustomTextBox customTextBox1, CustomTextBox customTextBox2)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -63,14 +59,7 @@ namespace GUedang
 
         private void checkBox1_CheckedChanged_2(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
-            {
-                customTextBox1.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                customTextBox1.UseSystemPasswordChar = true;
-            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -121,6 +110,11 @@ namespace GUedang
         }
 
         private void customTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
 
         }

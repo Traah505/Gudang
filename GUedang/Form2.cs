@@ -45,7 +45,7 @@ namespace GUedang
         
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Form3 DashboardPengguna = new Form3(lblAdmin.Text.Replace("Admin : ", ""));
+            DashBoardkeranjang1 DashboardPengguna = new DashBoardkeranjang1(lblAdmin.Text.Replace("Admin : ", ""));
             DashboardPengguna.Show();
             this.Hide();
         }
@@ -98,7 +98,7 @@ namespace GUedang
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form3 DashboardPengguna = new Form3(lblAdmin.Text.Replace("Admin : ", ""));
+            DashBoardkeranjang1 DashboardPengguna = new DashBoardkeranjang1(lblAdmin.Text.Replace("Admin : ", ""));
             DashboardPengguna.Show();
             this.Hide();
         }

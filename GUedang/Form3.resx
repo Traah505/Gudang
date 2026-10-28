@@ -267,7 +267,7 @@
         Wb+2/moDuSG+YbURvVG6MbDxbGN7U3DTeDNk88hm9+bM5uYvnl+6v/x/HfzV8Wvy17ffbL81fnv/zvnd
         8vvO709bTFvKW25b6Vuntm5urfwh/pH/4/wn5U/9n9E/b/9i/0r/tf+b+Lfm77W/r7dR2/Rtm+247crt
         K9sLO/CO+I7VTvRO+c7gzvwu2BXdtdiN3C3dHdh9sbv7738le4H4pzkzC4BzOgDWDwCoqQVALBgAitf/
-        Aq2inWNQN7d0AAAACXBIWXMAAAsOAAALDgFAvuFBAADdZklEQVR4Xuz993tb15nvDT//yXu9vzzPc855
+        Aq2inWNQN7d0AAAACXBIWXMAAAsNAAALDQHtB8AsAADdZklEQVR4Xuz993tb15nvDT//yXu9vzzPc855
         z0kmiW0VEr2yiepWZwGwCwCSklxjJ+5FvbP3BjYVO85kzrTMTGYmOWmT4sSx4yLJqizou5f1XvfaAAgC
         FEk5kE0H63t9vUyBJAhsrL0+q973/4WIiIiIiMpS/1fhA0RERERE5SECACIiIqIyFQEAERERUZmKAICI
         iIioTEUAQERERFSmIgAgIiIiKlMRABARERGVqQgAiIiIiMpUBABEREREZSoCACIiIqIyFQEAERERUZmK
@@ -1553,7 +1553,7 @@
         Wb+2/moDuSG+YbURvVG6MbDxbGN7U3DTeDNk88hm9+bM5uYvnl+6v/x/HfzV8Wvy17ffbL81fnv/zvnd
         8vvO709bTFvKW25b6Vuntm5urfwh/pH/4/wn5U/9n9E/b/9i/0r/tf+b+Lfm77W/r7dR2/Rtm+247crt
         K9sLO/CO+I7VTvRO+c7gzvwu2BXdtdiN3C3dHdh9sbv7738le4H4pzkzC4BzOgDWDwCoqQVALBgAitf/
-        Aq2inWNQN7d0AAAACXBIWXMAAAsPAAALDwGS+QOlAADdZklEQVR4Xuz993tb15nvDT//yXu9vzzPc855
+        Aq2inWNQN7d0AAAACXBIWXMAAAsOAAALDgFAvuFBAADdZklEQVR4Xuz993tb15nvDT//yXu9vzzPc855
         z0kmiW0VEr2yiepWZwGwCwCSklxjJ+5FvbP3BjYVO85kzrTMTGYmOWmT4sSx4yLJqizou5f1XvfaAAgC
         FEk5kE0H63t9vUyBJAhsrL0+q973/4WIiIiIiMpS/1fhA0RERERE5SECACIiIqIyFQEAERERUZmKAICI
         iIioTEUAQERERFSmIgAgIiIiKlMRABARERGVqQgAiIiIiMpUBABEREREZSoCACIiIqIyFQEAERERUZmK
@@ -2932,21 +2932,6 @@
         AAAAAADwh/4fqMFqHmVJ7hsAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="colNamaBarang.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colHarga.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colJumlah.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colSubtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colAksi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="colNamaBarang.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

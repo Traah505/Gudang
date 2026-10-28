@@ -101,7 +101,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Blue;
-            label2.Location = new Point(220, 29);
+            label2.Location = new Point(215, 9);
             label2.Name = "label2";
             label2.Size = new Size(133, 65);
             label2.TabIndex = 17;
@@ -121,16 +121,17 @@
             roundedPanel2.Controls.Add(pictureBox1);
             roundedPanel2.Controls.Add(dgvKeranjang);
             roundedPanel2.ForeColor = Color.Navy;
-            roundedPanel2.Location = new Point(80, 96);
+            roundedPanel2.Location = new Point(37, 77);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1119, 545);
+            roundedPanel2.Size = new Size(1192, 561);
             roundedPanel2.TabIndex = 0;
+            roundedPanel2.Paint += roundedPanel2_Paint;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(775, 216);
+            label8.Location = new Point(775, 204);
             label8.Name = "label8";
             label8.Size = new Size(113, 25);
             label8.TabIndex = 29;
@@ -141,7 +142,7 @@
             // 
             pictureBox3.BackColor = Color.White;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(733, 204);
+            pictureBox3.Location = new Point(733, 194);
             pictureBox3.Margin = new Padding(4, 5, 4, 5);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(44, 35);
@@ -151,13 +152,13 @@
             // 
             // roundedPanel3
             // 
-            roundedPanel3.BackColor = Color.Transparent;
+            roundedPanel3.BackColor = Color.Gainsboro;
             roundedPanel3.Controls.Add(btnProsesPembayaran);
             roundedPanel3.Controls.Add(roundedPanel4);
             roundedPanel3.Controls.Add(txtJumlahBayar);
             roundedPanel3.Controls.Add(lblKembalianTitle);
             roundedPanel3.Controls.Add(lblJumlahBayar);
-            roundedPanel3.Location = new Point(733, 244);
+            roundedPanel3.Location = new Point(775, 232);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(345, 203);
             roundedPanel3.TabIndex = 27;
@@ -240,7 +241,7 @@
             panelRingkasan.Controls.Add(lblTotalHargaTitle);
             panelRingkasan.Controls.Add(lblTotalItem);
             panelRingkasan.Controls.Add(lblTotalItemTitle);
-            panelRingkasan.Location = new Point(733, 48);
+            panelRingkasan.Location = new Point(775, 45);
             panelRingkasan.Name = "panelRingkasan";
             panelRingkasan.Size = new Size(345, 148);
             panelRingkasan.TabIndex = 21;
@@ -336,7 +337,7 @@
             dgvKeranjang.RowHeadersVisible = false;
             dgvKeranjang.RowHeadersWidth = 62;
             dgvKeranjang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKeranjang.Size = new Size(606, 424);
+            dgvKeranjang.Size = new Size(663, 424);
             dgvKeranjang.TabIndex = 0;
             // 
             // colNamaBarang
@@ -378,7 +379,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Navy;
-            label1.Location = new Point(110, 29);
+            label1.Location = new Point(110, 9);
             label1.Name = "label1";
             label1.Size = new Size(127, 65);
             label1.TabIndex = 16;
@@ -388,7 +389,7 @@
             // 
             pictureBox4.BackColor = Color.White;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(36, 29);
+            pictureBox4.Location = new Point(37, 9);
             pictureBox4.Margin = new Padding(4, 5, 4, 5);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(82, 59);

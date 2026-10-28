@@ -154,6 +154,11 @@ namespace GUedang
 
             MessageBox.Show("Pembayaran berhasil!");
         }
+
+        private void roundedPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    
+
 }

@@ -101,7 +101,9 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-
+            Form2 DashboardAdmin = new Form2();
+            DashboardAdmin.Show();
+            this.Hide();
         }
 
         private void label7_Click_1(object sender, EventArgs e)
@@ -115,6 +117,23 @@ namespace GUedang
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+            Register Register = new Register();
+            Register.Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -16,10 +16,17 @@ namespace GUedang
         {
             InitializeComponent();
             lblAdmin.Text = "Admin : " + namaUser;
+            UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
+            dashboardAdmin.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(dashboardAdmin);
         }
 
         public Form2()
         {
+            InitializeComponent();
+            UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
+            dashboardAdmin.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(dashboardAdmin);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -42,7 +49,7 @@ namespace GUedang
             loginForm.Show();
             this.Hide();
         }
-        
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             DashBoardkeranjang1 DashboardPengguna = new DashBoardkeranjang1(lblAdmin.Text.Replace("Admin : ", ""));
@@ -101,6 +108,11 @@ namespace GUedang
             DashBoardkeranjang1 DashboardPengguna = new DashBoardkeranjang1(lblAdmin.Text.Replace("Admin : ", ""));
             DashboardPengguna.Show();
             this.Hide();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

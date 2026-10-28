@@ -56,5 +56,20 @@ namespace GUedang
             UC_User halamanUser = new UC_User();
             TmpilkanHalaman(halamanUser);
         }
+
+        private void roundedPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblJumlahUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

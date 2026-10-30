@@ -28,10 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            lblTitleLaporan = new Label();
+            roundedPanel1 = new RoundedPanel();
+            roundedPanel2 = new RoundedPanel();
+            SuspendLayout();
+            // 
+            // lblTitleLaporan
+            // 
+            lblTitleLaporan.AutoSize = true;
+            lblTitleLaporan.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitleLaporan.ForeColor = Color.Navy;
+            lblTitleLaporan.Location = new Point(221, 29);
+            lblTitleLaporan.Name = "lblTitleLaporan";
+            lblTitleLaporan.Size = new Size(121, 38);
+            lblTitleLaporan.TabIndex = 0;
+            lblTitleLaporan.Text = "Laporan";
+            // 
+            // roundedPanel1
+            // 
+            roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.Location = new Point(232, 84);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Size = new Size(737, 107);
+            roundedPanel1.TabIndex = 1;
+            // 
+            // roundedPanel2
+            // 
+            roundedPanel2.BackColor = Color.Transparent;
+            roundedPanel2.Location = new Point(442, 257);
+            roundedPanel2.Name = "roundedPanel2";
+            roundedPanel2.Size = new Size(525, 200);
+            roundedPanel2.TabIndex = 2;
+            // 
+            // UC_Laporan
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(roundedPanel2);
+            Controls.Add(roundedPanel1);
+            Controls.Add(lblTitleLaporan);
+            Name = "UC_Laporan";
+            Size = new Size(1021, 533);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblTitleLaporan;
+        private RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel2;
     }
 }

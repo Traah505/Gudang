@@ -109,7 +109,14 @@ namespace GUedang
             DashboardPengguna.Show();
             this.Hide();
         }
+        private void BukaHalaman(UserControl halaman)
+        {
+            panelContent.Controls.Clear();
 
+            halaman.Dock = DockStyle.Fill;
+
+            panelContent.Controls.Add(halaman);
+        }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 

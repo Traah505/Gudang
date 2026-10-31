@@ -19,6 +19,8 @@ namespace GUedang
         {
             ResetButtonColors();
             roundedButtonDashboard.BackColor = Color.DodgerBlue;
+            UC_Dashboard halamanDashboard = new UC_Dashboard();
+            TampilkanHalaman(halamanDashboard);
         }
         private void roundedButtonUser_Click(object sender, EventArgs e)
         {
@@ -38,13 +40,13 @@ namespace GUedang
 
         private void ResetButtonColors()
         {
-            roundedButtonDashboard.BackColor = Color.DarkSlateGray;
-            roundedButtonUser.BackColor = Color.DarkSlateGray;
-            roundedButtonLaporan.BackColor = Color.DarkSlateGray;
-            roundedButtonBarang.BackColor = Color.DarkSlateGray;
+            roundedButtonDashboard.BackColor = Color.Navy;
+            roundedButtonUser.BackColor = Color.Navy;
+            roundedButtonLaporan.BackColor = Color.Navy;
+            roundedButtonBarang.BackColor = Color.Navy;
         }
 
-        private void TmpilkanHalaman(UserControl Halaman)
+        private void TampilkanHalaman(UserControl Halaman)
         {
             panelContent2.Controls.Clear();
             Halaman.Dock = DockStyle.Fill;
@@ -53,8 +55,10 @@ namespace GUedang
 
         private void roundedButtonUser_Click_2(object sender, EventArgs e)
         {
+            ResetButtonColors();
+            roundedButtonUser.BackColor = Color.DodgerBlue;
             UC_User halamanUser = new UC_User();
-            TmpilkanHalaman(halamanUser);
+            TampilkanHalaman(halamanUser);
         }
 
         private void roundedPanel1_Paint(object sender, PaintEventArgs e)
@@ -68,6 +72,32 @@ namespace GUedang
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButtonBarang_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonBarang.BackColor = Color.DodgerBlue;
+            UC_Barang halamanBarang = new UC_Barang();
+            TampilkanHalaman(halamanBarang);
+        }
+
+        private void roundedButtonLaporan_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonLaporan.BackColor = Color.DodgerBlue;
+            UC_Laporan halamanLaporan = new UC_Laporan();
+            TampilkanHalaman(halamanLaporan);
+        }
+
+        private void panelContent2_Paint(object sender, PaintEventArgs e)
         {
 
         }

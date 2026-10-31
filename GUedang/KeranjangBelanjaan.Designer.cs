@@ -1,6 +1,6 @@
 ﻿namespace GUedang
 {
-    partial class Form4
+    partial class KeranjangBelanjaan
     {
         /// <summary>
         /// Required designer variable.
@@ -41,30 +41,27 @@
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(dataGridView1);
-            panel2.Location = new Point(190, 2);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(133, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(826, 662);
+            panel2.Size = new Size(578, 397);
             panel2.TabIndex = 1;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(830, 662);
+            dataGridView1.Size = new Size(581, 397);
             dataGridView1.TabIndex = 1;
             // 
             // curvedSplitPanel1
             // 
             curvedSplitPanel1.BackColor = Color.Transparent;
             curvedSplitPanel1.Controls.Add(rondedbuton1);
-            curvedSplitPanel1.Location = new Point(1, 2);
-            curvedSplitPanel1.Margin = new Padding(4, 5, 4, 5);
+            curvedSplitPanel1.Location = new Point(1, 1);
             curvedSplitPanel1.Name = "curvedSplitPanel1";
-            curvedSplitPanel1.Size = new Size(190, 667);
+            curvedSplitPanel1.Size = new Size(133, 400);
             curvedSplitPanel1.TabIndex = 2;
             // 
             // rondedbuton1
@@ -73,23 +70,21 @@
             rondedbuton1.FlatAppearance.BorderSize = 0;
             rondedbuton1.FlatStyle = FlatStyle.Flat;
             rondedbuton1.ForeColor = Color.White;
-            rondedbuton1.Location = new Point(6, 65);
-            rondedbuton1.Margin = new Padding(4, 5, 4, 5);
+            rondedbuton1.Location = new Point(4, 39);
             rondedbuton1.Name = "rondedbuton1";
-            rondedbuton1.Size = new Size(179, 53);
+            rondedbuton1.Size = new Size(125, 32);
             rondedbuton1.TabIndex = 0;
             rondedbuton1.Text = "rondedbuton1";
             rondedbuton1.UseVisualStyleBackColor = false;
             // 
             // Form4
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1016, 652);
+            ClientSize = new Size(711, 391);
             Controls.Add(curvedSplitPanel1);
             Controls.Add(panel2);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Form4";
             Text = "Gudang";
             Load += Form4_Load;

@@ -8,22 +8,11 @@ using System.Windows.Forms;
 
 namespace GUedang
 {
-    public partial class Register : Form
+    public partial class UC_Dashboard : UserControl
     {
-        public Register()
+        public UC_Dashboard()
         {
             InitializeComponent();
-        }
-
-        private void curvedSplitPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

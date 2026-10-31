@@ -10,9 +10,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUedang
 {
-    public partial class Form2 : Form
+    public partial class Admin : Form
     {
-        public Form2(string namaUser)
+        public Admin(string namaUser)
         {
             InitializeComponent();
             lblAdmin.Text = "Admin : " + namaUser;
@@ -21,7 +21,7 @@ namespace GUedang
             panelContent.Controls.Add(dashboardAdmin);
         }
 
-        public Form2()
+        public Admin()
         {
             InitializeComponent();
             UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
@@ -45,9 +45,6 @@ namespace GUedang
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 loginForm = new Form1();
-            loginForm.Show();
-            this.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -120,6 +117,13 @@ namespace GUedang
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

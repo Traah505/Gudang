@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             Login = new RoundedPanel();
-            label1 = new Label();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
             roundedTextBox2 = new RoundedTextBox();
@@ -46,7 +45,6 @@
             checkBox1 = new CheckBox();
             label9 = new Label();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
             Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -57,8 +55,6 @@
             // 
             Login.BackColor = Color.WhiteSmoke;
             Login.BorderStyle = BorderStyle.Fixed3D;
-            Login.Controls.Add(label3);
-            Login.Controls.Add(label1);
             Login.Controls.Add(pictureBox6);
             Login.Controls.Add(pictureBox5);
             Login.Controls.Add(roundedTextBox2);
@@ -79,22 +75,10 @@
             Login.Size = new Size(327, 348);
             Login.TabIndex = 27;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.ForeColor = Color.RoyalBlue;
-            label1.Location = new Point(228, 257);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 28;
-            label1.Text = "Daftar";
-            label1.Click += label1_Click_2;
-            // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(67, 155);
+            pictureBox6.Location = new Point(67, 148);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(16, 16);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -105,7 +89,7 @@
             // 
             pictureBox5.BackColor = Color.WhiteSmoke;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(67, 100);
+            pictureBox5.Location = new Point(67, 93);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(16, 16);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -117,7 +101,7 @@
             // 
             roundedTextBox2.BackColor = Color.White;
             roundedTextBox2.BorderColor = Color.Navy;
-            roundedTextBox2.Location = new Point(57, 118);
+            roundedTextBox2.Location = new Point(57, 111);
             roundedTextBox2.Margin = new Padding(2);
             roundedTextBox2.Name = "roundedTextBox2";
             roundedTextBox2.Size = new Size(210, 29);
@@ -128,7 +112,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.White;
             label12.BorderStyle = BorderStyle.Fixed3D;
-            label12.Location = new Point(88, 99);
+            label12.Location = new Point(88, 92);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
             label12.Size = new Size(41, 17);
@@ -139,7 +123,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.White;
-            label4.Location = new Point(83, 54);
+            label4.Location = new Point(83, 44);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(184, 15);
@@ -151,7 +135,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.White;
             label11.BorderStyle = BorderStyle.Fixed3D;
-            label11.Location = new Point(88, 154);
+            label11.Location = new Point(88, 147);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(54, 17);
@@ -163,7 +147,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(116, 35);
+            label2.Location = new Point(114, 25);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(120, 19);
@@ -174,7 +158,7 @@
             // 
             roundedTextBox1.BackColor = Color.White;
             roundedTextBox1.BorderColor = Color.Navy;
-            roundedTextBox1.Location = new Point(57, 176);
+            roundedTextBox1.Location = new Point(57, 169);
             roundedTextBox1.Margin = new Padding(2);
             roundedTextBox1.Name = "roundedTextBox1";
             roundedTextBox1.Size = new Size(210, 29);
@@ -186,7 +170,7 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(83, 229);
+            roundedButton1.Location = new Point(83, 222);
             roundedButton1.Name = "roundedButton1";
             roundedButton1.Size = new Size(158, 25);
             roundedButton1.TabIndex = 19;
@@ -200,7 +184,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 11F);
             label5.ForeColor = Color.Blue;
-            label5.Location = new Point(152, 315);
+            label5.Location = new Point(145, 302);
             label5.Name = "label5";
             label5.Size = new Size(33, 20);
             label5.TabIndex = 0;
@@ -212,7 +196,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.White;
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(191, 207);
+            label7.Location = new Point(191, 200);
             label7.Name = "label7";
             label7.Size = new Size(86, 15);
             label7.TabIndex = 22;
@@ -223,7 +207,7 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.White;
-            label10.Location = new Point(95, 300);
+            label10.Location = new Point(88, 287);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(146, 15);
@@ -233,7 +217,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(170, 209);
+            checkBox1.Location = new Point(170, 202);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(15, 14);
             checkBox1.TabIndex = 8;
@@ -245,7 +229,7 @@
             label9.AutoSize = true;
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(138, 285);
+            label9.Location = new Point(131, 272);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(63, 15);
@@ -263,22 +247,12 @@
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(116, 257);
-            label3.Name = "label3";
-            label3.Size = new Size(111, 15);
-            label3.TabIndex = 29;
-            label3.Text = "Belum punya akun?";
-            label3.Click += label3_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(620, 344);
+            ClientSize = new Size(620, 349);
             Controls.Add(pictureBox1);
             Controls.Add(Login);
             ForeColor = Color.FromArgb(0, 192, 192);
@@ -315,7 +289,5 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;
-        private Label label1;
-        private Label label3;
     }
 }

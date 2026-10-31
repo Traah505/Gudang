@@ -9,9 +9,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUedang
 {
-    public partial class Form4 : Form
+    public partial class KeranjangBelanjaan : Form
     {
-        public Form4()
+        public KeranjangBelanjaan()
         {
             InitializeComponent();
         }

@@ -69,7 +69,7 @@ namespace GUedang
 
         private void label7_Click(object sender, EventArgs e)
         {
-            Form4 Register = new Form4();
+            KeranjangBelanjaan Register = new KeranjangBelanjaan();
             Register.Show();
             this.Hide();
         }
@@ -101,7 +101,8 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-            Form2 DashboardAdmin = new Form2();
+            
+            Admin DashboardAdmin = new Admin();
             DashboardAdmin.Show();
             this.Hide();
         }
@@ -128,9 +129,7 @@ namespace GUedang
 
         private void label1_Click_2(object sender, EventArgs e)
         {
-            Register Register = new Register();
-            Register.Show();
-            this.Hide();
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

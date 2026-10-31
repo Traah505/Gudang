@@ -36,87 +36,81 @@
             roundedButtonLaporan = new RoundedButton();
             roundedButtonUser = new RoundedButton();
             roundedButtonDashboard = new RoundedButton();
-            panelJUmlahUser = new RoundedPanel();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             lblKasir = new Label();
             lblJumlahUser = new Label();
-            roundedPanel2 = new RoundedPanel();
             roundedButton1 = new RoundedButton();
             label5 = new Label();
             panelContent2 = new RoundedPanel();
+            pictureBox3 = new PictureBox();
             dgvRequestUser = new DataGridView();
             colNo = new DataGridViewTextBoxColumn();
             colNama = new DataGridViewTextBoxColumn();
             colJenis = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
+            label4 = new Label();
             label2 = new Label();
             label1 = new Label();
-            label4 = new Label();
-            pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
-            panelJUmlahUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            roundedPanel2.SuspendLayout();
             panelContent2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRequestUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRequestUser).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DarkSlateGray;
+            panel1.BackColor = Color.Navy;
             panel1.Controls.Add(roundedButtonBarang);
             panel1.Controls.Add(roundedButtonLaporan);
             panel1.Controls.Add(roundedButtonUser);
             panel1.Controls.Add(roundedButtonDashboard);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(201, 538);
+            panel1.Size = new Size(141, 335);
             panel1.TabIndex = 0;
             // 
             // roundedButtonBarang
             // 
-            roundedButtonBarang.BackColor = Color.DarkSlateGray;
+            roundedButtonBarang.BackColor = Color.Navy;
             roundedButtonBarang.FlatAppearance.BorderSize = 0;
             roundedButtonBarang.FlatStyle = FlatStyle.Flat;
             roundedButtonBarang.ForeColor = Color.White;
-            roundedButtonBarang.Location = new Point(20, 185);
-            roundedButtonBarang.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonBarang.Location = new Point(20, 132);
             roundedButtonBarang.Name = "roundedButtonBarang";
-            roundedButtonBarang.Size = new Size(203, 67);
+            roundedButtonBarang.Size = new Size(142, 40);
             roundedButtonBarang.TabIndex = 3;
             roundedButtonBarang.Text = "Barang";
             roundedButtonBarang.UseVisualStyleBackColor = false;
+            roundedButtonBarang.Click += roundedButtonBarang_Click_1;
             // 
             // roundedButtonLaporan
             // 
-            roundedButtonLaporan.BackColor = Color.DarkSlateGray;
+            roundedButtonLaporan.BackColor = Color.Navy;
             roundedButtonLaporan.FlatAppearance.BorderSize = 0;
             roundedButtonLaporan.FlatStyle = FlatStyle.Flat;
             roundedButtonLaporan.ForeColor = Color.White;
-            roundedButtonLaporan.Location = new Point(20, 262);
-            roundedButtonLaporan.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonLaporan.Location = new Point(20, 178);
             roundedButtonLaporan.Name = "roundedButtonLaporan";
-            roundedButtonLaporan.Size = new Size(203, 67);
+            roundedButtonLaporan.Size = new Size(142, 40);
             roundedButtonLaporan.TabIndex = 2;
             roundedButtonLaporan.Text = "Laporan";
             roundedButtonLaporan.UseVisualStyleBackColor = false;
+            roundedButtonLaporan.Click += roundedButtonLaporan_Click_1;
             // 
             // roundedButtonUser
             // 
-            roundedButtonUser.BackColor = Color.DarkSlateGray;
+            roundedButtonUser.BackColor = Color.Navy;
             roundedButtonUser.FlatAppearance.BorderSize = 0;
             roundedButtonUser.FlatStyle = FlatStyle.Flat;
             roundedButtonUser.ForeColor = Color.White;
-            roundedButtonUser.Location = new Point(20, 108);
-            roundedButtonUser.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonUser.Location = new Point(20, 86);
             roundedButtonUser.Name = "roundedButtonUser";
-            roundedButtonUser.Size = new Size(203, 67);
+            roundedButtonUser.Size = new Size(142, 40);
             roundedButtonUser.TabIndex = 1;
             roundedButtonUser.Text = "User";
             roundedButtonUser.UseVisualStyleBackColor = false;
@@ -124,42 +118,25 @@
             // 
             // roundedButtonDashboard
             // 
-            roundedButtonDashboard.BackColor = Color.DarkSlateGray;
+            roundedButtonDashboard.BackColor = Color.Navy;
             roundedButtonDashboard.FlatAppearance.BorderSize = 0;
             roundedButtonDashboard.FlatStyle = FlatStyle.Flat;
             roundedButtonDashboard.ForeColor = Color.White;
-            roundedButtonDashboard.Location = new Point(20, 32);
-            roundedButtonDashboard.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonDashboard.Location = new Point(20, 40);
             roundedButtonDashboard.Name = "roundedButtonDashboard";
-            roundedButtonDashboard.Size = new Size(203, 67);
+            roundedButtonDashboard.Size = new Size(142, 40);
             roundedButtonDashboard.TabIndex = 0;
             roundedButtonDashboard.Text = "Dashboard";
             roundedButtonDashboard.UseVisualStyleBackColor = false;
             roundedButtonDashboard.Click += roundedButtonDashboard_Click;
             // 
-            // panelJUmlahUser
-            // 
-            panelJUmlahUser.BackColor = Color.Transparent;
-            panelJUmlahUser.BorderStyle = BorderStyle.FixedSingle;
-            panelJUmlahUser.Controls.Add(pictureBox2);
-            panelJUmlahUser.Controls.Add(pictureBox1);
-            panelJUmlahUser.Controls.Add(label3);
-            panelJUmlahUser.Controls.Add(lblKasir);
-            panelJUmlahUser.Controls.Add(lblJumlahUser);
-            panelJUmlahUser.Location = new Point(890, 77);
-            panelJUmlahUser.Margin = new Padding(4, 5, 4, 5);
-            panelJUmlahUser.Name = "panelJUmlahUser";
-            panelJUmlahUser.Padding = new Padding(10);
-            panelJUmlahUser.Size = new Size(175, 222);
-            panelJUmlahUser.TabIndex = 1;
-            panelJUmlahUser.Paint += roundedPanel1_Paint;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(13, 130);
+            pictureBox2.Location = new Point(503, 134);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(31, 35);
+            pictureBox2.Size = new Size(22, 21);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
@@ -167,9 +144,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(13, 62);
+            pictureBox1.Location = new Point(503, 108);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(31, 35);
+            pictureBox1.Size = new Size(22, 21);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -178,9 +156,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(50, 141);
+            label3.Location = new Point(529, 134);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(71, 24);
+            label3.Size = new Size(52, 17);
             label3.TabIndex = 2;
             label3.Text = "Gudang";
             // 
@@ -188,9 +167,10 @@
             // 
             lblKasir.AutoSize = true;
             lblKasir.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblKasir.Location = new Point(50, 73);
+            lblKasir.Location = new Point(529, 108);
+            lblKasir.Margin = new Padding(2, 0, 2, 0);
             lblKasir.Name = "lblKasir";
-            lblKasir.Size = new Size(48, 24);
+            lblKasir.Size = new Size(35, 17);
             lblKasir.TabIndex = 1;
             lblKasir.Text = "Kasir";
             // 
@@ -198,23 +178,13 @@
             // 
             lblJumlahUser.AutoSize = true;
             lblJumlahUser.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJumlahUser.Location = new Point(13, 10);
+            lblJumlahUser.Location = new Point(495, 73);
+            lblJumlahUser.Margin = new Padding(2, 0, 2, 0);
             lblJumlahUser.Name = "lblJumlahUser";
-            lblJumlahUser.Size = new Size(124, 28);
+            lblJumlahUser.Size = new Size(86, 19);
             lblJumlahUser.TabIndex = 0;
             lblJumlahUser.Text = "Jumlah User";
             lblJumlahUser.Click += lblJumlahUser_Click;
-            // 
-            // roundedPanel2
-            // 
-            roundedPanel2.BackColor = Color.RoyalBlue;
-            roundedPanel2.Controls.Add(roundedButton1);
-            roundedPanel2.Controls.Add(label5);
-            roundedPanel2.Location = new Point(890, 334);
-            roundedPanel2.Margin = new Padding(4, 5, 4, 5);
-            roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(175, 137);
-            roundedPanel2.TabIndex = 2;
             // 
             // roundedButton1
             // 
@@ -222,9 +192,10 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(14, 77);
+            roundedButton1.Location = new Point(486, 213);
+            roundedButton1.Margin = new Padding(2);
             roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(141, 38);
+            roundedButton1.Size = new Size(99, 23);
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Buat Pasword";
             roundedButton1.TextAlign = ContentAlignment.TopCenter;
@@ -235,9 +206,10 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(14, 26);
+            label5.Location = new Point(501, 175);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(90, 28);
+            label5.Size = new Size(63, 19);
             label5.TabIndex = 6;
             label5.Text = "Shortcut";
             label5.Click += label5_Click;
@@ -245,13 +217,35 @@
             // panelContent2
             // 
             panelContent2.BackColor = Color.Transparent;
+            panelContent2.Controls.Add(roundedButton1);
+            panelContent2.Controls.Add(lblJumlahUser);
+            panelContent2.Controls.Add(label5);
+            panelContent2.Controls.Add(pictureBox2);
+            panelContent2.Controls.Add(pictureBox3);
+            panelContent2.Controls.Add(label3);
+            panelContent2.Controls.Add(pictureBox1);
             panelContent2.Controls.Add(dgvRequestUser);
+            panelContent2.Controls.Add(label4);
             panelContent2.Controls.Add(label2);
-            panelContent2.Location = new Point(250, 68);
-            panelContent2.Margin = new Padding(4, 5, 4, 5);
+            panelContent2.Controls.Add(label1);
+            panelContent2.Controls.Add(lblKasir);
+            panelContent2.Location = new Point(147, 3);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(594, 435);
+            panelContent2.Size = new Size(603, 317);
             panelContent2.TabIndex = 3;
+            panelContent2.Paint += panelContent2_Paint;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(503, 17);
+            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(22, 21);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // dgvRequestUser
             // 
@@ -283,7 +277,8 @@
             dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
-            dgvRequestUser.Location = new Point(28, 63);
+            dgvRequestUser.Location = new Point(20, 68);
+            dgvRequestUser.Margin = new Padding(2);
             dgvRequestUser.MultiSelect = false;
             dgvRequestUser.Name = "dgvRequestUser";
             dgvRequestUser.ReadOnly = true;
@@ -291,7 +286,7 @@
             dgvRequestUser.RowHeadersWidth = 62;
             dgvRequestUser.RowTemplate.Height = 38;
             dgvRequestUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequestUser.Size = new Size(546, 351);
+            dgvRequestUser.Size = new Size(440, 233);
             dgvRequestUser.TabIndex = 6;
             // 
             // colNo
@@ -334,13 +329,25 @@
             colAksi.Name = "colAksi";
             colAksi.ReadOnly = true;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(529, 16);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 19);
+            label4.TabIndex = 5;
+            label4.Text = "Admin";
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(28, 9);
+            label2.Location = new Point(20, 45);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(252, 32);
+            label2.Size = new Size(163, 21);
             label2.TabIndex = 5;
             label2.Text = "Data Request User";
             // 
@@ -348,60 +355,30 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(278, 16);
+            label1.Location = new Point(20, 17);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(255, 39);
+            label1.Size = new Size(178, 27);
             label1.TabIndex = 4;
             label1.Text = "Dashboard Admin";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(940, 16);
-            label4.Name = "label4";
-            label4.Size = new Size(72, 28);
-            label4.TabIndex = 5;
-            label4.Text = "Admin";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(903, 9);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(31, 35);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
-            // 
             // UC_DashboardAdmin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            Controls.Add(pictureBox3);
-            Controls.Add(label4);
-            Controls.Add(label1);
             Controls.Add(panelContent2);
-            Controls.Add(roundedPanel2);
-            Controls.Add(panelJUmlahUser);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_DashboardAdmin";
-            Size = new Size(1095, 538);
+            Size = new Size(766, 323);
             panel1.ResumeLayout(false);
-            panelJUmlahUser.ResumeLayout(false);
-            panelJUmlahUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            roundedPanel2.ResumeLayout(false);
-            roundedPanel2.PerformLayout();
             panelContent2.ResumeLayout(false);
             panelContent2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRequestUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRequestUser).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
 
@@ -409,9 +386,7 @@
         #endregion
 
         private Panel panel1;
-        private RoundedPanel panelJUmlahUser;
         private RoundedButton roundedButtonDashboard;
-        private RoundedPanel roundedPanel2;
         private RoundedButton roundedButtonBarang;
         private RoundedButton roundedButtonLaporan;
         private RoundedButton roundedButtonUser;

@@ -49,9 +49,10 @@
             lblTitleLaporan.AutoSize = true;
             lblTitleLaporan.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitleLaporan.ForeColor = Color.Navy;
-            lblTitleLaporan.Location = new Point(232, 25);
+            lblTitleLaporan.Location = new Point(14, 14);
+            lblTitleLaporan.Margin = new Padding(2, 0, 2, 0);
             lblTitleLaporan.Name = "lblTitleLaporan";
-            lblTitleLaporan.Size = new Size(121, 38);
+            lblTitleLaporan.Size = new Size(81, 25);
             lblTitleLaporan.TabIndex = 0;
             lblTitleLaporan.Text = "Laporan";
             lblTitleLaporan.Click += lblTitleLaporan_Click;
@@ -66,9 +67,10 @@
             roundedPanel1.Controls.Add(dtpSampaiTanggal);
             roundedPanel1.Controls.Add(lblDaruTanggal);
             roundedPanel1.Controls.Add(dtpDariTanggal);
-            roundedPanel1.Location = new Point(232, 84);
+            roundedPanel1.Location = new Point(14, 49);
+            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(737, 107);
+            roundedPanel1.Size = new Size(516, 64);
             roundedPanel1.TabIndex = 1;
             // 
             // btnTampilkan
@@ -77,9 +79,10 @@
             btnTampilkan.FlatAppearance.BorderSize = 0;
             btnTampilkan.FlatStyle = FlatStyle.Flat;
             btnTampilkan.ForeColor = Color.White;
-            btnTampilkan.Location = new Point(594, 47);
+            btnTampilkan.Location = new Point(416, 28);
+            btnTampilkan.Margin = new Padding(2, 2, 2, 2);
             btnTampilkan.Name = "btnTampilkan";
-            btnTampilkan.Size = new Size(124, 39);
+            btnTampilkan.Size = new Size(87, 23);
             btnTampilkan.TabIndex = 6;
             btnTampilkan.Text = "Tampilkan";
             btnTampilkan.UseVisualStyleBackColor = false;
@@ -89,9 +92,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(396, 24);
+            label1.Location = new Point(277, 14);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(107, 18);
+            label1.Size = new Size(75, 14);
             label1.TabIndex = 5;
             label1.Text = "Jenis Laporan";
             // 
@@ -100,18 +104,20 @@
             cmbJenisLaporan.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJenisLaporan.FormattingEnabled = true;
             cmbJenisLaporan.Items.AddRange(new object[] { "Penjualan", "Barang", "Kasir" });
-            cmbJenisLaporan.Location = new Point(396, 53);
+            cmbJenisLaporan.Location = new Point(277, 32);
+            cmbJenisLaporan.Margin = new Padding(2, 2, 2, 2);
             cmbJenisLaporan.Name = "cmbJenisLaporan";
-            cmbJenisLaporan.Size = new Size(192, 33);
+            cmbJenisLaporan.Size = new Size(136, 23);
             cmbJenisLaporan.TabIndex = 4;
             // 
             // lblSampaiTanggal
             // 
             lblSampaiTanggal.AutoSize = true;
             lblSampaiTanggal.Font = new Font("Arial", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSampaiTanggal.Location = new Point(229, 24);
+            lblSampaiTanggal.Location = new Point(160, 14);
+            lblSampaiTanggal.Margin = new Padding(2, 0, 2, 0);
             lblSampaiTanggal.Name = "lblSampaiTanggal";
-            lblSampaiTanggal.Size = new Size(121, 18);
+            lblSampaiTanggal.Size = new Size(82, 14);
             lblSampaiTanggal.TabIndex = 3;
             lblSampaiTanggal.Text = "Sampai Tanggal";
             lblSampaiTanggal.Click += lblSampaiTanggal_Click;
@@ -120,18 +126,20 @@
             // 
             dtpSampaiTanggal.CustomFormat = "dd//MM/yyyy";
             dtpSampaiTanggal.Format = DateTimePickerFormat.Custom;
-            dtpSampaiTanggal.Location = new Point(229, 55);
+            dtpSampaiTanggal.Location = new Point(160, 33);
+            dtpSampaiTanggal.Margin = new Padding(2, 2, 2, 2);
             dtpSampaiTanggal.Name = "dtpSampaiTanggal";
-            dtpSampaiTanggal.Size = new Size(174, 31);
+            dtpSampaiTanggal.Size = new Size(123, 23);
             dtpSampaiTanggal.TabIndex = 2;
             // 
             // lblDaruTanggal
             // 
             lblDaruTanggal.AutoSize = true;
             lblDaruTanggal.Font = new Font("Arial", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDaruTanggal.Location = new Point(39, 24);
+            lblDaruTanggal.Location = new Point(27, 14);
+            lblDaruTanggal.Margin = new Padding(2, 0, 2, 0);
             lblDaruTanggal.Name = "lblDaruTanggal";
-            lblDaruTanggal.Size = new Size(96, 18);
+            lblDaruTanggal.Size = new Size(66, 14);
             lblDaruTanggal.TabIndex = 1;
             lblDaruTanggal.Text = "Dari Tanggal";
             // 
@@ -139,38 +147,42 @@
             // 
             dtpDariTanggal.CustomFormat = "dd//MM/yyyy";
             dtpDariTanggal.Format = DateTimePickerFormat.Custom;
-            dtpDariTanggal.Location = new Point(39, 55);
+            dtpDariTanggal.Location = new Point(27, 33);
+            dtpDariTanggal.Margin = new Padding(2, 2, 2, 2);
             dtpDariTanggal.Name = "dtpDariTanggal";
-            dtpDariTanggal.Size = new Size(184, 31);
+            dtpDariTanggal.Size = new Size(130, 23);
             dtpDariTanggal.TabIndex = 0;
             // 
             // roundedPanel2
             // 
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(dataGridView1);
-            roundedPanel2.Location = new Point(232, 214);
+            roundedPanel2.Location = new Point(14, 127);
+            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(737, 288);
+            roundedPanel2.Size = new Size(516, 173);
             roundedPanel2.TabIndex = 2;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(39, 34);
+            dataGridView1.Location = new Point(27, 21);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(679, 225);
+            dataGridView1.Size = new Size(475, 135);
             dataGridView1.TabIndex = 0;
             // 
             // UC_Laporan
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(roundedPanel2);
             Controls.Add(roundedPanel1);
             Controls.Add(lblTitleLaporan);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UC_Laporan";
-            Size = new Size(1021, 533);
+            Size = new Size(547, 320);
             Load += UC_Laporan_Load;
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();

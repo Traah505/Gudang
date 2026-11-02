@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DSHBRDGudang));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             roundedPanel1 = new RoundedPanel();
             panelGrafikStok = new RoundedPanel();
             label7 = new Label();
@@ -51,7 +53,13 @@
             label2 = new Label();
             label1 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartStokBarang = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            roundedPanel6 = new RoundedPanel();
+            label8 = new Label();
+            dgvBarangStokMenipis = new DataGridView();
+            colNo = new DataGridViewTextBoxColumn();
+            colNamaBarang = new DataGridViewTextBoxColumn();
+            colStok = new DataGridViewTextBoxColumn();
             roundedPanel1.SuspendLayout();
             panelGrafikStok.SuspendLayout();
             roundedPanel5.SuspendLayout();
@@ -59,12 +67,15 @@
             roundedPanel3.SuspendLayout();
             roundedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartStokBarang).BeginInit();
+            roundedPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBarangStokMenipis).BeginInit();
             SuspendLayout();
             // 
             // roundedPanel1
             // 
             roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.Controls.Add(roundedPanel6);
             roundedPanel1.Controls.Add(panelGrafikStok);
             roundedPanel1.Controls.Add(roundedPanel5);
             roundedPanel1.Controls.Add(roundedPanel4);
@@ -81,11 +92,11 @@
             // panelGrafikStok
             // 
             panelGrafikStok.BackColor = Color.Transparent;
-            panelGrafikStok.Controls.Add(chart1);
+            panelGrafikStok.Controls.Add(chartStokBarang);
             panelGrafikStok.Controls.Add(label7);
             panelGrafikStok.Location = new Point(24, 223);
             panelGrafikStok.Name = "panelGrafikStok";
-            panelGrafikStok.Size = new Size(396, 330);
+            panelGrafikStok.Size = new Size(434, 330);
             panelGrafikStok.TabIndex = 10;
             // 
             // label7
@@ -257,21 +268,103 @@
             label1.TabIndex = 0;
             label1.Text = "Dashboard Gudang";
             // 
-            // chart1
+            // chartStokBarang
             // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(19, 45);
-            chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(353, 282);
-            chart1.TabIndex = 3;
-            chart1.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            chartStokBarang.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartStokBarang.Legends.Add(legend1);
+            chartStokBarang.Location = new Point(3, 45);
+            chartStokBarang.Name = "chartStokBarang";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Stok Barang";
+            chartStokBarang.Series.Add(series1);
+            chartStokBarang.Size = new Size(428, 282);
+            chartStokBarang.TabIndex = 3;
+            chartStokBarang.Text = "chart1";
+            // 
+            // roundedPanel6
+            // 
+            roundedPanel6.BackColor = Color.Transparent;
+            roundedPanel6.BorderStyle = BorderStyle.FixedSingle;
+            roundedPanel6.Controls.Add(dgvBarangStokMenipis);
+            roundedPanel6.Controls.Add(label8);
+            roundedPanel6.Location = new Point(478, 223);
+            roundedPanel6.Name = "roundedPanel6";
+            roundedPanel6.Size = new Size(277, 327);
+            roundedPanel6.TabIndex = 11;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(3, 11);
+            label8.Name = "label8";
+            label8.Size = new Size(217, 30);
+            label8.TabIndex = 4;
+            label8.Text = "Barang Stok Menipis";
+            // 
+            // dgvBarangStokMenipis
+            // 
+            dgvBarangStokMenipis.AllowUserToAddRows = false;
+            dgvBarangStokMenipis.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBarangStokMenipis.BackgroundColor = Color.White;
+            dgvBarangStokMenipis.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.MidnightBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvBarangStokMenipis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBarangStokMenipis.ColumnHeadersHeight = 40;
+            dgvBarangStokMenipis.Columns.AddRange(new DataGridViewColumn[] { colNo, colNamaBarang, colStok });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.DimGray;
+            dataGridViewCellStyle2.Padding = new Padding(6);
+            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvBarangStokMenipis.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvBarangStokMenipis.EnableHeadersVisualStyles = false;
+            dgvBarangStokMenipis.Location = new Point(3, 45);
+            dgvBarangStokMenipis.Name = "dgvBarangStokMenipis";
+            dgvBarangStokMenipis.ReadOnly = true;
+            dgvBarangStokMenipis.RowHeadersVisible = false;
+            dgvBarangStokMenipis.RowHeadersWidth = 62;
+            dgvBarangStokMenipis.RowTemplate.Height = 38;
+            dgvBarangStokMenipis.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBarangStokMenipis.Size = new Size(263, 279);
+            dgvBarangStokMenipis.TabIndex = 5;
+            // 
+            // colNo
+            // 
+            colNo.FillWeight = 40F;
+            colNo.HeaderText = "No";
+            colNo.MinimumWidth = 8;
+            colNo.Name = "colNo";
+            colNo.ReadOnly = true;
+            // 
+            // colNamaBarang
+            // 
+            colNamaBarang.FillWeight = 130F;
+            colNamaBarang.HeaderText = "Nama Barang";
+            colNamaBarang.MinimumWidth = 8;
+            colNamaBarang.Name = "colNamaBarang";
+            colNamaBarang.ReadOnly = true;
+            // 
+            // colStok
+            // 
+            colStok.FillWeight = 50F;
+            colStok.HeaderText = "Stok";
+            colStok.MinimumWidth = 8;
+            colStok.Name = "colStok";
+            colStok.ReadOnly = true;
             // 
             // UC_DSHBRDGudang
             // 
@@ -295,7 +388,10 @@
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartStokBarang).EndInit();
+            roundedPanel6.ResumeLayout(false);
+            roundedPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBarangStokMenipis).EndInit();
             ResumeLayout(false);
         }
 
@@ -320,6 +416,12 @@
         private Label lblAngkaTotal;
         private Label label7;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStokBarang;
+        private RoundedPanel roundedPanel6;
+        private DataGridView dgvBarangStokMenipis;
+        private Label label8;
+        private DataGridViewTextBoxColumn colNo;
+        private DataGridViewTextBoxColumn colNamaBarang;
+        private DataGridViewTextBoxColumn colStok;
     }
 }

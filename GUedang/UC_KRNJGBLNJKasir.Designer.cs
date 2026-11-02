@@ -43,8 +43,8 @@
             colSubtotal = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
             roundedPanel1 = new RoundedPanel();
-            label2 = new Label();
             lblNominalTotal = new Label();
+            label2 = new Label();
             btnReset = new RoundedButton();
             btnBayar = new RoundedButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -112,7 +112,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvKeranjang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvKeranjang.EnableHeadersVisualStyles = false;
-            dgvKeranjang.Location = new Point(216, 84);
+            dgvKeranjang.Location = new Point(233, 86);
             dgvKeranjang.MultiSelect = false;
             dgvKeranjang.Name = "dgvKeranjang";
             dgvKeranjang.ReadOnly = true;
@@ -188,16 +188,6 @@
             roundedPanel1.Size = new Size(276, 80);
             roundedPanel1.TabIndex = 8;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(24, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(163, 28);
-            label2.TabIndex = 0;
-            label2.Text = "📄Total Belanja";
-            // 
             // lblNominalTotal
             // 
             lblNominalTotal.AutoSize = true;
@@ -208,6 +198,16 @@
             lblNominalTotal.Size = new Size(79, 45);
             lblNominalTotal.TabIndex = 1;
             lblNominalTotal.Text = "Rp0";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(24, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(163, 28);
+            label2.TabIndex = 0;
+            label2.Text = "📄Total Belanja";
             // 
             // btnReset
             // 

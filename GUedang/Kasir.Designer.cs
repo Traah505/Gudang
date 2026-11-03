@@ -33,9 +33,9 @@
             // 
             // panelKasirHalaman
             // 
-            panelKasirHalaman.Location = new Point(-1, 2);
+            panelKasirHalaman.Location = new Point(-1, 0);
             panelKasirHalaman.Name = "panelKasirHalaman";
-            panelKasirHalaman.Size = new Size(567, 450);
+            panelKasirHalaman.Size = new Size(816, 380);
             panelKasirHalaman.TabIndex = 0;
             panelKasirHalaman.Paint += panelKasirHalaman_Paint;
             // 
@@ -43,8 +43,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 450);
+            ClientSize = new Size(816, 380);
             Controls.Add(panelKasirHalaman);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Kasir";
             Text = "Kasir";
             ResumeLayout(false);

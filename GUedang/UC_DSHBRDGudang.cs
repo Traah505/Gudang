@@ -14,5 +14,15 @@ namespace GUedang
         {
             InitializeComponent();
         }
+
+        private void chartStokBarang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UC_DSHBRDGudang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

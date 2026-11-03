@@ -4,7 +4,7 @@ namespace GUedang
 {
     public partial class Form1 : Form
     {
-        private object? textBox2;
+        private object? userData;
 
         public Form1()
         {
@@ -67,12 +67,8 @@ namespace GUedang
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-            KeranjangBelanjaan Register = new KeranjangBelanjaan();
-            Register.Show();
-            this.Hide();
-        }
+
+
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -101,9 +97,9 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-            
-            Admin DashboardAdmin = new Admin();
-            DashboardAdmin.Show();
+
+            Kasir DashboardKasir = new Kasir();
+            DashboardKasir.Show();
             this.Hide();
         }
 
@@ -129,10 +125,15 @@ namespace GUedang
 
         private void label1_Click_2(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

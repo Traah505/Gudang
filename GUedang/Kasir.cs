@@ -13,11 +13,16 @@ namespace GUedang
         public Kasir()
         {
             InitializeComponent();
+   
+            
+            UC_Kasir dashboardAdmin = new UC_Kasir();
+            dashboardAdmin.Dock = DockStyle.Fill;
+            panelKasirHalaman.Controls.Add(dashboardAdmin);
+        
         }
 
         private void panelKasirHalaman_Paint(object sender, PaintEventArgs e)
         {
-
         }
         private void BukaHalaman(UserControl halaman)
         {

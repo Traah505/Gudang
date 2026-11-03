@@ -30,6 +30,7 @@ namespace GUedang
         {
             roundedButtonGudang.BackColor = Color.Navy;
             roundedButtonBRG.BackColor = Color.Navy;
+            roundedButtonKLLABRGGudang.BackColor = Color.Navy;
 
         }
 
@@ -47,6 +48,21 @@ namespace GUedang
             roundedButtonBRG.BackColor = Color.DodgerBlue;
             UC_BRGGudang halamanGudang = new UC_BRGGudang();
             TampilkanHalaman(halamanGudang);
+        }
+
+        private void roundedButtonKLLABRGGudang_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonKLLABRGGudang.BackColor = Color.DodgerBlue;
+            UC_KLLABRGGudang halamanGudang = new UC_KLLABRGGudang();
+            TampilkanHalaman(halamanGudang);
+        }
+
+        private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
+        {
+            Form1 DashboardAdmin = new Form1();
+            DashboardAdmin.Show();
+            this.Hide();
         }
     }
 }

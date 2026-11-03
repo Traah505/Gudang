@@ -13,6 +13,9 @@ namespace GUedang
         public Gudang()
         {
             InitializeComponent();
+            UC_Gudang dashboardAdmin = new UC_Gudang();
+            dashboardAdmin.Dock = DockStyle.Fill;
+            panelGudang.Controls.Add(dashboardAdmin);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

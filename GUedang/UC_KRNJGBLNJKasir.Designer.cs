@@ -56,18 +56,20 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(216, 25);
+            label1.Location = new Point(39, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(212, 32);
+            label1.Size = new Size(139, 21);
             label1.TabIndex = 4;
             label1.Text = "Keranjang Belanja";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(188, 22);
+            pictureBox1.Location = new Point(13, 22);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(31, 35);
+            pictureBox1.Size = new Size(22, 21);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -78,9 +80,10 @@
             btnHapusSemua.FlatAppearance.BorderSize = 0;
             btnHapusSemua.FlatStyle = FlatStyle.Flat;
             btnHapusSemua.ForeColor = Color.RoyalBlue;
-            btnHapusSemua.Location = new Point(686, 25);
+            btnHapusSemua.Location = new Point(509, 20);
+            btnHapusSemua.Margin = new Padding(2, 2, 2, 2);
             btnHapusSemua.Name = "btnHapusSemua";
-            btnHapusSemua.Size = new Size(162, 46);
+            btnHapusSemua.Size = new Size(113, 28);
             btnHapusSemua.TabIndex = 6;
             btnHapusSemua.Text = "🗑️Hapus Semua";
             btnHapusSemua.UseVisualStyleBackColor = false;
@@ -112,7 +115,8 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvKeranjang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvKeranjang.EnableHeadersVisualStyles = false;
-            dgvKeranjang.Location = new Point(233, 86);
+            dgvKeranjang.Location = new Point(13, 52);
+            dgvKeranjang.Margin = new Padding(2, 2, 2, 2);
             dgvKeranjang.MultiSelect = false;
             dgvKeranjang.Name = "dgvKeranjang";
             dgvKeranjang.ReadOnly = true;
@@ -120,7 +124,7 @@
             dgvKeranjang.RowHeadersWidth = 62;
             dgvKeranjang.RowTemplate.Height = 40;
             dgvKeranjang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKeranjang.Size = new Size(656, 356);
+            dgvKeranjang.Size = new Size(609, 214);
             dgvKeranjang.TabIndex = 7;
             // 
             // colNo
@@ -183,9 +187,10 @@
             roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(lblNominalTotal);
             roundedPanel1.Controls.Add(label2);
-            roundedPanel1.Location = new Point(216, 460);
+            roundedPanel1.Location = new Point(13, 272);
+            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(276, 80);
+            roundedPanel1.Size = new Size(193, 48);
             roundedPanel1.TabIndex = 8;
             // 
             // lblNominalTotal
@@ -193,9 +198,10 @@
             lblNominalTotal.AutoSize = true;
             lblNominalTotal.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNominalTotal.ForeColor = Color.MidnightBlue;
-            lblNominalTotal.Location = new Point(59, 28);
+            lblNominalTotal.Location = new Point(41, 17);
+            lblNominalTotal.Margin = new Padding(2, 0, 2, 0);
             lblNominalTotal.Name = "lblNominalTotal";
-            lblNominalTotal.Size = new Size(79, 45);
+            lblNominalTotal.Size = new Size(54, 30);
             lblNominalTotal.TabIndex = 1;
             lblNominalTotal.Text = "Rp0";
             // 
@@ -203,9 +209,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(24, 0);
+            label2.Location = new Point(17, 0);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(163, 28);
+            label2.Size = new Size(112, 19);
             label2.TabIndex = 0;
             label2.Text = "📄Total Belanja";
             // 
@@ -216,9 +223,10 @@
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.RoyalBlue;
-            btnReset.Location = new Point(534, 458);
+            btnReset.Location = new Point(394, 274);
+            btnReset.Margin = new Padding(2, 2, 2, 2);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(140, 75);
+            btnReset.Size = new Size(98, 45);
             btnReset.TabIndex = 9;
             btnReset.Text = "⟳ Reset";
             btnReset.UseVisualStyleBackColor = false;
@@ -230,16 +238,17 @@
             btnBayar.FlatStyle = FlatStyle.Flat;
             btnBayar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBayar.ForeColor = Color.White;
-            btnBayar.Location = new Point(709, 458);
+            btnBayar.Location = new Point(496, 274);
+            btnBayar.Margin = new Padding(2, 2, 2, 2);
             btnBayar.Name = "btnBayar";
-            btnBayar.Size = new Size(180, 75);
+            btnBayar.Size = new Size(126, 45);
             btnBayar.TabIndex = 10;
             btnBayar.Text = "▣ Bayar  ›";
             btnBayar.UseVisualStyleBackColor = false;
             // 
             // UC_KRNJGBLNJKasir
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(btnBayar);
             Controls.Add(btnReset);
@@ -248,8 +257,9 @@
             Controls.Add(btnHapusSemua);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UC_KRNJGBLNJKasir";
-            Size = new Size(906, 543);
+            Size = new Size(634, 326);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvKeranjang).EndInit();
             roundedPanel1.ResumeLayout(false);

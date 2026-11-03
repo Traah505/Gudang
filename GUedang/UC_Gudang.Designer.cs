@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            roundedButtonLogoutKsir = new RoundedButton();
+            roundedButtonKLLABRGGudang = new RoundedButton();
             roundedButtonBRG = new RoundedButton();
             roundedButtonGudang = new RoundedButton();
             panelGudang = new RoundedPanel();
@@ -38,12 +40,42 @@
             // panel1
             // 
             panel1.BackColor = Color.Navy;
+            panel1.Controls.Add(roundedButtonLogoutKsir);
+            panel1.Controls.Add(roundedButtonKLLABRGGudang);
             panel1.Controls.Add(roundedButtonBRG);
             panel1.Controls.Add(roundedButtonGudang);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 374);
+            panel1.Size = new Size(141, 448);
             panel1.TabIndex = 1;
+            // 
+            // roundedButtonLogoutKsir
+            // 
+            roundedButtonLogoutKsir.BackColor = Color.Navy;
+            roundedButtonLogoutKsir.FlatAppearance.BorderSize = 0;
+            roundedButtonLogoutKsir.FlatStyle = FlatStyle.Flat;
+            roundedButtonLogoutKsir.ForeColor = Color.White;
+            roundedButtonLogoutKsir.Location = new Point(0, 408);
+            roundedButtonLogoutKsir.Name = "roundedButtonLogoutKsir";
+            roundedButtonLogoutKsir.Size = new Size(141, 40);
+            roundedButtonLogoutKsir.TabIndex = 5;
+            roundedButtonLogoutKsir.Text = "Logout";
+            roundedButtonLogoutKsir.UseVisualStyleBackColor = false;
+            roundedButtonLogoutKsir.Click += roundedButtonLogoutKsir_Click;
+            // 
+            // roundedButtonKLLABRGGudang
+            // 
+            roundedButtonKLLABRGGudang.BackColor = Color.Navy;
+            roundedButtonKLLABRGGudang.FlatAppearance.BorderSize = 0;
+            roundedButtonKLLABRGGudang.FlatStyle = FlatStyle.Flat;
+            roundedButtonKLLABRGGudang.ForeColor = Color.White;
+            roundedButtonKLLABRGGudang.Location = new Point(20, 132);
+            roundedButtonKLLABRGGudang.Name = "roundedButtonKLLABRGGudang";
+            roundedButtonKLLABRGGudang.Size = new Size(142, 40);
+            roundedButtonKLLABRGGudang.TabIndex = 2;
+            roundedButtonKLLABRGGudang.Text = "Kelola Barang";
+            roundedButtonKLLABRGGudang.UseVisualStyleBackColor = false;
+            roundedButtonKLLABRGGudang.Click += roundedButtonKLLABRGGudang_Click;
             // 
             // roundedButtonBRG
             // 
@@ -76,19 +108,20 @@
             // panelGudang
             // 
             panelGudang.BackColor = Color.Transparent;
-            panelGudang.Location = new Point(232, 25);
+            panelGudang.Location = new Point(168, 34);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(296, 316);
+            panelGudang.Size = new Size(795, 412);
             panelGudang.TabIndex = 2;
             // 
             // UC_Gudang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             Controls.Add(panelGudang);
             Controls.Add(panel1);
             Name = "UC_Gudang";
-            Size = new Size(731, 374);
+            Size = new Size(966, 448);
             Load += UC_Gudang_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -100,5 +133,7 @@
         private RoundedButton roundedButtonBRG;
         private RoundedButton roundedButtonGudang;
         private RoundedPanel panelGudang;
+        private RoundedButton roundedButtonKLLABRGGudang;
+        private RoundedButton roundedButtonLogoutKsir;
     }
 }

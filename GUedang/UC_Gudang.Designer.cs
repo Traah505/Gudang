@@ -28,26 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Gudang));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             roundedButtonLogoutKsir = new RoundedButton();
             roundedButtonKLLABRGGudang = new RoundedButton();
             roundedButtonBRG = new RoundedButton();
             roundedButtonGudang = new RoundedButton();
             panelGudang = new RoundedPanel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Navy;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(roundedButtonLogoutKsir);
             panel1.Controls.Add(roundedButtonKLLABRGGudang);
             panel1.Controls.Add(roundedButtonBRG);
             panel1.Controls.Add(roundedButtonGudang);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 448);
+            panel1.Size = new Size(141, 477);
             panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(20, 13);
+            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(98, 45);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // roundedButtonLogoutKsir
             // 
@@ -55,9 +70,9 @@
             roundedButtonLogoutKsir.FlatAppearance.BorderSize = 0;
             roundedButtonLogoutKsir.FlatStyle = FlatStyle.Flat;
             roundedButtonLogoutKsir.ForeColor = Color.White;
-            roundedButtonLogoutKsir.Location = new Point(0, 408);
+            roundedButtonLogoutKsir.Location = new Point(0, 422);
             roundedButtonLogoutKsir.Name = "roundedButtonLogoutKsir";
-            roundedButtonLogoutKsir.Size = new Size(141, 40);
+            roundedButtonLogoutKsir.Size = new Size(141, 43);
             roundedButtonLogoutKsir.TabIndex = 5;
             roundedButtonLogoutKsir.Text = "Logout";
             roundedButtonLogoutKsir.UseVisualStyleBackColor = false;
@@ -69,7 +84,7 @@
             roundedButtonKLLABRGGudang.FlatAppearance.BorderSize = 0;
             roundedButtonKLLABRGGudang.FlatStyle = FlatStyle.Flat;
             roundedButtonKLLABRGGudang.ForeColor = Color.White;
-            roundedButtonKLLABRGGudang.Location = new Point(20, 132);
+            roundedButtonKLLABRGGudang.Location = new Point(20, 155);
             roundedButtonKLLABRGGudang.Name = "roundedButtonKLLABRGGudang";
             roundedButtonKLLABRGGudang.Size = new Size(142, 40);
             roundedButtonKLLABRGGudang.TabIndex = 2;
@@ -83,7 +98,7 @@
             roundedButtonBRG.FlatAppearance.BorderSize = 0;
             roundedButtonBRG.FlatStyle = FlatStyle.Flat;
             roundedButtonBRG.ForeColor = Color.White;
-            roundedButtonBRG.Location = new Point(20, 86);
+            roundedButtonBRG.Location = new Point(20, 109);
             roundedButtonBRG.Name = "roundedButtonBRG";
             roundedButtonBRG.Size = new Size(142, 40);
             roundedButtonBRG.TabIndex = 1;
@@ -97,7 +112,7 @@
             roundedButtonGudang.FlatAppearance.BorderSize = 0;
             roundedButtonGudang.FlatStyle = FlatStyle.Flat;
             roundedButtonGudang.ForeColor = Color.White;
-            roundedButtonGudang.Location = new Point(20, 40);
+            roundedButtonGudang.Location = new Point(20, 63);
             roundedButtonGudang.Name = "roundedButtonGudang";
             roundedButtonGudang.Size = new Size(142, 40);
             roundedButtonGudang.TabIndex = 0;
@@ -121,9 +136,10 @@
             Controls.Add(panelGudang);
             Controls.Add(panel1);
             Name = "UC_Gudang";
-            Size = new Size(966, 448);
+            Size = new Size(966, 477);
             Load += UC_Gudang_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -135,5 +151,6 @@
         private RoundedPanel panelGudang;
         private RoundedButton roundedButtonKLLABRGGudang;
         private RoundedButton roundedButtonLogoutKsir;
+        private PictureBox pictureBox1;
     }
 }

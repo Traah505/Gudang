@@ -146,7 +146,7 @@
             btnLihatSemua.FlatAppearance.BorderSize = 0;
             btnLihatSemua.FlatStyle = FlatStyle.Flat;
             btnLihatSemua.ForeColor = Color.RoyalBlue;
-            btnLihatSemua.Location = new Point(313, 44);
+            btnLihatSemua.Location = new Point(489, 44);
             btnLihatSemua.Margin = new Padding(2);
             btnLihatSemua.Name = "btnLihatSemua";
             btnLihatSemua.Size = new Size(111, 23);
@@ -199,6 +199,7 @@
             btnCetakLaporan.TabIndex = 6;
             btnCetakLaporan.Text = "▣ Cetak Laporan  ›";
             btnCetakLaporan.UseVisualStyleBackColor = false;
+            btnCetakLaporan.Click += btnCetakLaporan_Click;
             // 
             // btnRefresh
             // 

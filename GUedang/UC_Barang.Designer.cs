@@ -36,38 +36,38 @@
             pictureBox3 = new PictureBox();
             label3 = new Label();
             roundedPanel1 = new RoundedPanel();
-            roundedPanel2 = new RoundedPanel();
-            roundedPanel3 = new RoundedPanel();
-            roundedPanel4 = new RoundedPanel();
-            panelDaftarStok = new RoundedPanel();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
             lblTotalBarang = new Label();
+            label4 = new Label();
+            roundedPanel2 = new RoundedPanel();
             roundedPanel6 = new RoundedPanel();
-            label9 = new Label();
             lblStokAman = new Label();
+            label9 = new Label();
+            label5 = new Label();
+            roundedPanel3 = new RoundedPanel();
             lblStokMenipis = new Label();
+            label6 = new Label();
+            roundedPanel4 = new RoundedPanel();
             lblStokHabis = new Label();
-            txtCariStok = new RoundedTextBox();
-            btnSemua = new RoundedButton();
-            btnAman = new RoundedButton();
-            btnMenipis = new RoundedButton();
+            label7 = new Label();
+            panelDaftarStok = new RoundedPanel();
             btnHabis = new RoundedButton();
+            btnMenipis = new RoundedButton();
+            btnAman = new RoundedButton();
             dgvDaftarStok = new DataGridView();
             colNo = new DataGridViewTextBoxColumn();
             colKode = new DataGridViewTextBoxColumn();
             colNamaBarang = new DataGridViewTextBoxColumn();
             colStok = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
+            btnSemua = new RoundedButton();
+            txtCariStok = new RoundedTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             roundedPanel1.SuspendLayout();
             roundedPanel2.SuspendLayout();
+            roundedPanel6.SuspendLayout();
             roundedPanel3.SuspendLayout();
             roundedPanel4.SuspendLayout();
             panelDaftarStok.SuspendLayout();
-            roundedPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDaftarStok).BeginInit();
             SuspendLayout();
             // 
@@ -76,9 +76,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(16, 10);
+            label1.Location = new Point(11, 6);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(171, 38);
+            label1.Size = new Size(114, 25);
             label1.TabIndex = 0;
             label1.Text = "Stok Barang";
             // 
@@ -86,18 +87,20 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(22, 48);
+            label2.Location = new Point(15, 29);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(165, 25);
+            label2.Size = new Size(109, 15);
             label2.TabIndex = 1;
             label2.Text = "Pantau stok barang";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(642, 10);
+            pictureBox3.Location = new Point(511, 10);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(26, 38);
+            pictureBox3.Size = new Size(18, 23);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
@@ -106,9 +109,10 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(674, 23);
+            label3.Location = new Point(533, 16);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(65, 25);
+            label3.Size = new Size(43, 15);
             label3.TabIndex = 7;
             label3.Text = "Admin";
             // 
@@ -118,10 +122,34 @@
             roundedPanel1.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel1.Controls.Add(lblTotalBarang);
             roundedPanel1.Controls.Add(label4);
-            roundedPanel1.Location = new Point(22, 101);
+            roundedPanel1.Location = new Point(15, 61);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(180, 75);
+            roundedPanel1.Size = new Size(127, 46);
             roundedPanel1.TabIndex = 8;
+            roundedPanel1.PanelColor = Color.RoyalBlue;
+            // 
+            // lblTotalBarang
+            // 
+            lblTotalBarang.AutoSize = true;
+            lblTotalBarang.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalBarang.Location = new Point(13, 17);
+            lblTotalBarang.Margin = new Padding(2, 0, 2, 0);
+            lblTotalBarang.Name = "lblTotalBarang";
+            lblTotalBarang.Size = new Size(23, 25);
+            lblTotalBarang.TabIndex = 1;
+            lblTotalBarang.Text = "0";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Calibri Light", 9F, FontStyle.Bold);
+            label4.Location = new Point(8, 5);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(80, 14);
+            label4.TabIndex = 0;
+            label4.Text = "Total Barang";
             // 
             // roundedPanel2
             // 
@@ -129,97 +157,11 @@
             roundedPanel2.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel2.Controls.Add(roundedPanel6);
             roundedPanel2.Controls.Add(label5);
-            roundedPanel2.Location = new Point(230, 101);
+            roundedPanel2.Location = new Point(161, 61);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(180, 75);
+            roundedPanel2.Size = new Size(127, 46);
             roundedPanel2.TabIndex = 9;
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.Transparent;
-            roundedPanel3.BorderStyle = BorderStyle.FixedSingle;
-            roundedPanel3.Controls.Add(lblStokMenipis);
-            roundedPanel3.Controls.Add(label6);
-            roundedPanel3.Location = new Point(434, 101);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(180, 75);
-            roundedPanel3.TabIndex = 10;
-            // 
-            // roundedPanel4
-            // 
-            roundedPanel4.BackColor = Color.Transparent;
-            roundedPanel4.BorderStyle = BorderStyle.FixedSingle;
-            roundedPanel4.Controls.Add(lblStokHabis);
-            roundedPanel4.Controls.Add(label7);
-            roundedPanel4.Location = new Point(642, 101);
-            roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(180, 75);
-            roundedPanel4.TabIndex = 11;
-            // 
-            // panelDaftarStok
-            // 
-            panelDaftarStok.BackColor = Color.White;
-            panelDaftarStok.BorderStyle = BorderStyle.FixedSingle;
-            panelDaftarStok.Controls.Add(dgvDaftarStok);
-            panelDaftarStok.Controls.Add(btnHabis);
-            panelDaftarStok.Controls.Add(btnMenipis);
-            panelDaftarStok.Controls.Add(btnAman);
-            panelDaftarStok.Controls.Add(btnSemua);
-            panelDaftarStok.Controls.Add(txtCariStok);
-            panelDaftarStok.Location = new Point(22, 192);
-            panelDaftarStok.Name = "panelDaftarStok";
-            panelDaftarStok.Size = new Size(800, 300);
-            panelDaftarStok.TabIndex = 12;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(11, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 19);
-            label4.TabIndex = 0;
-            label4.Text = "Total Barang";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(16, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(92, 19);
-            label5.TabIndex = 1;
-            label5.Text = "Total Barang";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(14, 9);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 19);
-            label6.TabIndex = 2;
-            label6.Text = "Stok Menipis";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(16, 9);
-            label7.Name = "label7";
-            label7.Size = new Size(76, 19);
-            label7.TabIndex = 3;
-            label7.Text = "Stok Habis";
-            // 
-            // lblTotalBarang
-            // 
-            lblTotalBarang.AutoSize = true;
-            lblTotalBarang.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalBarang.Location = new Point(19, 28);
-            lblTotalBarang.Name = "lblTotalBarang";
-            lblTotalBarang.Size = new Size(33, 38);
-            lblTotalBarang.TabIndex = 1;
-            lblTotalBarang.Text = "0";
             // 
             // roundedPanel6
             // 
@@ -228,101 +170,131 @@
             roundedPanel6.Controls.Add(lblStokAman);
             roundedPanel6.Controls.Add(label9);
             roundedPanel6.Location = new Point(-1, -1);
+            roundedPanel6.Margin = new Padding(2);
             roundedPanel6.Name = "roundedPanel6";
-            roundedPanel6.Size = new Size(180, 75);
+            roundedPanel6.Size = new Size(127, 46);
             roundedPanel6.TabIndex = 10;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(16, 9);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 19);
-            label9.TabIndex = 1;
-            label9.Text = "Stok Aman";
+            roundedPanel6.PanelColor = Color.SeaGreen;
             // 
             // lblStokAman
             // 
             lblStokAman.AutoSize = true;
             lblStokAman.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStokAman.Location = new Point(16, 28);
+            lblStokAman.Location = new Point(11, 17);
+            lblStokAman.Margin = new Padding(2, 0, 2, 0);
             lblStokAman.Name = "lblStokAman";
-            lblStokAman.Size = new Size(33, 38);
+            lblStokAman.Size = new Size(23, 25);
             lblStokAman.TabIndex = 2;
             lblStokAman.Text = "0";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Calibri Light", 9F, FontStyle.Bold);
+            label9.Location = new Point(11, 5);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(68, 14);
+            label9.TabIndex = 1;
+            label9.Text = "Stok Aman";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(11, 5);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(61, 13);
+            label5.TabIndex = 1;
+            label5.Text = "Total Barang";
+            // 
+            // roundedPanel3
+            // 
+            roundedPanel3.BackColor = Color.Transparent;
+            roundedPanel3.BorderStyle = BorderStyle.FixedSingle;
+            roundedPanel3.Controls.Add(lblStokMenipis);
+            roundedPanel3.Controls.Add(label6);
+            roundedPanel3.Location = new Point(304, 61);
+            roundedPanel3.Margin = new Padding(2);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(127, 46);
+            roundedPanel3.TabIndex = 10;
+            roundedPanel3.PanelColor = Color.Goldenrod;
             // 
             // lblStokMenipis
             // 
             lblStokMenipis.AutoSize = true;
             lblStokMenipis.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStokMenipis.Location = new Point(14, 28);
+            lblStokMenipis.Location = new Point(10, 17);
+            lblStokMenipis.Margin = new Padding(2, 0, 2, 0);
             lblStokMenipis.Name = "lblStokMenipis";
-            lblStokMenipis.Size = new Size(33, 38);
+            lblStokMenipis.Size = new Size(23, 25);
             lblStokMenipis.TabIndex = 13;
             lblStokMenipis.Text = "0";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Calibri Light", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(10, 5);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(81, 14);
+            label6.TabIndex = 2;
+            label6.Text = "Stok Menipis";
+            // 
+            // roundedPanel4
+            // 
+            roundedPanel4.BackColor = Color.Transparent;
+            roundedPanel4.BorderStyle = BorderStyle.FixedSingle;
+            roundedPanel4.Controls.Add(lblStokHabis);
+            roundedPanel4.Controls.Add(label7);
+            roundedPanel4.Location = new Point(449, 61);
+            roundedPanel4.Margin = new Padding(2);
+            roundedPanel4.Name = "roundedPanel4";
+            roundedPanel4.Size = new Size(127, 46);
+            roundedPanel4.TabIndex = 11;
+            roundedPanel4.PanelColor = Color.IndianRed; 
+
             // 
             // lblStokHabis
             // 
             lblStokHabis.AutoSize = true;
             lblStokHabis.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStokHabis.Location = new Point(16, 28);
+            lblStokHabis.Location = new Point(11, 17);
+            lblStokHabis.Margin = new Padding(2, 0, 2, 0);
             lblStokHabis.Name = "lblStokHabis";
-            lblStokHabis.Size = new Size(33, 38);
+            lblStokHabis.Size = new Size(23, 25);
             lblStokHabis.TabIndex = 14;
             lblStokHabis.Text = "0";
             // 
-            // txtCariStok
+            // label7
             // 
-            txtCariStok.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCariStok.ForeColor = Color.MidnightBlue;
-            txtCariStok.Location = new Point(9, 13);
-            txtCariStok.Name = "txtCariStok";
-            txtCariStok.Size = new Size(450, 30);
-            txtCariStok.TabIndex = 0;
-            txtCariStok.Text = "Cari nama barang atau kode...";
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri Light", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(11, 5);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(67, 14);
+            label7.TabIndex = 3;
+            label7.Text = "Stok Habis";
             // 
-            // btnSemua
+            // panelDaftarStok
             // 
-            btnSemua.BackColor = Color.RoyalBlue;
-            btnSemua.FlatAppearance.BorderSize = 0;
-            btnSemua.FlatStyle = FlatStyle.Flat;
-            btnSemua.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSemua.ForeColor = Color.White;
-            btnSemua.Location = new Point(487, 12);
-            btnSemua.Name = "btnSemua";
-            btnSemua.Size = new Size(65, 30);
-            btnSemua.TabIndex = 1;
-            btnSemua.Text = "Semua";
-            btnSemua.UseVisualStyleBackColor = false;
-            // 
-            // btnAman
-            // 
-            btnAman.BackColor = Color.SeaGreen;
-            btnAman.FlatAppearance.BorderSize = 0;
-            btnAman.FlatStyle = FlatStyle.Flat;
-            btnAman.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAman.ForeColor = Color.White;
-            btnAman.Location = new Point(558, 13);
-            btnAman.Name = "btnAman";
-            btnAman.Size = new Size(65, 30);
-            btnAman.TabIndex = 2;
-            btnAman.Text = "Aman";
-            btnAman.UseVisualStyleBackColor = false;
-            // 
-            // btnMenipis
-            // 
-            btnMenipis.BackColor = Color.Goldenrod;
-            btnMenipis.FlatAppearance.BorderSize = 0;
-            btnMenipis.FlatStyle = FlatStyle.Flat;
-            btnMenipis.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnMenipis.ForeColor = Color.White;
-            btnMenipis.Location = new Point(629, 13);
-            btnMenipis.Name = "btnMenipis";
-            btnMenipis.Size = new Size(74, 30);
-            btnMenipis.TabIndex = 3;
-            btnMenipis.Text = "Menipis";
-            btnMenipis.UseVisualStyleBackColor = false;
+            panelDaftarStok.BackColor = Color.White;
+            panelDaftarStok.BorderStyle = BorderStyle.FixedSingle;
+            panelDaftarStok.Controls.Add(btnHabis);
+            panelDaftarStok.Controls.Add(btnMenipis);
+            panelDaftarStok.Controls.Add(btnAman);
+            panelDaftarStok.Controls.Add(dgvDaftarStok);
+            panelDaftarStok.Controls.Add(btnSemua);
+            panelDaftarStok.Controls.Add(txtCariStok);
+            panelDaftarStok.Location = new Point(15, 115);
+            panelDaftarStok.Margin = new Padding(2);
+            panelDaftarStok.Name = "panelDaftarStok";
+            panelDaftarStok.Size = new Size(561, 181);
+            panelDaftarStok.TabIndex = 12;
             // 
             // btnHabis
             // 
@@ -331,12 +303,43 @@
             btnHabis.FlatStyle = FlatStyle.Flat;
             btnHabis.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnHabis.ForeColor = Color.White;
-            btnHabis.Location = new Point(709, 13);
+            btnHabis.Location = new Point(495, -1);
+            btnHabis.Margin = new Padding(2);
             btnHabis.Name = "btnHabis";
-            btnHabis.Size = new Size(65, 30);
-            btnHabis.TabIndex = 4;
+            btnHabis.Size = new Size(51, 30);
+            btnHabis.TabIndex = 8;
             btnHabis.Text = "Habis";
             btnHabis.UseVisualStyleBackColor = false;
+            // 
+            // btnMenipis
+            // 
+            btnMenipis.BackColor = Color.Goldenrod;
+            btnMenipis.FlatAppearance.BorderSize = 0;
+            btnMenipis.FlatStyle = FlatStyle.Flat;
+            btnMenipis.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMenipis.ForeColor = Color.White;
+            btnMenipis.Location = new Point(435, -1);
+            btnMenipis.Margin = new Padding(2);
+            btnMenipis.Name = "btnMenipis";
+            btnMenipis.Size = new Size(57, 30);
+            btnMenipis.TabIndex = 7;
+            btnMenipis.Text = "Menipis";
+            btnMenipis.UseVisualStyleBackColor = false;
+            // 
+            // btnAman
+            // 
+            btnAman.BackColor = Color.SeaGreen;
+            btnAman.FlatAppearance.BorderSize = 0;
+            btnAman.FlatStyle = FlatStyle.Flat;
+            btnAman.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAman.ForeColor = Color.White;
+            btnAman.Location = new Point(380, -1);
+            btnAman.Margin = new Padding(2);
+            btnAman.Name = "btnAman";
+            btnAman.Size = new Size(51, 30);
+            btnAman.TabIndex = 6;
+            btnAman.Text = "Aman";
+            btnAman.UseVisualStyleBackColor = false;
             // 
             // dgvDaftarStok
             // 
@@ -366,14 +369,15 @@
             dgvDaftarStok.DefaultCellStyle = dataGridViewCellStyle2;
             dgvDaftarStok.EnableHeadersVisualStyles = false;
             dgvDaftarStok.GridColor = Color.White;
-            dgvDaftarStok.Location = new Point(9, 49);
+            dgvDaftarStok.Location = new Point(6, 29);
+            dgvDaftarStok.Margin = new Padding(2);
             dgvDaftarStok.Name = "dgvDaftarStok";
             dgvDaftarStok.ReadOnly = true;
             dgvDaftarStok.RowHeadersVisible = false;
             dgvDaftarStok.RowHeadersWidth = 62;
             dgvDaftarStok.RowTemplate.Height = 35;
             dgvDaftarStok.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvDaftarStok.Size = new Size(778, 235);
+            dgvDaftarStok.Size = new Size(545, 141);
             dgvDaftarStok.TabIndex = 5;
             // 
             // colNo
@@ -421,9 +425,35 @@
             colStatus.ReadOnly = true;
             colStatus.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
+            // btnSemua
+            // 
+            btnSemua.BackColor = Color.RoyalBlue;
+            btnSemua.FlatAppearance.BorderSize = 0;
+            btnSemua.FlatStyle = FlatStyle.Flat;
+            btnSemua.Font = new Font("Calibri", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSemua.ForeColor = Color.White;
+            btnSemua.Location = new Point(325, -1);
+            btnSemua.Margin = new Padding(2);
+            btnSemua.Name = "btnSemua";
+            btnSemua.Size = new Size(51, 30);
+            btnSemua.TabIndex = 1;
+            btnSemua.Text = "Semua";
+            btnSemua.UseVisualStyleBackColor = false;
+            // 
+            // txtCariStok
+            // 
+            txtCariStok.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCariStok.ForeColor = Color.MidnightBlue;
+            txtCariStok.Location = new Point(6, 8);
+            txtCariStok.Margin = new Padding(2);
+            txtCariStok.Name = "txtCariStok";
+            txtCariStok.Size = new Size(315, 21);
+            txtCariStok.TabIndex = 0;
+            txtCariStok.Text = "Cari nama barang atau kode...";
+            // 
             // UC_Barang
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             Controls.Add(panelDaftarStok);
@@ -435,20 +465,21 @@
             Controls.Add(pictureBox3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "UC_Barang";
-            Size = new Size(845, 538);
+            Size = new Size(592, 323);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
+            roundedPanel6.ResumeLayout(false);
+            roundedPanel6.PerformLayout();
             roundedPanel3.ResumeLayout(false);
             roundedPanel3.PerformLayout();
             roundedPanel4.ResumeLayout(false);
             roundedPanel4.PerformLayout();
             panelDaftarStok.ResumeLayout(false);
-            roundedPanel6.ResumeLayout(false);
-            roundedPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDaftarStok).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -476,15 +507,15 @@
         private Label lblStokHabis;
         private Label label7;
         private RoundedTextBox txtCariStok;
-        private RoundedButton btnMenipis;
-        private RoundedButton btnAman;
         private RoundedButton btnSemua;
-        private RoundedButton btnHabis;
         private DataGridView dgvDaftarStok;
         private DataGridViewTextBoxColumn colNo;
         private DataGridViewTextBoxColumn colKode;
         private DataGridViewTextBoxColumn colNamaBarang;
         private DataGridViewTextBoxColumn colStok;
         private DataGridViewTextBoxColumn colStatus;
+        private RoundedButton btnHabis;
+        private RoundedButton btnMenipis;
+        private RoundedButton btnAman;
     }
 }

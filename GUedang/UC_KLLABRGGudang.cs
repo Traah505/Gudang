@@ -15,24 +15,19 @@ namespace GUedang
             InitializeComponent();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnSimpan_Click(object sender, EventArgs e)
         {
-            if (e.RowIndex < 0) return;
+           
+        }
 
-            DataGridViewRow row = dgvKelolaBarang.Rows[e.RowIndex];
+        private void dgvKelolaBarang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            txtKode.Text = row.Cells["colKode"].Value?.ToString();
-            txtNama.Text = row.Cells["colNama"].Value?.ToString();
-            cmbKategori.Text = row.Cells["colKategori"].Value?.ToString();
-
-            numHargaBeli.Value = Convert.ToDecimal(
-                row.Cells["colHargaBeli"].Value ?? 0);
-
-            numHargaJual.Value = Convert.ToDecimal(
-                row.Cells["colHargaJual"].Value ?? 0);
-
-            numStok.Value = Convert.ToDecimal(
-                row.Cells["colStok"].Value ?? 0);
+        }
+        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
+

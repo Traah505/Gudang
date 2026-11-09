@@ -212,6 +212,7 @@
             btnTambahBarang.TabIndex = 11;
             btnTambahBarang.Text = "+ Tambah Barang";
             btnTambahBarang.UseVisualStyleBackColor = false;
+            btnTambahBarang.Click += btnTambahBarang_Click;
             // 
             // numStokAwal
             // 
@@ -324,6 +325,7 @@
             dgvBarang.RowTemplate.Height = 38;
             dgvBarang.Size = new Size(681, 467);
             dgvBarang.TabIndex = 1;
+            dgvBarang.CellContentClick += dgvBarang_CellContentClick;
             // 
             // colNo
             // 
@@ -378,7 +380,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.WhiteSmoke;
             Controls.Add(roundedPanel1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "UC_BRGGudang";

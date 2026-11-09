@@ -55,21 +55,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(39, 22);
+            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(51, 15);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(139, 21);
+            label1.Size = new Size(191, 30);
             label1.TabIndex = 4;
             label1.Text = "Keranjang Belanja";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(13, 22);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Location = new Point(2, 7);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(22, 21);
+            pictureBox1.Size = new Size(45, 41);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -81,7 +82,7 @@
             btnHapusSemua.FlatStyle = FlatStyle.Flat;
             btnHapusSemua.ForeColor = Color.RoyalBlue;
             btnHapusSemua.Location = new Point(509, 20);
-            btnHapusSemua.Margin = new Padding(2, 2, 2, 2);
+            btnHapusSemua.Margin = new Padding(2);
             btnHapusSemua.Name = "btnHapusSemua";
             btnHapusSemua.Size = new Size(113, 28);
             btnHapusSemua.TabIndex = 6;
@@ -115,8 +116,8 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvKeranjang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvKeranjang.EnableHeadersVisualStyles = false;
-            dgvKeranjang.Location = new Point(13, 52);
-            dgvKeranjang.Margin = new Padding(2, 2, 2, 2);
+            dgvKeranjang.Location = new Point(2, 52);
+            dgvKeranjang.Margin = new Padding(2);
             dgvKeranjang.MultiSelect = false;
             dgvKeranjang.Name = "dgvKeranjang";
             dgvKeranjang.ReadOnly = true;
@@ -124,7 +125,7 @@
             dgvKeranjang.RowHeadersWidth = 62;
             dgvKeranjang.RowTemplate.Height = 40;
             dgvKeranjang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKeranjang.Size = new Size(609, 214);
+            dgvKeranjang.Size = new Size(630, 200);
             dgvKeranjang.TabIndex = 7;
             // 
             // colNo
@@ -188,7 +189,7 @@
             roundedPanel1.Controls.Add(lblNominalTotal);
             roundedPanel1.Controls.Add(label2);
             roundedPanel1.Location = new Point(13, 272);
-            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(193, 48);
             roundedPanel1.TabIndex = 8;
@@ -224,7 +225,7 @@
             btnReset.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.RoyalBlue;
             btnReset.Location = new Point(394, 274);
-            btnReset.Margin = new Padding(2, 2, 2, 2);
+            btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(98, 45);
             btnReset.TabIndex = 9;
@@ -239,12 +240,13 @@
             btnBayar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBayar.ForeColor = Color.White;
             btnBayar.Location = new Point(496, 274);
-            btnBayar.Margin = new Padding(2, 2, 2, 2);
+            btnBayar.Margin = new Padding(2);
             btnBayar.Name = "btnBayar";
             btnBayar.Size = new Size(126, 45);
             btnBayar.TabIndex = 10;
             btnBayar.Text = "▣ Bayar  ›";
             btnBayar.UseVisualStyleBackColor = false;
+            btnBayar.Click += btnBayar_Click;
             // 
             // UC_KRNJGBLNJKasir
             // 
@@ -257,7 +259,7 @@
             Controls.Add(btnHapusSemua);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UC_KRNJGBLNJKasir";
             Size = new Size(634, 326);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

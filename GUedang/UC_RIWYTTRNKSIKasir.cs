@@ -14,5 +14,10 @@ namespace GUedang
         {
             InitializeComponent();
         }
+
+        private void btnCetakLaporan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -217,7 +217,6 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(177, 50);
             txtPassword.TabIndex = 10;
-            txtPassword.Text = "Password awal";
             // 
             // cmbJenis
             // 
@@ -241,12 +240,13 @@
             // 
             // txtNama
             // 
+            txtNama.BackColor = Color.White;
+            txtNama.BorderColor = Color.Black;
             txtNama.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNama.Location = new Point(19, 67);
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(183, 48);
             txtNama.TabIndex = 7;
-            txtNama.Text = "Nama Lengkap";
             // 
             // label5
             // 

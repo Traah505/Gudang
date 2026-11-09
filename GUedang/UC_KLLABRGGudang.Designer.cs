@@ -55,7 +55,7 @@
             label6 = new Label();
             cmbKategori = new ComboBox();
             label5 = new Label();
-            txtNama = new RoundedTextBox();
+            txtNamaBarang = new RoundedTextBox();
             label4 = new Label();
             txtKode = new RoundedTextBox();
             label3 = new Label();
@@ -73,9 +73,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(10, 14);
+            label1.Location = new Point(7, 8);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(193, 38);
+            label1.Size = new Size(130, 25);
             label1.TabIndex = 0;
             label1.Text = "Kelola Barang";
             // 
@@ -86,17 +87,19 @@
             panelDaftarBarang.Controls.Add(roundedTextBox1);
             panelDaftarBarang.Controls.Add(label9);
             panelDaftarBarang.Controls.Add(dgvKelolaBarang);
-            panelDaftarBarang.Location = new Point(10, 55);
+            panelDaftarBarang.Location = new Point(7, 33);
+            panelDaftarBarang.Margin = new Padding(2);
             panelDaftarBarang.Name = "panelDaftarBarang";
-            panelDaftarBarang.Size = new Size(700, 450);
+            panelDaftarBarang.Size = new Size(491, 271);
             panelDaftarBarang.TabIndex = 1;
             // 
             // roundedTextBox1
             // 
             roundedTextBox1.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedTextBox1.Location = new Point(347, 10);
+            roundedTextBox1.Location = new Point(243, 6);
+            roundedTextBox1.Margin = new Padding(2);
             roundedTextBox1.Name = "roundedTextBox1";
-            roundedTextBox1.Size = new Size(300, 30);
+            roundedTextBox1.Size = new Size(210, 20);
             roundedTextBox1.TabIndex = 17;
             roundedTextBox1.Text = "Cari kode atau nama barang...";
             // 
@@ -105,9 +108,10 @@
             label9.AutoSize = true;
             label9.Font = new Font("Calibri", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.MidnightBlue;
-            label9.Location = new Point(235, 12);
+            label9.Location = new Point(164, 7);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(106, 24);
+            label9.Size = new Size(74, 17);
             label9.TabIndex = 16;
             label9.Text = "Cari Barang";
             // 
@@ -150,9 +154,9 @@
             dgvKelolaBarang.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.MidnightBlue;
             dgvKelolaBarang.RowTemplate.Height = 38;
             dgvKelolaBarang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKelolaBarang.Size = new Size(680, 390);
+            dgvKelolaBarang.Size = new Size(476, 234);
             dgvKelolaBarang.TabIndex = 0;
-            dgvKelolaBarang.CellClick += dataGridView1_CellClick;
+            dgvKelolaBarang.CellContentClick += dgvKelolaBarang_CellContentClick;
             // 
             // colKode
             // 
@@ -247,14 +251,15 @@
             roundedPanel2.Controls.Add(label6);
             roundedPanel2.Controls.Add(cmbKategori);
             roundedPanel2.Controls.Add(label5);
-            roundedPanel2.Controls.Add(txtNama);
+            roundedPanel2.Controls.Add(txtNamaBarang);
             roundedPanel2.Controls.Add(label4);
             roundedPanel2.Controls.Add(txtKode);
             roundedPanel2.Controls.Add(label3);
             roundedPanel2.Controls.Add(label2);
-            roundedPanel2.Location = new Point(732, 55);
+            roundedPanel2.Location = new Point(512, 33);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(280, 450);
+            roundedPanel2.Size = new Size(197, 280);
             roundedPanel2.TabIndex = 2;
             // 
             // btnHapus
@@ -263,9 +268,10 @@
             btnHapus.FlatAppearance.BorderSize = 0;
             btnHapus.FlatStyle = FlatStyle.Flat;
             btnHapus.ForeColor = Color.White;
-            btnHapus.Location = new Point(180, 390);
+            btnHapus.Location = new Point(129, 249);
+            btnHapus.Margin = new Padding(2);
             btnHapus.Name = "btnHapus";
-            btnHapus.Size = new Size(80, 35);
+            btnHapus.Size = new Size(56, 21);
             btnHapus.TabIndex = 15;
             btnHapus.Text = "Hapus";
             btnHapus.UseVisualStyleBackColor = false;
@@ -276,9 +282,10 @@
             btnReset.FlatAppearance.BorderSize = 0;
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.ForeColor = Color.White;
-            btnReset.Location = new Point(100, 390);
+            btnReset.Location = new Point(73, 249);
+            btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(80, 35);
+            btnReset.Size = new Size(56, 21);
             btnReset.TabIndex = 14;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = false;
@@ -289,64 +296,72 @@
             btnSimpan.FlatAppearance.BorderSize = 0;
             btnSimpan.FlatStyle = FlatStyle.Flat;
             btnSimpan.ForeColor = Color.White;
-            btnSimpan.Location = new Point(10, 390);
+            btnSimpan.Location = new Point(10, 249);
+            btnSimpan.Margin = new Padding(2);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(80, 35);
+            btnSimpan.Size = new Size(56, 21);
             btnSimpan.TabIndex = 13;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = false;
+            btnSimpan.Click += btnSimpan_Click;
             // 
             // numHargaJual
             // 
-            numHargaJual.Location = new Point(10, 340);
+            numHargaJual.Location = new Point(7, 222);
+            numHargaJual.Margin = new Padding(2);
             numHargaJual.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
             numHargaJual.Name = "numHargaJual";
-            numHargaJual.Size = new Size(250, 31);
+            numHargaJual.Size = new Size(175, 23);
             numHargaJual.TabIndex = 12;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(10, 320);
+            label8.Location = new Point(7, 210);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(78, 19);
+            label8.Size = new Size(51, 13);
             label8.TabIndex = 11;
             label8.Text = "Harga Jual";
             // 
             // numHargaBeli
             // 
-            numHargaBeli.Location = new Point(10, 287);
+            numHargaBeli.Location = new Point(7, 185);
+            numHargaBeli.Margin = new Padding(2);
             numHargaBeli.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
             numHargaBeli.Name = "numHargaBeli";
-            numHargaBeli.Size = new Size(250, 31);
+            numHargaBeli.Size = new Size(175, 23);
             numHargaBeli.TabIndex = 10;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(10, 265);
+            label7.Location = new Point(7, 172);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(78, 19);
+            label7.Size = new Size(50, 13);
             label7.TabIndex = 9;
             label7.Text = "Harga Beli";
             // 
             // numStok
             // 
-            numStok.Location = new Point(10, 230);
+            numStok.Location = new Point(7, 147);
+            numStok.Margin = new Padding(2);
             numStok.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numStok.Name = "numStok";
-            numStok.Size = new Size(250, 31);
+            numStok.Size = new Size(175, 23);
             numStok.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(10, 210);
+            label6.Location = new Point(7, 135);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(36, 19);
+            label6.Size = new Size(27, 13);
             label6.TabIndex = 7;
             label6.Text = "Stok";
             // 
@@ -354,56 +369,61 @@
             // 
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(10, 175);
+            cmbKategori.Location = new Point(6, 110);
+            cmbKategori.Margin = new Padding(2);
             cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(250, 33);
+            cmbKategori.Size = new Size(176, 23);
             cmbKategori.TabIndex = 6;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(10, 155);
+            label5.Location = new Point(6, 98);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(64, 19);
+            label5.Size = new Size(44, 13);
             label5.TabIndex = 5;
             label5.Text = "Kategori";
             // 
-            // txtNama
+            // txtNamaBarang
             // 
-            txtNama.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNama.Location = new Point(10, 120);
-            txtNama.Name = "txtNama";
-            txtNama.Size = new Size(250, 30);
-            txtNama.TabIndex = 4;
-            txtNama.Text = "Nama Barang...";
+            txtNamaBarang.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNamaBarang.Location = new Point(7, 75);
+            txtNamaBarang.Margin = new Padding(2);
+            txtNamaBarang.Name = "txtNamaBarang";
+            txtNamaBarang.Size = new Size(175, 21);
+            txtNamaBarang.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(10, 100);
+            label4.Location = new Point(7, 63);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(99, 19);
+            label4.Size = new Size(66, 13);
             label4.TabIndex = 3;
             label4.Text = "Nama Barang";
             // 
             // txtKode
             // 
             txtKode.BackColor = Color.Gainsboro;
-            txtKode.Location = new Point(10, 65);
+            txtKode.Location = new Point(7, 39);
+            txtKode.Margin = new Padding(2);
             txtKode.Name = "txtKode";
             txtKode.ReadOnly = true;
-            txtKode.Size = new Size(250, 30);
+            txtKode.Size = new Size(175, 22);
             txtKode.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(10, 45);
+            label3.Location = new Point(7, 27);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(41, 19);
+            label3.Size = new Size(30, 13);
             label3.TabIndex = 1;
             label3.Text = "Kode";
             // 
@@ -412,23 +432,23 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(10, 12);
+            label2.Location = new Point(7, 7);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(129, 28);
+            label2.Size = new Size(89, 19);
             label2.TabIndex = 0;
             label2.Text = "Ubah Barang";
             // 
             // UC_KLLABRGGudang
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.AliceBlue;
+            BackColor = Color.WhiteSmoke;
             Controls.Add(roundedPanel2);
             Controls.Add(panelDaftarBarang);
             Controls.Add(label1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_KLLABRGGudang";
-            Size = new Size(1039, 542);
+            Size = new Size(727, 325);
             panelDaftarBarang.ResumeLayout(false);
             panelDaftarBarang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKelolaBarang).EndInit();
@@ -451,7 +471,7 @@
         private Label label3;
         private Label label2;
         private Label label5;
-        private RoundedTextBox txtNama;
+        private RoundedTextBox txtNamaBarang;
         private Label label4;
         private Label label7;
         private NumericUpDown numStok;

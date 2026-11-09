@@ -73,7 +73,7 @@
             panelKasir.Controls.Add(roundedPanel1);
             panelKasir.Location = new Point(2, 28);
             panelKasir.Name = "panelKasir";
-            panelKasir.Size = new Size(449, 288);
+            panelKasir.Size = new Size(465, 309);
             panelKasir.TabIndex = 3;
             // 
             // label7
@@ -118,7 +118,7 @@
             dgvTransaksiTerbaru.EnableHeadersVisualStyles = false;
             dgvTransaksiTerbaru.GridColor = Color.FromArgb(226, 232, 240);
             dgvTransaksiTerbaru.Location = new Point(15, 160);
-            dgvTransaksiTerbaru.Margin = new Padding(2, 2, 2, 2);
+            dgvTransaksiTerbaru.Margin = new Padding(2);
             dgvTransaksiTerbaru.MultiSelect = false;
             dgvTransaksiTerbaru.Name = "dgvTransaksiTerbaru";
             dgvTransaksiTerbaru.ReadOnly = true;
@@ -165,10 +165,12 @@
             roundedPanel4.Controls.Add(lblUserAktif);
             roundedPanel4.Controls.Add(label6);
             roundedPanel4.Location = new Point(247, 65);
-            roundedPanel4.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel4.Margin = new Padding(2);
             roundedPanel4.Name = "roundedPanel4";
             roundedPanel4.Size = new Size(186, 55);
             roundedPanel4.TabIndex = 3;
+            roundedPanel4.PanelColor = Color.SkyBlue;
+
             // 
             // lblUserAktif
             // 
@@ -200,10 +202,12 @@
             roundedPanel3.Controls.Add(lblBarangTerjual);
             roundedPanel3.Controls.Add(label5);
             roundedPanel3.Location = new Point(15, 65);
-            roundedPanel3.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel3.Margin = new Padding(2);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(186, 55);
             roundedPanel3.TabIndex = 2;
+            roundedPanel3.PanelColor = Color.DeepSkyBlue;
+
             // 
             // lblBarangTerjual
             // 
@@ -231,14 +235,17 @@
             // 
             // roundedPanel2
             // 
-            roundedPanel2.BackColor = Color.SkyBlue;
+            roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(lblTotalPendapatan);
             roundedPanel2.Controls.Add(label4);
             roundedPanel2.Location = new Point(247, 7);
-            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(186, 55);
             roundedPanel2.TabIndex = 1;
+            roundedPanel2.Paint += roundedPanel2_Paint;
+            roundedPanel2.PanelColor = Color.Blue;
+
             // 
             // lblTotalPendapatan
             // 
@@ -257,7 +264,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(13, 8);
+            label4.Location = new Point(20, 8);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(134, 21);
@@ -266,14 +273,16 @@
             // 
             // roundedPanel1
             // 
-            roundedPanel1.BackColor = Color.DeepSkyBlue;
+            roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(lblTotalTransaksi);
             roundedPanel1.Controls.Add(label3);
             roundedPanel1.Location = new Point(15, 7);
-            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(186, 55);
             roundedPanel1.TabIndex = 0;
+            roundedPanel1.PanelColor = Color.SteelBlue;
+
             // 
             // lblTotalTransaksi
             // 
@@ -303,7 +312,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(2, 0);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(2, 2);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(128, 21);
@@ -314,7 +324,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(387, 0);
+            label2.Location = new Point(387, 2);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(45, 21);
@@ -324,8 +334,8 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(368, -2);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Location = new Point(361, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(22, 21);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -340,9 +350,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panelKasir);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UC_DSHBRDKasir";
-            Size = new Size(463, 326);
+            Size = new Size(481, 340);
             panelKasir.ResumeLayout(false);
             panelKasir.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTransaksiTerbaru).EndInit();

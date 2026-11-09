@@ -36,7 +36,7 @@
             panelGudang.BackColor = Color.White;
             panelGudang.Location = new Point(0, -2);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(842, 443);
+            panelGudang.Size = new Size(998, 471);
             panelGudang.TabIndex = 0;
             panelGudang.Paint += panel1_Paint;
             // 
@@ -44,7 +44,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(839, 441);
+            ClientSize = new Size(998, 469);
             Controls.Add(panelGudang);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Gudang";

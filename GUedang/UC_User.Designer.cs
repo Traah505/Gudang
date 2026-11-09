@@ -44,7 +44,7 @@
             btnBatal = new Rondedbuton();
             btnSImpan = new Rondedbuton();
             txtPassword = new RoundedTextBox();
-            comboBox1 = new ComboBox();
+            cbmRole = new ComboBox();
             label6 = new Label();
             txtNama = new RoundedTextBox();
             label5 = new Label();
@@ -63,7 +63,7 @@
             roundedPanel1.Controls.Add(dgvUser);
             roundedPanel1.Controls.Add(label2);
             roundedPanel1.Location = new Point(16, 42);
-            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(400, 258);
             roundedPanel1.TabIndex = 0;
@@ -98,8 +98,8 @@
             dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUser.EnableHeadersVisualStyles = false;
             dgvUser.GridColor = Color.Gainsboro;
-            dgvUser.Location = new Point(4, 27);
-            dgvUser.Margin = new Padding(2, 2, 2, 2);
+            dgvUser.Location = new Point(2, 27);
+            dgvUser.Margin = new Padding(2);
             dgvUser.Name = "dgvUser";
             dgvUser.ReadOnly = true;
             dgvUser.RowHeadersVisible = false;
@@ -178,14 +178,14 @@
             roundedPanel2.Controls.Add(btnBatal);
             roundedPanel2.Controls.Add(btnSImpan);
             roundedPanel2.Controls.Add(txtPassword);
-            roundedPanel2.Controls.Add(comboBox1);
+            roundedPanel2.Controls.Add(cbmRole);
             roundedPanel2.Controls.Add(label6);
             roundedPanel2.Controls.Add(txtNama);
             roundedPanel2.Controls.Add(label5);
             roundedPanel2.Controls.Add(label4);
             roundedPanel2.Controls.Add(label3);
             roundedPanel2.Location = new Point(435, 42);
-            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(158, 220);
             roundedPanel2.TabIndex = 2;
@@ -197,7 +197,7 @@
             btnBatal.FlatStyle = FlatStyle.Flat;
             btnBatal.ForeColor = Color.RoyalBlue;
             btnBatal.Location = new Point(80, 182);
-            btnBatal.Margin = new Padding(2, 2, 2, 2);
+            btnBatal.Margin = new Padding(2);
             btnBatal.Name = "btnBatal";
             btnBatal.Size = new Size(62, 25);
             btnBatal.TabIndex = 12;
@@ -211,32 +211,34 @@
             btnSImpan.FlatStyle = FlatStyle.Flat;
             btnSImpan.ForeColor = Color.White;
             btnSImpan.Location = new Point(14, 182);
-            btnSImpan.Margin = new Padding(2, 2, 2, 2);
+            btnSImpan.Margin = new Padding(2);
             btnSImpan.Name = "btnSImpan";
             btnSImpan.Size = new Size(62, 25);
             btnSImpan.TabIndex = 11;
             btnSImpan.Text = "Simpan";
             btnSImpan.UseVisualStyleBackColor = false;
+            btnSImpan.Click += btnSImpan_Click;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(13, 138);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.BackColor = Color.White;
+            txtPassword.BorderColor = Color.Black;
+            txtPassword.Location = new Point(13, 140);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(124, 29);
             txtPassword.TabIndex = 10;
-            txtPassword.Text = "Password awal";
             // 
-            // comboBox1
+            // cbmRole
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Kasir", "Gudang" });
-            comboBox1.Location = new Point(14, 93);
-            comboBox1.Margin = new Padding(2, 2, 2, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(129, 23);
-            comboBox1.TabIndex = 9;
+            cbmRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbmRole.FormattingEnabled = true;
+            cbmRole.Items.AddRange(new object[] { "Kasir", "Gudang" });
+            cbmRole.Location = new Point(14, 93);
+            cbmRole.Margin = new Padding(2);
+            cbmRole.Name = "cbmRole";
+            cbmRole.Size = new Size(129, 23);
+            cbmRole.TabIndex = 9;
             // 
             // label6
             // 
@@ -251,13 +253,14 @@
             // 
             // txtNama
             // 
+            txtNama.BackColor = Color.White;
+            txtNama.BorderColor = Color.Black;
             txtNama.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNama.Location = new Point(13, 40);
-            txtNama.Margin = new Padding(2, 2, 2, 2);
+            txtNama.Margin = new Padding(2);
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(128, 29);
             txtNama.TabIndex = 7;
-            txtNama.Text = "Nama Lengkap";
             // 
             // label5
             // 
@@ -298,7 +301,7 @@
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(16, 6);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -342,7 +345,7 @@
         private Label label4;
         private Label label3;
         private RoundedTextBox txtPassword;
-        private ComboBox comboBox1;
+        private ComboBox cbmRole;
         private Label label6;
         private Rondedbuton btnBatal;
         private Rondedbuton btnSImpan;

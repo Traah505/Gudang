@@ -70,9 +70,9 @@
             Login.Controls.Add(checkBox1);
             Login.Controls.Add(label9);
             Login.ForeColor = Color.Black;
-            Login.Location = new Point(283, 1);
+            Login.Location = new Point(292, 12);
             Login.Name = "Login";
-            Login.Size = new Size(327, 348);
+            Login.Size = new Size(327, 325);
             Login.TabIndex = 27;
             // 
             // pictureBox6
@@ -163,6 +163,8 @@
             roundedTextBox1.Name = "roundedTextBox1";
             roundedTextBox1.Size = new Size(210, 29);
             roundedTextBox1.TabIndex = 23;
+            roundedTextBox1.UseSystemPasswordChar = true;
+            roundedTextBox1.TextChanged += roundedTextBox1_TextChanged;
             // 
             // roundedButton1
             // 
@@ -196,7 +198,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.White;
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(191, 200);
+            label7.Location = new Point(181, 200);
             label7.Name = "label7";
             label7.Size = new Size(86, 15);
             label7.TabIndex = 22;
@@ -217,7 +219,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(170, 202);
+            checkBox1.Location = new Point(163, 201);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(15, 14);
             checkBox1.TabIndex = 8;
@@ -252,8 +254,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(620, 349);
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(626, 349);
             Controls.Add(pictureBox1);
             Controls.Add(Login);
             ForeColor = Color.FromArgb(0, 192, 192);

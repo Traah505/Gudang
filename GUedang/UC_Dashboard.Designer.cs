@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panelContent2 = new RoundedPanel();
             roundedButton1 = new RoundedButton();
             lblJumlahUser = new Label();
@@ -46,7 +46,6 @@
             colStatus = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
             label4 = new Label();
-            label2 = new Label();
             label1 = new Label();
             lblKasir = new Label();
             panelContent2.SuspendLayout();
@@ -68,7 +67,6 @@
             panelContent2.Controls.Add(pictureBox1);
             panelContent2.Controls.Add(dgvRequestUser);
             panelContent2.Controls.Add(label4);
-            panelContent2.Controls.Add(label2);
             panelContent2.Controls.Add(label1);
             panelContent2.Controls.Add(lblKasir);
             panelContent2.Location = new Point(3, 17);
@@ -166,29 +164,29 @@
             dgvRequestUser.BackgroundColor = Color.WhiteSmoke;
             dgvRequestUser.BorderStyle = BorderStyle.None;
             dgvRequestUser.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvRequestUser.ColumnHeadersHeight = 40;
             dgvRequestUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvRequestUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus, colAksi });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.DimGray;
-            dataGridViewCellStyle2.Padding = new Padding(6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.DimGray;
+            dataGridViewCellStyle6.Padding = new Padding(6);
+            dataGridViewCellStyle6.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle6;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
-            dgvRequestUser.Location = new Point(20, 68);
+            dgvRequestUser.Location = new Point(20, 46);
             dgvRequestUser.Margin = new Padding(2);
             dgvRequestUser.MultiSelect = false;
             dgvRequestUser.Name = "dgvRequestUser";
@@ -197,7 +195,7 @@
             dgvRequestUser.RowHeadersWidth = 62;
             dgvRequestUser.RowTemplate.Height = 38;
             dgvRequestUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequestUser.Size = new Size(440, 233);
+            dgvRequestUser.Size = new Size(440, 255);
             dgvRequestUser.TabIndex = 6;
             // 
             // colNo
@@ -251,21 +249,11 @@
             label4.TabIndex = 5;
             label4.Text = "Admin";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(20, 45);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(163, 21);
-            label2.TabIndex = 5;
-            label2.Text = "Data Request User";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(20, 17);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -317,7 +305,6 @@
         private DataGridViewTextBoxColumn colStatus;
         private DataGridViewButtonColumn colAksi;
         private Label label4;
-        private Label label2;
         private Label label1;
         private Label lblKasir;
     }

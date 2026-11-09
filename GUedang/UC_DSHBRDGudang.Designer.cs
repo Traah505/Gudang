@@ -324,7 +324,7 @@
             // 
             // roundedPanel2
             // 
-            roundedPanel2.BackColor = Color.Transparent;
+            roundedPanel2.BackColor = Color.DeepSkyBlue;
             roundedPanel2.Controls.Add(label3);
             roundedPanel2.Controls.Add(lblAngkaTotal);
             roundedPanel2.Font = new Font("Segoe UI", 11F);
@@ -383,6 +383,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(17, 13);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";

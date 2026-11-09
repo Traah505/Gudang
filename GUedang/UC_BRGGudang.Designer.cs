@@ -146,7 +146,7 @@
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(lblBarangMasuk);
             roundedPanel2.Controls.Add(label6);
-            roundedPanel2.Location = new Point(51, 314);
+            roundedPanel2.Location = new Point(52, 316);
             roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(198, 48);
@@ -190,10 +190,10 @@
             panelTambahBarang.Controls.Add(pictureBox1);
             panelTambahBarang.Controls.Add(label3);
             panelTambahBarang.Controls.Add(label2);
-            panelTambahBarang.Location = new Point(512, 44);
+            panelTambahBarang.Location = new Point(496, 31);
             panelTambahBarang.Margin = new Padding(2);
             panelTambahBarang.Name = "panelTambahBarang";
-            panelTambahBarang.Size = new Size(155, 318);
+            panelTambahBarang.Size = new Size(173, 295);
             panelTambahBarang.TabIndex = 2;
             // 
             // btnReset
@@ -203,7 +203,7 @@
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.RoyalBlue;
-            btnReset.Location = new Point(81, 246);
+            btnReset.Location = new Point(94, 220);
             btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(66, 59);
@@ -217,17 +217,18 @@
             btnTambahBarang.FlatAppearance.BorderSize = 0;
             btnTambahBarang.FlatStyle = FlatStyle.Flat;
             btnTambahBarang.ForeColor = Color.White;
-            btnTambahBarang.Location = new Point(2, 248);
+            btnTambahBarang.Location = new Point(12, 220);
             btnTambahBarang.Margin = new Padding(2);
             btnTambahBarang.Name = "btnTambahBarang";
             btnTambahBarang.Size = new Size(66, 59);
             btnTambahBarang.TabIndex = 11;
             btnTambahBarang.Text = "+ Tambah Barang";
             btnTambahBarang.UseVisualStyleBackColor = false;
+            btnTambahBarang.Click += btnTambahBarang_Click;
             // 
             // numStokAwal
             // 
-            numStokAwal.Location = new Point(1, 213);
+            numStokAwal.Location = new Point(12, 177);
             numStokAwal.Margin = new Padding(2);
             numStokAwal.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numStokAwal.Name = "numStokAwal";
@@ -237,7 +238,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(14, 196);
+            label5.Location = new Point(12, 160);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(59, 15);
@@ -249,7 +250,7 @@
             cmbKategori.BackColor = Color.White;
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(1, 155);
+            cmbKategori.Location = new Point(12, 135);
             cmbKategori.Margin = new Padding(2);
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(150, 23);
@@ -258,7 +259,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(14, 138);
+            label4.Location = new Point(12, 118);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
@@ -267,7 +268,7 @@
             // 
             // txtNamaBarang
             // 
-            txtNamaBarang.Location = new Point(1, 90);
+            txtNamaBarang.Location = new Point(12, 80);
             txtNamaBarang.Margin = new Padding(2);
             txtNamaBarang.Name = "txtNamaBarang";
             txtNamaBarang.Size = new Size(148, 26);
@@ -288,7 +289,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 73);
+            label3.Location = new Point(12, 63);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(79, 15);
@@ -345,6 +346,7 @@
             dgvBarang.RowTemplate.Height = 38;
             dgvBarang.Size = new Size(477, 280);
             dgvBarang.TabIndex = 1;
+            dgvBarang.CellContentClick += dgvBarang_CellContentClick;
             // 
             // colNo
             // 
@@ -389,6 +391,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
             label1.Location = new Point(15, 0);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -400,7 +403,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.WhiteSmoke;
             Controls.Add(roundedPanel1);
             Name = "UC_BRGGudang";
             Size = new Size(691, 385);

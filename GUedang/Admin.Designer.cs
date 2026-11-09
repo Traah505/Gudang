@@ -47,7 +47,7 @@
             // 
             lblAdmin.AutoSize = true;
             lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblAdmin.Location = new Point(389, 28);
+            lblAdmin.Location = new Point(333, 26);
             lblAdmin.Name = "lblAdmin";
             lblAdmin.Size = new Size(93, 30);
             lblAdmin.TabIndex = 3;
@@ -109,7 +109,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(349, 26);
+            pictureBox2.Location = new Point(292, 26);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 32);
@@ -147,7 +147,7 @@
             panelContent.TabIndex = 10;
             panelContent.Paint += panel3_Paint;
             // 
-            // Form2
+            // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -156,7 +156,7 @@
             Controls.Add(panelContent);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form2";
+            Name = "Admin";
             Text = "DashboardAdmin";
             Load += Form2_Load;
             panel1.ResumeLayout(false);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Text;
@@ -31,12 +32,8 @@ namespace GUedang
 
         private void Form2_Load(object sender, EventArgs e)
         {
-        }
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -49,9 +46,7 @@ namespace GUedang
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Admin DashboardPengguna = new Admin(lblAdmin.Text.Replace("Admin : ", ""));
-            DashboardPengguna.Show();
-            this.Hide();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,19 +56,9 @@ namespace GUedang
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            lblAdmin.Text.Replace("Admin : ", "");
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-            string pathFile = "logs.txt";
-            string waktu = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            string username = "Admin";
-            string aktivitas = "Mencatat aktivitas baru";
-            string barisLog = $"{waktu} | {username} | {aktivitas}\n";
-            System.IO.File.AppendAllText(pathFile, barisLog);
-            MessageBox.Show("Catatan berhasil ditambahkan!");
-        }
 
         private void flowLayoutPanel8_Paint(object sender, PaintEventArgs e)
         {
@@ -100,12 +85,6 @@ namespace GUedang
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Admin DashboardPengguna = new Admin(lblAdmin.Text.Replace("Admin : ", ""));
-            DashboardPengguna.Show();
-            this.Hide();
-        }
         private void BukaHalaman(UserControl halaman)
         {
             panelContent.Controls.Clear();
@@ -121,9 +100,9 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-            Form1 loginForm = new Form1();
-            loginForm.Show();
-            this.Hide();
+          Form1 LoginAkun = new Form1();
+          LoginAkun.Show();
+          this.Hide();
         }
     }
 }

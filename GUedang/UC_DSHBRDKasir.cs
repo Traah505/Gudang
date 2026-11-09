@@ -14,5 +14,10 @@ namespace GUedang
         {
             InitializeComponent();
         }
+
+        private void roundedPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

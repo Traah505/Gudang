@@ -1,6 +1,7 @@
 ﻿namespace GUedang
 {
-    partial class Form1
+    partial class LoginAkun
+
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,21 +29,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAkun));
             Login = new RoundedPanel();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
-            roundedTextBox2 = new RoundedTextBox();
+            txtNama = new RoundedTextBox();
             label12 = new Label();
             label4 = new Label();
             label11 = new Label();
             label2 = new Label();
-            roundedTextBox1 = new RoundedTextBox();
-            roundedButton1 = new RoundedButton();
-            label5 = new Label();
+            txtPassword = new RoundedTextBox();
+            btnLogin = new RoundedButton();
+            lblExit = new Label();
             label7 = new Label();
             label10 = new Label();
-            checkBox1 = new CheckBox();
+            chkLihatPassword = new CheckBox();
             label9 = new Label();
             pictureBox1 = new PictureBox();
             Login.SuspendLayout();
@@ -57,30 +58,32 @@
             Login.BorderStyle = BorderStyle.Fixed3D;
             Login.Controls.Add(pictureBox6);
             Login.Controls.Add(pictureBox5);
-            Login.Controls.Add(roundedTextBox2);
+            Login.Controls.Add(txtNama);
             Login.Controls.Add(label12);
             Login.Controls.Add(label4);
             Login.Controls.Add(label11);
             Login.Controls.Add(label2);
-            Login.Controls.Add(roundedTextBox1);
-            Login.Controls.Add(roundedButton1);
-            Login.Controls.Add(label5);
+            Login.Controls.Add(txtPassword);
+            Login.Controls.Add(btnLogin);
+            Login.Controls.Add(lblExit);
             Login.Controls.Add(label7);
             Login.Controls.Add(label10);
-            Login.Controls.Add(checkBox1);
+            Login.Controls.Add(chkLihatPassword);
             Login.Controls.Add(label9);
             Login.ForeColor = Color.Black;
-            Login.Location = new Point(283, 1);
+            Login.Location = new Point(404, 2);
+            Login.Margin = new Padding(4, 5, 4, 5);
             Login.Name = "Login";
-            Login.Size = new Size(327, 348);
+            Login.Size = new Size(465, 577);
             Login.TabIndex = 27;
             // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(67, 148);
+            pictureBox6.Location = new Point(96, 247);
+            pictureBox6.Margin = new Padding(4, 5, 4, 5);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(16, 16);
+            pictureBox6.Size = new Size(23, 27);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 27;
             pictureBox6.TabStop = false;
@@ -89,33 +92,31 @@
             // 
             pictureBox5.BackColor = Color.WhiteSmoke;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(67, 93);
+            pictureBox5.Location = new Point(96, 155);
+            pictureBox5.Margin = new Padding(4, 5, 4, 5);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(16, 16);
+            pictureBox5.Size = new Size(23, 27);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 27;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
             // 
-            // roundedTextBox2
+            // txtNama
             // 
-            roundedTextBox2.BackColor = Color.White;
-            roundedTextBox2.BorderColor = Color.Navy;
-            roundedTextBox2.Location = new Point(57, 111);
-            roundedTextBox2.Margin = new Padding(2);
-            roundedTextBox2.Name = "roundedTextBox2";
-            roundedTextBox2.Size = new Size(210, 29);
-            roundedTextBox2.TabIndex = 26;
+            txtNama.BackColor = Color.White;
+            txtNama.BorderColor = Color.Navy;
+            txtNama.Location = new Point(81, 185);
+            txtNama.Name = "txtNama";
+            txtNama.Size = new Size(300, 50);
+            txtNama.TabIndex = 26;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.BackColor = Color.White;
             label12.BorderStyle = BorderStyle.Fixed3D;
-            label12.Location = new Point(88, 92);
-            label12.Margin = new Padding(2, 0, 2, 0);
+            label12.Location = new Point(126, 153);
             label12.Name = "label12";
-            label12.Size = new Size(41, 17);
+            label12.Size = new Size(61, 27);
             label12.TabIndex = 25;
             label12.Text = "Nama";
             // 
@@ -123,10 +124,9 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.White;
-            label4.Location = new Point(83, 44);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(119, 73);
             label4.Name = "label4";
-            label4.Size = new Size(184, 15);
+            label4.Size = new Size(273, 25);
             label4.TabIndex = 15;
             label4.Text = "Silahkan login untuk melanjutkan";
             // 
@@ -135,10 +135,9 @@
             label11.AutoSize = true;
             label11.BackColor = Color.White;
             label11.BorderStyle = BorderStyle.Fixed3D;
-            label11.Location = new Point(88, 147);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Location = new Point(126, 245);
             label11.Name = "label11";
-            label11.Size = new Size(54, 17);
+            label11.Size = new Size(81, 27);
             label11.TabIndex = 24;
             label11.Text = "Pasword";
             // 
@@ -147,124 +146,122 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(114, 25);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(163, 42);
             label2.Name = "label2";
-            label2.Size = new Size(120, 19);
+            label2.Size = new Size(170, 28);
             label2.TabIndex = 13;
             label2.Text = "Selamat Datang!";
             // 
-            // roundedTextBox1
+            // txtPassword
             // 
-            roundedTextBox1.BackColor = Color.White;
-            roundedTextBox1.BorderColor = Color.Navy;
-            roundedTextBox1.Location = new Point(57, 169);
-            roundedTextBox1.Margin = new Padding(2);
-            roundedTextBox1.Name = "roundedTextBox1";
-            roundedTextBox1.Size = new Size(210, 29);
-            roundedTextBox1.TabIndex = 23;
+            txtPassword.BackColor = Color.White;
+            txtPassword.BorderColor = Color.Navy;
+            txtPassword.Location = new Point(81, 282);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(300, 50);
+            txtPassword.TabIndex = 23;
+            txtPassword.UseSystemPasswordChar = true;
             // 
-            // roundedButton1
+            // btnLogin
             // 
-            roundedButton1.BackColor = Color.CornflowerBlue;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(83, 222);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(158, 25);
-            roundedButton1.TabIndex = 19;
-            roundedButton1.Text = "Login";
-            roundedButton1.UseVisualStyleBackColor = false;
-            roundedButton1.Click += roundedButton1_Click;
+            btnLogin.BackColor = Color.CornflowerBlue;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(119, 370);
+            btnLogin.Margin = new Padding(4, 5, 4, 5);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(226, 42);
+            btnLogin.TabIndex = 19;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // label5
+            // lblExit
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.White;
-            label5.Font = new Font("Segoe UI", 11F);
-            label5.ForeColor = Color.Blue;
-            label5.Location = new Point(145, 302);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 20);
-            label5.TabIndex = 0;
-            label5.Text = "Exit";
-            label5.Click += label5_Click;
+            lblExit.AutoSize = true;
+            lblExit.BackColor = Color.White;
+            lblExit.Font = new Font("Segoe UI", 11F);
+            lblExit.ForeColor = Color.Blue;
+            lblExit.Location = new Point(207, 503);
+            lblExit.Margin = new Padding(4, 0, 4, 0);
+            lblExit.Name = "lblExit";
+            lblExit.Size = new Size(46, 30);
+            lblExit.TabIndex = 0;
+            lblExit.Text = "Exit";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.White;
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(191, 200);
+            label7.Location = new Point(273, 333);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(86, 15);
+            label7.Size = new Size(129, 25);
             label7.TabIndex = 22;
             label7.Text = "Lihat Password";
-            label7.Click += label7_Click_1;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.White;
-            label10.Location = new Point(88, 287);
-            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Location = new Point(126, 478);
             label10.Name = "label10";
-            label10.Size = new Size(146, 15);
+            label10.Size = new Size(218, 25);
             label10.TabIndex = 18;
             label10.Text = "Gudang - Stok - Penjualan";
             // 
-            // checkBox1
+            // chkLihatPassword
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(170, 202);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(15, 14);
-            checkBox1.TabIndex = 8;
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged_2;
+            chkLihatPassword.AutoSize = true;
+            chkLihatPassword.Location = new Point(243, 337);
+            chkLihatPassword.Margin = new Padding(4, 5, 4, 5);
+            chkLihatPassword.Name = "chkLihatPassword";
+            chkLihatPassword.Size = new Size(22, 21);
+            chkLihatPassword.TabIndex = 8;
+            chkLihatPassword.UseVisualStyleBackColor = true;
+            chkLihatPassword.CheckedChanged += chkLihatPassword_CheckedChanged_1;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.White;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(131, 272);
-            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Location = new Point(187, 453);
             label9.Name = "label9";
-            label9.Size = new Size(63, 15);
+            label9.Size = new Size(98, 25);
             label9.TabIndex = 17;
             label9.Text = "SMK Mart";
-            label9.Click += label9_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 1);
+            pictureBox1.Location = new Point(-1, 2);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 348);
+            pictureBox1.Size = new Size(410, 580);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
-            // Form1
+            // LoginAkun
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(620, 349);
+            ClientSize = new Size(886, 582);
             Controls.Add(pictureBox1);
             Controls.Add(Login);
             ForeColor = Color.FromArgb(0, 192, 192);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "LoginAkun";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            Load += Form1_Load;
             Login.ResumeLayout(false);
             Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -274,19 +271,19 @@
         }
 
         #endregion
-        private CheckBox checkBox1;
+        private CheckBox chkLihatPassword;
         private Label label2;
         private Label label4;
-        private Label label5;
+        private Label lblExit;
         private Label label10;
         private Label label9;
-        private RoundedButton roundedButton1;
+        private RoundedButton btnLogin;
         private Label label7;
         private RoundedPanel Login;
         private Label label12;
         private Label label11;
-        private RoundedTextBox roundedTextBox1;
-        private RoundedTextBox roundedTextBox2;
+        private RoundedTextBox txtPassword;
+        private RoundedTextBox txtNama;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox1;

@@ -121,7 +121,7 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-            Form1 loginForm = new Form1();
+            LoginAkun loginForm = new LoginAkun();
             loginForm.Show();
             this.Hide();
         }

@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Id": 1,
+    "Nama": "admin",
+    "Role": "Admin",
+    "Aktif": true,
+    "Salt": "AQIDBAUGBwgJCgsMDQ4PEA==",
+    "PasswordHash": "5"
+  }
+]

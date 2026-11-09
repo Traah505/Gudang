@@ -53,7 +53,7 @@ namespace GUedang
 
         private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
         {
-            Form1 DashboardAdmin = new Form1();
+            LoginAkun DashboardAdmin = new LoginAkun();
             DashboardAdmin.Show();
             this.Hide();
         }

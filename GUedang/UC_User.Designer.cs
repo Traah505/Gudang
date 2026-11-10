@@ -224,7 +224,7 @@
             // 
             cmbJenis.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJenis.FormattingEnabled = true;
-            cmbJenis.Items.AddRange(new object[] { "Admin", "Kasir", "Gudang" });
+            cmbJenis.Items.AddRange(new object[] { "Kasir", "Gudang" });
             cmbJenis.Location = new Point(20, 184);
             cmbJenis.Name = "cmbJenis";
             cmbJenis.Size = new Size(183, 33);

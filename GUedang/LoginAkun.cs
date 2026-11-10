@@ -12,6 +12,9 @@ namespace GUedang
         {
             InitializeComponent();
 
+            this.AcceptButton = btnLogin;
+            
+
         }
 
         private void LoginAkun_Load(object sender, EventArgs e)

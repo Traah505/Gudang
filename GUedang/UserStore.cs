@@ -30,7 +30,7 @@ namespace GUedang
         public const string Gudang = "Gudang";
 
         // isi ComboBox "Jenis" di halaman User
-        public static readonly string[] Semua = { Admin, Kasir, Gudang };
+        public static readonly string[] Semua = { Kasir, Gudang };
     }
 
     // Menyimpan siapa yang sedang login (bisa dipakai di dashboard: Session.UserAktif.Nama)

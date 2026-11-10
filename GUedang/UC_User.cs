@@ -35,7 +35,7 @@ namespace GUedang
             cmbJenis.Items.Clear();
             cmbJenis.Items.AddRange(Roles.Semua);
 
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.UseSystemPasswordChar = false;
 
             MuatGrid();
         }

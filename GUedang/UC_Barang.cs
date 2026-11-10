@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Drawing;   
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,6 +13,14 @@ namespace GUedang
         public UC_Barang()
         {
             InitializeComponent();
+
+
+            // Warna panel
+            panelTotal.PanelColor = Color.RoyalBlue;
+            panelAman.PanelColor = Color.SeaGreen;
+            panelMenipis.PanelColor = Color.Goldenrod;
+            panelHabis.PanelColor = Color.IndianRed;
+
         }
     }
 }

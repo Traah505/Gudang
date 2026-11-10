@@ -182,7 +182,7 @@ namespace GUedang
         private void btnSImpan_Click(object sender, EventArgs e)
         {
             string namaUser = txtNama.Text.Trim();
-            string jenisRole = cbmRole.SelectedItem?.ToString();
+            string jenisRole = cmbJenis.SelectedItem?.ToString();
             string password = txtPassword.Text.Trim();
 
             if (string.IsNullOrEmpty(namaUser) || string.IsNullOrEmpty(jenisRole) || string.IsNullOrEmpty(password))
@@ -201,7 +201,10 @@ namespace GUedang
             MessageBox.Show("Akun berhasil ditambahkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtNama.Text = "";
             txtPassword.Text = "";
-            cbmRole.SelectedIndex = -1;
+            cmbJenis.SelectedIndex = -1;
         }
     }
-}
+
+ }
+
+

@@ -55,8 +55,9 @@
             panel1.Controls.Add(roundedButtonUser);
             panel1.Controls.Add(roundedButtonDashboard);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 335);
+            panel1.Size = new Size(201, 895);
             panel1.TabIndex = 0;
             // 
             // roundedButtonBarang
@@ -65,9 +66,10 @@
             roundedButtonBarang.FlatAppearance.BorderSize = 0;
             roundedButtonBarang.FlatStyle = FlatStyle.Flat;
             roundedButtonBarang.ForeColor = Color.White;
-            roundedButtonBarang.Location = new Point(20, 132);
+            roundedButtonBarang.Location = new Point(29, 220);
+            roundedButtonBarang.Margin = new Padding(4, 5, 4, 5);
             roundedButtonBarang.Name = "roundedButtonBarang";
-            roundedButtonBarang.Size = new Size(142, 40);
+            roundedButtonBarang.Size = new Size(203, 67);
             roundedButtonBarang.TabIndex = 3;
             roundedButtonBarang.Text = "Barang";
             roundedButtonBarang.UseVisualStyleBackColor = false;
@@ -79,9 +81,10 @@
             roundedButtonLaporan.FlatAppearance.BorderSize = 0;
             roundedButtonLaporan.FlatStyle = FlatStyle.Flat;
             roundedButtonLaporan.ForeColor = Color.White;
-            roundedButtonLaporan.Location = new Point(20, 178);
+            roundedButtonLaporan.Location = new Point(29, 297);
+            roundedButtonLaporan.Margin = new Padding(4, 5, 4, 5);
             roundedButtonLaporan.Name = "roundedButtonLaporan";
-            roundedButtonLaporan.Size = new Size(142, 40);
+            roundedButtonLaporan.Size = new Size(203, 67);
             roundedButtonLaporan.TabIndex = 2;
             roundedButtonLaporan.Text = "Laporan";
             roundedButtonLaporan.UseVisualStyleBackColor = false;
@@ -93,9 +96,10 @@
             roundedButtonUser.FlatAppearance.BorderSize = 0;
             roundedButtonUser.FlatStyle = FlatStyle.Flat;
             roundedButtonUser.ForeColor = Color.White;
-            roundedButtonUser.Location = new Point(20, 86);
+            roundedButtonUser.Location = new Point(29, 143);
+            roundedButtonUser.Margin = new Padding(4, 5, 4, 5);
             roundedButtonUser.Name = "roundedButtonUser";
-            roundedButtonUser.Size = new Size(142, 40);
+            roundedButtonUser.Size = new Size(203, 67);
             roundedButtonUser.TabIndex = 1;
             roundedButtonUser.Text = "User";
             roundedButtonUser.UseVisualStyleBackColor = false;
@@ -107,9 +111,10 @@
             roundedButtonDashboard.FlatAppearance.BorderSize = 0;
             roundedButtonDashboard.FlatStyle = FlatStyle.Flat;
             roundedButtonDashboard.ForeColor = Color.White;
-            roundedButtonDashboard.Location = new Point(20, 40);
+            roundedButtonDashboard.Location = new Point(29, 67);
+            roundedButtonDashboard.Margin = new Padding(4, 5, 4, 5);
             roundedButtonDashboard.Name = "roundedButtonDashboard";
-            roundedButtonDashboard.Size = new Size(142, 40);
+            roundedButtonDashboard.Size = new Size(203, 67);
             roundedButtonDashboard.TabIndex = 0;
             roundedButtonDashboard.Text = "Dashboard";
             roundedButtonDashboard.UseVisualStyleBackColor = false;
@@ -119,9 +124,10 @@
             // 
             panelContent2.BackColor = Color.Transparent;
             panelContent2.Controls.Add(dgvRequestUser);
-            panelContent2.Location = new Point(147, 3);
+            panelContent2.Location = new Point(210, 5);
+            panelContent2.Margin = new Padding(4, 5, 4, 5);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(603, 317);
+            panelContent2.Size = new Size(1286, 890);
             panelContent2.TabIndex = 3;
             panelContent2.Paint += panelContent2_Paint;
             // 
@@ -155,8 +161,7 @@
             dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
-            dgvRequestUser.Location = new Point(-425, -263);
-            dgvRequestUser.Margin = new Padding(2);
+            dgvRequestUser.Location = new Point(-607, -438);
             dgvRequestUser.MultiSelect = false;
             dgvRequestUser.Name = "dgvRequestUser";
             dgvRequestUser.ReadOnly = true;
@@ -164,8 +169,9 @@
             dgvRequestUser.RowHeadersWidth = 62;
             dgvRequestUser.RowTemplate.Height = 38;
             dgvRequestUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequestUser.Size = new Size(440, 233);
+            dgvRequestUser.Size = new Size(629, 388);
             dgvRequestUser.TabIndex = 6;
+            dgvRequestUser.CellContentClick += dgvRequestUser_CellContentClick;
             // 
             // colNo
             // 
@@ -209,13 +215,14 @@
             // 
             // UC_DashboardAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             Controls.Add(panelContent2);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_DashboardAdmin";
-            Size = new Size(766, 323);
+            Size = new Size(1500, 900);
             panel1.ResumeLayout(false);
             panelContent2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRequestUser).EndInit();

@@ -101,5 +101,10 @@ namespace GUedang
         {
 
         }
+
+        private void dgvRequestUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

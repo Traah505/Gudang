@@ -123,9 +123,9 @@
             // panelKasir
             // 
             panelKasir.BackColor = Color.Transparent;
-            panelKasir.Location = new Point(170, 20);
+            panelKasir.Location = new Point(147, 64);
             panelKasir.Name = "panelKasir";
-            panelKasir.Size = new Size(627, 342);
+            panelKasir.Size = new Size(689, 309);
             panelKasir.TabIndex = 2;
             // 
             // UC_Kasir

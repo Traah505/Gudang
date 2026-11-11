@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GUedang
 {
-    internal class ModelBarang
+    public class ModelBarang
     {
         public string KodeBarang { get; set; }
         public string NamaBarang { get; set; }

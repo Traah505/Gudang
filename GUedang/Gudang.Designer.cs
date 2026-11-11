@@ -34,9 +34,9 @@
             // panelGudang
             // 
             panelGudang.BackColor = Color.White;
-            panelGudang.Location = new Point(0, -2);
+            panelGudang.Location = new Point(0, 3);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(998, 471);
+            panelGudang.Size = new Size(998, 466);
             panelGudang.TabIndex = 0;
             panelGudang.Paint += panel1_Paint;
             // 
@@ -49,6 +49,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Gudang";
             Text = "Gudang";
+            Load += Gudang_Load;
             ResumeLayout(false);
         }
 

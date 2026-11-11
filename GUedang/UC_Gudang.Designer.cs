@@ -70,7 +70,7 @@
             roundedButtonLogoutKsir.FlatAppearance.BorderSize = 0;
             roundedButtonLogoutKsir.FlatStyle = FlatStyle.Flat;
             roundedButtonLogoutKsir.ForeColor = Color.White;
-            roundedButtonLogoutKsir.Location = new Point(0, 422);
+            roundedButtonLogoutKsir.Location = new Point(0, 414);
             roundedButtonLogoutKsir.Name = "roundedButtonLogoutKsir";
             roundedButtonLogoutKsir.Size = new Size(141, 43);
             roundedButtonLogoutKsir.TabIndex = 5;
@@ -125,7 +125,7 @@
             panelGudang.BackColor = Color.Transparent;
             panelGudang.Location = new Point(168, 34);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(795, 412);
+            panelGudang.Size = new Size(1166, 423);
             panelGudang.TabIndex = 2;
             // 
             // UC_Gudang
@@ -136,7 +136,7 @@
             Controls.Add(panelGudang);
             Controls.Add(panel1);
             Name = "UC_Gudang";
-            Size = new Size(966, 477);
+            Size = new Size(1337, 477);
             Load += UC_Gudang_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelContent2 = new RoundedPanel();
             label3 = new Label();
             roundedPanel1 = new RoundedPanel();
+            lblBarangHabis = new Label();
+            label6 = new Label();
+            lblBarangMenipis = new Label();
+            label5 = new Label();
+            lblJumlahGudang = new Label();
             lblJumlahKasir = new Label();
             label2 = new Label();
             label7 = new Label();
@@ -48,11 +53,6 @@
             colAksi = new DataGridViewButtonColumn();
             label4 = new Label();
             label1 = new Label();
-            lblJumlahGudang = new Label();
-            label5 = new Label();
-            lblBarangMenipis = new Label();
-            label6 = new Label();
-            lblBarangHabis = new Label();
             panelContent2.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -70,19 +70,19 @@
             panelContent2.Controls.Add(dgvUser);
             panelContent2.Controls.Add(label4);
             panelContent2.Controls.Add(label1);
-            panelContent2.Location = new Point(4, 5);
-            panelContent2.Margin = new Padding(4, 5, 4, 5);
+            panelContent2.Location = new Point(3, 3);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(1284, 923);
+            panelContent2.Size = new Size(899, 554);
             panelContent2.TabIndex = 4;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(38, 39);
+            label3.Location = new Point(20, 32);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(191, 24);
+            label3.Size = new Size(138, 17);
             label3.TabIndex = 14;
             label3.Text = "Selamat Datang,Admin";
             // 
@@ -99,18 +99,83 @@
             roundedPanel1.Controls.Add(label7);
             roundedPanel1.Controls.Add(pictureBox5);
             roundedPanel1.Controls.Add(pictureBox4);
-            roundedPanel1.Location = new Point(1010, 77);
+            roundedPanel1.Location = new Point(707, 46);
+            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(246, 585);
+            roundedPanel1.Size = new Size(172, 351);
             roundedPanel1.TabIndex = 8;
+            // 
+            // lblBarangHabis
+            // 
+            lblBarangHabis.AutoSize = true;
+            lblBarangHabis.BackColor = Color.IndianRed;
+            lblBarangHabis.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBarangHabis.ForeColor = Color.White;
+            lblBarangHabis.Location = new Point(25, 210);
+            lblBarangHabis.Margin = new Padding(2, 0, 2, 0);
+            lblBarangHabis.Name = "lblBarangHabis";
+            lblBarangHabis.Size = new Size(23, 25);
+            lblBarangHabis.TabIndex = 19;
+            lblBarangHabis.Text = "0";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.IndianRed;
+            label6.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(25, 196);
+            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(83, 17);
+            label6.TabIndex = 18;
+            label6.Text = "Barang Habis";
+            // 
+            // lblBarangMenipis
+            // 
+            lblBarangMenipis.AutoSize = true;
+            lblBarangMenipis.BackColor = Color.Goldenrod;
+            lblBarangMenipis.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBarangMenipis.ForeColor = Color.White;
+            lblBarangMenipis.Location = new Point(25, 159);
+            lblBarangMenipis.Margin = new Padding(2, 0, 2, 0);
+            lblBarangMenipis.Name = "lblBarangMenipis";
+            lblBarangMenipis.Size = new Size(23, 25);
+            lblBarangMenipis.TabIndex = 17;
+            lblBarangMenipis.Text = "0";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Goldenrod;
+            label5.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(25, 145);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(96, 17);
+            label5.TabIndex = 16;
+            label5.Text = "Barang Menipis";
+            // 
+            // lblJumlahGudang
+            // 
+            lblJumlahGudang.AutoSize = true;
+            lblJumlahGudang.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblJumlahGudang.Location = new Point(51, 108);
+            lblJumlahGudang.Margin = new Padding(2, 0, 2, 0);
+            lblJumlahGudang.Name = "lblJumlahGudang";
+            lblJumlahGudang.Size = new Size(23, 25);
+            lblJumlahGudang.TabIndex = 15;
+            lblJumlahGudang.Text = "0";
             // 
             // lblJumlahKasir
             // 
             lblJumlahKasir.AutoSize = true;
             lblJumlahKasir.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJumlahKasir.Location = new Point(73, 97);
+            lblJumlahKasir.Location = new Point(51, 58);
+            lblJumlahKasir.Margin = new Padding(2, 0, 2, 0);
             lblJumlahKasir.Name = "lblJumlahKasir";
-            lblJumlahKasir.Size = new Size(33, 38);
+            lblJumlahKasir.Size = new Size(23, 25);
             lblJumlahKasir.TabIndex = 14;
             lblJumlahKasir.Text = "0";
             // 
@@ -118,9 +183,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(73, 73);
+            label2.Location = new Point(51, 44);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(48, 24);
+            label2.Size = new Size(35, 17);
             label2.TabIndex = 11;
             label2.Text = "Kasir";
             // 
@@ -128,18 +194,20 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(73, 156);
+            label7.Location = new Point(51, 94);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(71, 24);
+            label7.Size = new Size(52, 17);
             label7.TabIndex = 13;
             label7.Text = "Gudang";
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(36, 145);
+            pictureBox5.Location = new Point(25, 87);
+            pictureBox5.Margin = new Padding(2, 2, 2, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(31, 35);
+            pictureBox5.Size = new Size(22, 21);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 10;
             pictureBox5.TabStop = false;
@@ -147,9 +215,10 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(36, 62);
+            pictureBox4.Location = new Point(25, 37);
+            pictureBox4.Margin = new Padding(2, 2, 2, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 35);
+            pictureBox4.Size = new Size(22, 21);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 9;
             pictureBox4.TabStop = false;
@@ -157,9 +226,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1117, 28);
+            pictureBox3.Location = new Point(782, 17);
+            pictureBox3.Margin = new Padding(2, 2, 2, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(31, 35);
+            pictureBox3.Size = new Size(22, 21);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -172,29 +242,30 @@
             dgvUser.BackgroundColor = Color.WhiteSmoke;
             dgvUser.BorderStyle = BorderStyle.None;
             dgvUser.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUser.ColumnHeadersHeight = 40;
             dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus, colAksi });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.DimGray;
-            dataGridViewCellStyle6.Padding = new Padding(6);
-            dataGridViewCellStyle6.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle6.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvUser.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.DimGray;
+            dataGridViewCellStyle2.Padding = new Padding(6);
+            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUser.EnableHeadersVisualStyles = false;
             dgvUser.GridColor = Color.Gainsboro;
-            dgvUser.Location = new Point(29, 77);
+            dgvUser.Location = new Point(20, 51);
+            dgvUser.Margin = new Padding(2, 2, 2, 2);
             dgvUser.MultiSelect = false;
             dgvUser.Name = "dgvUser";
             dgvUser.ReadOnly = true;
@@ -202,7 +273,7 @@
             dgvUser.RowHeadersWidth = 62;
             dgvUser.RowTemplate.Height = 38;
             dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.Size = new Size(965, 769);
+            dgvUser.Size = new Size(676, 456);
             dgvUser.TabIndex = 6;
             // 
             // colNo
@@ -249,9 +320,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(1154, 35);
+            label4.Location = new Point(808, 21);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(72, 28);
+            label4.Size = new Size(50, 19);
             label4.TabIndex = 5;
             label4.Text = "Admin";
             // 
@@ -260,78 +332,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(29, 9);
+            label1.Location = new Point(20, 5);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(255, 39);
+            label1.Size = new Size(178, 27);
             label1.TabIndex = 4;
             label1.Text = "Dashboard Admin";
             // 
-            // lblJumlahGudang
-            // 
-            lblJumlahGudang.AutoSize = true;
-            lblJumlahGudang.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJumlahGudang.Location = new Point(73, 180);
-            lblJumlahGudang.Name = "lblJumlahGudang";
-            lblJumlahGudang.Size = new Size(33, 38);
-            lblJumlahGudang.TabIndex = 15;
-            lblJumlahGudang.Text = "0";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Goldenrod;
-            label5.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(36, 241);
-            label5.Name = "label5";
-            label5.Size = new Size(133, 24);
-            label5.TabIndex = 16;
-            label5.Text = "Barang Menipis";
-            // 
-            // lblBarangMenipis
-            // 
-            lblBarangMenipis.AutoSize = true;
-            lblBarangMenipis.BackColor = Color.Goldenrod;
-            lblBarangMenipis.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBarangMenipis.ForeColor = Color.White;
-            lblBarangMenipis.Location = new Point(36, 265);
-            lblBarangMenipis.Name = "lblBarangMenipis";
-            lblBarangMenipis.Size = new Size(33, 38);
-            lblBarangMenipis.TabIndex = 17;
-            lblBarangMenipis.Text = "0";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.IndianRed;
-            label6.Font = new Font("Calibri Light", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(36, 326);
-            label6.Name = "label6";
-            label6.Size = new Size(113, 24);
-            label6.TabIndex = 18;
-            label6.Text = "Barang Habis";
-            // 
-            // lblBarangHabis
-            // 
-            lblBarangHabis.AutoSize = true;
-            lblBarangHabis.BackColor = Color.IndianRed;
-            lblBarangHabis.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBarangHabis.ForeColor = Color.White;
-            lblBarangHabis.Location = new Point(36, 350);
-            lblBarangHabis.Name = "lblBarangHabis";
-            lblBarangHabis.Size = new Size(33, 38);
-            lblBarangHabis.TabIndex = 19;
-            lblBarangHabis.Text = "0";
-            // 
             // UC_Dashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelContent2);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_Dashboard";
-            Size = new Size(1276, 900);
+            Size = new Size(893, 540);
             panelContent2.ResumeLayout(false);
             panelContent2.PerformLayout();
             roundedPanel1.ResumeLayout(false);

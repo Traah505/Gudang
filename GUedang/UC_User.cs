@@ -2,15 +2,10 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-// Ganti isi UC_User.cs (di luar InitializeComponent) dengan kode ini.
-// Nama control yang diasumsikan (ubah lewat Properties > (Name) kalau berbeda):
-//   dgvUser (DataGridView), txtNama, txtPassword (RoundedTextBox),
-//   cmbJenis (ComboBox), btnSimpan, btnBatal (Button)
 namespace GUedang
 {
     public partial class UC_User : UserControl
     {
-        // teks "Nama Lengkap" / "Password awal" di desainmu dianggap kosong
         private const string PhNama = "Nama Lengkap";
         private const string PhPassword = "Password awal";
 
@@ -26,7 +21,7 @@ namespace GUedang
 
         private void UC_User_Load(object sender, EventArgs e)
         {
-            // jangan jalankan saat dibuka di Designer
+
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
             SiapkanGrid();
@@ -81,7 +76,7 @@ namespace GUedang
                 foreach (var u in daftar)
                 {
                     int i = dgvUser.Rows.Add(no++, u.Nama, u.Role, u.Aktif ? "Aktif" : "Nonaktif");
-                    dgvUser.Rows[i].Tag = u.Id;   // simpan Id untuk hapus / ubah status
+                    dgvUser.Rows[i].Tag = u.Id;
                 }
             }
             catch (Exception ex)
@@ -149,7 +144,7 @@ namespace GUedang
 
             try
             {
-                if (kolom == "colAksi")            // tombol Hapus
+                if (kolom == "colAksi")
                 {
                     var konfirmasi = MessageBox.Show("Hapus user \"" + nama + "\"?", "Konfirmasi",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -203,8 +198,18 @@ namespace GUedang
             txtPassword.Text = "";
             cmbJenis.SelectedIndex = -1;
         }
+
+        private void UC_User_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSimpan_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 
- }
+}
 
 

@@ -61,18 +61,21 @@
             // 
             // roundedPanel1
             // 
+            roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel1.BackColor = Color.White;
             roundedPanel1.Controls.Add(dgvUser);
             roundedPanel1.Controls.Add(label2);
-            roundedPanel1.Location = new Point(23, 93);
+            roundedPanel1.Location = new Point(16, 56);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(1003, 717);
+            roundedPanel1.Size = new Size(702, 430);
             roundedPanel1.TabIndex = 0;
             // 
             // dgvUser
             // 
             dgvUser.AllowUserToAddRows = false;
             dgvUser.AllowUserToDeleteRows = false;
+            dgvUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvUser.BackgroundColor = Color.White;
             dgvUser.BorderStyle = BorderStyle.None;
@@ -99,14 +102,15 @@
             dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUser.EnableHeadersVisualStyles = false;
             dgvUser.GridColor = Color.Gainsboro;
-            dgvUser.Location = new Point(17, 78);
+            dgvUser.Location = new Point(12, 47);
+            dgvUser.Margin = new Padding(2);
             dgvUser.Name = "dgvUser";
             dgvUser.ReadOnly = true;
             dgvUser.RowHeadersVisible = false;
             dgvUser.RowHeadersWidth = 62;
             dgvUser.RowTemplate.Height = 38;
             dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.Size = new Size(969, 601);
+            dgvUser.Size = new Size(678, 361);
             dgvUser.TabIndex = 3;
             // 
             // colNo
@@ -153,9 +157,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Bahnschrift SemiCondensed", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(17, 35);
+            label2.Location = new Point(12, 21);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(108, 27);
+            label2.Size = new Size(76, 18);
             label2.TabIndex = 2;
             label2.Tag = "";
             label2.Text = "Daftar User";
@@ -164,14 +169,16 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Bahnschrift SemiCondensed", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(94, 18);
+            label1.Location = new Point(66, 11);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(75, 39);
+            label1.Size = new Size(52, 27);
             label1.TabIndex = 1;
             label1.Text = "User";
             // 
             // roundedPanel2
             // 
+            roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(btnBatal);
             roundedPanel2.Controls.Add(btnSimpan);
@@ -182,9 +189,10 @@
             roundedPanel2.Controls.Add(label5);
             roundedPanel2.Controls.Add(label4);
             roundedPanel2.Controls.Add(label3);
-            roundedPanel2.Location = new Point(1032, 105);
+            roundedPanel2.Location = new Point(722, 63);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(226, 472);
+            roundedPanel2.Size = new Size(158, 283);
             roundedPanel2.TabIndex = 2;
             // 
             // btnBatal
@@ -193,9 +201,10 @@
             btnBatal.FlatAppearance.BorderSize = 0;
             btnBatal.FlatStyle = FlatStyle.Flat;
             btnBatal.ForeColor = Color.RoyalBlue;
-            btnBatal.Location = new Point(125, 386);
+            btnBatal.Location = new Point(88, 232);
+            btnBatal.Margin = new Padding(2);
             btnBatal.Name = "btnBatal";
-            btnBatal.Size = new Size(89, 42);
+            btnBatal.Size = new Size(62, 25);
             btnBatal.TabIndex = 12;
             btnBatal.Text = "Batal";
             btnBatal.UseVisualStyleBackColor = false;
@@ -206,18 +215,21 @@
             btnSimpan.FlatAppearance.BorderSize = 0;
             btnSimpan.FlatStyle = FlatStyle.Flat;
             btnSimpan.ForeColor = Color.White;
-            btnSimpan.Location = new Point(20, 386);
+            btnSimpan.Location = new Point(14, 232);
+            btnSimpan.Margin = new Padding(2);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(89, 42);
+            btnSimpan.Size = new Size(62, 25);
             btnSimpan.TabIndex = 11;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = false;
+            btnSimpan.Click += btnSimpan_Click_1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(20, 258);
+            txtPassword.Location = new Point(14, 155);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(177, 50);
+            txtPassword.Size = new Size(124, 30);
             txtPassword.TabIndex = 10;
             // 
             // cmbJenis
@@ -225,18 +237,20 @@
             cmbJenis.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJenis.FormattingEnabled = true;
             cmbJenis.Items.AddRange(new object[] { "Kasir", "Gudang" });
-            cmbJenis.Location = new Point(20, 184);
+            cmbJenis.Location = new Point(14, 110);
+            cmbJenis.Margin = new Padding(2);
             cmbJenis.Name = "cmbJenis";
-            cmbJenis.Size = new Size(183, 33);
+            cmbJenis.Size = new Size(129, 23);
             cmbJenis.TabIndex = 9;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(19, 236);
+            label6.Location = new Point(13, 142);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(70, 19);
+            label6.Size = new Size(50, 13);
             label6.TabIndex = 8;
             label6.Text = "Password";
             // 
@@ -245,18 +259,20 @@
             txtNama.BackColor = Color.White;
             txtNama.BorderColor = Color.Black;
             txtNama.Font = new Font("Calibri Light", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNama.Location = new Point(14, 97);
+            txtNama.Location = new Point(10, 58);
+            txtNama.Margin = new Padding(2);
             txtNama.Name = "txtNama";
-            txtNama.Size = new Size(183, 48);
+            txtNama.Size = new Size(128, 29);
             txtNama.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(19, 162);
+            label5.Location = new Point(13, 97);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(40, 19);
+            label5.Size = new Size(27, 13);
             label5.TabIndex = 6;
             label5.Text = "Jenis";
             // 
@@ -264,9 +280,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(19, 65);
+            label4.Location = new Point(13, 39);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(48, 19);
+            label4.Size = new Size(33, 13);
             label4.TabIndex = 5;
             label4.Text = "Nama";
             // 
@@ -274,9 +291,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift SemiCondensed", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(19, 15);
+            label3.Location = new Point(13, 9);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(121, 27);
+            label3.Size = new Size(84, 18);
             label3.TabIndex = 4;
             label3.Tag = "";
             label3.Text = "Tambah User";
@@ -284,9 +302,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(23, 10);
+            pictureBox2.Location = new Point(16, 6);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 53);
+            pictureBox2.Size = new Size(46, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
@@ -294,16 +313,17 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 725);
+            pictureBox1.Location = new Point(0, 435);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1280, 125);
+            pictureBox1.Size = new Size(896, 75);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
             // UC_User
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(pictureBox1);
@@ -311,9 +331,9 @@
             Controls.Add(roundedPanel2);
             Controls.Add(label1);
             Controls.Add(roundedPanel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_User";
-            Size = new Size(1280, 900);
+            Size = new Size(896, 540);
+            Load += UC_User_Load_1;
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUser).EndInit();

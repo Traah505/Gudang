@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             panelDaftarBarang = new RoundedPanel();
-            roundedTextBox1 = new RoundedTextBox();
+            txtCari = new RoundedTextBox();
             label9 = new Label();
             dgvKelolaBarang = new DataGridView();
             colKode = new DataGridViewTextBoxColumn();
@@ -84,31 +84,30 @@
             // 
             panelDaftarBarang.BackColor = Color.White;
             panelDaftarBarang.BorderStyle = BorderStyle.FixedSingle;
-            panelDaftarBarang.Controls.Add(roundedTextBox1);
+            panelDaftarBarang.Controls.Add(txtCari);
             panelDaftarBarang.Controls.Add(label9);
             panelDaftarBarang.Controls.Add(dgvKelolaBarang);
             panelDaftarBarang.Location = new Point(7, 33);
             panelDaftarBarang.Margin = new Padding(2);
             panelDaftarBarang.Name = "panelDaftarBarang";
-            panelDaftarBarang.Size = new Size(491, 271);
+            panelDaftarBarang.Size = new Size(897, 271);
             panelDaftarBarang.TabIndex = 1;
             // 
-            // roundedTextBox1
+            // txtCari
             // 
-            roundedTextBox1.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            roundedTextBox1.Location = new Point(243, 6);
-            roundedTextBox1.Margin = new Padding(2);
-            roundedTextBox1.Name = "roundedTextBox1";
-            roundedTextBox1.Size = new Size(210, 20);
-            roundedTextBox1.TabIndex = 17;
-            roundedTextBox1.Text = "Cari kode atau nama barang...";
+            txtCari.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtCari.Location = new Point(663, 17);
+            txtCari.Margin = new Padding(2);
+            txtCari.Name = "txtCari";
+            txtCari.Size = new Size(210, 20);
+            txtCari.TabIndex = 17;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Calibri", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.MidnightBlue;
-            label9.Location = new Point(164, 7);
+            label9.Location = new Point(585, 19);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(74, 17);
@@ -120,27 +119,27 @@
             dgvKelolaBarang.AllowUserToAddRows = false;
             dgvKelolaBarang.BackgroundColor = Color.White;
             dgvKelolaBarang.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.MidnightBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvKelolaBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.MidnightBlue;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvKelolaBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvKelolaBarang.ColumnHeadersHeight = 40;
             dgvKelolaBarang.Columns.AddRange(new DataGridViewColumn[] { colKode, colNama, colKategori, colHargaBeli, colHargaJual, colStok, colStatus, colAksi });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.Padding = new Padding(6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvKelolaBarang.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle4.Padding = new Padding(6);
+            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvKelolaBarang.DefaultCellStyle = dataGridViewCellStyle4;
             dgvKelolaBarang.EnableHeadersVisualStyles = false;
-            dgvKelolaBarang.Location = new Point(15, 45);
+            dgvKelolaBarang.Location = new Point(3, 39);
             dgvKelolaBarang.MultiSelect = false;
             dgvKelolaBarang.Name = "dgvKelolaBarang";
             dgvKelolaBarang.ReadOnly = true;
@@ -154,9 +153,8 @@
             dgvKelolaBarang.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.MidnightBlue;
             dgvKelolaBarang.RowTemplate.Height = 38;
             dgvKelolaBarang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKelolaBarang.Size = new Size(476, 234);
+            dgvKelolaBarang.Size = new Size(870, 227);
             dgvKelolaBarang.TabIndex = 0;
-            dgvKelolaBarang.CellContentClick += dgvKelolaBarang_CellContentClick;
             // 
             // colKode
             // 
@@ -256,7 +254,7 @@
             roundedPanel2.Controls.Add(txtKode);
             roundedPanel2.Controls.Add(label3);
             roundedPanel2.Controls.Add(label2);
-            roundedPanel2.Location = new Point(512, 33);
+            roundedPanel2.Location = new Point(920, 33);
             roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(197, 280);
@@ -369,6 +367,7 @@
             // 
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
+            cmbKategori.Items.AddRange(new object[] { "Makanan", "Minuman", "Peralatan Sekolah", "Elektronik" });
             cmbKategori.Location = new Point(6, 110);
             cmbKategori.Margin = new Padding(2);
             cmbKategori.Name = "cmbKategori";
@@ -412,7 +411,6 @@
             txtKode.Location = new Point(7, 39);
             txtKode.Margin = new Padding(2);
             txtKode.Name = "txtKode";
-            txtKode.ReadOnly = true;
             txtKode.Size = new Size(175, 22);
             txtKode.TabIndex = 2;
             // 
@@ -448,7 +446,8 @@
             Controls.Add(panelDaftarBarang);
             Controls.Add(label1);
             Name = "UC_KLLABRGGudang";
-            Size = new Size(727, 325);
+            Size = new Size(1128, 325);
+            Load += UC_KLLABRGGudang_Load;
             panelDaftarBarang.ResumeLayout(false);
             panelDaftarBarang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKelolaBarang).EndInit();
@@ -483,7 +482,7 @@
         private NumericUpDown numHargaBeli;
         private RoundedButton btnHapus;
         private RoundedButton btnReset;
-        private RoundedTextBox roundedTextBox1;
+        private RoundedTextBox txtCari;
         private Label label9;
         private DataGridViewTextBoxColumn colKode;
         private DataGridViewTextBoxColumn colNama;

@@ -8,22 +8,23 @@ using System.Windows.Forms;
 
 namespace GUedang
 {
-    public partial class Kasir : Form
+    public partial class Kasir : UserControl
     {
         public Kasir()
         {
             InitializeComponent();
-   
-            
+
+
             UC_Kasir dashboardAdmin = new UC_Kasir();
             dashboardAdmin.Dock = DockStyle.Fill;
             panelKasirHalaman.Controls.Add(dashboardAdmin);
-        
+
         }
 
         private void panelKasirHalaman_Paint(object sender, PaintEventArgs e)
         {
         }
+
         private void BukaHalaman(UserControl halaman)
         {
             panelKasirHalaman.Controls.Clear();
@@ -31,6 +32,11 @@ namespace GUedang
             halaman.Dock = DockStyle.Fill;
 
             panelKasirHalaman.Controls.Add(halaman);
+        }
+
+        private void Kasir_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

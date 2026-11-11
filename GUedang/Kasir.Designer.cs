@@ -124,9 +124,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(816, 380);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            //FormBorderStyle = FormBorderStyle.None;
             Name = "Kasir";
             Text = "Kasir";
+            Load += Kasir_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

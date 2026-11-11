@@ -13,7 +13,7 @@ namespace GUedang
             InitializeComponent();
 
             this.AcceptButton = btnLogin;
-            
+
 
         }
 
@@ -23,14 +23,10 @@ namespace GUedang
             chkLihatPassword.CheckedChanged += chkLihatPassword_CheckedChanged_1
                 ;
 
-            AcceptButton = btnLogin;                
+            AcceptButton = btnLogin;
             txtPassword.UseSystemPasswordChar = true;
         }
 
-        
-
-        
-        
         private void BukaDashboard(UserAkun user)
         {
             UserControl dashboard;
@@ -38,15 +34,16 @@ namespace GUedang
             switch (user.Role)
             {
                 case Roles.Admin: dashboard = new UC_DashboardAdmin(); break;
-                case Roles.Kasir: dashboard = new UC_DSHBRDKasir(); break;
-                case Roles.Gudang: dashboard = new UC_DSHBRDGudang(); break;
+                case Roles.Kasir: dashboard = new Kasir();
+                    break;
+                case Roles.Gudang: dashboard = new UC_Gudang(); break;
                 default:
                     MessageBox.Show("Role \"" + user.Role + "\" tidak dikenali.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
             }
 
-           
+
             using (var host = new Form())
             {
                 host.Text = "SMK Mart - " + user.Role + " (" + user.Nama + ")";
@@ -56,10 +53,9 @@ namespace GUedang
                 host.Controls.Add(dashboard);
 
                 Hide();
-                host.ShowDialog();   // kode lanjut di bawah setelah jendela ditutup
+                host.ShowDialog();
             }
 
-            // jendela dashboard ditutup = logout, kembali ke form login
             Session.UserAktif = null;
             txtNama.Text = "";
             txtPassword.Text = "";
@@ -109,6 +105,11 @@ namespace GUedang
             Session.UserAktif = user;
             BukaDashboard(user);
         }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
- }
+}
 

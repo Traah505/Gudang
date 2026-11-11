@@ -106,5 +106,17 @@ namespace GUedang
         {
 
         }
+
+        private void UC_DashboardAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
+        {
+            LoginAkun DashboardAdmin = new LoginAkun();
+            DashboardAdmin.Show();
+            this.Hide();
+        }
     }
 }

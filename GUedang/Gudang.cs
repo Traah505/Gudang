@@ -13,8 +13,11 @@ namespace GUedang
         public Gudang()
         {
             InitializeComponent();
+            this.WindowState =
+        FormWindowState.Maximized;
             UC_Gudang dashboardAdmin = new UC_Gudang();
-            dashboardAdmin.Dock = DockStyle.Fill;
+            dashboardAdmin.Controls.Clear();
+            panelGudang.Controls.Clear();
             panelGudang.Controls.Add(dashboardAdmin);
         }
 
@@ -29,6 +32,11 @@ namespace GUedang
             halaman.Dock = DockStyle.Fill;
 
             panelGudang.Controls.Add(halaman);
+        }
+
+        private void Gudang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

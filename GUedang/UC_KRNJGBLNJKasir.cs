@@ -19,5 +19,20 @@ namespace GUedang
         {
 
         }
+
+        private void dgvKeranjang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rondedbuton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

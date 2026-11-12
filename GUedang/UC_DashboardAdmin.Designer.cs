@@ -43,6 +43,7 @@
             colJenis = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
+            roundedButtonRiwayat = new RoundedButton();
             panel1.SuspendLayout();
             panelContent2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRequestUser).BeginInit();
@@ -52,14 +53,16 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.Navy;
+            panel1.Controls.Add(roundedButtonRiwayat);
             panel1.Controls.Add(roundedButtonLaporanGudang);
             panel1.Controls.Add(roundedButtonBarang);
             panel1.Controls.Add(roundedButtonLaporan);
             panel1.Controls.Add(roundedButtonUser);
             panel1.Controls.Add(roundedButtonDashboard);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 289);
+            panel1.Size = new Size(201, 482);
             panel1.TabIndex = 0;
             // 
             // roundedButtonLaporanGudang
@@ -68,9 +71,10 @@
             roundedButtonLaporanGudang.FlatAppearance.BorderSize = 0;
             roundedButtonLaporanGudang.FlatStyle = FlatStyle.Flat;
             roundedButtonLaporanGudang.ForeColor = Color.White;
-            roundedButtonLaporanGudang.Location = new Point(16, 199);
+            roundedButtonLaporanGudang.Location = new Point(23, 399);
+            roundedButtonLaporanGudang.Margin = new Padding(4, 5, 4, 5);
             roundedButtonLaporanGudang.Name = "roundedButtonLaporanGudang";
-            roundedButtonLaporanGudang.Size = new Size(142, 40);
+            roundedButtonLaporanGudang.Size = new Size(203, 67);
             roundedButtonLaporanGudang.TabIndex = 4;
             roundedButtonLaporanGudang.Text = "Laporan Aktivitas";
             roundedButtonLaporanGudang.UseVisualStyleBackColor = false;
@@ -82,9 +86,10 @@
             roundedButtonBarang.FlatAppearance.BorderSize = 0;
             roundedButtonBarang.FlatStyle = FlatStyle.Flat;
             roundedButtonBarang.ForeColor = Color.White;
-            roundedButtonBarang.Location = new Point(16, 107);
+            roundedButtonBarang.Location = new Point(23, 178);
+            roundedButtonBarang.Margin = new Padding(4, 5, 4, 5);
             roundedButtonBarang.Name = "roundedButtonBarang";
-            roundedButtonBarang.Size = new Size(142, 40);
+            roundedButtonBarang.Size = new Size(203, 67);
             roundedButtonBarang.TabIndex = 3;
             roundedButtonBarang.Text = "Kelola Barang";
             roundedButtonBarang.UseVisualStyleBackColor = false;
@@ -96,9 +101,10 @@
             roundedButtonLaporan.FlatAppearance.BorderSize = 0;
             roundedButtonLaporan.FlatStyle = FlatStyle.Flat;
             roundedButtonLaporan.ForeColor = Color.White;
-            roundedButtonLaporan.Location = new Point(16, 153);
+            roundedButtonLaporan.Location = new Point(23, 255);
+            roundedButtonLaporan.Margin = new Padding(4, 5, 4, 5);
             roundedButtonLaporan.Name = "roundedButtonLaporan";
-            roundedButtonLaporan.Size = new Size(142, 40);
+            roundedButtonLaporan.Size = new Size(203, 67);
             roundedButtonLaporan.TabIndex = 2;
             roundedButtonLaporan.Text = "Laporan Penjualan";
             roundedButtonLaporan.UseVisualStyleBackColor = false;
@@ -110,9 +116,10 @@
             roundedButtonUser.FlatAppearance.BorderSize = 0;
             roundedButtonUser.FlatStyle = FlatStyle.Flat;
             roundedButtonUser.ForeColor = Color.White;
-            roundedButtonUser.Location = new Point(16, 61);
+            roundedButtonUser.Location = new Point(23, 102);
+            roundedButtonUser.Margin = new Padding(4, 5, 4, 5);
             roundedButtonUser.Name = "roundedButtonUser";
-            roundedButtonUser.Size = new Size(142, 40);
+            roundedButtonUser.Size = new Size(203, 67);
             roundedButtonUser.TabIndex = 1;
             roundedButtonUser.Text = "Kelola Pengguna";
             roundedButtonUser.UseVisualStyleBackColor = false;
@@ -124,9 +131,10 @@
             roundedButtonDashboard.FlatAppearance.BorderSize = 0;
             roundedButtonDashboard.FlatStyle = FlatStyle.Flat;
             roundedButtonDashboard.ForeColor = Color.White;
-            roundedButtonDashboard.Location = new Point(16, 15);
+            roundedButtonDashboard.Location = new Point(23, 25);
+            roundedButtonDashboard.Margin = new Padding(4, 5, 4, 5);
             roundedButtonDashboard.Name = "roundedButtonDashboard";
-            roundedButtonDashboard.Size = new Size(142, 40);
+            roundedButtonDashboard.Size = new Size(203, 67);
             roundedButtonDashboard.TabIndex = 0;
             roundedButtonDashboard.Text = "Dashboard";
             roundedButtonDashboard.UseVisualStyleBackColor = false;
@@ -137,9 +145,10 @@
             panelContent2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContent2.BackColor = Color.Transparent;
             panelContent2.Controls.Add(dgvRequestUser);
-            panelContent2.Location = new Point(147, 3);
+            panelContent2.Location = new Point(210, 5);
+            panelContent2.Margin = new Padding(4, 5, 4, 5);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(900, 283);
+            panelContent2.Size = new Size(1286, 472);
             panelContent2.TabIndex = 3;
             panelContent2.Paint += panelContent2_Paint;
             // 
@@ -173,8 +182,7 @@
             dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
-            dgvRequestUser.Location = new Point(-425, -263);
-            dgvRequestUser.Margin = new Padding(2);
+            dgvRequestUser.Location = new Point(-607, -438);
             dgvRequestUser.MultiSelect = false;
             dgvRequestUser.Name = "dgvRequestUser";
             dgvRequestUser.ReadOnly = true;
@@ -182,7 +190,7 @@
             dgvRequestUser.RowHeadersWidth = 62;
             dgvRequestUser.RowTemplate.Height = 38;
             dgvRequestUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRequestUser.Size = new Size(440, 233);
+            dgvRequestUser.Size = new Size(629, 388);
             dgvRequestUser.TabIndex = 6;
             dgvRequestUser.CellContentClick += dgvRequestUser_CellContentClick;
             // 
@@ -226,15 +234,30 @@
             colAksi.Name = "colAksi";
             colAksi.ReadOnly = true;
             // 
+            // roundedButtonRiwayat
+            // 
+            roundedButtonRiwayat.BackColor = Color.Navy;
+            roundedButtonRiwayat.FlatAppearance.BorderSize = 0;
+            roundedButtonRiwayat.FlatStyle = FlatStyle.Flat;
+            roundedButtonRiwayat.ForeColor = Color.White;
+            roundedButtonRiwayat.Location = new Point(23, 322);
+            roundedButtonRiwayat.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonRiwayat.Name = "roundedButtonRiwayat";
+            roundedButtonRiwayat.Size = new Size(203, 67);
+            roundedButtonRiwayat.TabIndex = 5;
+            roundedButtonRiwayat.Text = "Riwayat Gudang";
+            roundedButtonRiwayat.UseVisualStyleBackColor = false;
+            // 
             // UC_DashboardAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             Controls.Add(panelContent2);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_DashboardAdmin";
-            Size = new Size(1050, 289);
+            Size = new Size(1500, 482);
             Load += UC_DashboardAdmin_Load;
             panel1.ResumeLayout(false);
             panelContent2.ResumeLayout(false);
@@ -259,5 +282,6 @@
         private DataGridViewTextBoxColumn colStatus;
         private DataGridViewButtonColumn colAksi;
         private RoundedButton roundedButtonLaporanGudang;
+        private RoundedButton roundedButtonRiwayat;
     }
 }

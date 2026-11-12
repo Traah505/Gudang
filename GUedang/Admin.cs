@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GUedang
 {
-    public partial class Admin : Form
+    public partial class Admin : UserControl
     {
         public Admin(string namaUser)
         {
@@ -19,14 +19,7 @@ namespace GUedang
             lblAdmin.Text = "Admin : " + namaUser;
             UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
             dashboardAdmin.Dock = DockStyle.Fill;
-            panelContent.Controls.Add(dashboardAdmin);
-        }
-
-        public Admin()
-        {
-            InitializeComponent();
-            UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
-            dashboardAdmin.Dock = DockStyle.Fill;
+            panelContent.Controls.Clear();
             panelContent.Controls.Add(dashboardAdmin);
         }
 
@@ -100,9 +93,19 @@ namespace GUedang
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
-            LoginAkun loginForm = new LoginAkun();
-            loginForm.Show();
-            this.Hide();
+            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.Yes)
+            {
+                LoginAkun DashboardLogin = new LoginAkun();
+                DashboardLogin.Show();
+                this.Hide();
+               
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

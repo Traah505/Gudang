@@ -51,11 +51,10 @@ namespace GUedang
             TampilkanHalaman(halamanDashboard);
         }
 
-        private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
+        
+        private void panelKasir_Paint(object sender, PaintEventArgs e)
         {
-            LoginAkun DashboardAdmin = new LoginAkun();
-            DashboardAdmin.Show();
-            this.Hide();
+
         }
 
         private void UC_Kasir_Load(object sender, EventArgs e)

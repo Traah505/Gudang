@@ -44,6 +44,7 @@ namespace GUedang
             roundedButtonUser.BackColor = Color.Navy;
             roundedButtonLaporan.BackColor = Color.Navy;
             roundedButtonBarang.BackColor = Color.Navy;
+            roundedButtonLaporanGudang.BackColor = Color.Navy;
         }
 
         private void TampilkanHalaman(UserControl Halaman)
@@ -114,9 +115,17 @@ namespace GUedang
 
         private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
         {
-            LoginAkun DashboardAdmin = new LoginAkun();
-            DashboardAdmin.Show();
-            this.Hide();
+
         }
+
+        private void roundedButtonLaporanGudang_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonLaporanGudang.BackColor = Color.DodgerBlue;
+            UC_LaporanGudang halamanLaporan = new UC_LaporanGudang();
+            TampilkanHalaman(halamanLaporan);
+        }
+
+       
     }
 }

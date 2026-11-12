@@ -7,9 +7,7 @@ using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
 
-// Tambahkan file ini ke project (Add > Existing Item), lalu
-// Project > Add Reference > Assemblies > centang "System.Runtime.Serialization".
-// Ganti namespace di bawah kalau namespace project-mu berbeda.
+
 namespace GUedang
 {
     [DataContract]
@@ -17,7 +15,7 @@ namespace GUedang
     {
         [DataMember(Order = 1)] public int Id { get; set; }
         [DataMember(Order = 2)] public string Nama { get; set; }
-        [DataMember(Order = 3)] public string Role { get; set; }   // Admin / Kasir / Gudang
+        [DataMember(Order = 3)] public string Role { get; set; }   
         [DataMember(Order = 4)] public bool Aktif { get; set; }
         [DataMember(Order = 5)] public string Salt { get; set; }
         [DataMember(Order = 6)] public string PasswordHash { get; set; }
@@ -29,11 +27,11 @@ namespace GUedang
         public const string Kasir = "Kasir";
         public const string Gudang = "Gudang";
 
-        // isi ComboBox "Jenis" di halaman User
+        
         public static readonly string[] Semua = { Kasir, Gudang };
     }
 
-    // Menyimpan siapa yang sedang login (bisa dipakai di dashboard: Session.UserAktif.Nama)
+    
     public static class Session
     {
         public static UserAkun UserAktif { get; set; }
@@ -44,11 +42,11 @@ namespace GUedang
         private const int Iterations = 10000;
         public const int MinPanjangPassword = 4;
 
-        // users.json ada di folder yang sama dengan .exe (bin\Debug)
+        
         private static readonly string FilePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "users.json");
 
-        // ---------- baca / tulis JSON ----------
+        
 
         public static List<UserAkun> Muat()
         {

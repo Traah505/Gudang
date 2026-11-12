@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DashboardAdmin));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            roundedButtonLogoutKsir = new RoundedButton();
+            roundedButtonLaporanGudang = new RoundedButton();
             roundedButtonBarang = new RoundedButton();
             roundedButtonLaporan = new RoundedButton();
             roundedButtonUser = new RoundedButton();
@@ -46,49 +44,37 @@
             colStatus = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelContent2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRequestUser).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(roundedButtonLogoutKsir);
+            panel1.Controls.Add(roundedButtonLaporanGudang);
             panel1.Controls.Add(roundedButtonBarang);
             panel1.Controls.Add(roundedButtonLaporan);
             panel1.Controls.Add(roundedButtonUser);
             panel1.Controls.Add(roundedButtonDashboard);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 540);
+            panel1.Size = new Size(141, 289);
             panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // roundedButtonLaporanGudang
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(20, 13);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(98, 45);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
-            // roundedButtonLogoutKsir
-            // 
-            roundedButtonLogoutKsir.BackColor = Color.Navy;
-            roundedButtonLogoutKsir.FlatAppearance.BorderSize = 0;
-            roundedButtonLogoutKsir.FlatStyle = FlatStyle.Flat;
-            roundedButtonLogoutKsir.ForeColor = Color.White;
-            roundedButtonLogoutKsir.Location = new Point(0, 491);
-            roundedButtonLogoutKsir.Name = "roundedButtonLogoutKsir";
-            roundedButtonLogoutKsir.Size = new Size(141, 43);
-            roundedButtonLogoutKsir.TabIndex = 6;
-            roundedButtonLogoutKsir.Text = "Logout";
-            roundedButtonLogoutKsir.UseVisualStyleBackColor = false;
-            roundedButtonLogoutKsir.Click += roundedButtonLogoutKsir_Click;
+            roundedButtonLaporanGudang.BackColor = Color.Navy;
+            roundedButtonLaporanGudang.FlatAppearance.BorderSize = 0;
+            roundedButtonLaporanGudang.FlatStyle = FlatStyle.Flat;
+            roundedButtonLaporanGudang.ForeColor = Color.White;
+            roundedButtonLaporanGudang.Location = new Point(16, 199);
+            roundedButtonLaporanGudang.Name = "roundedButtonLaporanGudang";
+            roundedButtonLaporanGudang.Size = new Size(142, 40);
+            roundedButtonLaporanGudang.TabIndex = 4;
+            roundedButtonLaporanGudang.Text = "Laporan Aktivitas";
+            roundedButtonLaporanGudang.UseVisualStyleBackColor = false;
+            roundedButtonLaporanGudang.Click += roundedButtonLaporanGudang_Click;
             // 
             // roundedButtonBarang
             // 
@@ -96,11 +82,11 @@
             roundedButtonBarang.FlatAppearance.BorderSize = 0;
             roundedButtonBarang.FlatStyle = FlatStyle.Flat;
             roundedButtonBarang.ForeColor = Color.White;
-            roundedButtonBarang.Location = new Point(20, 155);
+            roundedButtonBarang.Location = new Point(16, 107);
             roundedButtonBarang.Name = "roundedButtonBarang";
             roundedButtonBarang.Size = new Size(142, 40);
             roundedButtonBarang.TabIndex = 3;
-            roundedButtonBarang.Text = "Barang";
+            roundedButtonBarang.Text = "Kelola Barang";
             roundedButtonBarang.UseVisualStyleBackColor = false;
             roundedButtonBarang.Click += roundedButtonBarang_Click_1;
             // 
@@ -110,11 +96,11 @@
             roundedButtonLaporan.FlatAppearance.BorderSize = 0;
             roundedButtonLaporan.FlatStyle = FlatStyle.Flat;
             roundedButtonLaporan.ForeColor = Color.White;
-            roundedButtonLaporan.Location = new Point(20, 201);
+            roundedButtonLaporan.Location = new Point(16, 153);
             roundedButtonLaporan.Name = "roundedButtonLaporan";
             roundedButtonLaporan.Size = new Size(142, 40);
             roundedButtonLaporan.TabIndex = 2;
-            roundedButtonLaporan.Text = "Laporan";
+            roundedButtonLaporan.Text = "Laporan Penjualan";
             roundedButtonLaporan.UseVisualStyleBackColor = false;
             roundedButtonLaporan.Click += roundedButtonLaporan_Click_1;
             // 
@@ -124,11 +110,11 @@
             roundedButtonUser.FlatAppearance.BorderSize = 0;
             roundedButtonUser.FlatStyle = FlatStyle.Flat;
             roundedButtonUser.ForeColor = Color.White;
-            roundedButtonUser.Location = new Point(20, 109);
+            roundedButtonUser.Location = new Point(16, 61);
             roundedButtonUser.Name = "roundedButtonUser";
             roundedButtonUser.Size = new Size(142, 40);
             roundedButtonUser.TabIndex = 1;
-            roundedButtonUser.Text = "User";
+            roundedButtonUser.Text = "Kelola Pengguna";
             roundedButtonUser.UseVisualStyleBackColor = false;
             roundedButtonUser.Click += roundedButtonUser_Click_2;
             // 
@@ -138,7 +124,7 @@
             roundedButtonDashboard.FlatAppearance.BorderSize = 0;
             roundedButtonDashboard.FlatStyle = FlatStyle.Flat;
             roundedButtonDashboard.ForeColor = Color.White;
-            roundedButtonDashboard.Location = new Point(20, 63);
+            roundedButtonDashboard.Location = new Point(16, 15);
             roundedButtonDashboard.Name = "roundedButtonDashboard";
             roundedButtonDashboard.Size = new Size(142, 40);
             roundedButtonDashboard.TabIndex = 0;
@@ -153,7 +139,7 @@
             panelContent2.Controls.Add(dgvRequestUser);
             panelContent2.Location = new Point(147, 3);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(900, 534);
+            panelContent2.Size = new Size(900, 283);
             panelContent2.TabIndex = 3;
             panelContent2.Paint += panelContent2_Paint;
             // 
@@ -248,10 +234,9 @@
             Controls.Add(panelContent2);
             Controls.Add(panel1);
             Name = "UC_DashboardAdmin";
-            Size = new Size(1050, 540);
+            Size = new Size(1050, 289);
             Load += UC_DashboardAdmin_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelContent2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRequestUser).EndInit();
             ResumeLayout(false);
@@ -273,7 +258,6 @@
         private DataGridViewTextBoxColumn colJenis;
         private DataGridViewTextBoxColumn colStatus;
         private DataGridViewButtonColumn colAksi;
-        private RoundedButton roundedButtonLogoutKsir;
-        private PictureBox pictureBox1;
+        private RoundedButton roundedButtonLaporanGudang;
     }
 }

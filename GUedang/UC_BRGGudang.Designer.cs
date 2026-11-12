@@ -70,6 +70,7 @@
             // 
             // roundedPanel1
             // 
+            roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(pictureBox2);
             roundedPanel1.Controls.Add(label7);
@@ -79,7 +80,7 @@
             roundedPanel1.Controls.Add(dgvBarang);
             roundedPanel1.Controls.Add(label1);
             roundedPanel1.Location = new Point(2, 10);
-            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(680, 373);
             roundedPanel1.TabIndex = 0;
@@ -88,7 +89,7 @@
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(539, 9);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(22, 21);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -112,7 +113,7 @@
             roundedPanel3.Controls.Add(lblBarangKeluar);
             roundedPanel3.Controls.Add(label8);
             roundedPanel3.Location = new Point(267, 316);
-            roundedPanel3.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel3.Margin = new Padding(2);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(198, 48);
             roundedPanel3.TabIndex = 4;
@@ -147,7 +148,7 @@
             roundedPanel2.Controls.Add(lblBarangMasuk);
             roundedPanel2.Controls.Add(label6);
             roundedPanel2.Location = new Point(51, 314);
-            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(198, 48);
             roundedPanel2.TabIndex = 3;
@@ -191,7 +192,7 @@
             panelTambahBarang.Controls.Add(label3);
             panelTambahBarang.Controls.Add(label2);
             panelTambahBarang.Location = new Point(512, 44);
-            panelTambahBarang.Margin = new Padding(2, 2, 2, 2);
+            panelTambahBarang.Margin = new Padding(2);
             panelTambahBarang.Name = "panelTambahBarang";
             panelTambahBarang.Size = new Size(155, 318);
             panelTambahBarang.TabIndex = 2;
@@ -204,7 +205,7 @@
             btnReset.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.RoyalBlue;
             btnReset.Location = new Point(81, 246);
-            btnReset.Margin = new Padding(2, 2, 2, 2);
+            btnReset.Margin = new Padding(2);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(66, 59);
             btnReset.TabIndex = 12;
@@ -218,7 +219,7 @@
             btnTambahBarang.FlatStyle = FlatStyle.Flat;
             btnTambahBarang.ForeColor = Color.White;
             btnTambahBarang.Location = new Point(2, 248);
-            btnTambahBarang.Margin = new Padding(2, 2, 2, 2);
+            btnTambahBarang.Margin = new Padding(2);
             btnTambahBarang.Name = "btnTambahBarang";
             btnTambahBarang.Size = new Size(66, 59);
             btnTambahBarang.TabIndex = 11;
@@ -229,7 +230,7 @@
             // numStokAwal
             // 
             numStokAwal.Location = new Point(1, 213);
-            numStokAwal.Margin = new Padding(2, 2, 2, 2);
+            numStokAwal.Margin = new Padding(2);
             numStokAwal.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numStokAwal.Name = "numStokAwal";
             numStokAwal.Size = new Size(148, 23);
@@ -251,7 +252,7 @@
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
             cmbKategori.Location = new Point(1, 155);
-            cmbKategori.Margin = new Padding(2, 2, 2, 2);
+            cmbKategori.Margin = new Padding(2);
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(150, 23);
             cmbKategori.TabIndex = 8;
@@ -269,7 +270,7 @@
             // txtNamaBarang
             // 
             txtNamaBarang.Location = new Point(1, 90);
-            txtNamaBarang.Margin = new Padding(2, 2, 2, 2);
+            txtNamaBarang.Margin = new Padding(2);
             txtNamaBarang.Name = "txtNamaBarang";
             txtNamaBarang.Size = new Size(148, 30);
             txtNamaBarang.TabIndex = 6;
@@ -279,7 +280,7 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(2, 26);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(28, 21);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -336,15 +337,15 @@
             dgvBarang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBarang.EnableHeadersVisualStyles = false;
             dgvBarang.GridColor = Color.Gainsboro;
-            dgvBarang.Location = new Point(13, 29);
-            dgvBarang.Margin = new Padding(2, 2, 2, 2);
+            dgvBarang.Location = new Point(2, 44);
+            dgvBarang.Margin = new Padding(2);
             dgvBarang.MultiSelect = false;
             dgvBarang.Name = "dgvBarang";
             dgvBarang.ReadOnly = true;
             dgvBarang.RowHeadersVisible = false;
             dgvBarang.RowHeadersWidth = 62;
             dgvBarang.RowTemplate.Height = 38;
-            dgvBarang.Size = new Size(477, 280);
+            dgvBarang.Size = new Size(495, 237);
             dgvBarang.TabIndex = 1;
             dgvBarang.CellContentClick += dgvBarang_CellContentClick;
             // 

@@ -301,7 +301,7 @@
             btnSimpan.TabIndex = 13;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = false;
-            btnSimpan.Click += btnSimpan_Click;
+         
             // 
             // numHargaJual
             // 
@@ -447,7 +447,6 @@
             Controls.Add(label1);
             Name = "UC_KLLABRGGudang";
             Size = new Size(1128, 325);
-            Load += UC_KLLABRGGudang_Load;
             panelDaftarBarang.ResumeLayout(false);
             panelDaftarBarang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKelolaBarang).EndInit();

@@ -13,11 +13,9 @@ namespace GUedang
         public Kasir()
         {
             InitializeComponent();
-
-
-            UC_Kasir dashboardAdmin = new UC_Kasir();
-            dashboardAdmin.Dock = DockStyle.Fill;
-            panelKasirHalaman.Controls.Add(dashboardAdmin);
+            UC_Kasir dashoardKasir = new UC_Kasir();
+            dashoardKasir.Dock = DockStyle.Fill;
+            panelKasirHalaman.Controls.Add(dashoardKasir);
 
         }
 
@@ -34,9 +32,47 @@ namespace GUedang
             panelKasirHalaman.Controls.Add(halaman);
         }
 
-        private void Kasir_Load(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Kasir_Load(object sender, EventArgs e)
+        {
+            UC_Kasir halamanKasir = new UC_Kasir();
+            halamanKasir.Dock = DockStyle.Fill;
+            panelKasirHalaman.Controls.Clear();
+            panelKasirHalaman.Controls.Add(halamanKasir);
+        }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.Yes)
+            {
+                LoginAkun DashboardLogin = new LoginAkun();
+                DashboardLogin.Show();
+                this.Hide();
+
+            }
+        }
+
+        private void roundedButton1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.Yes)
+            {
+                LoginAkun DashboardLogin = new LoginAkun();
+                DashboardLogin.Show();
+                this.Hide();
+
+
+            }
+        }
+
+        private void lblKasir_Click(object sender, EventArgs e)
+        {
+            lblKasir.Text = lblKasir.Text.Replace("Kasir : ", "");
         }
     }
 }

@@ -33,10 +33,11 @@ namespace GUedang
 
             switch (user.Role)
             {
-                case Roles.Admin: dashboard = new UC_DashboardAdmin(); break;
-                case Roles.Kasir: dashboard = new Kasir();
+                case Roles.Admin: dashboard = new Admin(user.Nama); break;
+                case Roles.Kasir:
+                    dashboard = new Kasir();
                     break;
-                case Roles.Gudang: dashboard = new UC_Gudang(); break;
+                case Roles.Gudang: dashboard = new Gudang(); break;
                 default:
                     MessageBox.Show("Role \"" + user.Role + "\" tidak dikenali.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,6 +110,11 @@ namespace GUedang
         private void lblExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

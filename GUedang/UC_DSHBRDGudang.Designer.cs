@@ -73,6 +73,7 @@
             // 
             // roundedPanel1
             // 
+            roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(roundedPanel6);
             roundedPanel1.Controls.Add(panelGrafikStok);
@@ -86,11 +87,12 @@
             roundedPanel1.Location = new Point(2, 2);
             roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(657, 352);
+            roundedPanel1.Size = new Size(668, 352);
             roundedPanel1.TabIndex = 0;
             // 
             // roundedPanel6
             // 
+            roundedPanel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel6.BackColor = Color.Transparent;
             roundedPanel6.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel6.Controls.Add(dgvBarangStokMenipis);
@@ -176,6 +178,7 @@
             // 
             // panelGrafikStok
             // 
+            panelGrafikStok.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelGrafikStok.BackColor = Color.Transparent;
             panelGrafikStok.Controls.Add(chartStokBarang);
             panelGrafikStok.Controls.Add(label7);

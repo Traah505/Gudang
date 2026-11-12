@@ -58,11 +58,6 @@ namespace GUedang
             TampilkanHalaman(halamanGudang);
         }
 
-        private void roundedButtonLogoutKsir_Click(object sender, EventArgs e)
-        {
-            LoginAkun DashboardAdmin = new LoginAkun();
-            DashboardAdmin.Show();
-            this.Hide();
-        }
+        
     }
 }

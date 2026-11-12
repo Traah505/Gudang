@@ -204,7 +204,8 @@ namespace GUedang
 
         }
 
-        private void btnSimpan_Click_1(object sender, EventArgs e)
+       
+        private void roundedPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

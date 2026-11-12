@@ -38,6 +38,7 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             panelContent = new Panel();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -45,18 +46,19 @@
             // 
             // lblAdmin
             // 
-            lblAdmin.AutoSize = true;
             lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblAdmin.Location = new Point(333, 26);
+            lblAdmin.Location = new Point(365, 21);
             lblAdmin.Name = "lblAdmin";
-            lblAdmin.Size = new Size(93, 30);
+            lblAdmin.Size = new Size(93, 34);
             lblAdmin.TabIndex = 3;
             lblAdmin.Text = "Admin :";
             lblAdmin.Click += label2_Click;
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(roundedButton1);
@@ -64,10 +66,11 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblAdmin);
-            panel1.Location = new Point(-4, -2);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(761, 82);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
             // label7
             // 
@@ -94,22 +97,23 @@
             // 
             // roundedButton1
             // 
+            roundedButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             roundedButton1.BackColor = Color.RoyalBlue;
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(604, 22);
+            roundedButton1.Location = new Point(616, 19);
             roundedButton1.Name = "roundedButton1";
             roundedButton1.Size = new Size(139, 36);
             roundedButton1.TabIndex = 7;
-            roundedButton1.Text = "Logout/Back";
+            roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
             roundedButton1.Click += roundedButton1_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(292, 26);
+            pictureBox2.Location = new Point(314, 21);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(46, 32);
@@ -123,9 +127,9 @@
             label2.Location = new Point(82, 47);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(125, 15);
+            label2.Size = new Size(131, 15);
             label2.TabIndex = 5;
-            label2.Text = "Selamt datang, Admin";
+            label2.Text = "Selamat datang, Admin";
             // 
             // pictureBox1
             // 
@@ -140,6 +144,7 @@
             // 
             // panelContent
             // 
+            panelContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContent.BackColor = Color.WhiteSmoke;
             panelContent.Location = new Point(-1, 74);
             panelContent.Name = "panelContent";
@@ -147,17 +152,23 @@
             panelContent.TabIndex = 10;
             panelContent.Paint += panel3_Paint;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.Location = new Point(297, 12);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(5, 54);
+            panel2.TabIndex = 0;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(758, 400);
             Controls.Add(panelContent);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "Admin";
-            Text = "DashboardAdmin";
+            Size = new Size(758, 400);
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -177,5 +188,6 @@
         private RoundedButton roundedButton1;
         private Label label7;
         private Label label6;
+        private Panel panel2;
     }
 }

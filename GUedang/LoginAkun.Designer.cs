@@ -45,11 +45,9 @@
             label10 = new Label();
             chkLihatPassword = new CheckBox();
             label9 = new Label();
-            pictureBox1 = new PictureBox();
             Login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Login
@@ -75,6 +73,7 @@
             Login.Name = "Login";
             Login.Size = new Size(327, 348);
             Login.TabIndex = 27;
+            Login.Paint += Login_Paint;
             // 
             // pictureBox6
             // 
@@ -102,7 +101,7 @@
             txtNama.BackColor = Color.White;
             txtNama.BorderColor = Color.Navy;
             txtNama.Location = new Point(57, 111);
-            txtNama.Margin = new Padding(2, 2, 2, 2);
+            txtNama.Margin = new Padding(2);
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(210, 30);
             txtNama.TabIndex = 26;
@@ -159,7 +158,7 @@
             txtPassword.BackColor = Color.White;
             txtPassword.BorderColor = Color.Navy;
             txtPassword.Location = new Point(57, 169);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(210, 30);
             txtPassword.TabIndex = 23;
@@ -236,23 +235,12 @@
             label9.TabIndex = 17;
             label9.Text = "SMK Mart";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(287, 348);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 28;
-            pictureBox1.TabStop = false;
-            // 
             // LoginAkun
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(620, 349);
-            Controls.Add(pictureBox1);
             Controls.Add(Login);
             ForeColor = Color.FromArgb(0, 192, 192);
             FormBorderStyle = FormBorderStyle.None;
@@ -266,7 +254,6 @@
             Login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -286,6 +273,5 @@
         private RoundedTextBox txtNama;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox1;
     }
 }

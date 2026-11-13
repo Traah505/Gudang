@@ -169,8 +169,6 @@
             roundedPanel4.Name = "roundedPanel4";
             roundedPanel4.Size = new Size(186, 55);
             roundedPanel4.TabIndex = 3;
-            roundedPanel4.PanelColor = Color.SkyBlue;
-
             // 
             // lblUserAktif
             // 
@@ -199,6 +197,7 @@
             // roundedPanel3
             // 
             roundedPanel3.BackColor = Color.Transparent;
+            roundedPanel3.BackgroundImageLayout = ImageLayout.None;
             roundedPanel3.Controls.Add(lblBarangTerjual);
             roundedPanel3.Controls.Add(label5);
             roundedPanel3.Location = new Point(15, 65);
@@ -206,8 +205,6 @@
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(186, 55);
             roundedPanel3.TabIndex = 2;
-            roundedPanel3.PanelColor = Color.DeepSkyBlue;
-
             // 
             // lblBarangTerjual
             // 
@@ -244,8 +241,6 @@
             roundedPanel2.Size = new Size(186, 55);
             roundedPanel2.TabIndex = 1;
             roundedPanel2.Paint += roundedPanel2_Paint;
-            roundedPanel2.PanelColor = Color.Blue;
-
             // 
             // lblTotalPendapatan
             // 
@@ -274,6 +269,7 @@
             // roundedPanel1
             // 
             roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.BackgroundImageLayout = ImageLayout.None;
             roundedPanel1.Controls.Add(lblTotalTransaksi);
             roundedPanel1.Controls.Add(label3);
             roundedPanel1.Location = new Point(15, 7);
@@ -281,8 +277,6 @@
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(186, 55);
             roundedPanel1.TabIndex = 0;
-            roundedPanel1.PanelColor = Color.SteelBlue;
-
             // 
             // lblTotalTransaksi
             // 

@@ -56,5 +56,10 @@ namespace GUedang
         {
             lblGudang.Text = lblGudang.Text.Replace("Gudang : ", "");
         }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

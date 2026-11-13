@@ -83,7 +83,7 @@
             // 
             label7.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold);
             label7.ForeColor = Color.Blue;
-            label7.Location = new Point(144, 17);
+            label7.Location = new Point(140, 17);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(73, 30);
@@ -115,6 +115,7 @@
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
+            roundedButton1.Click += roundedButton1_Click;
             // 
             // pictureBox2
             // 
@@ -133,9 +134,9 @@
             label2.Location = new Point(82, 47);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(131, 15);
+            label2.Size = new Size(137, 15);
             label2.TabIndex = 5;
-            label2.Text = "Selamat datang, Admin";
+            label2.Text = "Selamat datang, Gudang";
             // 
             // pictureBox1
             // 

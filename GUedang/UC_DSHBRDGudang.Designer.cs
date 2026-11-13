@@ -94,7 +94,6 @@
             // 
             roundedPanel6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel6.BackColor = Color.Transparent;
-            roundedPanel6.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel6.Controls.Add(dgvBarangStokMenipis);
             roundedPanel6.Controls.Add(label8);
             roundedPanel6.Location = new Point(335, 134);

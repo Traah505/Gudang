@@ -47,10 +47,9 @@
             // lblAdmin
             // 
             lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblAdmin.Location = new Point(521, 35);
-            lblAdmin.Margin = new Padding(4, 0, 4, 0);
+            lblAdmin.Location = new Point(365, 21);
             lblAdmin.Name = "lblAdmin";
-            lblAdmin.Size = new Size(133, 57);
+            lblAdmin.Size = new Size(93, 34);
             lblAdmin.TabIndex = 3;
             lblAdmin.Text = "Admin :";
             lblAdmin.Click += label2_Click;
@@ -68,28 +67,27 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblAdmin);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1087, 137);
+            panel1.Size = new Size(761, 82);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Black;
-            panel2.Location = new Point(424, 20);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(297, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(7, 90);
+            panel2.Size = new Size(5, 54);
             panel2.TabIndex = 0;
             // 
             // label7
             // 
             label7.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold);
-            label7.ForeColor = Color.Blue;
-            label7.Location = new Point(223, 28);
+            label7.ForeColor = Color.LightSkyBlue;
+            label7.Location = new Point(140, 17);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(104, 50);
+            label7.Size = new Size(73, 30);
             label7.TabIndex = 21;
             label7.Text = "Mart";
             // 
@@ -97,12 +95,14 @@
             // 
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold);
-            label6.ForeColor = Color.DodgerBlue;
-            label6.Location = new Point(117, 28);
+            label6.ForeColor = Color.Navy;
+            label6.Location = new Point(82, 17);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(100, 50);
+            label6.Size = new Size(70, 30);
             label6.TabIndex = 20;
             label6.Text = "SMK";
+            label6.Click += label6_Click;
             // 
             // roundedButton1
             // 
@@ -111,10 +111,9 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(880, 32);
-            roundedButton1.Margin = new Padding(4, 5, 4, 5);
+            roundedButton1.Location = new Point(616, 19);
             roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(199, 60);
+            roundedButton1.Size = new Size(139, 36);
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
@@ -123,9 +122,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(449, 35);
+            pictureBox2.Location = new Point(314, 21);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 53);
+            pictureBox2.Size = new Size(46, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
@@ -133,18 +133,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(117, 78);
+            label2.Location = new Point(82, 47);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(198, 25);
+            label2.Size = new Size(131, 15);
             label2.TabIndex = 5;
             label2.Text = "Selamat datang, Admin";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(21, 28);
+            pictureBox1.Location = new Point(15, 17);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(90, 75);
+            pictureBox1.Size = new Size(63, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -153,23 +155,21 @@
             // 
             panelContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContent.BackColor = Color.WhiteSmoke;
-            panelContent.Location = new Point(-1, 123);
-            panelContent.Margin = new Padding(4, 5, 4, 5);
+            panelContent.Location = new Point(-1, 74);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1083, 547);
+            panelContent.Size = new Size(758, 328);
             panelContent.TabIndex = 10;
             panelContent.Paint += panel3_Paint;
             // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             Controls.Add(panelContent);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Admin";
-            Size = new Size(1083, 667);
+            Size = new Size(758, 400);
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

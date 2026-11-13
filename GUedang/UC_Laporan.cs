@@ -13,6 +13,9 @@ namespace GUedang
         public UC_Laporan()
         {
             InitializeComponent();
+
+            panelPendapatan.PanelColor = Color.FromArgb(0, 122, 204);
+            panelJumlahTransaksi.PanelColor = Color.FromArgb(0, 122, 204);
         }
 
         private void lblTitleLaporan_Click(object sender, EventArgs e)
@@ -27,20 +30,11 @@ namespace GUedang
 
         private void UC_Laporan_Load(object sender, EventArgs e)
         {
-            cmbJenisLaporan.Items.Clear();
-
-            cmbJenisLaporan.Items.Add("Penjualan");
-            cmbJenisLaporan.Items.Add("Barang");
-            cmbJenisLaporan.Items.Add("Kasir");
-
-            cmbJenisLaporan.SelectedIndex = 0;
         }
 
         private void btnTampilkan_Click(object sender, EventArgs e)
         {
-            string jenis = cmbJenisLaporan.Text;
-
-            MessageBox.Show("Jenis laporan yang dipilih: " + jenis);
+            
         }
         private void TampilkanLaporanPenjualan()
         {

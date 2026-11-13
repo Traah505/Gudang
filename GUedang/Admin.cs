@@ -99,11 +99,21 @@ namespace GUedang
                 LoginAkun DashboardLogin = new LoginAkun();
                 DashboardLogin.Show();
                 this.Hide();
-               
+
             }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

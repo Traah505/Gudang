@@ -74,5 +74,15 @@ namespace GUedang
         {
             lblKasir.Text = lblKasir.Text.Replace("Kasir : ", "");
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedButton1_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

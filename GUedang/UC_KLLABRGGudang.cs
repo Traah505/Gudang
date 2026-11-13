@@ -10,6 +10,10 @@ namespace GUedang
 {
     public partial class UC_KLLABRGGudang : UserControl
     {
+        private void UC_KLLABRGGudang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

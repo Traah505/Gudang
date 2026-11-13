@@ -44,7 +44,8 @@ namespace GUedang
             roundedButtonUser.BackColor = Color.Navy;
             roundedButtonLaporan.BackColor = Color.Navy;
             roundedButtonBarang.BackColor = Color.Navy;
-            roundedButtonLaporanGudang.BackColor = Color.Navy;
+            roundedButtonRiwayat.BackColor = Color.Navy;
+            roundedButtonLaporan.BackColor = Color.Navy;
         }
 
         private void TampilkanHalaman(UserControl Halaman)
@@ -126,6 +127,9 @@ namespace GUedang
             TampilkanHalaman(halamanLaporan);
         }
 
-       
+        private void roundedButtonRiwayat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -84,6 +84,7 @@ namespace GUedang
             base.OnPaint(e);
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
             RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height);
 
@@ -93,7 +94,7 @@ namespace GUedang
                 using (Brush brushPanel = new SolidBrush(panelColor))
                 {
                     // Potong area kerja panel sesuai bentuk sudut melengkung
-                    this.Region = new Region(pathSurface);
+                    this.Region = new Region(GetRoundedPath(new RectangleF(0, 0, this.Width, this.Height), cornerRadius));
 
                     // Gambar isi panel
                     g.FillPath(brushPanel, pathSurface);
@@ -111,7 +112,7 @@ namespace GUedang
             }
             else
             {
-                this.Region = new Region(rectSurface);
+                this.Region = new Region(new Rectangle(0, 0, this.Width, this.Height));
                 using (Brush brushPanel = new SolidBrush(panelColor))
                 {
                     g.FillRectangle(brushPanel, rectSurface);

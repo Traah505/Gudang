@@ -190,7 +190,6 @@
             // 
             roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.White;
-            roundedPanel2.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel2.Controls.Add(btnHapus);
             roundedPanel2.Controls.Add(btnReset);
             roundedPanel2.Controls.Add(btnSimpan);
@@ -394,7 +393,6 @@
             // 
             panelDaftarBarang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelDaftarBarang.BackColor = Color.White;
-            panelDaftarBarang.BorderStyle = BorderStyle.FixedSingle;
             panelDaftarBarang.Controls.Add(dgvKelolaBarang);
             panelDaftarBarang.Controls.Add(btnMenipis);
             panelDaftarBarang.Controls.Add(txtCari);
@@ -544,7 +542,6 @@
             // panelTotal
             // 
             panelTotal.BackColor = Color.Transparent;
-            panelTotal.BorderStyle = BorderStyle.FixedSingle;
             panelTotal.Controls.Add(lblTotalBarang);
             panelTotal.Controls.Add(label10);
             panelTotal.ForeColor = Color.White;
@@ -579,7 +576,6 @@
             // panelHabis
             // 
             panelHabis.BackColor = Color.Transparent;
-            panelHabis.BorderStyle = BorderStyle.FixedSingle;
             panelHabis.Controls.Add(lblStokHabis);
             panelHabis.Controls.Add(label16);
             panelHabis.ForeColor = Color.White;
@@ -614,7 +610,6 @@
             // panelMenipis
             // 
             panelMenipis.BackColor = Color.Transparent;
-            panelMenipis.BorderStyle = BorderStyle.FixedSingle;
             panelMenipis.Controls.Add(lblStokMenipis);
             panelMenipis.Controls.Add(label14);
             panelMenipis.ForeColor = Color.White;
@@ -649,7 +644,6 @@
             // panelAman
             // 
             panelAman.BackColor = Color.Transparent;
-            panelAman.BorderStyle = BorderStyle.FixedSingle;
             panelAman.Controls.Add(lblStokAman);
             panelAman.Controls.Add(label12);
             panelAman.ForeColor = Color.White;

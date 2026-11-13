@@ -83,7 +83,6 @@
             // panelDaftarBarang
             // 
             panelDaftarBarang.BackColor = Color.White;
-            panelDaftarBarang.BorderStyle = BorderStyle.FixedSingle;
             panelDaftarBarang.Controls.Add(txtCari);
             panelDaftarBarang.Controls.Add(label9);
             panelDaftarBarang.Controls.Add(dgvKelolaBarang);
@@ -236,7 +235,7 @@
             // 
             // roundedPanel2
             // 
-            roundedPanel2.BackColor = Color.White;
+            roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.BorderStyle = BorderStyle.FixedSingle;
             roundedPanel2.Controls.Add(btnHapus);
             roundedPanel2.Controls.Add(btnReset);
@@ -301,7 +300,6 @@
             btnSimpan.TabIndex = 13;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = false;
-         
             // 
             // numHargaJual
             // 
@@ -447,6 +445,7 @@
             Controls.Add(label1);
             Name = "UC_KLLABRGGudang";
             Size = new Size(1128, 325);
+            Load += UC_KLLABRGGudang_Load;
             panelDaftarBarang.ResumeLayout(false);
             panelDaftarBarang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvKelolaBarang).EndInit();

@@ -34,5 +34,15 @@ namespace GUedang
         {
 
         }
+
+        private void roundedPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void roundedPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

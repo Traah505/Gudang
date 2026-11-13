@@ -82,7 +82,7 @@
             btnHapusSemua.FlatAppearance.BorderSize = 0;
             btnHapusSemua.FlatStyle = FlatStyle.Flat;
             btnHapusSemua.ForeColor = Color.RoyalBlue;
-            btnHapusSemua.Location = new Point(517, 34);
+            btnHapusSemua.Location = new Point(548, 36);
             btnHapusSemua.Margin = new Padding(2);
             btnHapusSemua.Name = "btnHapusSemua";
             btnHapusSemua.Size = new Size(113, 28);

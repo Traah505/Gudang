@@ -29,7 +29,7 @@ namespace GUedang
         private void ResetButtonColors()
         {
             roundedButtonGudang.BackColor = Color.Navy;
-            roundedButtonBRG.BackColor = Color.Navy;
+            roundedButtonBRGMSK.BackColor = Color.Navy;
             roundedButtonKLLABRGGudang.BackColor = Color.Navy;
 
         }
@@ -45,7 +45,7 @@ namespace GUedang
         private void roundedButtonBRG_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
-            roundedButtonBRG.BackColor = Color.DodgerBlue;
+            roundedButtonBRGMSK.BackColor = Color.DodgerBlue;
             UC_BRGGudang halamanGudang = new UC_BRGGudang();
             TampilkanHalaman(halamanGudang);
         }

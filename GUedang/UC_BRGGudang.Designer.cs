@@ -28,285 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_BRGGudang));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             roundedPanel1 = new RoundedPanel();
-            pictureBox2 = new PictureBox();
-            label7 = new Label();
-            roundedPanel3 = new RoundedPanel();
-            lblBarangKeluar = new Label();
-            label8 = new Label();
-            roundedPanel2 = new RoundedPanel();
-            lblBarangMasuk = new Label();
-            label6 = new Label();
-            panelTambahBarang = new RoundedPanel();
-            btnReset = new RoundedButton();
-            btnTambahBarang = new RoundedButton();
-            numStokAwal = new NumericUpDown();
-            label5 = new Label();
-            cmbKategori = new ComboBox();
-            label4 = new Label();
-            txtNamaBarang = new RoundedTextBox();
-            pictureBox1 = new PictureBox();
-            label3 = new Label();
-            label2 = new Label();
             dgvBarang = new DataGridView();
-            colNo = new DataGridViewTextBoxColumn();
-            colNamaBarang = new DataGridViewTextBoxColumn();
-            colKode = new DataGridViewTextBoxColumn();
-            colKategori = new DataGridViewTextBoxColumn();
-            colStok = new DataGridViewTextBoxColumn();
             label1 = new Label();
+            roundedPanel2 = new RoundedPanel();
+            colNo = new DataGridViewTextBoxColumn();
+            colTanggal = new DataGridViewTextBoxColumn();
+            colKode = new DataGridViewTextBoxColumn();
+            colNamaBarang = new DataGridViewTextBoxColumn();
+            colJumlah = new DataGridViewTextBoxColumn();
+            colHargaBeli = new DataGridViewTextBoxColumn();
+            colKeterangan = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            label2 = new Label();
+            roundedPanel3 = new RoundedPanel();
+            label3 = new Label();
+            lblTotalBarangMasuk = new Label();
+            label4 = new Label();
+            roundedPanel4 = new RoundedPanel();
+            lblTotalNilaiMasuk = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            panel2 = new Panel();
+            label5 = new Label();
+            btnSimpan = new RoundedButton();
+            txtKeterangan = new CustomTextBox();
+            label8 = new Label();
+            numJumlah = new NumericUpDown();
+            label10 = new Label();
+            btnCari = new Button();
+            txtNamaAtauKode = new CustomTextBox();
+            label9 = new Label();
+            txtHargaBeli = new CustomTextBox();
+            label11 = new Label();
+            dtpTanggal = new DateTimePicker();
             roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            roundedPanel3.SuspendLayout();
-            roundedPanel2.SuspendLayout();
-            panelTambahBarang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numStokAwal).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBarang).BeginInit();
+            roundedPanel2.SuspendLayout();
+            panel1.SuspendLayout();
+            roundedPanel3.SuspendLayout();
+            roundedPanel4.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numJumlah).BeginInit();
             SuspendLayout();
             // 
             // roundedPanel1
             // 
             roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.Controls.Add(pictureBox2);
-            roundedPanel1.Controls.Add(label7);
-            roundedPanel1.Controls.Add(roundedPanel3);
+            roundedPanel1.Controls.Add(dtpTanggal);
+            roundedPanel1.Controls.Add(panel1);
             roundedPanel1.Controls.Add(roundedPanel2);
-            roundedPanel1.Controls.Add(panelTambahBarang);
             roundedPanel1.Controls.Add(dgvBarang);
             roundedPanel1.Controls.Add(label1);
-            roundedPanel1.Location = new Point(2, 10);
-            roundedPanel1.Margin = new Padding(2);
+            roundedPanel1.Location = new Point(3, 17);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(680, 373);
+            roundedPanel1.Size = new Size(971, 622);
             roundedPanel1.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(539, 9);
-            pictureBox2.Margin = new Padding(2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(22, 21);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(556, 10);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(63, 20);
-            label7.TabIndex = 5;
-            label7.Text = "Gudang";
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.Transparent;
-            roundedPanel3.Controls.Add(lblBarangKeluar);
-            roundedPanel3.Controls.Add(label8);
-            roundedPanel3.Location = new Point(267, 316);
-            roundedPanel3.Margin = new Padding(2);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(198, 48);
-            roundedPanel3.TabIndex = 4;
-            // 
-            // lblBarangKeluar
-            // 
-            lblBarangKeluar.AutoSize = true;
-            lblBarangKeluar.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBarangKeluar.ForeColor = Color.White;
-            lblBarangKeluar.Location = new Point(15, 23);
-            lblBarangKeluar.Margin = new Padding(2, 0, 2, 0);
-            lblBarangKeluar.Name = "lblBarangKeluar";
-            lblBarangKeluar.Size = new Size(23, 25);
-            lblBarangKeluar.TabIndex = 2;
-            lblBarangKeluar.Text = "0";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(15, 5);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(106, 20);
-            label8.TabIndex = 1;
-            label8.Text = "Barang Keluar";
-            // 
-            // roundedPanel2
-            // 
-            roundedPanel2.BackColor = Color.Transparent;
-            roundedPanel2.Controls.Add(lblBarangMasuk);
-            roundedPanel2.Controls.Add(label6);
-            roundedPanel2.Location = new Point(51, 314);
-            roundedPanel2.Margin = new Padding(2);
-            roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(198, 48);
-            roundedPanel2.TabIndex = 3;
-            // 
-            // lblBarangMasuk
-            // 
-            lblBarangMasuk.AutoSize = true;
-            lblBarangMasuk.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBarangMasuk.ForeColor = Color.White;
-            lblBarangMasuk.Location = new Point(15, 23);
-            lblBarangMasuk.Margin = new Padding(2, 0, 2, 0);
-            lblBarangMasuk.Name = "lblBarangMasuk";
-            lblBarangMasuk.Size = new Size(23, 25);
-            lblBarangMasuk.TabIndex = 2;
-            lblBarangMasuk.Text = "0";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(15, 5);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(107, 20);
-            label6.TabIndex = 1;
-            label6.Text = "Barang Masuk";
-            // 
-            // panelTambahBarang
-            // 
-            panelTambahBarang.BackColor = Color.Transparent;
-            panelTambahBarang.BorderStyle = BorderStyle.FixedSingle;
-            panelTambahBarang.Controls.Add(btnReset);
-            panelTambahBarang.Controls.Add(btnTambahBarang);
-            panelTambahBarang.Controls.Add(numStokAwal);
-            panelTambahBarang.Controls.Add(label5);
-            panelTambahBarang.Controls.Add(cmbKategori);
-            panelTambahBarang.Controls.Add(label4);
-            panelTambahBarang.Controls.Add(txtNamaBarang);
-            panelTambahBarang.Controls.Add(pictureBox1);
-            panelTambahBarang.Controls.Add(label3);
-            panelTambahBarang.Controls.Add(label2);
-            panelTambahBarang.Location = new Point(512, 44);
-            panelTambahBarang.Margin = new Padding(2);
-            panelTambahBarang.Name = "panelTambahBarang";
-            panelTambahBarang.Size = new Size(155, 318);
-            panelTambahBarang.TabIndex = 2;
-            // 
-            // btnReset
-            // 
-            btnReset.BackColor = Color.White;
-            btnReset.FlatAppearance.BorderSize = 0;
-            btnReset.FlatStyle = FlatStyle.Flat;
-            btnReset.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReset.ForeColor = Color.RoyalBlue;
-            btnReset.Location = new Point(81, 246);
-            btnReset.Margin = new Padding(2);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(66, 59);
-            btnReset.TabIndex = 12;
-            btnReset.Text = "⟳ Reset";
-            btnReset.UseVisualStyleBackColor = false;
-            // 
-            // btnTambahBarang
-            // 
-            btnTambahBarang.BackColor = Color.RoyalBlue;
-            btnTambahBarang.FlatAppearance.BorderSize = 0;
-            btnTambahBarang.FlatStyle = FlatStyle.Flat;
-            btnTambahBarang.ForeColor = Color.White;
-            btnTambahBarang.Location = new Point(2, 248);
-            btnTambahBarang.Margin = new Padding(2);
-            btnTambahBarang.Name = "btnTambahBarang";
-            btnTambahBarang.Size = new Size(66, 59);
-            btnTambahBarang.TabIndex = 11;
-            btnTambahBarang.Text = "+ Tambah Barang";
-            btnTambahBarang.UseVisualStyleBackColor = false;
-            btnTambahBarang.Click += btnTambahBarang_Click;
-            // 
-            // numStokAwal
-            // 
-            numStokAwal.Location = new Point(1, 213);
-            numStokAwal.Margin = new Padding(2);
-            numStokAwal.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numStokAwal.Name = "numStokAwal";
-            numStokAwal.Size = new Size(148, 23);
-            numStokAwal.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(14, 196);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(59, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Stok Awal";
-            // 
-            // cmbKategori
-            // 
-            cmbKategori.BackColor = Color.White;
-            cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(1, 155);
-            cmbKategori.Margin = new Padding(2);
-            cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(150, 23);
-            cmbKategori.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(14, 138);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(51, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Kategori";
-            // 
-            // txtNamaBarang
-            // 
-            txtNamaBarang.Location = new Point(1, 90);
-            txtNamaBarang.Margin = new Padding(2);
-            txtNamaBarang.Name = "txtNamaBarang";
-            txtNamaBarang.Size = new Size(148, 30);
-            txtNamaBarang.TabIndex = 6;
-            txtNamaBarang.Text = "Masukan Nama Barang...";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(2, 26);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(28, 21);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(14, 73);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Nama Barang";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(26, 26);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(121, 21);
-            label2.TabIndex = 0;
-            label2.Text = "Tambah Barang";
             // 
             // dgvBarang
             // 
@@ -317,7 +97,7 @@
             dgvBarang.BorderStyle = BorderStyle.None;
             dgvBarang.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.MidnightBlue;
+            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.Padding = new Padding(8);
@@ -326,7 +106,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvBarang.ColumnHeadersHeight = 45;
-            dgvBarang.Columns.AddRange(new DataGridViewColumn[] { colNo, colNamaBarang, colKode, colKategori, colStok });
+            dgvBarang.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colKode, colNamaBarang, colJumlah, colHargaBeli, colKeterangan });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -337,17 +117,48 @@
             dgvBarang.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBarang.EnableHeadersVisualStyles = false;
             dgvBarang.GridColor = Color.Gainsboro;
-            dgvBarang.Location = new Point(2, 44);
-            dgvBarang.Margin = new Padding(2);
+            dgvBarang.Location = new Point(21, 329);
             dgvBarang.MultiSelect = false;
             dgvBarang.Name = "dgvBarang";
             dgvBarang.ReadOnly = true;
             dgvBarang.RowHeadersVisible = false;
             dgvBarang.RowHeadersWidth = 62;
             dgvBarang.RowTemplate.Height = 38;
-            dgvBarang.Size = new Size(495, 237);
+            dgvBarang.Size = new Size(947, 290);
             dgvBarang.TabIndex = 1;
             dgvBarang.CellContentClick += dgvBarang_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(21, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(238, 38);
+            label1.TabIndex = 0;
+            label1.Text = "📥Barang Masuk";
+            // 
+            // roundedPanel2
+            // 
+            roundedPanel2.BackColor = Color.Transparent;
+            roundedPanel2.Controls.Add(label11);
+            roundedPanel2.Controls.Add(txtHargaBeli);
+            roundedPanel2.Controls.Add(label9);
+            roundedPanel2.Controls.Add(btnSimpan);
+            roundedPanel2.Controls.Add(txtKeterangan);
+            roundedPanel2.Controls.Add(label8);
+            roundedPanel2.Controls.Add(numJumlah);
+            roundedPanel2.Controls.Add(label10);
+            roundedPanel2.Controls.Add(btnCari);
+            roundedPanel2.Controls.Add(txtNamaAtauKode);
+            roundedPanel2.Controls.Add(panel2);
+            roundedPanel2.Controls.Add(roundedPanel4);
+            roundedPanel2.Controls.Add(roundedPanel3);
+            roundedPanel2.Location = new Point(36, 53);
+            roundedPanel2.Name = "roundedPanel2";
+            roundedPanel2.Size = new Size(920, 225);
+            roundedPanel2.TabIndex = 2;
             // 
             // colNo
             // 
@@ -357,13 +168,12 @@
             colNo.Name = "colNo";
             colNo.ReadOnly = true;
             // 
-            // colNamaBarang
+            // colTanggal
             // 
-            colNamaBarang.FillWeight = 130F;
-            colNamaBarang.HeaderText = "Nama Barang";
-            colNamaBarang.MinimumWidth = 8;
-            colNamaBarang.Name = "colNamaBarang";
-            colNamaBarang.ReadOnly = true;
+            colTanggal.HeaderText = "Tanggal";
+            colTanggal.MinimumWidth = 8;
+            colTanggal.Name = "colTanggal";
+            colTanggal.ReadOnly = true;
             // 
             // colKode
             // 
@@ -372,53 +182,297 @@
             colKode.Name = "colKode";
             colKode.ReadOnly = true;
             // 
-            // colKategori
+            // colNamaBarang
             // 
-            colKategori.FillWeight = 115F;
-            colKategori.HeaderText = "Kategori";
-            colKategori.MinimumWidth = 8;
-            colKategori.Name = "colKategori";
-            colKategori.ReadOnly = true;
+            colNamaBarang.FillWeight = 130F;
+            colNamaBarang.HeaderText = "Nama Barang";
+            colNamaBarang.MinimumWidth = 8;
+            colNamaBarang.Name = "colNamaBarang";
+            colNamaBarang.ReadOnly = true;
             // 
-            // colStok
+            // colJumlah
             // 
-            colStok.FillWeight = 90F;
-            colStok.HeaderText = "Stok";
-            colStok.MinimumWidth = 8;
-            colStok.Name = "colStok";
-            colStok.ReadOnly = true;
+            colJumlah.FillWeight = 115F;
+            colJumlah.HeaderText = "Jumlah";
+            colJumlah.MinimumWidth = 8;
+            colJumlah.Name = "colJumlah";
+            colJumlah.ReadOnly = true;
             // 
-            // label1
+            // colHargaBeli
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(15, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 30);
-            label1.TabIndex = 0;
-            label1.Text = "Barang";
+            colHargaBeli.FillWeight = 90F;
+            colHargaBeli.HeaderText = "Harga Beli";
+            colHargaBeli.MinimumWidth = 8;
+            colHargaBeli.Name = "colHargaBeli";
+            colHargaBeli.ReadOnly = true;
+            // 
+            // colKeterangan
+            // 
+            colKeterangan.HeaderText = "Keterangan";
+            colKeterangan.MinimumWidth = 8;
+            colKeterangan.Name = "colKeterangan";
+            colKeterangan.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(21, 284);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(947, 39);
+            panel1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(216, 28);
+            label2.TabIndex = 0;
+            label2.Text = "Riwayat Barang Masuk";
+            // 
+            // roundedPanel3
+            // 
+            roundedPanel3.BackColor = Color.Transparent;
+            roundedPanel3.Controls.Add(label4);
+            roundedPanel3.Controls.Add(lblTotalBarangMasuk);
+            roundedPanel3.Controls.Add(label3);
+            roundedPanel3.Location = new Point(27, 6);
+            roundedPanel3.Name = "roundedPanel3";
+            roundedPanel3.Size = new Size(430, 89);
+            roundedPanel3.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.RoyalBlue;
+            label3.Location = new Point(37, 7);
+            label3.Name = "label3";
+            label3.Size = new Size(174, 25);
+            label3.TabIndex = 0;
+            label3.Text = "Total Barang Masuk";
+            // 
+            // lblTotalBarangMasuk
+            // 
+            lblTotalBarangMasuk.AutoSize = true;
+            lblTotalBarangMasuk.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalBarangMasuk.ForeColor = Color.RoyalBlue;
+            lblTotalBarangMasuk.Location = new Point(37, 32);
+            lblTotalBarangMasuk.Name = "lblTotalBarangMasuk";
+            lblTotalBarangMasuk.Size = new Size(27, 32);
+            lblTotalBarangMasuk.TabIndex = 1;
+            lblTotalBarangMasuk.Text = "0";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.RoyalBlue;
+            label4.Location = new Point(58, 32);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 32);
+            label4.TabIndex = 2;
+            label4.Text = "Barang";
+            // 
+            // roundedPanel4
+            // 
+            roundedPanel4.BackColor = Color.Transparent;
+            roundedPanel4.Controls.Add(lblTotalNilaiMasuk);
+            roundedPanel4.Controls.Add(label6);
+            roundedPanel4.Controls.Add(label7);
+            roundedPanel4.Location = new Point(477, 6);
+            roundedPanel4.Name = "roundedPanel4";
+            roundedPanel4.Size = new Size(430, 89);
+            roundedPanel4.TabIndex = 3;
+            // 
+            // lblTotalNilaiMasuk
+            // 
+            lblTotalNilaiMasuk.AutoSize = true;
+            lblTotalNilaiMasuk.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalNilaiMasuk.ForeColor = Color.ForestGreen;
+            lblTotalNilaiMasuk.Location = new Point(76, 32);
+            lblTotalNilaiMasuk.Name = "lblTotalNilaiMasuk";
+            lblTotalNilaiMasuk.Size = new Size(27, 32);
+            lblTotalNilaiMasuk.TabIndex = 2;
+            lblTotalNilaiMasuk.Text = "0";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.ForestGreen;
+            label6.Location = new Point(37, 32);
+            label6.Name = "label6";
+            label6.Size = new Size(43, 32);
+            label6.TabIndex = 1;
+            label6.Text = "Rp";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.ForestGreen;
+            label7.Location = new Point(37, 7);
+            label7.Name = "label7";
+            label7.Size = new Size(154, 25);
+            label7.TabIndex = 0;
+            label7.Text = "Total Nilai Masuk";
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.Controls.Add(label5);
+            panel2.Location = new Point(3, 101);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(225, 39);
+            panel2.TabIndex = 4;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(13, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(196, 28);
+            label5.TabIndex = 0;
+            label5.Text = "Input Barang Masuk";
+            // 
+            // btnSimpan
+            // 
+            btnSimpan.BackColor = Color.RoyalBlue;
+            btnSimpan.FlatAppearance.BorderSize = 0;
+            btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.ForeColor = Color.White;
+            btnSimpan.Location = new Point(806, 146);
+            btnSimpan.Name = "btnSimpan";
+            btnSimpan.Size = new Size(101, 64);
+            btnSimpan.TabIndex = 19;
+            btnSimpan.Text = "💾Simpan";
+            btnSimpan.UseVisualStyleBackColor = false;
+            // 
+            // txtKeterangan
+            // 
+            txtKeterangan.BackColor = Color.White;
+            txtKeterangan.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtKeterangan.Location = new Point(484, 170);
+            txtKeterangan.Name = "txtKeterangan";
+            txtKeterangan.Padding = new Padding(10, 7, 10, 7);
+            txtKeterangan.Size = new Size(184, 40);
+            txtKeterangan.TabIndex = 18;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(484, 142);
+            label8.Name = "label8";
+            label8.Size = new Size(101, 25);
+            label8.TabIndex = 17;
+            label8.Text = "Ketarangan";
+            // 
+            // numJumlah
+            // 
+            numJumlah.BackColor = Color.White;
+            numJumlah.Location = new Point(388, 179);
+            numJumlah.Name = "numJumlah";
+            numJumlah.Size = new Size(90, 31);
+            numJumlah.TabIndex = 16;
+            numJumlah.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(390, 142);
+            label10.Name = "label10";
+            label10.Size = new Size(67, 25);
+            label10.TabIndex = 15;
+            label10.Text = "Jumlah";
+            // 
+            // btnCari
+            // 
+            btnCari.BackColor = Color.RoyalBlue;
+            btnCari.ForeColor = Color.White;
+            btnCari.Location = new Point(317, 166);
+            btnCari.Name = "btnCari";
+            btnCari.Size = new Size(55, 44);
+            btnCari.TabIndex = 14;
+            btnCari.Text = "🔍︎";
+            btnCari.UseVisualStyleBackColor = false;
+            // 
+            // txtNamaAtauKode
+            // 
+            txtNamaAtauKode.BackColor = Color.White;
+            txtNamaAtauKode.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNamaAtauKode.Location = new Point(16, 166);
+            txtNamaAtauKode.Name = "txtNamaAtauKode";
+            txtNamaAtauKode.Padding = new Padding(10, 7, 10, 7);
+            txtNamaAtauKode.Size = new Size(356, 44);
+            txtNamaAtauKode.TabIndex = 13;
+            txtNamaAtauKode.Tag = "Masukan Nama Barang";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(669, 142);
+            label9.Name = "label9";
+            label9.Size = new Size(92, 25);
+            label9.TabIndex = 20;
+            label9.Text = "Harga Beli";
+            // 
+            // txtHargaBeli
+            // 
+            txtHargaBeli.BackColor = Color.White;
+            txtHargaBeli.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtHargaBeli.Location = new Point(674, 170);
+            txtHargaBeli.Name = "txtHargaBeli";
+            txtHargaBeli.Padding = new Padding(10, 7, 10, 7);
+            txtHargaBeli.Size = new Size(111, 40);
+            txtHargaBeli.TabIndex = 21;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(24, 138);
+            label11.Name = "label11";
+            label11.Size = new Size(220, 25);
+            label11.TabIndex = 22;
+            label11.Text = "Masukan Nama atau Kode";
+            // 
+            // dtpTanggal
+            // 
+            dtpTanggal.CalendarForeColor = Color.DarkGray;
+            dtpTanggal.Format = DateTimePickerFormat.Short;
+            dtpTanggal.Location = new Point(819, 7);
+            dtpTanggal.Name = "dtpTanggal";
+            dtpTanggal.Size = new Size(124, 31);
+            dtpTanggal.TabIndex = 4;
             // 
             // UC_BRGGudang
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             Controls.Add(roundedPanel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_BRGGudang";
-            Size = new Size(691, 385);
+            Size = new Size(987, 642);
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            roundedPanel3.ResumeLayout(false);
-            roundedPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBarang).EndInit();
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
-            panelTambahBarang.ResumeLayout(false);
-            panelTambahBarang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numStokAwal).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvBarang).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            roundedPanel3.ResumeLayout(false);
+            roundedPanel3.PerformLayout();
+            roundedPanel4.ResumeLayout(false);
+            roundedPanel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numJumlah).EndInit();
             ResumeLayout(false);
         }
 
@@ -427,29 +481,36 @@
         private RoundedPanel roundedPanel1;
         private DataGridView dgvBarang;
         private Label label1;
-        private RoundedPanel panelTambahBarang;
-        private Label label3;
+        private Panel panel1;
         private Label label2;
-        private ComboBox cmbKategori;
-        private Label label4;
-        private RoundedTextBox txtNamaBarang;
-        private PictureBox pictureBox1;
-        private RoundedButton btnReset;
-        private RoundedButton btnTambahBarang;
-        private NumericUpDown numStokAwal;
-        private Label label5;
         private RoundedPanel roundedPanel2;
+        private DataGridViewTextBoxColumn colNo;
+        private DataGridViewTextBoxColumn colTanggal;
+        private DataGridViewTextBoxColumn colKode;
+        private DataGridViewTextBoxColumn colNamaBarang;
+        private DataGridViewTextBoxColumn colJumlah;
+        private DataGridViewTextBoxColumn colHargaBeli;
+        private DataGridViewTextBoxColumn colKeterangan;
+        private RoundedPanel roundedPanel3;
+        private Label lblTotalBarangMasuk;
+        private Label label3;
+        private Panel panel2;
+        private Label label5;
+        private RoundedPanel roundedPanel4;
+        private Label lblTotalNilaiMasuk;
         private Label label6;
         private Label label7;
-        private RoundedPanel roundedPanel3;
-        private Label lblBarangKeluar;
+        private Label label4;
+        private Label label11;
+        private CustomTextBox txtHargaBeli;
+        private Label label9;
+        private RoundedButton btnSimpan;
+        private CustomTextBox txtKeterangan;
         private Label label8;
-        private Label lblBarangMasuk;
-        private PictureBox pictureBox2;
-        private DataGridViewTextBoxColumn colNo;
-        private DataGridViewTextBoxColumn colNamaBarang;
-        private DataGridViewTextBoxColumn colKode;
-        private DataGridViewTextBoxColumn colKategori;
-        private DataGridViewTextBoxColumn colStok;
+        private NumericUpDown numJumlah;
+        private Label label10;
+        private Button btnCari;
+        private CustomTextBox txtNamaAtauKode;
+        private DateTimePicker dtpTanggal;
     }
 }

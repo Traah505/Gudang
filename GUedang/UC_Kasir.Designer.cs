@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            roundedButton1 = new RoundedButton();
+            roundedButtonGANTIPWKasir = new RoundedButton();
             roundedButtonRIWYTTRNKSIKasir = new RoundedButton();
             roundedButtonKRNJGBLNJKasir = new RoundedButton();
             roundedButtonDSHBRDKasir = new RoundedButton();
@@ -41,7 +41,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(roundedButton1);
+            panel1.Controls.Add(roundedButtonGANTIPWKasir);
             panel1.Controls.Add(roundedButtonRIWYTTRNKSIKasir);
             panel1.Controls.Add(roundedButtonKRNJGBLNJKasir);
             panel1.Controls.Add(roundedButtonDSHBRDKasir);
@@ -50,18 +50,19 @@
             panel1.Size = new Size(141, 214);
             panel1.TabIndex = 1;
             // 
-            // roundedButton1
+            // roundedButtonGANTIPWKasir
             // 
-            roundedButton1.BackColor = Color.Navy;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(17, 152);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(142, 40);
-            roundedButton1.TabIndex = 6;
-            roundedButton1.Text = "Ganti password";
-            roundedButton1.UseVisualStyleBackColor = false;
+            roundedButtonGANTIPWKasir.BackColor = Color.Navy;
+            roundedButtonGANTIPWKasir.FlatAppearance.BorderSize = 0;
+            roundedButtonGANTIPWKasir.FlatStyle = FlatStyle.Flat;
+            roundedButtonGANTIPWKasir.ForeColor = Color.White;
+            roundedButtonGANTIPWKasir.Location = new Point(17, 152);
+            roundedButtonGANTIPWKasir.Name = "roundedButtonGANTIPWKasir";
+            roundedButtonGANTIPWKasir.Size = new Size(142, 40);
+            roundedButtonGANTIPWKasir.TabIndex = 6;
+            roundedButtonGANTIPWKasir.Text = "Ganti password";
+            roundedButtonGANTIPWKasir.UseVisualStyleBackColor = false;
+            roundedButtonGANTIPWKasir.Click += roundedButtonGANTIPWKasir_Click;
             // 
             // roundedButtonRIWYTTRNKSIKasir
             // 
@@ -135,6 +136,6 @@
         private RoundedButton roundedButtonKRNJGBLNJKasir;
         private RoundedButton roundedButtonDSHBRDKasir;
         private RoundedPanel panelKasir;
-        private RoundedButton roundedButton1;
+        private RoundedButton roundedButtonGANTIPWKasir;
     }
 }

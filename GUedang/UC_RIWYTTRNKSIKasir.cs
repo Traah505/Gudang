@@ -13,7 +13,7 @@ namespace GUedang
         public UC_RIWYTTRNKSIKasir()
         {
             InitializeComponent();
-            timerTransaksi.Start();
+
 
             roundedPanel1.PanelColor = Color.RoyalBlue;
             roundedPanel2.PanelColor = Color.DeepSkyBlue;
@@ -34,9 +34,21 @@ namespace GUedang
 
         }
 
-        private void timerTransaksi_Tick(object sender, EventArgs e)
+        private void MuatRiwayat()
         {
-            dtpTransaksi.Value = DateTime.Now;
+            var data = PenjualanStore.Muat()
+                .Where(t => t.Waktu.Date == dtpTransaksi.Value.Date).ToList();
+            dgvRiwayatTransaksi.Rows.Clear();
+            foreach (var t in data)
+                dgvRiwayatTransaksi.Rows.Add(t.NoTransaksi, t.Waktu.ToString("HH:mm"), t.Kasir,
+                    t.Items.Sum(i => i.Jumlah).ToString("0.##"), t.Total.ToString("N0"));
+            lblPendapatan.Text = "Rp " + data.Sum(t => t.Total).ToString("N0");
+            lblJumlahTransaksi.Text = data.Count.ToString();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

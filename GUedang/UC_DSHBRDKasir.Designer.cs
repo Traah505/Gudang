@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DSHBRDKasir));
             panelKasir = new RoundedPanel();
             label7 = new Label();
@@ -75,6 +75,7 @@
             panelKasir.Name = "panelKasir";
             panelKasir.Size = new Size(465, 309);
             panelKasir.TabIndex = 3;
+            panelKasir.Paint += panelKasir_Paint;
             // 
             // label7
             // 
@@ -95,26 +96,26 @@
             dgvTransaksiTerbaru.BackgroundColor = Color.White;
             dgvTransaksiTerbaru.BorderStyle = BorderStyle.None;
             dgvTransaksiTerbaru.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(23, 59, 103);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.Padding = new Padding(8);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvTransaksiTerbaru.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(23, 59, 103);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(8);
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvTransaksiTerbaru.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvTransaksiTerbaru.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTransaksiTerbaru.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colNamaKasir, colTotal });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(51, 65, 85);
-            dataGridViewCellStyle2.Padding = new Padding(6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(219, 234, 254);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(23, 59, 103);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvTransaksiTerbaru.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(51, 65, 85);
+            dataGridViewCellStyle6.Padding = new Padding(6);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(219, 234, 254);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(23, 59, 103);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvTransaksiTerbaru.DefaultCellStyle = dataGridViewCellStyle6;
             dgvTransaksiTerbaru.EnableHeadersVisualStyles = false;
             dgvTransaksiTerbaru.GridColor = Color.FromArgb(226, 232, 240);
             dgvTransaksiTerbaru.Location = new Point(15, 160);

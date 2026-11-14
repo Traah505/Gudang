@@ -37,6 +37,11 @@ namespace GUedang
             ResetButtonColors();
             roundedButtonLaporan.BackColor = Color.DodgerBlue;
         }
+        private void roundedButtonRiwayat_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonRiwayat.BackColor = Color.DodgerBlue;
+        }
 
         private void ResetButtonColors()
         {
@@ -61,6 +66,13 @@ namespace GUedang
             roundedButtonUser.BackColor = Color.DodgerBlue;
             UC_User halamanUser = new UC_User();
             TampilkanHalaman(halamanUser);
+        }
+        private void roundedButtonRiwayat_Click_2(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonRiwayat.BackColor = Color.DodgerBlue;
+            UC_RiwayatGudang halamanRiwayat = new UC_RiwayatGudang();
+            TampilkanHalaman(halamanRiwayat);
         }
 
         private void roundedPanel1_Paint(object sender, PaintEventArgs e)
@@ -99,6 +111,14 @@ namespace GUedang
             TampilkanHalaman(halamanLaporan);
         }
 
+        private void roundedButtonRiwayat_Click_1(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonRiwayat.BackColor = Color.DodgerBlue;
+            UC_RiwayatGudang halamanRiwayat = new UC_RiwayatGudang();
+            TampilkanHalaman(halamanRiwayat);
+        }
+
         private void panelContent2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -120,14 +140,6 @@ namespace GUedang
         }
 
         private void roundedButtonLaporanGudang_Click(object sender, EventArgs e)
-        {
-            ResetButtonColors();
-            roundedButtonLaporanGudang.BackColor = Color.DodgerBlue;
-            UC_LaporanGudang halamanLaporan = new UC_LaporanGudang();
-            TampilkanHalaman(halamanLaporan);
-        }
-
-        private void roundedButtonRiwayat_Click(object sender, EventArgs e)
         {
 
         }

@@ -47,7 +47,7 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            lblAdmin = new Label();
+            lblKasir1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
@@ -177,7 +177,7 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(lblAdmin);
+            panel1.Controls.Add(lblKasir1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(761, 82);
@@ -261,14 +261,15 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
-            // lblAdmin
+            // lblKasir1
             // 
-            lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblAdmin.Location = new Point(365, 21);
-            lblAdmin.Name = "lblAdmin";
-            lblAdmin.Size = new Size(93, 34);
-            lblAdmin.TabIndex = 3;
-            lblAdmin.Text = "Admin :";
+            lblKasir1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblKasir1.Location = new Point(365, 21);
+            lblKasir1.Name = "lblKasir1";
+            lblKasir1.Size = new Size(93, 34);
+            lblKasir1.TabIndex = 3;
+            lblKasir1.Text = "Kasir :";
+            lblKasir1.Click += lblKasir1_Click;
             // 
             // Kasir
             // 
@@ -309,6 +310,6 @@
         private PictureBox pictureBox2;
         private Label label2;
         private PictureBox pictureBox1;
-        private Label lblAdmin;
+        private Label lblKasir1;
     }
 }

@@ -44,8 +44,8 @@
             btnTampilkan = new RoundedButton();
             roundedPanel2 = new RoundedPanel();
             label5 = new Label();
-            txtCariPenjualan = new CustomTextBox();
-            dgvPenjualan = new DataGridView();
+            txtCariLaporan = new CustomTextBox();
+            dgvLaporan = new DataGridView();
             colNo = new DataGridViewTextBoxColumn();
             colKode = new DataGridViewTextBoxColumn();
             colTanggal = new DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             panelJumlahTransaksi.SuspendLayout();
             panelPendapatan.SuspendLayout();
             roundedPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPenjualan).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporan).BeginInit();
             roundedPanel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -117,12 +117,13 @@
             panelJumlahTransaksi.Name = "panelJumlahTransaksi";
             panelJumlahTransaksi.Size = new Size(208, 44);
             panelJumlahTransaksi.TabIndex = 8;
+            panelJumlahTransaksi.Paint += panelJumlahTransaksi_Paint;
             // 
             // lblJumlahTransaksi
             // 
             lblJumlahTransaksi.AutoSize = true;
             lblJumlahTransaksi.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJumlahTransaksi.ForeColor = Color.White;
+            lblJumlahTransaksi.ForeColor = Color.Black;
             lblJumlahTransaksi.Location = new Point(24, 17);
             lblJumlahTransaksi.Margin = new Padding(2, 0, 2, 0);
             lblJumlahTransaksi.Name = "lblJumlahTransaksi";
@@ -134,7 +135,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(24, 4);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
@@ -158,7 +159,7 @@
             // 
             lblTotalPendapatan.AutoSize = true;
             lblTotalPendapatan.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalPendapatan.ForeColor = Color.White;
+            lblTotalPendapatan.ForeColor = Color.Black;
             lblTotalPendapatan.Location = new Point(48, 17);
             lblTotalPendapatan.Margin = new Padding(2, 0, 2, 0);
             lblTotalPendapatan.Name = "lblTotalPendapatan";
@@ -170,7 +171,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(19, 17);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
@@ -182,7 +183,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(19, 5);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
@@ -210,8 +211,8 @@
             roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(label5);
-            roundedPanel2.Controls.Add(txtCariPenjualan);
-            roundedPanel2.Controls.Add(dgvPenjualan);
+            roundedPanel2.Controls.Add(txtCariLaporan);
+            roundedPanel2.Controls.Add(dgvLaporan);
             roundedPanel2.Location = new Point(2, 124);
             roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
@@ -230,24 +231,24 @@
             label5.Tag = "";
             label5.Text = "🔍";
             // 
-            // txtCariPenjualan
+            // txtCariLaporan
             // 
-            txtCariPenjualan.BackColor = Color.White;
-            txtCariPenjualan.Location = new Point(27, 10);
-            txtCariPenjualan.Margin = new Padding(2);
-            txtCariPenjualan.Name = "txtCariPenjualan";
-            txtCariPenjualan.Padding = new Padding(7, 4, 7, 4);
-            txtCariPenjualan.Size = new Size(208, 25);
-            txtCariPenjualan.TabIndex = 2;
+            txtCariLaporan.BackColor = Color.White;
+            txtCariLaporan.Location = new Point(27, 10);
+            txtCariLaporan.Margin = new Padding(2);
+            txtCariLaporan.Name = "txtCariLaporan";
+            txtCariLaporan.Padding = new Padding(7, 4, 7, 4);
+            txtCariLaporan.Size = new Size(208, 25);
+            txtCariLaporan.TabIndex = 2;
             // 
-            // dgvPenjualan
+            // dgvLaporan
             // 
-            dgvPenjualan.AllowUserToAddRows = false;
-            dgvPenjualan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvPenjualan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvPenjualan.BackgroundColor = Color.White;
-            dgvPenjualan.BorderStyle = BorderStyle.None;
-            dgvPenjualan.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvLaporan.AllowUserToAddRows = false;
+            dgvLaporan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvLaporan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLaporan.BackgroundColor = Color.White;
+            dgvLaporan.BorderStyle = BorderStyle.None;
+            dgvLaporan.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.RoyalBlue;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -255,9 +256,9 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvPenjualan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvPenjualan.ColumnHeadersHeight = 40;
-            dgvPenjualan.Columns.AddRange(new DataGridViewColumn[] { colNo, colKode, colTanggal, colNamaKasir, colTotalHarga });
+            dgvLaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvLaporan.ColumnHeadersHeight = 40;
+            dgvLaporan.Columns.AddRange(new DataGridViewColumn[] { colNo, colKode, colTanggal, colNamaKasir, colTotalHarga });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
@@ -265,20 +266,20 @@
             dataGridViewCellStyle4.SelectionBackColor = Color.LightSteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = Color.DarkBlue;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvPenjualan.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvPenjualan.EnableHeadersVisualStyles = false;
-            dgvPenjualan.GridColor = Color.Gainsboro;
-            dgvPenjualan.Location = new Point(27, 46);
-            dgvPenjualan.Margin = new Padding(2);
-            dgvPenjualan.MultiSelect = false;
-            dgvPenjualan.Name = "dgvPenjualan";
-            dgvPenjualan.RowHeadersVisible = false;
-            dgvPenjualan.RowHeadersWidth = 62;
-            dgvPenjualan.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvPenjualan.RowTemplate.Height = 35;
-            dgvPenjualan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPenjualan.Size = new Size(805, 337);
-            dgvPenjualan.TabIndex = 0;
+            dgvLaporan.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvLaporan.EnableHeadersVisualStyles = false;
+            dgvLaporan.GridColor = Color.Gainsboro;
+            dgvLaporan.Location = new Point(27, 46);
+            dgvLaporan.Margin = new Padding(2);
+            dgvLaporan.MultiSelect = false;
+            dgvLaporan.Name = "dgvLaporan";
+            dgvLaporan.RowHeadersVisible = false;
+            dgvLaporan.RowHeadersWidth = 62;
+            dgvLaporan.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvLaporan.RowTemplate.Height = 35;
+            dgvLaporan.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLaporan.Size = new Size(805, 337);
+            dgvLaporan.TabIndex = 0;
             // 
             // colNo
             // 
@@ -326,6 +327,7 @@
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(890, 515);
             roundedPanel3.TabIndex = 3;
+            roundedPanel3.Paint += roundedPanel3_Paint;
             // 
             // UC_Laporan
             // 
@@ -344,7 +346,7 @@
             panelPendapatan.PerformLayout();
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPenjualan).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporan).EndInit();
             roundedPanel3.ResumeLayout(false);
             roundedPanel3.PerformLayout();
             ResumeLayout(false);
@@ -356,7 +358,7 @@
         private RoundedPanel roundedPanel1;
         private RoundedPanel roundedPanel2;
         private RoundedButton btnTampilkan;
-        private DataGridView dgvPenjualan;
+        private DataGridView dgvLaporan;
         private RoundedPanel roundedPanel3;
         private RoundedPanel panelPendapatan;
         private Label label2;
@@ -372,7 +374,7 @@
         private DataGridViewTextBoxColumn colTanggal;
         private DataGridViewTextBoxColumn colNamaKasir;
         private DataGridViewTextBoxColumn colTotalHarga;
-        private CustomTextBox txtCariPenjualan;
+        private CustomTextBox txtCariLaporan;
         private Label label5;
     }
 }

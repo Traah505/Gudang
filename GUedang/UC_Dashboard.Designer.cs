@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Dashboard));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelContent2 = new RoundedPanel();
             label3 = new Label();
             roundedPanel1 = new RoundedPanel();
@@ -45,12 +45,11 @@
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
             dgvUser = new DataGridView();
+            label1 = new Label();
             colNo = new DataGridViewTextBoxColumn();
             colNama = new DataGridViewTextBoxColumn();
             colJenis = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
-            colAksi = new DataGridViewButtonColumn();
-            label1 = new Label();
             panelContent2.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -68,8 +67,9 @@
             panelContent2.Controls.Add(label1);
             panelContent2.Location = new Point(3, 3);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(899, 554);
+            panelContent2.Size = new Size(899, 348);
             panelContent2.TabIndex = 4;
+            panelContent2.Paint += panelContent2_Paint;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             roundedPanel1.Location = new Point(707, 46);
             roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(172, 351);
+            roundedPanel1.Size = new Size(172, 272);
             roundedPanel1.TabIndex = 8;
             // 
             // lblBarangHabis
@@ -229,26 +229,26 @@
             dgvUser.BackgroundColor = Color.White;
             dgvUser.BorderStyle = BorderStyle.None;
             dgvUser.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUser.ColumnHeadersHeight = 40;
             dgvUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus, colAksi });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.DimGray;
-            dataGridViewCellStyle4.Padding = new Padding(6);
-            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvUser.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.DimGray;
+            dataGridViewCellStyle2.Padding = new Padding(6);
+            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUser.EnableHeadersVisualStyles = false;
             dgvUser.GridColor = Color.Gainsboro;
             dgvUser.Location = new Point(20, 51);
@@ -260,8 +260,21 @@
             dgvUser.RowHeadersWidth = 62;
             dgvUser.RowTemplate.Height = 38;
             dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.Size = new Size(676, 456);
+            dgvUser.Size = new Size(676, 250);
             dgvUser.TabIndex = 6;
+            dgvUser.CellContentClick += dgvUser_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MidnightBlue;
+            label1.Location = new Point(20, 5);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(178, 27);
+            label1.TabIndex = 4;
+            label1.Text = "Dashboard Admin";
             // 
             // colNo
             // 
@@ -295,33 +308,13 @@
             colStatus.Name = "colStatus";
             colStatus.ReadOnly = true;
             // 
-            // colAksi
-            // 
-            colAksi.FillWeight = 70F;
-            colAksi.HeaderText = "Aksi";
-            colAksi.MinimumWidth = 8;
-            colAksi.Name = "colAksi";
-            colAksi.ReadOnly = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Calibri", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(20, 5);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(178, 27);
-            label1.TabIndex = 4;
-            label1.Text = "Dashboard Admin";
-            // 
             // UC_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelContent2);
             Name = "UC_Dashboard";
-            Size = new Size(893, 540);
+            Size = new Size(893, 354);
             panelContent2.ResumeLayout(false);
             panelContent2.PerformLayout();
             roundedPanel1.ResumeLayout(false);
@@ -336,11 +329,6 @@
 
         private RoundedPanel panelContent2;
         private DataGridView dgvUser;
-        private DataGridViewTextBoxColumn colNo;
-        private DataGridViewTextBoxColumn colNama;
-        private DataGridViewTextBoxColumn colJenis;
-        private DataGridViewTextBoxColumn colStatus;
-        private DataGridViewButtonColumn colAksi;
         private Label label1;
         private RoundedPanel roundedPanel1;
         private Label label2;
@@ -354,5 +342,9 @@
         private Label lblBarangHabis;
         private Label label6;
         private Label lblBarangMenipis;
+        private DataGridViewTextBoxColumn colNo;
+        private DataGridViewTextBoxColumn colNama;
+        private DataGridViewTextBoxColumn colJenis;
+        private DataGridViewTextBoxColumn colStatus;
     }
 }

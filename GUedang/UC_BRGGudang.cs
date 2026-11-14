@@ -17,35 +17,42 @@ namespace GUedang
 
         private void btnTambahBarang_Click(object sender, EventArgs e)
         {
-            string kode = "BRG-" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            string namaBarang = txtNamaBarang.Text.Trim();
-            string kategori = cmbKategori.SelectedItem?.ToString();
-
-            if (string.IsNullOrEmpty(namaBarang) || string.IsNullOrEmpty(kategori))
-            {
-                MessageBox.Show("Nama barang dan kategori harus diisi.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if(!int.TryParse(numStokAwal.Text.Trim(), out int stokAwal) || stokAwal < 0)
-            {
-                MessageBox.Show("Stok awal harus berupa angka .", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-                
-            }
-            List<ModelBarang> daftarBarang = HelperJson.BacaData<ModelBarang>("DataBarang.json");
-            daftarBarang.Add(new ModelBarang
-            {
-                NamaBarang = namaBarang,
-                Kategori = kategori,
-                Stok = stokAwal,
-            });
-            HelperJson.SimpanData("DataBarang.json", daftarBarang); 
         }
 
         private void dgvBarang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void roundedPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            
+            bool ok = BarangStore.UbahStok(txtNamaAtauKode.Text.Trim(), "Masuk",
+                (int)numJumlah.Value, decimal.TryParse(txtHargaBeli.Text, out var h) ? h : 0,
+                txtKeterangan.Text.Trim(), out string pesan);
+            MessageBox.Show(pesan, "Barang Masuk", MessageBoxButtons.OK,
+                ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+            if (ok) { numJumlah.Value = 0; txtKeterangan.Text = ""; MuatRiwayat(); }
+        }
+
+        private void MuatRiwayat()
+        {
+            var log = HelperJson.BacaData<ModelTransaksi>("DataTransaksi.json")
+                                .Where(t => t.Jenis == "Masuk").ToList();
+            dgvBarang.Rows.Clear();
+            int no = 1;
+            foreach (var t in log)
+                dgvBarang.Rows.Add(no++, t.Tanggal.ToString("dd/MM/yyyy"), t.Kode, t.Nama,
+                                    t.Jumlah, t.Harga, t.Keterangan);
+            lbl.Text = log.Sum(t => t.Jumlah) + " Barang";
+            lblTotalNilai.Text = "Rp " + log.Sum(t => t.Jumlah * t.Harga).ToString("N0");
+        }
     }
+    
 }

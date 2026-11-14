@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel1 = new Panel();
             roundedButtonRiwayat = new RoundedButton();
-            roundedButtonLaporanGudang = new RoundedButton();
             roundedButtonBarang = new RoundedButton();
             roundedButtonLaporan = new RoundedButton();
             roundedButtonUser = new RoundedButton();
@@ -54,14 +53,13 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(roundedButtonRiwayat);
-            panel1.Controls.Add(roundedButtonLaporanGudang);
             panel1.Controls.Add(roundedButtonBarang);
             panel1.Controls.Add(roundedButtonLaporan);
             panel1.Controls.Add(roundedButtonUser);
             panel1.Controls.Add(roundedButtonDashboard);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 289);
+            panel1.Size = new Size(141, 247);
             panel1.TabIndex = 0;
             // 
             // roundedButtonRiwayat
@@ -70,27 +68,13 @@
             roundedButtonRiwayat.FlatAppearance.BorderSize = 0;
             roundedButtonRiwayat.FlatStyle = FlatStyle.Flat;
             roundedButtonRiwayat.ForeColor = Color.White;
-            roundedButtonRiwayat.Location = new Point(16, 193);
+            roundedButtonRiwayat.Location = new Point(16, 199);
             roundedButtonRiwayat.Name = "roundedButtonRiwayat";
             roundedButtonRiwayat.Size = new Size(142, 40);
             roundedButtonRiwayat.TabIndex = 5;
             roundedButtonRiwayat.Text = "Riwayat Gudang";
             roundedButtonRiwayat.UseVisualStyleBackColor = false;
             roundedButtonRiwayat.Click += roundedButtonRiwayat_Click;
-            // 
-            // roundedButtonLaporanGudang
-            // 
-            roundedButtonLaporanGudang.BackColor = Color.Navy;
-            roundedButtonLaporanGudang.FlatAppearance.BorderSize = 0;
-            roundedButtonLaporanGudang.FlatStyle = FlatStyle.Flat;
-            roundedButtonLaporanGudang.ForeColor = Color.White;
-            roundedButtonLaporanGudang.Location = new Point(16, 239);
-            roundedButtonLaporanGudang.Name = "roundedButtonLaporanGudang";
-            roundedButtonLaporanGudang.Size = new Size(142, 40);
-            roundedButtonLaporanGudang.TabIndex = 4;
-            roundedButtonLaporanGudang.Text = "Laporan Aktivitas";
-            roundedButtonLaporanGudang.UseVisualStyleBackColor = false;
-            roundedButtonLaporanGudang.Click += roundedButtonLaporanGudang_Click;
             // 
             // roundedButtonBarang
             // 
@@ -140,7 +124,7 @@
             roundedButtonDashboard.FlatAppearance.BorderSize = 0;
             roundedButtonDashboard.FlatStyle = FlatStyle.Flat;
             roundedButtonDashboard.ForeColor = Color.White;
-            roundedButtonDashboard.Location = new Point(16, 15);
+            roundedButtonDashboard.Location = new Point(20, 15);
             roundedButtonDashboard.Name = "roundedButtonDashboard";
             roundedButtonDashboard.Size = new Size(142, 40);
             roundedButtonDashboard.TabIndex = 0;
@@ -155,7 +139,7 @@
             panelContent2.Controls.Add(dgvRequestUser);
             panelContent2.Location = new Point(147, 3);
             panelContent2.Name = "panelContent2";
-            panelContent2.Size = new Size(900, 283);
+            panelContent2.Size = new Size(900, 236);
             panelContent2.TabIndex = 3;
             panelContent2.Paint += panelContent2_Paint;
             // 
@@ -167,30 +151,30 @@
             dgvRequestUser.BackgroundColor = Color.WhiteSmoke;
             dgvRequestUser.BorderStyle = BorderStyle.None;
             dgvRequestUser.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvRequestUser.ColumnHeadersHeight = 40;
             dgvRequestUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvRequestUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus, colAksi });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.DimGray;
-            dataGridViewCellStyle2.Padding = new Padding(6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle10.ForeColor = Color.DimGray;
+            dataGridViewCellStyle10.Padding = new Padding(6);
+            dataGridViewCellStyle10.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle10.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle10;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
             dgvRequestUser.Location = new Point(-425, -263);
-            dgvRequestUser.Margin = new Padding(2, 2, 2, 2);
+            dgvRequestUser.Margin = new Padding(2);
             dgvRequestUser.MultiSelect = false;
             dgvRequestUser.Name = "dgvRequestUser";
             dgvRequestUser.ReadOnly = true;
@@ -250,7 +234,7 @@
             Controls.Add(panelContent2);
             Controls.Add(panel1);
             Name = "UC_DashboardAdmin";
-            Size = new Size(1050, 289);
+            Size = new Size(1050, 247);
             Load += UC_DashboardAdmin_Load;
             panel1.ResumeLayout(false);
             panelContent2.ResumeLayout(false);
@@ -274,7 +258,6 @@
         private DataGridViewTextBoxColumn colJenis;
         private DataGridViewTextBoxColumn colStatus;
         private DataGridViewButtonColumn colAksi;
-        private RoundedButton roundedButtonLaporanGudang;
         private RoundedButton roundedButtonRiwayat;
     }
 }

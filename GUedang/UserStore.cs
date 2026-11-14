@@ -190,5 +190,20 @@ namespace GUedang
             using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations))
                 return Convert.ToBase64String(pbkdf2.GetBytes(32));
         }
+        public static bool GantiPassword(string nama, string lama, string baru, out string pesan)
+        {
+            var daftar = Muat();
+            var u = daftar.FirstOrDefault(x =>
+                x.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase));
+
+            if (u == null) { pesan = "User tidak ditemukan."; return false; }
+            if (u.PasswordHash != Hash(lama, Convert.FromBase64String(u.Salt))) { pesan = "Kata sandi lama salah."; return false; }
+            if (baru.Length < 4) { pesan = "Kata sandi baru minimal 4 karakter."; return false; }
+
+            u.PasswordHash = Hash(baru, Convert.FromBase64String(u.Salt));
+            Simpan(daftar);   // pakai method simpan yang sudah kamu punya
+            pesan = "Kata sandi berhasil diganti.";
+            return true;
+        }
     }
 }

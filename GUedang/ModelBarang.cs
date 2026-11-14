@@ -9,8 +9,14 @@ namespace GUedang
         public string KodeBarang { get; set; }
         public string NamaBarang { get; set; }
         public string Kategori { get; set; }
-        public decimal Stok { get; set; }
+        public decimal Stok { get; set; }           
+        public int Minimum { get; set; }        
         public decimal HargaBeli { get; set; }
         public decimal HargaJual { get; set; }
+
+       
+        public string Status =>
+            Stok <= 0 ? "Habis" :
+            Stok <= Minimum ? "Menipis" : "Aman";
     }
 }

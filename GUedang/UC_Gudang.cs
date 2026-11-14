@@ -30,7 +30,9 @@ namespace GUedang
         {
             roundedButtonGudang.BackColor = Color.Navy;
             roundedButtonBRGMSK.BackColor = Color.Navy;
-            roundedButtonKLLABRGGudang.BackColor = Color.Navy;
+            roundedButtonBRGKLR.BackColor = Color.Navy;
+            roundedButtonStok.BackColor = Color.Navy;
+            roundedButtonGNTPWGD.BackColor = Color.Navy;
 
         }
 
@@ -50,14 +52,28 @@ namespace GUedang
             TampilkanHalaman(halamanGudang);
         }
 
-        private void roundedButtonKLLABRGGudang_Click(object sender, EventArgs e)
+        private void roundedButtonGNTPWGD_Click(object sender, EventArgs e)
         {
             ResetButtonColors();
-            roundedButtonKLLABRGGudang.BackColor = Color.DodgerBlue;
-            UC_KLLABRGGudang halamanGudang = new UC_KLLABRGGudang();
+            roundedButtonGNTPWGD.BackColor = Color.DodgerBlue;
+            UC_GANTIPWGudang halamanGudang = new UC_GANTIPWGudang();
             TampilkanHalaman(halamanGudang);
         }
 
-        
+        private void roundedButtonBRGKLR_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonBRGKLR.BackColor = Color.DodgerBlue;
+            UC_BarangKeluar halamanGudang = new UC_BarangKeluar();
+            TampilkanHalaman(halamanGudang);
+        }
+
+        private void roundedButtonStok_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonStok.BackColor = Color.DodgerBlue;
+            UC_StokBarangGudang halamanGudang = new UC_StokBarangGudang();
+            TampilkanHalaman(halamanGudang);
+        }
     }
 }

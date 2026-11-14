@@ -204,13 +204,53 @@ namespace GUedang
 
         }
 
-       
+
         private void roundedPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-    }
 
+        private void btnSimpan_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnSimpanGP_Click(object sender, EventArgs e)
+        {
+            if (txtBaruGP.Text != txtKonfGP.Text)
+            {
+                MessageBox.Show("Konfirmasi tidak sama.", "Peringatan");
+                return;
+            }
+
+            bool ok = UserStore.GantiPassword(txtNamaGP.Text.Trim(), txtLamaGP.Text,
+                                              txtBaruGP.Text, out string pesan);
+
+            MessageBox.Show(pesan, "Ganti Password", MessageBoxButtons.OK,
+                ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+
+            if (ok) BersihkanGP();
+        }
+
+        // tombol Batal di panel Ganti Password (double-click di designer juga)
+        private void btnBatalGP_Click(object sender, EventArgs e)
+        {
+            BersihkanGP();
+        }
+
+        private void BersihkanGP()
+        {
+            txtNamaGP.Text = "";
+            txtLamaGP.Text = "";
+            txtBaruGP.Text = "";
+            txtKonfGP.Text = "";
+        }
+
+        
+    }
 }
+
+
 
 

@@ -24,7 +24,7 @@ namespace GUedang
         {
             ResetButtonColors();
             roundedButtonDSHBRDKasir.BackColor = Color.DodgerBlue;
-            UC_Dashboard halamanDashboard = new UC_Dashboard();
+            UC_DSHBRDKasir halamanDashboard = new UC_DSHBRDKasir();
             TampilkanHalaman(halamanDashboard);
         }
         private void ResetButtonColors()
@@ -32,6 +32,7 @@ namespace GUedang
             roundedButtonDSHBRDKasir.BackColor = Color.Navy;
             roundedButtonKRNJGBLNJKasir.BackColor = Color.Navy;
             roundedButtonRIWYTTRNKSIKasir.BackColor = Color.Navy;
+            roundedButtonGANTIPWKasir.BackColor = Color.Navy;
 
         }
 
@@ -51,7 +52,7 @@ namespace GUedang
             TampilkanHalaman(halamanDashboard);
         }
 
-        
+
         private void panelKasir_Paint(object sender, PaintEventArgs e)
         {
 
@@ -60,6 +61,14 @@ namespace GUedang
         private void UC_Kasir_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void roundedButtonGANTIPWKasir_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonGANTIPWKasir.BackColor = Color.DodgerBlue;
+            UC_GANTIPWKasir halamanDashboard = new UC_GANTIPWKasir();
+            TampilkanHalaman(halamanDashboard);
         }
     }
 }

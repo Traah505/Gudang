@@ -13,6 +13,7 @@ namespace GUedang
         public Gudang()
         {
             InitializeComponent();
+            lblGudang.Text = Sesi.NamaUser;
             UC_Gudang dashboardAdmin = new UC_Gudang();
             dashboardAdmin.Controls.Clear();
             panelGudang.Controls.Clear();
@@ -54,12 +55,19 @@ namespace GUedang
 
         private void lblGudang_Click(object sender, EventArgs e)
         {
-            lblGudang.Text = lblGudang.Text.Replace("Gudang : ", "");
+           
         }
 
         private void roundedButton1_Click(object sender, EventArgs e)
         {
+            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.Yes)
+            {
+                LoginAkun DashboardLogin = new LoginAkun();
+                DashboardLogin.Show();
+                this.Hide();
 
+            }
         }
     }
 }

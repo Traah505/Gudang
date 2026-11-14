@@ -31,7 +31,7 @@
             panel1 = new Panel();
             roundedButtonStok = new RoundedButton();
             roundedButtonBRGKLR = new RoundedButton();
-            roundedButton1 = new RoundedButton();
+            roundedButtonGNTPWGD = new RoundedButton();
             roundedButtonBRGMSK = new RoundedButton();
             roundedButtonGudang = new RoundedButton();
             panelGudang = new RoundedPanel();
@@ -44,13 +44,12 @@
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(roundedButtonStok);
             panel1.Controls.Add(roundedButtonBRGKLR);
-            panel1.Controls.Add(roundedButton1);
+            panel1.Controls.Add(roundedButtonGNTPWGD);
             panel1.Controls.Add(roundedButtonBRGMSK);
             panel1.Controls.Add(roundedButtonGudang);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(201, 725);
+            panel1.Size = new Size(141, 435);
             panel1.TabIndex = 1;
             // 
             // roundedButtonStok
@@ -59,13 +58,13 @@
             roundedButtonStok.FlatAppearance.BorderSize = 0;
             roundedButtonStok.FlatStyle = FlatStyle.Flat;
             roundedButtonStok.ForeColor = Color.White;
-            roundedButtonStok.Location = new Point(29, 243);
-            roundedButtonStok.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonStok.Location = new Point(20, 153);
             roundedButtonStok.Name = "roundedButtonStok";
-            roundedButtonStok.Size = new Size(203, 67);
+            roundedButtonStok.Size = new Size(142, 40);
             roundedButtonStok.TabIndex = 8;
             roundedButtonStok.Text = "Stok Barang";
             roundedButtonStok.UseVisualStyleBackColor = false;
+            roundedButtonStok.Click += roundedButtonStok_Click;
             // 
             // roundedButtonBRGKLR
             // 
@@ -73,27 +72,27 @@
             roundedButtonBRGKLR.FlatAppearance.BorderSize = 0;
             roundedButtonBRGKLR.FlatStyle = FlatStyle.Flat;
             roundedButtonBRGKLR.ForeColor = Color.White;
-            roundedButtonBRGKLR.Location = new Point(29, 166);
-            roundedButtonBRGKLR.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonBRGKLR.Location = new Point(20, 107);
             roundedButtonBRGKLR.Name = "roundedButtonBRGKLR";
-            roundedButtonBRGKLR.Size = new Size(203, 67);
+            roundedButtonBRGKLR.Size = new Size(142, 40);
             roundedButtonBRGKLR.TabIndex = 7;
             roundedButtonBRGKLR.Text = "Barang Keluar";
             roundedButtonBRGKLR.UseVisualStyleBackColor = false;
+            roundedButtonBRGKLR.Click += roundedButtonBRGKLR_Click;
             // 
-            // roundedButton1
+            // roundedButtonGNTPWGD
             // 
-            roundedButton1.BackColor = Color.Navy;
-            roundedButton1.FlatAppearance.BorderSize = 0;
-            roundedButton1.FlatStyle = FlatStyle.Flat;
-            roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(29, 307);
-            roundedButton1.Margin = new Padding(4, 5, 4, 5);
-            roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(203, 67);
-            roundedButton1.TabIndex = 6;
-            roundedButton1.Text = "Ganti password";
-            roundedButton1.UseVisualStyleBackColor = false;
+            roundedButtonGNTPWGD.BackColor = Color.Navy;
+            roundedButtonGNTPWGD.FlatAppearance.BorderSize = 0;
+            roundedButtonGNTPWGD.FlatStyle = FlatStyle.Flat;
+            roundedButtonGNTPWGD.ForeColor = Color.White;
+            roundedButtonGNTPWGD.Location = new Point(20, 199);
+            roundedButtonGNTPWGD.Name = "roundedButtonGNTPWGD";
+            roundedButtonGNTPWGD.Size = new Size(142, 40);
+            roundedButtonGNTPWGD.TabIndex = 6;
+            roundedButtonGNTPWGD.Text = "Ganti password";
+            roundedButtonGNTPWGD.UseVisualStyleBackColor = false;
+            roundedButtonGNTPWGD.Click += roundedButtonGNTPWGD_Click;
             // 
             // roundedButtonBRGMSK
             // 
@@ -101,10 +100,9 @@
             roundedButtonBRGMSK.FlatAppearance.BorderSize = 0;
             roundedButtonBRGMSK.FlatStyle = FlatStyle.Flat;
             roundedButtonBRGMSK.ForeColor = Color.White;
-            roundedButtonBRGMSK.Location = new Point(29, 102);
-            roundedButtonBRGMSK.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonBRGMSK.Location = new Point(20, 61);
             roundedButtonBRGMSK.Name = "roundedButtonBRGMSK";
-            roundedButtonBRGMSK.Size = new Size(203, 67);
+            roundedButtonBRGMSK.Size = new Size(142, 40);
             roundedButtonBRGMSK.TabIndex = 1;
             roundedButtonBRGMSK.Text = "Barang Masuk";
             roundedButtonBRGMSK.UseVisualStyleBackColor = false;
@@ -116,10 +114,9 @@
             roundedButtonGudang.FlatAppearance.BorderSize = 0;
             roundedButtonGudang.FlatStyle = FlatStyle.Flat;
             roundedButtonGudang.ForeColor = Color.White;
-            roundedButtonGudang.Location = new Point(29, 25);
-            roundedButtonGudang.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonGudang.Location = new Point(20, 15);
             roundedButtonGudang.Name = "roundedButtonGudang";
-            roundedButtonGudang.Size = new Size(203, 67);
+            roundedButtonGudang.Size = new Size(142, 40);
             roundedButtonGudang.TabIndex = 0;
             roundedButtonGudang.Text = "Dashboard";
             roundedButtonGudang.UseVisualStyleBackColor = false;
@@ -129,22 +126,20 @@
             // 
             panelGudang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelGudang.BackColor = Color.Transparent;
-            panelGudang.Location = new Point(210, 5);
-            panelGudang.Margin = new Padding(4, 5, 4, 5);
+            panelGudang.Location = new Point(147, 3);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(1009, 705);
+            panelGudang.Size = new Size(706, 423);
             panelGudang.TabIndex = 2;
             // 
             // UC_Gudang
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             Controls.Add(panelGudang);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "UC_Gudang";
-            Size = new Size(1264, 725);
+            Size = new Size(885, 435);
             Load += UC_Gudang_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -156,7 +151,7 @@
         private RoundedButton roundedButtonBRGMSK;
         private RoundedButton roundedButtonGudang;
         private RoundedPanel panelGudang;
-        private RoundedButton roundedButton1;
+        private RoundedButton roundedButtonGNTPWGD;
         private RoundedButton roundedButtonBRGKLR;
         private RoundedButton roundedButtonStok;
     }

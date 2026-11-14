@@ -104,7 +104,10 @@ namespace GUedang
             }
 
             Session.UserAktif = user;
+            Sesi.NamaUser = user.Nama;
+            Sesi.RoleUser = user.Role;
             BukaDashboard(user);
+            
         }
 
         private void lblExit_Click(object sender, EventArgs e)

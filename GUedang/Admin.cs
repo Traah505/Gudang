@@ -16,7 +16,7 @@ namespace GUedang
         public Admin(string namaUser)
         {
             InitializeComponent();
-            lblAdmin.Text = "Admin : " + namaUser;
+            lblAdmin.Text = Sesi.NamaUser;
             UC_DashboardAdmin dashboardAdmin = new UC_DashboardAdmin();
             dashboardAdmin.Dock = DockStyle.Fill;
             panelContent.Controls.Clear();
@@ -49,7 +49,7 @@ namespace GUedang
 
         private void label2_Click(object sender, EventArgs e)
         {
-            lblAdmin.Text.Replace("Admin : ", "");
+            lblAdmin.Text = Sesi.NamaUser;
         }
 
 

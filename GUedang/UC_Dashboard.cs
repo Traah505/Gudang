@@ -75,5 +75,15 @@ namespace GUedang
 
             _gridSiap = true;
         }
+
+        private void panelContent2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

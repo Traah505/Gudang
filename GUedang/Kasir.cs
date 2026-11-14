@@ -13,6 +13,7 @@ namespace GUedang
         public Kasir()
         {
             InitializeComponent();
+            lblKasir1.Text = Sesi.NamaUser;
             UC_Kasir dashoardKasir = new UC_Kasir();
             dashoardKasir.Dock = DockStyle.Fill;
             panelKasirHalaman.Controls.Add(dashoardKasir);
@@ -72,7 +73,7 @@ namespace GUedang
 
         private void lblKasir_Click(object sender, EventArgs e)
         {
-            lblKasir.Text = lblKasir.Text.Replace("Kasir : ", "");
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -81,6 +82,18 @@ namespace GUedang
         }
 
         private void roundedButton1_Click_2(object sender, EventArgs e)
+        {
+            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (hasil == DialogResult.Yes)
+            {
+                LoginAkun DashboardLogin = new LoginAkun();
+                DashboardLogin.Show();
+                this.Hide();
+
+            }
+        }
+
+        private void lblKasir1_Click(object sender, EventArgs e)
         {
 
         }

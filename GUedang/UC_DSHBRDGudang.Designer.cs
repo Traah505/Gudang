@@ -336,6 +336,7 @@
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(128, 64);
             roundedPanel2.TabIndex = 6;
+            roundedPanel2.Paint += roundedPanel2_Paint;
             // 
             // label3
             // 

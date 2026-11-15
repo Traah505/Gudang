@@ -18,15 +18,6 @@ namespace GUedang
 
         private void MuatDashboard()
         {
-            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-
-            var jual = PenjualanStore.Muat();
-            var hariIni = jual.Where(t => t.Waktu.Date == DateTime.Today).ToList();
-
-            lblTotalTransaksi.Text = hariIni.Count.ToString();
-            lblTotalPendapatan.Text = "Rp " + hariIni.Sum(t => t.Total).ToString("N0");
-            lblBarangTerjual.Text = hariIni.Sum(t => t.Items.Sum(i => i.Jumlah)).ToString("0.##");
-            lblUserAktif.Text = UserStore.Muat().Count(u => u.Aktif).ToString();
 
             // tabel Transaksi Terbaru (kolom: No, Tanggal, Nama Kasir, Total)
             dgvTransaksiTerbaru.Rows.Clear();

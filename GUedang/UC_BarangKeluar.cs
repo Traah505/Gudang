@@ -13,6 +13,8 @@ namespace GUedang
         public UC_BarangKeluar()
         {
             InitializeComponent();
+            roundedPanel2.PanelColor = Color.AliceBlue;
+            roundedPanel3.PanelColor = Color.Lavender;
         }
 
         private void label4_Click(object sender, EventArgs e)

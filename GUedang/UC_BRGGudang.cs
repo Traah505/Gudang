@@ -13,6 +13,8 @@ namespace GUedang
         public UC_BRGGudang()
         {
             InitializeComponent();
+            roundedPanel3.PanelColor = Color.AliceBlue;
+            roundedPanel4.PanelColor = Color.Honeydew;
         }
 
         private void btnTambahBarang_Click(object sender, EventArgs e)

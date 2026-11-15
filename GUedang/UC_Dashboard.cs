@@ -18,9 +18,15 @@ namespace GUedang
         public UC_Dashboard()
         {
             InitializeComponent();
+            roundedPanel1.PanelColor = Color.AliceBlue;
+            roundedPanel2.PanelColor = Color.AliceBlue;
+            roundedPanel3.PanelColor = Color.Honeydew;
+            roundedPanel4.PanelColor = Color.LemonChiffon;
+            roundedPanel5.PanelColor = Color.MistyRose;
+            roundedPanel6.PanelColor = Color.Azure;
 
-            // dimuat saat pertama dibuat, dan dimuat ulang tiap kali halaman ini
-            // ditampilkan lagi (supaya user baru dari halaman User langsung muncul)
+
+
             Load += (s, e) => MuatData();
             VisibleChanged += (s, e) => { if (Visible) MuatData(); };
         }
@@ -82,6 +88,16 @@ namespace GUedang
         }
 
         private void dgvUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

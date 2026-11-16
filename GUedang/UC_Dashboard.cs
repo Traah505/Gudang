@@ -3,12 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
-// Ganti isi UC_Dashboard.cs (di luar InitializeComponent) dengan kode ini.
-// Nama control yang diasumsikan (ubah lewat Properties > (Name) kalau berbeda):
-//   dgvUser         -> tabel (No, Nama, Jenis, Status, Aksi)
-//   lblJumlahKasir  -> angka "0" di bawah tulisan Kasir
-//   lblJumlahGudang -> angka "0" di bawah tulisan Gudang
-// Angka Barang Menipis dan Barang Habis belum disentuh.
 namespace GUedang
 {
     public partial class UC_Dashboard : UserControl
@@ -25,62 +19,55 @@ namespace GUedang
             roundedPanel5.PanelColor = Color.MistyRose;
             roundedPanel6.PanelColor = Color.Azure;
 
-
-
-            Load += (s, e) => MuatData();
-            VisibleChanged += (s, e) => { if (Visible) MuatData(); };
+        
+            InitializeComponent();
+            Load += (s, e) => MuatDashboard();
+            VisibleChanged += (s, e) => { if (Visible) MuatDashboard(); };
         }
 
-        public void MuatData()
+        private void MuatDashboard()
         {
-            // jangan jalankan saat dibuka di Designer
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
-            if (!_gridSiap) SiapkanGrid();
-
-            try
+            if (dgvPengguna.Columns.Count == 0)
             {
-                var daftar = UserStore.Muat();
-
-                dgvUser.Rows.Clear();
-                int no = 1;
-                foreach (var u in daftar)
-                    dgvUser.Rows.Add(no++, u.Nama, u.Role, u.Aktif ? "Aktif" : "Nonaktif");
-
-                // yang dihitung hanya user yang berstatus Aktif
-                lblJumlahKasir.Text = daftar.Count(u => u.Aktif && u.Role == Roles.Kasir).ToString();
-                lblJumlahGudang.Text = daftar.Count(u => u.Aktif && u.Role == Roles.Gudang).ToString();
+                dgvPengguna.AutoGenerateColumns = false;
+                dgvPengguna.AllowUserToAddRows = false;
+                dgvPengguna.ReadOnly = true;
+                dgvPengguna.RowHeadersVisible = false;
+                dgvPengguna.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvPengguna.Columns.Add("colNo", "No");
+                dgvPengguna.Columns.Add("colNama", "Nama");
+                dgvPengguna.Columns.Add("colJenis", "Jenis");
+                dgvPengguna.Columns.Add("colStatus", "Status");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal membaca data user:\n" + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            var users = UserStore.Muat();
+            var barang = BarangStore.Muat();
+            var jual = PenjualanStore.Muat().Where(t => t.Waktu.Date == DateTime.Today).ToList();
+            var log = HelperJson.BacaData<ModelTransaksi>("DataTransaksi.json")
+                                .Where(t => t.Tanggal.Date == DateTime.Today).ToList();
+
+            lblJumlahKasir.Text = users.Count(u => u.Role == "Kasir").ToString();
+            lblJumlahGudang.Text = users.Count(u => u.Role == "Gudang").ToString();
+            lblBarangMenipis.Text = barang.Count(b => b.Status == "Menipis").ToString();
+            lblBarangHabis.Text = barang.Count(b => b.Status == "Habis").ToString();
+
+            dgvPengguna.Rows.Clear();
+            int no = 1;
+            foreach (var u in users)
+                dgvPengguna.Rows.Add(no++, u.Nama, u.Role, u.Aktif ? "Aktif" : "Nonaktif");
+
+            lblPendapatanHariIni.Text = "Rp " + jual.Sum(t => t.Total).ToString("N0");
+            lblTransaksiHariIni.Text = jual.Count.ToString();
+
+            lblMasuk.Text = log.Where(t => t.Jenis == "Masuk").Sum(t => t.Jumlah).ToString("0.##");
+            lblKeluar.Text = Math.Abs(log.Where(t => t.Jenis == "Keluar").Sum(t => t.Jumlah)).ToString("0.##");
+            lblStokSaatIni.Text = barang.Sum(b => b.Stok).ToString("0.##");
         }
 
-        private void SiapkanGrid()
-        {
-            dgvUser.AutoGenerateColumns = false;
-            dgvUser.AllowUserToAddRows = false;
-            dgvUser.AllowUserToDeleteRows = false;
-            dgvUser.ReadOnly = true;
-            dgvUser.RowHeadersVisible = false;
-            dgvUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUser.MultiSelect = false;
-            dgvUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dgvUser.Columns.Clear();
-            dgvUser.Columns.Add(new DataGridViewTextBoxColumn
-            { Name = "colNo", HeaderText = "No", FillWeight = 10 });
-            dgvUser.Columns.Add(new DataGridViewTextBoxColumn
-            { Name = "colNama", HeaderText = "Nama", FillWeight = 45 });
-            dgvUser.Columns.Add(new DataGridViewTextBoxColumn
-            { Name = "colJenis", HeaderText = "Jenis", FillWeight = 25 });
-            dgvUser.Columns.Add(new DataGridViewTextBoxColumn
-            { Name = "colStatus", HeaderText = "Status", FillWeight = 20 });
 
-            _gridSiap = true;
-        }
 
         private void panelContent2_Paint(object sender, PaintEventArgs e)
         {

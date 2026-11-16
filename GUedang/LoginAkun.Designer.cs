@@ -78,7 +78,7 @@
             txtNama.BackColor = Color.White;
             txtNama.BorderColor = Color.Navy;
             txtNama.Location = new Point(41, 128);
-            txtNama.Margin = new Padding(2, 2, 2, 2);
+            txtNama.Margin = new Padding(2);
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(210, 30);
             txtNama.TabIndex = 26;
@@ -133,7 +133,7 @@
             txtPassword.BackColor = Color.White;
             txtPassword.BorderColor = Color.Navy;
             txtPassword.Location = new Point(41, 186);
-            txtPassword.Margin = new Padding(2, 2, 2, 2);
+            txtPassword.Margin = new Padding(2);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(210, 30);
             txtPassword.TabIndex = 23;
@@ -235,10 +235,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 1);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Location = new Point(-1, -7);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(328, 347);
+            pictureBox1.Size = new Size(328, 362);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;

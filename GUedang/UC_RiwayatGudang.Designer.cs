@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             roundedPanel5 = new RoundedPanel();
             dgvRiwayatGudang = new DataGridView();
@@ -107,29 +107,29 @@
             // 
             dgvRiwayatGudang.AllowUserToAddRows = false;
             dgvRiwayatGudang.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.DeepSkyBlue;
-            dgvRiwayatGudang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.DeepSkyBlue;
+            dgvRiwayatGudang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvRiwayatGudang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiwayatGudang.BackgroundColor = Color.White;
             dgvRiwayatGudang.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvRiwayatGudang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvRiwayatGudang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRiwayatGudang.ColumnHeadersHeight = 45;
             dgvRiwayatGudang.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colJenisTransaksi, colNamaBarang, colJumlah, colStokAkhir, colKeterangan });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvRiwayatGudang.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvRiwayatGudang.DefaultCellStyle = dataGridViewCellStyle3;
             dgvRiwayatGudang.EnableHeadersVisualStyles = false;
             dgvRiwayatGudang.GridColor = Color.White;
             dgvRiwayatGudang.Location = new Point(11, 8);
@@ -378,6 +378,7 @@
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(752, 51);
             roundedPanel1.TabIndex = 0;
+            roundedPanel1.Paint += roundedPanel1_Paint;
             // 
             // btnCari
             // 

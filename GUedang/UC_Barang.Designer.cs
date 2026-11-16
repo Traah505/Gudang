@@ -58,6 +58,14 @@
             label11 = new Label();
             panelDaftarBarang = new RoundedPanel();
             dgvKelolaBarang = new DataGridView();
+            colKode = new DataGridViewTextBoxColumn();
+            colNama = new DataGridViewTextBoxColumn();
+            colKategori = new DataGridViewTextBoxColumn();
+            colHargaBeli = new DataGridViewTextBoxColumn();
+            colHargaJual = new DataGridViewTextBoxColumn();
+            colStok = new DataGridViewTextBoxColumn();
+            colMinimum = new DataGridViewTextBoxColumn();
+            colStatus = new DataGridViewTextBoxColumn();
             roundedPanel5 = new RoundedPanel();
             panelTotal = new RoundedPanel();
             lblTotalBarang = new Label();
@@ -72,14 +80,6 @@
             lblStokAman = new Label();
             label12 = new Label();
             roundedPanel1 = new RoundedPanel();
-            colKode = new DataGridViewTextBoxColumn();
-            colNama = new DataGridViewTextBoxColumn();
-            colKategori = new DataGridViewTextBoxColumn();
-            colHargaBeli = new DataGridViewTextBoxColumn();
-            colHargaJual = new DataGridViewTextBoxColumn();
-            colStok = new DataGridViewTextBoxColumn();
-            colMinimum = new DataGridViewTextBoxColumn();
-            colStatus = new DataGridViewTextBoxColumn();
             roundedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMinimum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numHargaJual).BeginInit();
@@ -471,6 +471,84 @@
             dgvKelolaBarang.Size = new Size(888, 258);
             dgvKelolaBarang.TabIndex = 0;
             // 
+            // colKode
+            // 
+            colKode.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colKode.HeaderText = "Kode";
+            colKode.MinimumWidth = 8;
+            colKode.Name = "colKode";
+            colKode.ReadOnly = true;
+            colKode.Width = 150;
+            // 
+            // colNama
+            // 
+            colNama.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colNama.FillWeight = 180F;
+            colNama.HeaderText = "Nama";
+            colNama.MinimumWidth = 8;
+            colNama.Name = "colNama";
+            colNama.ReadOnly = true;
+            colNama.Width = 180;
+            // 
+            // colKategori
+            // 
+            colKategori.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colKategori.FillWeight = 130F;
+            colKategori.HeaderText = "Kategori";
+            colKategori.MinimumWidth = 8;
+            colKategori.Name = "colKategori";
+            colKategori.ReadOnly = true;
+            colKategori.Width = 130;
+            // 
+            // colHargaBeli
+            // 
+            colHargaBeli.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colHargaBeli.FillWeight = 130F;
+            colHargaBeli.HeaderText = "Hrg Beli";
+            colHargaBeli.MinimumWidth = 8;
+            colHargaBeli.Name = "colHargaBeli";
+            colHargaBeli.ReadOnly = true;
+            colHargaBeli.Width = 130;
+            // 
+            // colHargaJual
+            // 
+            colHargaJual.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colHargaJual.FillWeight = 130F;
+            colHargaJual.HeaderText = "Hrg Jual";
+            colHargaJual.MinimumWidth = 8;
+            colHargaJual.Name = "colHargaJual";
+            colHargaJual.ReadOnly = true;
+            colHargaJual.Width = 130;
+            // 
+            // colStok
+            // 
+            colStok.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colStok.FillWeight = 80F;
+            colStok.HeaderText = "Stok";
+            colStok.MinimumWidth = 8;
+            colStok.Name = "colStok";
+            colStok.ReadOnly = true;
+            colStok.Width = 80;
+            // 
+            // colMinimum
+            // 
+            colMinimum.FillWeight = 80F;
+            colMinimum.HeaderText = "Minimum";
+            colMinimum.MinimumWidth = 8;
+            colMinimum.Name = "colMinimum";
+            colMinimum.ReadOnly = true;
+            colMinimum.Width = 150;
+            // 
+            // colStatus
+            // 
+            colStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            colStatus.FillWeight = 110F;
+            colStatus.HeaderText = "Status";
+            colStatus.MinimumWidth = 8;
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            colStatus.Width = 110;
+            // 
             // roundedPanel5
             // 
             roundedPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -638,84 +716,6 @@
             roundedPanel1.Size = new Size(1398, 534);
             roundedPanel1.TabIndex = 14;
             roundedPanel1.Paint += roundedPanel1_Paint;
-            // 
-            // colKode
-            // 
-            colKode.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colKode.HeaderText = "Kode";
-            colKode.MinimumWidth = 8;
-            colKode.Name = "colKode";
-            colKode.ReadOnly = true;
-            colKode.Width = 150;
-            // 
-            // colNama
-            // 
-            colNama.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colNama.FillWeight = 180F;
-            colNama.HeaderText = "Nama";
-            colNama.MinimumWidth = 8;
-            colNama.Name = "colNama";
-            colNama.ReadOnly = true;
-            colNama.Width = 180;
-            // 
-            // colKategori
-            // 
-            colKategori.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colKategori.FillWeight = 130F;
-            colKategori.HeaderText = "Kategori";
-            colKategori.MinimumWidth = 8;
-            colKategori.Name = "colKategori";
-            colKategori.ReadOnly = true;
-            colKategori.Width = 130;
-            // 
-            // colHargaBeli
-            // 
-            colHargaBeli.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colHargaBeli.FillWeight = 130F;
-            colHargaBeli.HeaderText = "Hrg Beli";
-            colHargaBeli.MinimumWidth = 8;
-            colHargaBeli.Name = "colHargaBeli";
-            colHargaBeli.ReadOnly = true;
-            colHargaBeli.Width = 130;
-            // 
-            // colHargaJual
-            // 
-            colHargaJual.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colHargaJual.FillWeight = 130F;
-            colHargaJual.HeaderText = "Hrg Jual";
-            colHargaJual.MinimumWidth = 8;
-            colHargaJual.Name = "colHargaJual";
-            colHargaJual.ReadOnly = true;
-            colHargaJual.Width = 130;
-            // 
-            // colStok
-            // 
-            colStok.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colStok.FillWeight = 80F;
-            colStok.HeaderText = "Stok";
-            colStok.MinimumWidth = 8;
-            colStok.Name = "colStok";
-            colStok.ReadOnly = true;
-            colStok.Width = 80;
-            // 
-            // colMinimum
-            // 
-            colMinimum.FillWeight = 80F;
-            colMinimum.HeaderText = "Minimum";
-            colMinimum.MinimumWidth = 8;
-            colMinimum.Name = "colMinimum";
-            colMinimum.ReadOnly = true;
-            colMinimum.Width = 150;
-            // 
-            // colStatus
-            // 
-            colStatus.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            colStatus.FillWeight = 110F;
-            colStatus.HeaderText = "Status";
-            colStatus.MinimumWidth = 8;
-            colStatus.Name = "colStatus";
-            colStatus.ReadOnly = true;
-            colStatus.Width = 110;
             // 
             // UC_Barang
             // 

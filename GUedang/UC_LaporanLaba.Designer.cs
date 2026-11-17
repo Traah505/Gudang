@@ -31,6 +31,23 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            panelRounded1 = new PanelRounded();
+            dgvLaporanLaba = new DataGridView();
+            colNo = new DataGridViewTextBoxColumn();
+            colTanggal = new DataGridViewTextBoxColumn();
+            colTransaksi = new DataGridViewTextBoxColumn();
+            colPenjualan = new DataGridViewTextBoxColumn();
+            colModal = new DataGridViewTextBoxColumn();
+            colLaba = new DataGridViewTextBoxColumn();
+            label14 = new Label();
+            roundedPanel5 = new RoundedPanel();
+            roundedPanel6 = new RoundedPanel();
+            btnTampilakan = new Rondedbuton();
+            dtpTanggalAkhir = new DateTimePicker();
+            label13 = new Label();
+            dtpTanggalAwal = new DateTimePicker();
+            label12 = new Label();
+            label5 = new Label();
             roundedPanel4 = new RoundedPanel();
             lblPersentase = new Label();
             label10 = new Label();
@@ -49,31 +66,14 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            roundedPanel5 = new RoundedPanel();
-            label5 = new Label();
-            label12 = new Label();
-            dtpTanggalAwal = new DateTimePicker();
-            label13 = new Label();
-            dtpTanggalAkhir = new DateTimePicker();
-            btnTampilakan = new Rondedbuton();
-            roundedPanel6 = new RoundedPanel();
-            panelRounded1 = new PanelRounded();
-            label14 = new Label();
-            dgvLaporanLaba = new DataGridView();
-            colNo = new DataGridViewTextBoxColumn();
-            colTanggal = new DataGridViewTextBoxColumn();
-            colTransaksi = new DataGridViewTextBoxColumn();
-            colPenjualan = new DataGridViewTextBoxColumn();
-            colModal = new DataGridViewTextBoxColumn();
-            colLaba = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
+            panelRounded1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporanLaba).BeginInit();
+            roundedPanel5.SuspendLayout();
             roundedPanel4.SuspendLayout();
             roundedPanel3.SuspendLayout();
             roundedPanel2.SuspendLayout();
             roundedPanel1.SuspendLayout();
-            roundedPanel5.SuspendLayout();
-            panelRounded1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLaporanLaba).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,196 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1405, 677);
             panel1.TabIndex = 0;
+            // 
+            // panelRounded1
+            // 
+            panelRounded1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelRounded1.BackColor = Color.Transparent;
+            panelRounded1.Controls.Add(dgvLaporanLaba);
+            panelRounded1.Controls.Add(label14);
+            panelRounded1.Location = new Point(25, 383);
+            panelRounded1.Name = "panelRounded1";
+            panelRounded1.Size = new Size(1345, 237);
+            panelRounded1.TabIndex = 9;
+            // 
+            // dgvLaporanLaba
+            // 
+            dgvLaporanLaba.AllowUserToAddRows = false;
+            dgvLaporanLaba.AllowUserToDeleteRows = false;
+            dgvLaporanLaba.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLaporanLaba.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvLaporanLaba.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvLaporanLaba.ColumnHeadersHeight = 40;
+            dgvLaporanLaba.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colTransaksi, colPenjualan, colModal, colLaba });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightSteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvLaporanLaba.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvLaporanLaba.EnableHeadersVisualStyles = false;
+            dgvLaporanLaba.Location = new Point(19, 27);
+            dgvLaporanLaba.MultiSelect = false;
+            dgvLaporanLaba.Name = "dgvLaporanLaba";
+            dgvLaporanLaba.ReadOnly = true;
+            dgvLaporanLaba.RowHeadersVisible = false;
+            dgvLaporanLaba.RowHeadersWidth = 62;
+            dgvLaporanLaba.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvLaporanLaba.Size = new Size(1298, 197);
+            dgvLaporanLaba.TabIndex = 15;
+            // 
+            // colNo
+            // 
+            colNo.FillWeight = 50F;
+            colNo.HeaderText = "No";
+            colNo.MinimumWidth = 8;
+            colNo.Name = "colNo";
+            colNo.ReadOnly = true;
+            colNo.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTanggal
+            // 
+            colTanggal.HeaderText = "Tanggal";
+            colTanggal.MinimumWidth = 8;
+            colTanggal.Name = "colTanggal";
+            colTanggal.ReadOnly = true;
+            colTanggal.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colTransaksi
+            // 
+            colTransaksi.HeaderText = "Transaksi";
+            colTransaksi.MinimumWidth = 8;
+            colTransaksi.Name = "colTransaksi";
+            colTransaksi.ReadOnly = true;
+            colTransaksi.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colPenjualan
+            // 
+            colPenjualan.HeaderText = "Penjualan";
+            colPenjualan.MinimumWidth = 8;
+            colPenjualan.Name = "colPenjualan";
+            colPenjualan.ReadOnly = true;
+            colPenjualan.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colModal
+            // 
+            colModal.HeaderText = "Modal";
+            colModal.MinimumWidth = 8;
+            colModal.Name = "colModal";
+            colModal.ReadOnly = true;
+            colModal.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colLaba
+            // 
+            colLaba.HeaderText = "Laba";
+            colLaba.MinimumWidth = 8;
+            colLaba.Name = "colLaba";
+            colLaba.ReadOnly = true;
+            colLaba.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Calibri", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.MidnightBlue;
+            label14.Location = new Point(19, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(204, 24);
+            label14.TabIndex = 14;
+            label14.Text = "Rincian Laba Penjualan";
+            // 
+            // roundedPanel5
+            // 
+            roundedPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            roundedPanel5.BackColor = Color.Transparent;
+            roundedPanel5.Controls.Add(roundedPanel6);
+            roundedPanel5.Controls.Add(btnTampilakan);
+            roundedPanel5.Controls.Add(dtpTanggalAkhir);
+            roundedPanel5.Controls.Add(label13);
+            roundedPanel5.Controls.Add(dtpTanggalAwal);
+            roundedPanel5.Controls.Add(label12);
+            roundedPanel5.Controls.Add(label5);
+            roundedPanel5.Location = new Point(22, 243);
+            roundedPanel5.Name = "roundedPanel5";
+            roundedPanel5.Size = new Size(1348, 134);
+            roundedPanel5.TabIndex = 8;
+            // 
+            // roundedPanel6
+            // 
+            roundedPanel6.BackColor = Color.Transparent;
+            roundedPanel6.Location = new Point(0, 156);
+            roundedPanel6.Name = "roundedPanel6";
+            roundedPanel6.Size = new Size(1348, 221);
+            roundedPanel6.TabIndex = 9;
+            // 
+            // btnTampilakan
+            // 
+            btnTampilakan.BackColor = Color.White;
+            btnTampilakan.BackgroundImageLayout = ImageLayout.None;
+            btnTampilakan.FlatAppearance.BorderSize = 0;
+            btnTampilakan.FlatStyle = FlatStyle.Flat;
+            btnTampilakan.ForeColor = Color.Black;
+            btnTampilakan.Location = new Point(1021, 64);
+            btnTampilakan.Name = "btnTampilakan";
+            btnTampilakan.Size = new Size(225, 44);
+            btnTampilakan.TabIndex = 13;
+            btnTampilakan.Text = "Tampilkan";
+            btnTampilakan.UseVisualStyleBackColor = false;
+            // 
+            // dtpTanggalAkhir
+            // 
+            dtpTanggalAkhir.Format = DateTimePickerFormat.Short;
+            dtpTanggalAkhir.Location = new Point(305, 77);
+            dtpTanggalAkhir.Name = "dtpTanggalAkhir";
+            dtpTanggalAkhir.Size = new Size(141, 31);
+            dtpTanggalAkhir.TabIndex = 12;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(305, 55);
+            label13.Name = "label13";
+            label13.Size = new Size(98, 19);
+            label13.TabIndex = 11;
+            label13.Text = "Tanggal Akhir";
+            // 
+            // dtpTanggalAwal
+            // 
+            dtpTanggalAwal.Format = DateTimePickerFormat.Short;
+            dtpTanggalAwal.Location = new Point(30, 77);
+            dtpTanggalAwal.Name = "dtpTanggalAwal";
+            dtpTanggalAwal.Size = new Size(141, 31);
+            dtpTanggalAwal.TabIndex = 10;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(30, 55);
+            label12.Name = "label12";
+            label12.Size = new Size(96, 19);
+            label12.TabIndex = 9;
+            label12.Text = "Tanggal Awal";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(22, 18);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 19);
+            label5.TabIndex = 5;
+            label5.Text = "Filter Laporan";
             // 
             // roundedPanel4
             // 
@@ -287,195 +477,6 @@
             label1.TabIndex = 0;
             label1.Text = "Laporan Laba";
             // 
-            // roundedPanel5
-            // 
-            roundedPanel5.BackColor = Color.Transparent;
-            roundedPanel5.Controls.Add(roundedPanel6);
-            roundedPanel5.Controls.Add(btnTampilakan);
-            roundedPanel5.Controls.Add(dtpTanggalAkhir);
-            roundedPanel5.Controls.Add(label13);
-            roundedPanel5.Controls.Add(dtpTanggalAwal);
-            roundedPanel5.Controls.Add(label12);
-            roundedPanel5.Controls.Add(label5);
-            roundedPanel5.Location = new Point(22, 243);
-            roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Size = new Size(1348, 134);
-            roundedPanel5.TabIndex = 8;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(22, 18);
-            label5.Name = "label5";
-            label5.Size = new Size(104, 19);
-            label5.TabIndex = 5;
-            label5.Text = "Filter Laporan";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(30, 55);
-            label12.Name = "label12";
-            label12.Size = new Size(96, 19);
-            label12.TabIndex = 9;
-            label12.Text = "Tanggal Awal";
-            // 
-            // dtpTanggalAwal
-            // 
-            dtpTanggalAwal.Format = DateTimePickerFormat.Short;
-            dtpTanggalAwal.Location = new Point(30, 77);
-            dtpTanggalAwal.Name = "dtpTanggalAwal";
-            dtpTanggalAwal.Size = new Size(141, 31);
-            dtpTanggalAwal.TabIndex = 10;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(305, 55);
-            label13.Name = "label13";
-            label13.Size = new Size(98, 19);
-            label13.TabIndex = 11;
-            label13.Text = "Tanggal Akhir";
-            // 
-            // dtpTanggalAkhir
-            // 
-            dtpTanggalAkhir.Format = DateTimePickerFormat.Short;
-            dtpTanggalAkhir.Location = new Point(305, 77);
-            dtpTanggalAkhir.Name = "dtpTanggalAkhir";
-            dtpTanggalAkhir.Size = new Size(141, 31);
-            dtpTanggalAkhir.TabIndex = 12;
-            // 
-            // btnTampilakan
-            // 
-            btnTampilakan.BackColor = Color.White;
-            btnTampilakan.BackgroundImageLayout = ImageLayout.None;
-            btnTampilakan.FlatAppearance.BorderSize = 0;
-            btnTampilakan.FlatStyle = FlatStyle.Flat;
-            btnTampilakan.ForeColor = Color.Black;
-            btnTampilakan.Location = new Point(1021, 64);
-            btnTampilakan.Name = "btnTampilakan";
-            btnTampilakan.Size = new Size(225, 44);
-            btnTampilakan.TabIndex = 13;
-            btnTampilakan.Text = "Tampilkan";
-            btnTampilakan.UseVisualStyleBackColor = false;
-            // 
-            // roundedPanel6
-            // 
-            roundedPanel6.BackColor = Color.Transparent;
-            roundedPanel6.Location = new Point(0, 156);
-            roundedPanel6.Name = "roundedPanel6";
-            roundedPanel6.Size = new Size(1348, 221);
-            roundedPanel6.TabIndex = 9;
-            // 
-            // panelRounded1
-            // 
-            panelRounded1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelRounded1.BackColor = Color.Transparent;
-            panelRounded1.Controls.Add(dgvLaporanLaba);
-            panelRounded1.Controls.Add(label14);
-            panelRounded1.Location = new Point(25, 383);
-            panelRounded1.Name = "panelRounded1";
-            panelRounded1.Size = new Size(1345, 237);
-            panelRounded1.TabIndex = 9;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Calibri", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.MidnightBlue;
-            label14.Location = new Point(19, 0);
-            label14.Name = "label14";
-            label14.Size = new Size(204, 24);
-            label14.TabIndex = 14;
-            label14.Text = "Rincian Laba Penjualan";
-            // 
-            // dgvLaporanLaba
-            // 
-            dgvLaporanLaba.AllowUserToAddRows = false;
-            dgvLaporanLaba.AllowUserToDeleteRows = false;
-            dgvLaporanLaba.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvLaporanLaba.BackgroundColor = Color.White;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLaporanLaba.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvLaporanLaba.ColumnHeadersHeight = 40;
-            dgvLaporanLaba.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colTransaksi, colPenjualan, colModal, colLaba });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = Color.LightSteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLaporanLaba.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvLaporanLaba.EnableHeadersVisualStyles = false;
-            dgvLaporanLaba.Location = new Point(19, 27);
-            dgvLaporanLaba.MultiSelect = false;
-            dgvLaporanLaba.Name = "dgvLaporanLaba";
-            dgvLaporanLaba.ReadOnly = true;
-            dgvLaporanLaba.RowHeadersVisible = false;
-            dgvLaporanLaba.RowHeadersWidth = 62;
-            dgvLaporanLaba.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLaporanLaba.Size = new Size(1298, 197);
-            dgvLaporanLaba.TabIndex = 15;
-            // 
-            // colNo
-            // 
-            colNo.FillWeight = 50F;
-            colNo.HeaderText = "No";
-            colNo.MinimumWidth = 8;
-            colNo.Name = "colNo";
-            colNo.ReadOnly = true;
-            colNo.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colTanggal
-            // 
-            colTanggal.HeaderText = "Tanggal";
-            colTanggal.MinimumWidth = 8;
-            colTanggal.Name = "colTanggal";
-            colTanggal.ReadOnly = true;
-            colTanggal.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colTransaksi
-            // 
-            colTransaksi.HeaderText = "Transaksi";
-            colTransaksi.MinimumWidth = 8;
-            colTransaksi.Name = "colTransaksi";
-            colTransaksi.ReadOnly = true;
-            colTransaksi.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colPenjualan
-            // 
-            colPenjualan.HeaderText = "Penjualan";
-            colPenjualan.MinimumWidth = 8;
-            colPenjualan.Name = "colPenjualan";
-            colPenjualan.ReadOnly = true;
-            colPenjualan.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colModal
-            // 
-            colModal.HeaderText = "Modal";
-            colModal.MinimumWidth = 8;
-            colModal.Name = "colModal";
-            colModal.ReadOnly = true;
-            colModal.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colLaba
-            // 
-            colLaba.HeaderText = "Laba";
-            colLaba.MinimumWidth = 8;
-            colLaba.Name = "colLaba";
-            colLaba.ReadOnly = true;
-            colLaba.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
             // UC_LaporanLaba
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -485,6 +486,11 @@
             Size = new Size(1408, 635);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelRounded1.ResumeLayout(false);
+            panelRounded1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLaporanLaba).EndInit();
+            roundedPanel5.ResumeLayout(false);
+            roundedPanel5.PerformLayout();
             roundedPanel4.ResumeLayout(false);
             roundedPanel4.PerformLayout();
             roundedPanel3.ResumeLayout(false);
@@ -493,11 +499,6 @@
             roundedPanel2.PerformLayout();
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
-            roundedPanel5.ResumeLayout(false);
-            roundedPanel5.PerformLayout();
-            panelRounded1.ResumeLayout(false);
-            panelRounded1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvLaporanLaba).EndInit();
             ResumeLayout(false);
         }
 

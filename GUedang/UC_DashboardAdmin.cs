@@ -41,8 +41,18 @@ namespace GUedang
         {
             ResetButtonColors();
             roundedButtonRiwayat.BackColor = Color.DodgerBlue;
+            UC_RiwayatGudang halamanRiwayat = new UC_RiwayatGudang();
+            TampilkanHalaman(halamanRiwayat);
+
         }
 
+        private void roundedButtonLaporanAktivitas_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonLaporanAktivitas.BackColor = Color.DodgerBlue;
+            UC_LaporanAktivitas halamanAktivitas = new UC_LaporanAktivitas();
+            TampilkanHalaman(halamanAktivitas);
+        }
         private void ResetButtonColors()
         {
             roundedButtonDashboard.BackColor = Color.Navy;
@@ -50,7 +60,7 @@ namespace GUedang
             roundedButtonLaporan.BackColor = Color.Navy;
             roundedButtonBarang.BackColor = Color.Navy;
             roundedButtonRiwayat.BackColor = Color.Navy;
-            roundedButtonLaporan.BackColor = Color.Navy;
+            roundedButtonLaporanAktivitas.BackColor = Color.Navy;
         }
 
         private void TampilkanHalaman(UserControl Halaman)
@@ -142,6 +152,15 @@ namespace GUedang
         private void roundedButtonLaporanGudang_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void roundedButtonLaba_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            roundedButtonLaba.BackColor = Color.DodgerBlue;
+
+            UC_LaporanLaba halamanLaba = new UC_LaporanLaba();
+            TampilkanHalaman(halamanLaba);
         }
     }
 }

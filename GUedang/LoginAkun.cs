@@ -106,6 +106,8 @@ namespace GUedang
             Session.UserAktif = user;
             Sesi.NamaUser = user.Nama;
             Sesi.RoleUser = user.Role;
+
+            AktivitasStore.Catat(user.Nama,user.Role.ToString(), "Login");
             BukaDashboard(user);
             
         }

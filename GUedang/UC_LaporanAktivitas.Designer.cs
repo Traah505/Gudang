@@ -33,22 +33,22 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelLaporanAktivitas = new Panel();
+            roundedPanel2 = new RoundedPanel();
+            dgvAktivitas = new DataGridView();
             roundedPanel1 = new RoundedPanel();
-            label1 = new Label();
-            cmbPeran = new ComboBox();
             dtpWaktu = new DateTimePicker();
             label2 = new Label();
-            dgvAktivitas = new DataGridView();
-            roundedPanel2 = new RoundedPanel();
+            cmbPeran = new ComboBox();
+            label1 = new Label();
+            timerJam = new System.Windows.Forms.Timer(components);
             colWaktu = new DataGridViewTextBoxColumn();
             colNama = new DataGridViewTextBoxColumn();
             colPeran = new DataGridViewTextBoxColumn();
             colAktivitas = new DataGridViewTextBoxColumn();
-            timerJam = new System.Windows.Forms.Timer(components);
             panelLaporanAktivitas.SuspendLayout();
-            roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAktivitas).BeginInit();
             roundedPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvAktivitas).BeginInit();
+            roundedPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelLaporanAktivitas
@@ -56,6 +56,7 @@
             panelLaporanAktivitas.BackColor = Color.White;
             panelLaporanAktivitas.Controls.Add(roundedPanel2);
             panelLaporanAktivitas.Controls.Add(roundedPanel1);
+            panelLaporanAktivitas.Controls.Add(label1);
             panelLaporanAktivitas.Dock = DockStyle.Fill;
             panelLaporanAktivitas.Location = new Point(0, 0);
             panelLaporanAktivitas.Name = "panelLaporanAktivitas";
@@ -63,56 +64,15 @@
             panelLaporanAktivitas.TabIndex = 0;
             panelLaporanAktivitas.Paint += panelLaporanAktivitas_Paint;
             // 
-            // roundedPanel1
+            // roundedPanel2
             // 
-            roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.Controls.Add(dtpWaktu);
-            roundedPanel1.Controls.Add(label2);
-            roundedPanel1.Controls.Add(label1);
-            roundedPanel1.Controls.Add(cmbPeran);
-            roundedPanel1.Location = new Point(20, 20);
-            roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(1040, 123);
-            roundedPanel1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(19, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(188, 33);
-            label1.TabIndex = 0;
-            label1.Text = "Log Aktivitas";
-            label1.Click += label1_Click;
-            // 
-            // cmbPeran
-            // 
-            cmbPeran.FormattingEnabled = true;
-            cmbPeran.Items.AddRange(new object[] { "Semua Peran", "Admin", "Kasir", "Gudang" });
-            cmbPeran.Location = new Point(830, 69);
-            cmbPeran.Name = "cmbPeran";
-            cmbPeran.Size = new Size(182, 33);
-            cmbPeran.TabIndex = 1;
-            // 
-            // dtpWaktu
-            // 
-            dtpWaktu.CustomFormat = "dd MM yyyy HH;mm;ss";
-            dtpWaktu.Format = DateTimePickerFormat.Custom;
-            dtpWaktu.Location = new Point(812, 13);
-            dtpWaktu.Name = "dtpWaktu";
-            dtpWaktu.Size = new Size(200, 31);
-            dtpWaktu.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(769, 72);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 25);
-            label2.TabIndex = 3;
-            label2.Text = "Peran";
+            roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            roundedPanel2.BackColor = Color.Transparent;
+            roundedPanel2.Controls.Add(dgvAktivitas);
+            roundedPanel2.Location = new Point(20, 149);
+            roundedPanel2.Name = "roundedPanel2";
+            roundedPanel2.Size = new Size(1040, 427);
+            roundedPanel2.TabIndex = 4;
             // 
             // dgvAktivitas
             // 
@@ -152,17 +112,66 @@
             dgvAktivitas.Size = new Size(993, 387);
             dgvAktivitas.TabIndex = 3;
             // 
-            // roundedPanel2
+            // roundedPanel1
             // 
-            roundedPanel2.BackColor = Color.Transparent;
-            roundedPanel2.Controls.Add(dgvAktivitas);
-            roundedPanel2.Location = new Point(20, 149);
-            roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1040, 427);
-            roundedPanel2.TabIndex = 4;
+            roundedPanel1.Anchor = AnchorStyles.Top;
+            roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.Controls.Add(dtpWaktu);
+            roundedPanel1.Controls.Add(label2);
+            roundedPanel1.Controls.Add(cmbPeran);
+            roundedPanel1.Location = new Point(260, 20);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Size = new Size(800, 123);
+            roundedPanel1.TabIndex = 2;
+            // 
+            // dtpWaktu
+            // 
+            dtpWaktu.CustomFormat = "dd MM yyyy HH;mm;ss";
+            dtpWaktu.Format = DateTimePickerFormat.Custom;
+            dtpWaktu.Location = new Point(559, 11);
+            dtpWaktu.Name = "dtpWaktu";
+            dtpWaktu.Size = new Size(200, 31);
+            dtpWaktu.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(581, 44);
+            label2.Name = "label2";
+            label2.Size = new Size(55, 25);
+            label2.TabIndex = 3;
+            label2.Text = "Peran";
+            // 
+            // cmbPeran
+            // 
+            cmbPeran.FormattingEnabled = true;
+            cmbPeran.Items.AddRange(new object[] { "Semua Peran", "Admin", "Kasir", "Gudang" });
+            cmbPeran.Location = new Point(581, 72);
+            cmbPeran.Name = "cmbPeran";
+            cmbPeran.Size = new Size(182, 33);
+            cmbPeran.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(3, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(188, 33);
+            label1.TabIndex = 0;
+            label1.Text = "Log Aktivitas";
+            label1.Click += label1_Click;
+            // 
+            // timerJam
+            // 
+            timerJam.Enabled = true;
+            timerJam.Interval = 1000;
+            timerJam.Tick += timerJam_Tick;
             // 
             // colWaktu
             // 
+            colWaktu.DataPropertyName = "Waktu";
             colWaktu.FillWeight = 160F;
             colWaktu.HeaderText = "Waktu";
             colWaktu.MinimumWidth = 8;
@@ -170,6 +179,7 @@
             // 
             // colNama
             // 
+            colNama.DataPropertyName = "Nama";
             colNama.FillWeight = 150F;
             colNama.HeaderText = "Nama";
             colNama.MinimumWidth = 8;
@@ -177,6 +187,7 @@
             // 
             // colPeran
             // 
+            colPeran.DataPropertyName = "Peran";
             colPeran.FillWeight = 130F;
             colPeran.HeaderText = "peran";
             colPeran.MinimumWidth = 8;
@@ -184,16 +195,11 @@
             // 
             // colAktivitas
             // 
+            colAktivitas.DataPropertyName = "Aktivitas";
             colAktivitas.FillWeight = 150F;
             colAktivitas.HeaderText = "Aktivitas";
             colAktivitas.MinimumWidth = 8;
             colAktivitas.Name = "colAktivitas";
-            // 
-            // timerJam
-            // 
-            timerJam.Enabled = true;
-            timerJam.Interval = 1000;
-            timerJam.Tick += timerJam_Tick;
             // 
             // UC_LaporanAktivitas
             // 
@@ -203,10 +209,11 @@
             Name = "UC_LaporanAktivitas";
             Size = new Size(1095, 593);
             panelLaporanAktivitas.ResumeLayout(false);
+            panelLaporanAktivitas.PerformLayout();
+            roundedPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvAktivitas).EndInit();
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAktivitas).EndInit();
-            roundedPanel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -220,10 +227,10 @@
         private Label label2;
         private DataGridView dgvAktivitas;
         private RoundedPanel roundedPanel2;
+        private System.Windows.Forms.Timer timerJam;
         private DataGridViewTextBoxColumn colWaktu;
         private DataGridViewTextBoxColumn colNama;
         private DataGridViewTextBoxColumn colPeran;
         private DataGridViewTextBoxColumn colAktivitas;
-        private System.Windows.Forms.Timer timerJam;
     }
 }

@@ -44,6 +44,7 @@
             panel4 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
+            label1 = new Label();
             roundedPanel4 = new RoundedPanel();
             panel6 = new Panel();
             lblStokSaatIni = new Label();
@@ -64,7 +65,6 @@
             label3 = new Label();
             dtpDari = new DateTimePicker();
             dtpSampai = new DateTimePicker();
-            label1 = new Label();
             panel1.SuspendLayout();
             roundedPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRiwayatGudang).BeginInit();
@@ -77,30 +77,31 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(roundedPanel5);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(roundedPanel4);
             panel1.Controls.Add(roundedPanel3);
             panel1.Controls.Add(roundedPanel2);
             panel1.Controls.Add(roundedPanel1);
-            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(756, 334);
+            panel1.Size = new Size(1080, 557);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // roundedPanel5
             // 
+            roundedPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel5.BackColor = Color.Transparent;
             roundedPanel5.Controls.Add(dgvRiwayatGudang);
-            roundedPanel5.Location = new Point(18, 142);
-            roundedPanel5.Margin = new Padding(2);
+            roundedPanel5.Location = new Point(26, 237);
             roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Size = new Size(720, 180);
+            roundedPanel5.Size = new Size(1029, 300);
             roundedPanel5.TabIndex = 7;
             // 
             // dgvRiwayatGudang
@@ -109,6 +110,7 @@
             dgvRiwayatGudang.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.DeepSkyBlue;
             dgvRiwayatGudang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRiwayatGudang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvRiwayatGudang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRiwayatGudang.BackgroundColor = Color.White;
             dgvRiwayatGudang.BorderStyle = BorderStyle.None;
@@ -132,8 +134,7 @@
             dgvRiwayatGudang.DefaultCellStyle = dataGridViewCellStyle3;
             dgvRiwayatGudang.EnableHeadersVisualStyles = false;
             dgvRiwayatGudang.GridColor = Color.White;
-            dgvRiwayatGudang.Location = new Point(11, 8);
-            dgvRiwayatGudang.Margin = new Padding(2);
+            dgvRiwayatGudang.Location = new Point(19, 3);
             dgvRiwayatGudang.MultiSelect = false;
             dgvRiwayatGudang.Name = "dgvRiwayatGudang";
             dgvRiwayatGudang.ReadOnly = true;
@@ -141,7 +142,7 @@
             dgvRiwayatGudang.RowHeadersWidth = 62;
             dgvRiwayatGudang.RowTemplate.Height = 40;
             dgvRiwayatGudang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRiwayatGudang.Size = new Size(697, 161);
+            dgvRiwayatGudang.Size = new Size(996, 268);
             dgvRiwayatGudang.TabIndex = 0;
             // 
             // colNo
@@ -209,49 +210,56 @@
             // panel4
             // 
             panel4.BackColor = Color.Purple;
-            panel4.Location = new Point(527, 64);
-            panel4.Margin = new Padding(2);
+            panel4.Location = new Point(753, 107);
             panel4.Name = "panel4";
-            panel4.Size = new Size(13, 69);
+            panel4.Size = new Size(19, 115);
             panel4.TabIndex = 6;
             // 
             // panel3
             // 
             panel3.BackColor = Color.SeaGreen;
-            panel3.Location = new Point(277, 62);
-            panel3.Margin = new Padding(2);
+            panel3.Location = new Point(396, 103);
             panel3.Name = "panel3";
-            panel3.Size = new Size(13, 69);
+            panel3.Size = new Size(19, 115);
             panel3.TabIndex = 5;
             // 
             // panel2
             // 
             panel2.BackColor = Color.RoyalBlue;
-            panel2.Location = new Point(29, 64);
-            panel2.Margin = new Padding(2);
+            panel2.Location = new Point(41, 107);
             panel2.Name = "panel2";
-            panel2.Size = new Size(13, 69);
+            panel2.Size = new Size(19, 115);
             panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(45, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(225, 38);
+            label1.TabIndex = 0;
+            label1.Text = "Riwayat Gudang";
             // 
             // roundedPanel4
             // 
+            roundedPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel4.BackColor = Color.Transparent;
             roundedPanel4.Controls.Add(panel6);
             roundedPanel4.Controls.Add(lblStokSaatIni);
             roundedPanel4.Controls.Add(label5);
-            roundedPanel4.Location = new Point(527, 62);
-            roundedPanel4.Margin = new Padding(2);
+            roundedPanel4.Location = new Point(753, 103);
             roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(210, 69);
+            roundedPanel4.Size = new Size(300, 115);
             roundedPanel4.TabIndex = 3;
             // 
             // panel6
             // 
             panel6.BackColor = Color.Purple;
-            panel6.Location = new Point(195, 2);
-            panel6.Margin = new Padding(2);
+            panel6.Location = new Point(279, 3);
             panel6.Name = "panel6";
-            panel6.Size = new Size(13, 69);
+            panel6.Size = new Size(19, 115);
             panel6.TabIndex = 7;
             // 
             // lblStokSaatIni
@@ -259,10 +267,9 @@
             lblStokSaatIni.AutoSize = true;
             lblStokSaatIni.Font = new Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStokSaatIni.ForeColor = Color.Purple;
-            lblStokSaatIni.Location = new Point(19, 32);
-            lblStokSaatIni.Margin = new Padding(2, 0, 2, 0);
+            lblStokSaatIni.Location = new Point(27, 53);
             lblStokSaatIni.Name = "lblStokSaatIni";
-            lblStokSaatIni.Size = new Size(24, 26);
+            lblStokSaatIni.Size = new Size(35, 37);
             lblStokSaatIni.TabIndex = 4;
             lblStokSaatIni.Text = "0";
             // 
@@ -270,32 +277,30 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(19, 12);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(27, 20);
             label5.Name = "label5";
-            label5.Size = new Size(61, 13);
+            label5.Size = new Size(88, 19);
             label5.TabIndex = 2;
             label5.Text = "Stok Saat Ini";
             // 
             // roundedPanel3
             // 
+            roundedPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel3.BackColor = Color.Transparent;
             roundedPanel3.Controls.Add(panel5);
             roundedPanel3.Controls.Add(lblTotalBrgKeluar);
             roundedPanel3.Controls.Add(label4);
-            roundedPanel3.Location = new Point(277, 62);
-            roundedPanel3.Margin = new Padding(2);
+            roundedPanel3.Location = new Point(396, 103);
             roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(210, 69);
+            roundedPanel3.Size = new Size(300, 115);
             roundedPanel3.TabIndex = 2;
             // 
             // panel5
             // 
             panel5.BackColor = Color.SeaGreen;
-            panel5.Location = new Point(197, 2);
-            panel5.Margin = new Padding(2);
+            panel5.Location = new Point(281, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(13, 69);
+            panel5.Size = new Size(19, 115);
             panel5.TabIndex = 6;
             // 
             // lblTotalBrgKeluar
@@ -303,10 +308,9 @@
             lblTotalBrgKeluar.AutoSize = true;
             lblTotalBrgKeluar.Font = new Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalBrgKeluar.ForeColor = Color.SeaGreen;
-            lblTotalBrgKeluar.Location = new Point(25, 32);
-            lblTotalBrgKeluar.Margin = new Padding(2, 0, 2, 0);
+            lblTotalBrgKeluar.Location = new Point(36, 53);
             lblTotalBrgKeluar.Name = "lblTotalBrgKeluar";
-            lblTotalBrgKeluar.Size = new Size(24, 26);
+            lblTotalBrgKeluar.Size = new Size(35, 37);
             lblTotalBrgKeluar.TabIndex = 3;
             lblTotalBrgKeluar.Text = "0";
             // 
@@ -314,32 +318,30 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(25, 12);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(36, 20);
             label4.Name = "label4";
-            label4.Size = new Size(91, 13);
+            label4.Size = new Size(138, 19);
             label4.TabIndex = 1;
             label4.Text = "Total Barang Keluar";
             // 
             // roundedPanel2
             // 
+            roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(panel7);
             roundedPanel2.Controls.Add(lblTotalBrgMasuk);
             roundedPanel2.Controls.Add(label2);
-            roundedPanel2.Location = new Point(29, 62);
-            roundedPanel2.Margin = new Padding(2);
+            roundedPanel2.Location = new Point(41, 103);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(210, 69);
+            roundedPanel2.Size = new Size(300, 115);
             roundedPanel2.TabIndex = 1;
             // 
             // panel7
             // 
             panel7.BackColor = Color.RoyalBlue;
-            panel7.Location = new Point(195, 2);
-            panel7.Margin = new Padding(2);
+            panel7.Location = new Point(279, 3);
             panel7.Name = "panel7";
-            panel7.Size = new Size(13, 69);
+            panel7.Size = new Size(19, 115);
             panel7.TabIndex = 5;
             // 
             // lblTotalBrgMasuk
@@ -347,10 +349,9 @@
             lblTotalBrgMasuk.AutoSize = true;
             lblTotalBrgMasuk.Font = new Font("Arial", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalBrgMasuk.ForeColor = Color.RoyalBlue;
-            lblTotalBrgMasuk.Location = new Point(18, 32);
-            lblTotalBrgMasuk.Margin = new Padding(2, 0, 2, 0);
+            lblTotalBrgMasuk.Location = new Point(26, 53);
             lblTotalBrgMasuk.Name = "lblTotalBrgMasuk";
-            lblTotalBrgMasuk.Size = new Size(24, 26);
+            lblTotalBrgMasuk.Size = new Size(35, 37);
             lblTotalBrgMasuk.TabIndex = 2;
             lblTotalBrgMasuk.Text = "0";
             // 
@@ -358,25 +359,23 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(18, 12);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(26, 20);
             label2.Name = "label2";
-            label2.Size = new Size(92, 13);
+            label2.Size = new Size(139, 19);
             label2.TabIndex = 0;
             label2.Text = "Total Barang Masuk";
             // 
             // roundedPanel1
             // 
+            roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             roundedPanel1.BackColor = Color.Transparent;
             roundedPanel1.Controls.Add(btnCari);
             roundedPanel1.Controls.Add(cmbJenisTransaksi);
             roundedPanel1.Controls.Add(label6);
             roundedPanel1.Controls.Add(panel8);
-            roundedPanel1.Controls.Add(label1);
-            roundedPanel1.Location = new Point(2, 2);
-            roundedPanel1.Margin = new Padding(2);
+            roundedPanel1.Location = new Point(325, 12);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(752, 51);
+            roundedPanel1.Size = new Size(730, 85);
             roundedPanel1.TabIndex = 0;
             roundedPanel1.Paint += roundedPanel1_Paint;
             // 
@@ -387,10 +386,9 @@
             btnCari.FlatStyle = FlatStyle.Flat;
             btnCari.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCari.ForeColor = Color.White;
-            btnCari.Location = new Point(657, 25);
-            btnCari.Margin = new Padding(2);
+            btnCari.Location = new Point(939, 42);
             btnCari.Name = "btnCari";
-            btnCari.Size = new Size(69, 25);
+            btnCari.Size = new Size(99, 42);
             btnCari.TabIndex = 6;
             btnCari.Text = "🔍Cari";
             btnCari.UseVisualStyleBackColor = false;
@@ -399,19 +397,17 @@
             // 
             cmbJenisTransaksi.FormattingEnabled = true;
             cmbJenisTransaksi.Items.AddRange(new object[] { "Masuk", "Keluar" });
-            cmbJenisTransaksi.Location = new Point(525, 29);
-            cmbJenisTransaksi.Margin = new Padding(2);
+            cmbJenisTransaksi.Location = new Point(538, 42);
             cmbJenisTransaksi.Name = "cmbJenisTransaksi";
-            cmbJenisTransaksi.Size = new Size(129, 23);
+            cmbJenisTransaksi.Size = new Size(183, 33);
             cmbJenisTransaksi.TabIndex = 5;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(525, 11);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(529, 13);
             label6.Name = "label6";
-            label6.Size = new Size(82, 15);
+            label6.Size = new Size(124, 25);
             label6.TabIndex = 4;
             label6.Text = "Jenis Transaksi";
             // 
@@ -421,30 +417,27 @@
             panel8.Controls.Add(label3);
             panel8.Controls.Add(dtpDari);
             panel8.Controls.Add(dtpSampai);
-            panel8.Location = new Point(291, 4);
-            panel8.Margin = new Padding(2);
+            panel8.Location = new Point(216, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(210, 47);
+            panel8.Size = new Size(300, 78);
             panel8.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(52, 9);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(72, 17);
             label3.Name = "label3";
-            label3.Size = new Size(100, 15);
+            label3.Size = new Size(157, 25);
             label3.TabIndex = 3;
             label3.Text = "📅Rentang Waktu";
             // 
             // dtpDari
             // 
             dtpDari.Format = DateTimePickerFormat.Custom;
-            dtpDari.Location = new Point(2, 27);
-            dtpDari.Margin = new Padding(2);
+            dtpDari.Location = new Point(3, 45);
             dtpDari.MaxDate = new DateTime(9994, 12, 31, 0, 0, 0, 0);
             dtpDari.Name = "dtpDari";
-            dtpDari.Size = new Size(88, 23);
+            dtpDari.Size = new Size(124, 31);
             dtpDari.TabIndex = 1;
             // 
             // dtpSampai
@@ -452,34 +445,21 @@
             dtpSampai.CalendarForeColor = Color.White;
             dtpSampai.CalendarMonthBackground = Color.RoyalBlue;
             dtpSampai.Format = DateTimePickerFormat.Custom;
-            dtpSampai.Location = new Point(121, 27);
-            dtpSampai.Margin = new Padding(2);
+            dtpSampai.Location = new Point(173, 45);
             dtpSampai.MaxDate = new DateTime(9994, 12, 31, 0, 0, 0, 0);
             dtpSampai.Name = "dtpSampai";
-            dtpSampai.Size = new Size(88, 23);
+            dtpSampai.Size = new Size(124, 31);
             dtpSampai.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(15, 11);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(152, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Riwayat Gudang";
             // 
             // UC_RiwayatGudang
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Margin = new Padding(2);
             Name = "UC_RiwayatGudang";
-            Size = new Size(756, 334);
+            Size = new Size(1080, 557);
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             roundedPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRiwayatGudang).EndInit();
             roundedPanel4.ResumeLayout(false);

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             label1 = new Label();
             btnHapusSemua = new RoundedButton();
             dgvBarang = new DataGridView();
@@ -50,6 +50,7 @@
             textKategoriKasir = new TextBox();
             label6 = new Label();
             roundedPanel2 = new RoundedPanel();
+            btnTambah = new RoundedButton();
             numJumlah = new NumericUpDown();
             label9 = new Label();
             panel1 = new Panel();
@@ -119,25 +120,25 @@
             dgvBarang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBarang.BackgroundColor = Color.White;
             dgvBarang.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvBarang.ColumnHeadersHeight = 40;
             dgvBarang.Columns.AddRange(new DataGridViewColumn[] { colNo, colKode, colNama, colHarga, colKategori, colStok });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.DimGray;
-            dataGridViewCellStyle2.Padding = new Padding(6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvBarang.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.DimGray;
+            dataGridViewCellStyle7.Padding = new Padding(6);
+            dataGridViewCellStyle7.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dgvBarang.DefaultCellStyle = dataGridViewCellStyle7;
             dgvBarang.EnableHeadersVisualStyles = false;
             dgvBarang.Location = new Point(15, 109);
             dgvBarang.Margin = new Padding(2);
@@ -148,7 +149,7 @@
             dgvBarang.RowHeadersWidth = 62;
             dgvBarang.RowTemplate.Height = 40;
             dgvBarang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBarang.Size = new Size(489, 280);
+            dgvBarang.Size = new Size(542, 324);
             dgvBarang.TabIndex = 7;
             dgvBarang.CellContentClick += dgvBarang_CellContentClick;
             // 
@@ -209,7 +210,7 @@
             btnBayar.Location = new Point(4, 325);
             btnBayar.Margin = new Padding(2);
             btnBayar.Name = "btnBayar";
-            btnBayar.Size = new Size(91, 28);
+            btnBayar.Size = new Size(91, 72);
             btnBayar.TabIndex = 10;
             btnBayar.Text = "💵 Bayar  ›";
             btnBayar.UseVisualStyleBackColor = false;
@@ -271,6 +272,7 @@
             // 
             roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.Transparent;
+            roundedPanel2.Controls.Add(btnTambah);
             roundedPanel2.Controls.Add(numJumlah);
             roundedPanel2.Controls.Add(label9);
             roundedPanel2.Controls.Add(panel1);
@@ -287,9 +289,23 @@
             roundedPanel2.Controls.Add(label1);
             roundedPanel2.Location = new Point(0, 0);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(734, 408);
+            roundedPanel2.Size = new Size(787, 452);
             roundedPanel2.TabIndex = 24;
             roundedPanel2.Paint += roundedPanel2_Paint;
+            // 
+            // btnTambah
+            // 
+            btnTambah.BackColor = Color.RoyalBlue;
+            btnTambah.FlatAppearance.BorderSize = 0;
+            btnTambah.FlatStyle = FlatStyle.Flat;
+            btnTambah.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnTambah.ForeColor = Color.White;
+            btnTambah.Location = new Point(509, 60);
+            btnTambah.Name = "btnTambah";
+            btnTambah.Size = new Size(57, 34);
+            btnTambah.TabIndex = 27;
+            btnTambah.Text = "+";
+            btnTambah.UseVisualStyleBackColor = false;
             // 
             // numJumlah
             // 
@@ -312,13 +328,14 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(526, 44);
+            panel1.Location = new Point(581, 44);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(198, 34);
+            panel1.Size = new Size(195, 26);
             panel1.TabIndex = 12;
             // 
             // label5
@@ -326,7 +343,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(17, 7);
+            label5.Location = new Point(61, 2);
             label5.Name = "label5";
             label5.Size = new Size(80, 20);
             label5.TabIndex = 25;
@@ -365,10 +382,10 @@
             roundedPanel3.Controls.Add(label10);
             roundedPanel3.Controls.Add(dgvKeranjang);
             roundedPanel3.Controls.Add(btnBayar);
-            roundedPanel3.Location = new Point(526, 51);
+            roundedPanel3.Location = new Point(579, 51);
             roundedPanel3.Margin = new Padding(2);
             roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(197, 355);
+            roundedPanel3.Size = new Size(197, 399);
             roundedPanel3.TabIndex = 23;
             roundedPanel3.Paint += roundedPanel3_Paint;
             // 
@@ -383,7 +400,7 @@
             btnBatal.Location = new Point(99, 325);
             btnBatal.Margin = new Padding(2);
             btnBatal.Name = "btnBatal";
-            btnBatal.Size = new Size(90, 28);
+            btnBatal.Size = new Size(90, 72);
             btnBatal.TabIndex = 24;
             btnBatal.Text = " Batal  ›";
             btnBatal.UseVisualStyleBackColor = false;
@@ -471,7 +488,7 @@
             label14.BorderStyle = BorderStyle.Fixed3D;
             label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.RoyalBlue;
-            label14.Location = new Point(3, 79);
+            label14.Location = new Point(2, 79);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
             label14.Size = new Size(186, 17);
@@ -564,7 +581,7 @@
             label10.BorderStyle = BorderStyle.Fixed3D;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.RoyalBlue;
-            label10.Location = new Point(-28, 136);
+            label10.Location = new Point(0, 128);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(186, 17);
@@ -574,31 +591,31 @@
             // dgvKeranjang
             // 
             dgvKeranjang.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle3.BackColor = Color.AliceBlue;
-            dgvKeranjang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.BackColor = Color.AliceBlue;
+            dgvKeranjang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvKeranjang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvKeranjang.BackgroundColor = Color.White;
             dgvKeranjang.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvKeranjang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvKeranjang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvKeranjang.ColumnHeadersHeight = 40;
             dgvKeranjang.Columns.AddRange(new DataGridViewColumn[] { colNamaBarang, colJumlah, colHarga2 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.DarkSlateGray;
-            dataGridViewCellStyle5.SelectionBackColor = Color.LightSteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = Color.DarkBlue;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvKeranjang.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.DarkSlateGray;
+            dataGridViewCellStyle10.SelectionBackColor = Color.LightSteelBlue;
+            dataGridViewCellStyle10.SelectionForeColor = Color.DarkBlue;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            dgvKeranjang.DefaultCellStyle = dataGridViewCellStyle10;
             dgvKeranjang.EnableHeadersVisualStyles = false;
-            dgvKeranjang.Location = new Point(0, 23);
+            dgvKeranjang.Location = new Point(0, 18);
             dgvKeranjang.Margin = new Padding(2);
             dgvKeranjang.MultiSelect = false;
             dgvKeranjang.Name = "dgvKeranjang";
@@ -606,7 +623,7 @@
             dgvKeranjang.RowHeadersWidth = 62;
             dgvKeranjang.RowTemplate.Height = 35;
             dgvKeranjang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvKeranjang.Size = new Size(215, 54);
+            dgvKeranjang.Size = new Size(197, 59);
             dgvKeranjang.TabIndex = 11;
             // 
             // colNamaBarang
@@ -634,7 +651,7 @@
             Controls.Add(roundedPanel2);
             Margin = new Padding(2);
             Name = "UC_KRNJGBLNJKasir";
-            Size = new Size(734, 408);
+            Size = new Size(799, 455);
             ((System.ComponentModel.ISupportInitialize)dgvBarang).EndInit();
             roundedPanel2.ResumeLayout(false);
             roundedPanel2.PerformLayout();
@@ -693,5 +710,6 @@
         private Label label18;
         private Label label11;
         private RoundedButton btnBatal;
+        private RoundedButton btnTambah;
     }
 }

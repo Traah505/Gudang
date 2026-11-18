@@ -51,7 +51,7 @@
             lblAdmin.Name = "lblAdmin";
             lblAdmin.Size = new Size(93, 34);
             lblAdmin.TabIndex = 3;
-            lblAdmin.Text = "Admin :";
+            lblAdmin.Text = "Admin ";
             lblAdmin.Click += label2_Click;
             // 
             // panel1

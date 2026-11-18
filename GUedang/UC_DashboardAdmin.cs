@@ -61,6 +61,7 @@ namespace GUedang
             roundedButtonBarang.BackColor = Color.Navy;
             roundedButtonRiwayat.BackColor = Color.Navy;
             roundedButtonLaporanAktivitas.BackColor = Color.Navy;
+            roundedButtonLaba.BackColor = Color.Navy;
         }
 
         private void TampilkanHalaman(UserControl Halaman)
@@ -158,7 +159,6 @@ namespace GUedang
         {
             ResetButtonColors();
             roundedButtonLaba.BackColor = Color.DodgerBlue;
-
             UC_LaporanLaba halamanLaba = new UC_LaporanLaba();
             TampilkanHalaman(halamanLaba);
         }

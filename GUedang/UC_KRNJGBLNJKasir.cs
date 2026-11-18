@@ -8,6 +8,7 @@ namespace GUedang
 {
     public partial class UC_KRNJGBLNJKasir : UserControl   // samakan nama class dengan file-mu
     {
+      
         private List<ItemJual> keranjang = new List<ItemJual>();
 
         public UC_KRNJGBLNJKasir()
@@ -21,6 +22,8 @@ namespace GUedang
             btnBayar.Click += btnBayar_Click;
             btnBatal.Click += (s, e) => KosongkanKeranjang();
             btnHapusSemua.Click += (s, e) => KosongkanKeranjang();
+            btnTambah.Click += btnTambah_Click;
+            numJumlah.ValueChanged += (s, e) => { if (numJumlah.Value < 0) numJumlah.Value = 0; };  
         }
 
         private void UC_Keranjang_Load(object sender, EventArgs e)
@@ -102,7 +105,7 @@ namespace GUedang
         {
             dgvKeranjang.Rows.Clear();
             foreach (var i in keranjang)
-                dgvKeranjang.Rows.Add(i.Nama, i.Jumlah.ToString("0.##"), i.Subtotal);
+                dgvKeranjang.Rows.Add(i.Nama, i.Jumlah.ToString("0.##"), i.Subtotal.ToString("N0"));
             Hitung();
         }
 
@@ -116,11 +119,11 @@ namespace GUedang
         private void Hitung()
         {
             decimal total = keranjang.Sum(i => i.Subtotal);
-            lblSubtotal.Text = "Rp " + total.ToString("N0");
-            lblNominalTotalBelanja.Text = "Rp " + total.ToString("N0");
-            lblTotalBayar.Text = "Rp " + total.ToString("N0");
+            lblSubtotal.Text =  total.ToString("N0");
+            lblNominalTotalBelanja.Text =  total.ToString("N0");
+            lblTotalBayar.Text =  total.ToString("N0");
             decimal.TryParse(txtUangDiterima.Text, out decimal uang);
-            lblKembalian.Text = "Rp " + Math.Max(0, uang - total).ToString("N0");
+            lblKembalian.Text = Math.Max(0, uang - total).ToString("N0");
         }
 
         private void btnBayar_Click(object s, EventArgs e)
@@ -157,9 +160,55 @@ namespace GUedang
 
         }
 
-        private void dgvBarang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            private void TambahKeKeranjang(string kode, decimal jumlah)
         {
+            if (string.IsNullOrEmpty(kode))
+            {
+                MessageBox.Show("Pilih barang di tabel dulu.");
+                return;
+            }
+            if (jumlah <= 0)
+            {
+                MessageBox.Show("Jumlah harus lebih dari 0.");
+                return;
+            }
 
+            var b = BarangStore.Muat().FirstOrDefault(x =>
+                x.KodeBarang.Equals(kode, StringComparison.OrdinalIgnoreCase));
+            if (b == null) { MessageBox.Show("Barang tidak ditemukan."); return; }
+
+            var ada = keranjang.FirstOrDefault(i => i.Kode == b.KodeBarang);
+            decimal sudah = ada?.Jumlah ?? 0;
+            if (sudah + jumlah > b.Stok)
+            {
+                MessageBox.Show("Stok tidak cukup (sisa " + b.Stok.ToString("0.##") + ").");
+                return;
+            }
+
+            if (ada != null) ada.Jumlah += jumlah;
+            else keranjang.Add(new ItemJual
+            {
+                Kode = b.KodeBarang,
+                Nama = b.NamaBarang,
+                Jumlah = jumlah,
+                Harga = b.HargaJual
+            });
+
+            RefreshKeranjang();
+            numJumlah.Value = 1;
+        }
+
+        private void btnTambah_Click(object s, EventArgs e)
+        {
+            TambahKeKeranjang(txtKodeKasir.Text.Trim(), numJumlah.Value);
+        }
+
+        private void dgvBarang_CellContentClick(object s, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            string kode = dgvBarang.Rows[e.RowIndex].Cells[1].Value?.ToString();
+            TambahKeKeranjang(kode, numJumlah.Value);
         }
     }
+    
 }

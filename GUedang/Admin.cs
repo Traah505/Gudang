@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,9 +97,12 @@ namespace GUedang
             DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hasil == DialogResult.Yes)
             {
+                Sesi.Logout();
                 LoginAkun DashboardLogin = new LoginAkun();
                 DashboardLogin.Show();
                 this.Hide();
+
+               
 
             }
         }

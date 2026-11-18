@@ -58,6 +58,7 @@
             // panelKasirHalaman
             // 
             panelKasirHalaman.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelKasirHalaman.BackColor = Color.WhiteSmoke;
             panelKasirHalaman.Location = new Point(0, 72);
             panelKasirHalaman.Name = "panelKasirHalaman";
             panelKasirHalaman.Size = new Size(761, 359);
@@ -246,9 +247,9 @@
             label2.Location = new Point(82, 47);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(131, 15);
+            label2.Size = new Size(120, 15);
             label2.TabIndex = 5;
-            label2.Text = "Selamat datang, Admin";
+            label2.Text = "Selamat datang, Kasir";
             // 
             // pictureBox1
             // 
@@ -268,7 +269,7 @@
             lblKasir1.Name = "lblKasir1";
             lblKasir1.Size = new Size(93, 34);
             lblKasir1.TabIndex = 3;
-            lblKasir1.Text = "Kasir :";
+            lblKasir1.Text = "Kasir ";
             lblKasir1.Click += lblKasir1_Click;
             // 
             // Kasir

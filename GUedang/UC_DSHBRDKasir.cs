@@ -36,7 +36,7 @@ namespace GUedang
                 .Where(t => t.Waktu.Date == DateTime.Today)
                 .OrderByDescending(t => t.Waktu).ToList();
 
-            lblPendapatan.Text = "Rp " + hariIni.Sum(t => t.Total).ToString("N0");
+            lblPendapatan.Text = hariIni.Sum(t => t.Total).ToString("N0");
             lblJumlahTransaksi.Text = hariIni.Count.ToString();
             lblItemTerjual.Text = hariIni.Sum(t => t.Items.Sum(i => i.Jumlah)).ToString("0.##");
 

@@ -614,7 +614,9 @@
             // lblStokHabis
             // 
             lblStokHabis.AutoSize = true;
+            lblStokHabis.BackColor = Color.IndianRed;
             lblStokHabis.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStokHabis.ForeColor = Color.White;
             lblStokHabis.Location = new Point(11, 17);
             lblStokHabis.Margin = new Padding(2, 0, 2, 0);
             lblStokHabis.Name = "lblStokHabis";
@@ -625,7 +627,9 @@
             // label16
             // 
             label16.AutoSize = true;
+            label16.BackColor = Color.IndianRed;
             label16.Font = new Font("Calibri Light", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.White;
             label16.Location = new Point(11, 5);
             label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
@@ -648,7 +652,9 @@
             // lblStokMenipis
             // 
             lblStokMenipis.AutoSize = true;
+            lblStokMenipis.BackColor = Color.Goldenrod;
             lblStokMenipis.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStokMenipis.ForeColor = Color.White;
             lblStokMenipis.Location = new Point(10, 17);
             lblStokMenipis.Margin = new Padding(2, 0, 2, 0);
             lblStokMenipis.Name = "lblStokMenipis";
@@ -659,7 +665,9 @@
             // label14
             // 
             label14.AutoSize = true;
+            label14.BackColor = Color.Goldenrod;
             label14.Font = new Font("Calibri Light", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
             label14.Location = new Point(10, 5);
             label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
@@ -683,7 +691,9 @@
             // lblStokAman
             // 
             lblStokAman.AutoSize = true;
+            lblStokAman.BackColor = Color.SeaGreen;
             lblStokAman.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStokAman.ForeColor = Color.White;
             lblStokAman.Location = new Point(11, 17);
             lblStokAman.Margin = new Padding(2, 0, 2, 0);
             lblStokAman.Name = "lblStokAman";
@@ -694,7 +704,9 @@
             // label12
             // 
             label12.AutoSize = true;
+            label12.BackColor = Color.SeaGreen;
             label12.Font = new Font("Calibri Light", 9F, FontStyle.Bold);
+            label12.ForeColor = Color.White;
             label12.Location = new Point(11, 5);
             label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";

@@ -35,16 +35,16 @@
             panelLaporanAktivitas = new Panel();
             roundedPanel2 = new RoundedPanel();
             dgvAktivitas = new DataGridView();
+            colWaktu = new DataGridViewTextBoxColumn();
+            colNama = new DataGridViewTextBoxColumn();
+            colPeran = new DataGridViewTextBoxColumn();
+            colAktivitas = new DataGridViewTextBoxColumn();
             roundedPanel1 = new RoundedPanel();
             dtpWaktu = new DateTimePicker();
             label2 = new Label();
             cmbPeran = new ComboBox();
             label1 = new Label();
             timerJam = new System.Windows.Forms.Timer(components);
-            colWaktu = new DataGridViewTextBoxColumn();
-            colNama = new DataGridViewTextBoxColumn();
-            colPeran = new DataGridViewTextBoxColumn();
-            colAktivitas = new DataGridViewTextBoxColumn();
             panelLaporanAktivitas.SuspendLayout();
             roundedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAktivitas).BeginInit();
@@ -59,8 +59,9 @@
             panelLaporanAktivitas.Controls.Add(label1);
             panelLaporanAktivitas.Dock = DockStyle.Fill;
             panelLaporanAktivitas.Location = new Point(0, 0);
+            panelLaporanAktivitas.Margin = new Padding(2, 2, 2, 2);
             panelLaporanAktivitas.Name = "panelLaporanAktivitas";
-            panelLaporanAktivitas.Size = new Size(1095, 593);
+            panelLaporanAktivitas.Size = new Size(766, 356);
             panelLaporanAktivitas.TabIndex = 0;
             panelLaporanAktivitas.Paint += panelLaporanAktivitas_Paint;
             // 
@@ -69,9 +70,10 @@
             roundedPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             roundedPanel2.BackColor = Color.Transparent;
             roundedPanel2.Controls.Add(dgvAktivitas);
-            roundedPanel2.Location = new Point(20, 149);
+            roundedPanel2.Location = new Point(14, 89);
+            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(1040, 427);
+            roundedPanel2.Size = new Size(728, 256);
             roundedPanel2.TabIndex = 4;
             // 
             // dgvAktivitas
@@ -103,71 +105,15 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvAktivitas.DefaultCellStyle = dataGridViewCellStyle3;
             dgvAktivitas.EnableHeadersVisualStyles = false;
-            dgvAktivitas.Location = new Point(19, 23);
+            dgvAktivitas.Location = new Point(13, 14);
+            dgvAktivitas.Margin = new Padding(2, 2, 2, 2);
             dgvAktivitas.MultiSelect = false;
             dgvAktivitas.Name = "dgvAktivitas";
             dgvAktivitas.RowHeadersVisible = false;
             dgvAktivitas.RowHeadersWidth = 62;
             dgvAktivitas.RowTemplate.Height = 40;
-            dgvAktivitas.Size = new Size(993, 387);
+            dgvAktivitas.Size = new Size(695, 232);
             dgvAktivitas.TabIndex = 3;
-            // 
-            // roundedPanel1
-            // 
-            roundedPanel1.Anchor = AnchorStyles.Top;
-            roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.Controls.Add(dtpWaktu);
-            roundedPanel1.Controls.Add(label2);
-            roundedPanel1.Controls.Add(cmbPeran);
-            roundedPanel1.Location = new Point(260, 20);
-            roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(800, 123);
-            roundedPanel1.TabIndex = 2;
-            // 
-            // dtpWaktu
-            // 
-            dtpWaktu.CustomFormat = "dd MM yyyy HH;mm;ss";
-            dtpWaktu.Format = DateTimePickerFormat.Custom;
-            dtpWaktu.Location = new Point(559, 11);
-            dtpWaktu.Name = "dtpWaktu";
-            dtpWaktu.Size = new Size(200, 31);
-            dtpWaktu.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(581, 44);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 25);
-            label2.TabIndex = 3;
-            label2.Text = "Peran";
-            // 
-            // cmbPeran
-            // 
-            cmbPeran.FormattingEnabled = true;
-            cmbPeran.Items.AddRange(new object[] { "Semua Peran", "Admin", "Kasir", "Gudang" });
-            cmbPeran.Location = new Point(581, 72);
-            cmbPeran.Name = "cmbPeran";
-            cmbPeran.Size = new Size(182, 33);
-            cmbPeran.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Navy;
-            label1.Location = new Point(3, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(188, 33);
-            label1.TabIndex = 0;
-            label1.Text = "Log Aktivitas";
-            label1.Click += label1_Click;
-            // 
-            // timerJam
-            // 
-            timerJam.Enabled = true;
-            timerJam.Interval = 1000;
-            timerJam.Tick += timerJam_Tick;
             // 
             // colWaktu
             // 
@@ -201,13 +147,76 @@
             colAktivitas.MinimumWidth = 8;
             colAktivitas.Name = "colAktivitas";
             // 
+            // roundedPanel1
+            // 
+            roundedPanel1.Anchor = AnchorStyles.Top;
+            roundedPanel1.BackColor = Color.Transparent;
+            roundedPanel1.Controls.Add(dtpWaktu);
+            roundedPanel1.Controls.Add(label2);
+            roundedPanel1.Controls.Add(cmbPeran);
+            roundedPanel1.Location = new Point(182, 12);
+            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Size = new Size(560, 74);
+            roundedPanel1.TabIndex = 2;
+            // 
+            // dtpWaktu
+            // 
+            dtpWaktu.CustomFormat = "dd MM yyyy HH;mm;ss";
+            dtpWaktu.Format = DateTimePickerFormat.Custom;
+            dtpWaktu.Location = new Point(391, 7);
+            dtpWaktu.Margin = new Padding(2, 2, 2, 2);
+            dtpWaktu.Name = "dtpWaktu";
+            dtpWaktu.Size = new Size(141, 23);
+            dtpWaktu.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(20, 7);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(37, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Peran";
+            // 
+            // cmbPeran
+            // 
+            cmbPeran.FormattingEnabled = true;
+            cmbPeran.Items.AddRange(new object[] { "Semua Peran", "Admin", "Kasir", "Gudang" });
+            cmbPeran.Location = new Point(20, 24);
+            cmbPeran.Margin = new Padding(2, 2, 2, 2);
+            cmbPeran.Name = "cmbPeran";
+            cmbPeran.Size = new Size(129, 23);
+            cmbPeran.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Navy;
+            label1.Location = new Point(2, 19);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(129, 22);
+            label1.TabIndex = 0;
+            label1.Text = "Log Aktivitas";
+            label1.Click += label1_Click;
+            // 
+            // timerJam
+            // 
+            timerJam.Enabled = true;
+            timerJam.Interval = 1000;
+            timerJam.Tick += timerJam_Tick;
+            // 
             // UC_LaporanAktivitas
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelLaporanAktivitas);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UC_LaporanAktivitas";
-            Size = new Size(1095, 593);
+            Size = new Size(766, 356);
             panelLaporanAktivitas.ResumeLayout(false);
             panelLaporanAktivitas.PerformLayout();
             roundedPanel2.ResumeLayout(false);

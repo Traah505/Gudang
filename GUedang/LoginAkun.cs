@@ -107,25 +107,11 @@ namespace GUedang
             Sesi.NamaUser = user.Nama;
             Sesi.RoleUser = user.Role;
 
-            AktivitasStore.Catat(user.Nama,user.Role.ToString(), "Login");
+            AktivitasStore.Catat(user.Nama, user.Role.ToString(), "Login");
             BukaDashboard(user);
-            
-        }
-
-        private void lblExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Login_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void LoginAkun_Load_1(object sender, EventArgs e)
-        {
 
         }
     }
 }
 
+        

@@ -1,289 +1,330 @@
-﻿namespace GUedang
+﻿
+namespace GUedang
 {
     partial class LoginAkun
-
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAkun));
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            txtNama = new RoundedTextBox();
-            label12 = new Label();
-            label4 = new Label();
-            label11 = new Label();
-            label2 = new Label();
-            txtPassword = new RoundedTextBox();
-            btnLogin = new RoundedButton();
-            lblExit = new Label();
-            label7 = new Label();
-            label10 = new Label();
+            lblCopy = new Label();
+            lblChip = new Label();
+            btnExit = new Button();
             chkLihatPassword = new CheckBox();
-            label9 = new Label();
-            Login = new RoundedPanel();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            Login.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            lblIconPass = new Label();
+            lblPassword = new Label();
+            lblIconNama = new Label();
+            lblNama = new Label();
+            lblSub = new Label();
+            lblWelcome = new Label();
+            picLogo = new PictureBox();
+            lblTagline = new Label();
+            lblHeadline = new Label();
+            pnlLeft = new SmkGradientPanel();
+            pnlRight = new SmkSoftPanel();
+            txtPassword = new RoundedTextBox();
+            txtNama = new RoundedTextBox();
+            btnLogin = new SmkRoundButton();
+            pnlChip = new SmkRoundPanel();
+            ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
+            pnlLeft.SuspendLayout();
+            pnlRight.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox6
+            // lblCopy
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(51, 165);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(16, 16);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 27;
-            pictureBox6.TabStop = false;
+            lblCopy.BackColor = Color.Transparent;
+            lblCopy.Font = new Font("Segoe UI", 8.5F);
+            lblCopy.ForeColor = Color.FromArgb(150, 160, 182);
+            lblCopy.Location = new Point(70, 522);
+            lblCopy.Name = "lblCopy";
+            lblCopy.Size = new Size(380, 20);
+            lblCopy.TabIndex = 10;
+            lblCopy.Text = "© 2026 SMK Mart  •  Gudang · Stok · Penjualan";
+            lblCopy.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pictureBox5
+            // lblChip
             // 
-            pictureBox5.BackColor = Color.WhiteSmoke;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(51, 110);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(16, 16);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 27;
-            pictureBox5.TabStop = false;
+            lblChip.AutoSize = true;
+            lblChip.BackColor = Color.Transparent;
+            lblChip.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblChip.ForeColor = Color.FromArgb(76, 102, 255);
+            lblChip.Location = new Point(49, 35);
+            lblChip.Name = "lblChip";
+            lblChip.Size = new Size(112, 19);
+            lblChip.TabIndex = 0;
+            lblChip.Text = "●  LOGIN AKUN";
             // 
-            // txtNama
+            // btnExit
             // 
-            txtNama.BackColor = Color.White;
-            txtNama.BorderColor = Color.Navy;
-            txtNama.Location = new Point(41, 128);
-            txtNama.Margin = new Padding(2);
-            txtNama.Name = "txtNama";
-            txtNama.Size = new Size(210, 30);
-            txtNama.TabIndex = 26;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.White;
-            label12.Location = new Point(72, 109);
-            label12.Margin = new Padding(2, 0, 2, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(39, 15);
-            label12.TabIndex = 25;
-            label12.Text = "Nama";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.White;
-            label4.Location = new Point(41, 59);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(184, 15);
-            label4.TabIndex = 15;
-            label4.Text = "Silahkan login untuk melanjutkan";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.White;
-            label11.Location = new Point(72, 164);
-            label11.Margin = new Padding(2, 0, 2, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(52, 15);
-            label11.TabIndex = 24;
-            label11.Text = "Pasword";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.White;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(72, 40);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 19);
-            label2.TabIndex = 13;
-            label2.Text = "Selamat Datang!";
-            // 
-            // txtPassword
-            // 
-            txtPassword.BackColor = Color.White;
-            txtPassword.BorderColor = Color.Navy;
-            txtPassword.Location = new Point(41, 186);
-            txtPassword.Margin = new Padding(2);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(210, 30);
-            txtPassword.TabIndex = 23;
-            txtPassword.UseSystemPasswordChar = true;
-            // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = Color.CornflowerBlue;
-            btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(67, 239);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(158, 25);
-            btnLogin.TabIndex = 19;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // lblExit
-            // 
-            lblExit.AutoSize = true;
-            lblExit.BackColor = Color.White;
-            lblExit.Font = new Font("Segoe UI", 11F);
-            lblExit.ForeColor = Color.Blue;
-            lblExit.Location = new Point(129, 319);
-            lblExit.Name = "lblExit";
-            lblExit.Size = new Size(33, 20);
-            lblExit.TabIndex = 0;
-            lblExit.Text = "Exit";
-            lblExit.Click += lblExit_Click;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.White;
-            label7.ForeColor = Color.Black;
-            label7.Location = new Point(175, 217);
-            label7.Name = "label7";
-            label7.Size = new Size(86, 15);
-            label7.TabIndex = 22;
-            label7.Text = "Lihat Password";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.White;
-            label10.Location = new Point(72, 304);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(146, 15);
-            label10.TabIndex = 18;
-            label10.Text = "Gudang - Stok - Penjualan";
+            btnExit.BackColor = Color.White;
+            btnExit.Cursor = Cursors.Hand;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 228, 232);
+            btnExit.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 240, 242);
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnExit.ForeColor = Color.FromArgb(220, 70, 90);
+            btnExit.Location = new Point(70, 458);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(380, 32);
+            btnExit.TabIndex = 9;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
             // 
             // chkLihatPassword
             // 
             chkLihatPassword.AutoSize = true;
-            chkLihatPassword.Location = new Point(154, 219);
+            chkLihatPassword.BackColor = Color.Transparent;
+            chkLihatPassword.Cursor = Cursors.Hand;
+            chkLihatPassword.Font = new Font("Segoe UI", 9F);
+            chkLihatPassword.ForeColor = Color.FromArgb(110, 122, 148);
+            chkLihatPassword.Location = new Point(74, 358);
             chkLihatPassword.Name = "chkLihatPassword";
-            chkLihatPassword.Size = new Size(15, 14);
-            chkLihatPassword.TabIndex = 8;
+            chkLihatPassword.Size = new Size(105, 19);
+            chkLihatPassword.TabIndex = 7;
+            chkLihatPassword.Text = "Lihat Password";
             chkLihatPassword.UseVisualStyleBackColor = true;
-            chkLihatPassword.CheckedChanged += chkLihatPassword_CheckedChanged_1;
             // 
-            // label9
+            // lblIconPass
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.White;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label9.Location = new Point(115, 289);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(63, 15);
-            label9.TabIndex = 17;
-            label9.Text = "SMK Mart";
+            lblIconPass.AutoSize = true;
+            lblIconPass.BackColor = Color.Transparent;
+            lblIconPass.Font = new Font("Segoe MDL2 Assets", 13F);
+            lblIconPass.ForeColor = Color.FromArgb(76, 102, 255);
+            lblIconPass.Location = new Point(20, 12);
+            lblIconPass.Name = "lblIconPass";
+            lblIconPass.Size = new Size(100, 23);
+            lblIconPass.TabIndex = 1;
+            lblIconPass.Text = "";
             // 
-            // Login
+            // lblPassword
             // 
-            Login.BackColor = Color.Transparent;
-            Login.Controls.Add(pictureBox6);
-            Login.Controls.Add(label2);
-            Login.Controls.Add(txtPassword);
-            Login.Controls.Add(pictureBox5);
-            Login.Controls.Add(btnLogin);
-            Login.Controls.Add(label9);
-            Login.Controls.Add(lblExit);
-            Login.Controls.Add(txtNama);
-            Login.Controls.Add(label11);
-            Login.Controls.Add(chkLihatPassword);
-            Login.Controls.Add(label7);
-            Login.Controls.Add(label12);
-            Login.Controls.Add(label4);
-            Login.Controls.Add(label10);
-            Login.Location = new Point(332, 1);
-            Login.Name = "Login";
-            Login.Size = new Size(287, 347);
-            Login.TabIndex = 29;
+            lblPassword.AutoSize = true;
+            lblPassword.BackColor = Color.Transparent;
+            lblPassword.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblPassword.ForeColor = Color.FromArgb(60, 72, 100);
+            lblPassword.Location = new Point(72, 272);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(66, 17);
+            lblPassword.TabIndex = 5;
+            lblPassword.Text = "Password";
             // 
-            // pictureBox1
+            // lblIconNama
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, -7);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(328, 362);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 30;
-            pictureBox1.TabStop = false;
+            lblIconNama.AutoSize = true;
+            lblIconNama.BackColor = Color.Transparent;
+            lblIconNama.Font = new Font("Segoe MDL2 Assets", 13F);
+            lblIconNama.ForeColor = Color.FromArgb(76, 102, 255);
+            lblIconNama.Location = new Point(20, 12);
+            lblIconNama.Name = "lblIconNama";
+            lblIconNama.Size = new Size(100, 23);
+            lblIconNama.TabIndex = 1;
+            lblIconNama.Text = "";
+            // 
+            // lblNama
+            // 
+            lblNama.AutoSize = true;
+            lblNama.BackColor = Color.Transparent;
+            lblNama.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblNama.ForeColor = Color.FromArgb(60, 72, 100);
+            lblNama.Location = new Point(72, 182);
+            lblNama.Name = "lblNama";
+            lblNama.Size = new Size(44, 17);
+            lblNama.TabIndex = 3;
+            lblNama.Text = "Nama";
+            // 
+            // lblSub
+            // 
+            lblSub.AutoSize = true;
+            lblSub.BackColor = Color.Transparent;
+            lblSub.Font = new Font("Segoe UI", 10F);
+            lblSub.ForeColor = Color.FromArgb(110, 122, 148);
+            lblSub.Location = new Point(70, 136);
+            lblSub.Name = "lblSub";
+            lblSub.Size = new Size(204, 19);
+            lblSub.TabIndex = 2;
+            lblSub.Text = "Silakan login untuk melanjutkan";
+            // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.Transparent;
+            lblWelcome.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            lblWelcome.ForeColor = Color.FromArgb(22, 41, 94);
+            lblWelcome.Location = new Point(66, 90);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(252, 41);
+            lblWelcome.TabIndex = 1;
+            lblWelcome.Text = "Selamat Datang!";
+            // 
+            // picLogo
+            // 
+            picLogo.BackColor = Color.Transparent;
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
+            picLogo.Location = new Point(54, 24);
+            picLogo.Name = "picLogo";
+            picLogo.Size = new Size(234, 97);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            picLogo.TabIndex = 0;
+            picLogo.TabStop = false;
+            // 
+            // lblTagline
+            // 
+            lblTagline.AutoSize = true;
+            lblTagline.BackColor = Color.Transparent;
+            lblTagline.Font = new Font("Segoe UI", 10.5F);
+            lblTagline.ForeColor = Color.FromArgb(226, 236, 255);
+            lblTagline.Location = new Point(40, 182);
+            lblTagline.Name = "lblTagline";
+            lblTagline.Size = new Size(213, 38);
+            lblTagline.TabIndex = 1;
+            lblTagline.Text = "Pantau gudang, stok barang, dan\r\npenjualan dalam satu aplikasi.";
+            // 
+            // lblHeadline
+            // 
+            lblHeadline.AutoSize = true;
+            lblHeadline.BackColor = Color.Transparent;
+            lblHeadline.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lblHeadline.ForeColor = Color.White;
+            lblHeadline.Location = new Point(36, 138);
+            lblHeadline.Name = "lblHeadline";
+            lblHeadline.Size = new Size(342, 37);
+            lblHeadline.TabIndex = 0;
+            lblHeadline.Text = "Kelola Toko Lebih Mudah";
+            // 
+            // pnlLeft
+            // 
+            pnlLeft.ColorBottom = Color.FromArgb(40, 175, 255);
+            pnlLeft.ColorTop = Color.FromArgb(76, 102, 255);
+            pnlLeft.Controls.Add(picLogo);
+            pnlLeft.Controls.Add(lblHeadline);
+            pnlLeft.Controls.Add(lblTagline);
+            pnlLeft.FooterText = "Gudang   •   Stok   •   Penjualan";
+            pnlLeft.Location = new Point(0, 0);
+            pnlLeft.LogoCard = new Rectangle(28, 26, 280, 94);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new Size(440, 580);
+            pnlLeft.TabIndex = 1;
+            // 
+            // pnlRight
+            // 
+            pnlRight.AccentBottom = Color.FromArgb(40, 175, 255);
+            pnlRight.AccentTop = Color.FromArgb(76, 102, 255);
+            pnlRight.CardMarginX = 28;
+            pnlRight.CardMarginY = 24;
+            pnlRight.Controls.Add(txtPassword);
+            pnlRight.Controls.Add(txtNama);
+            pnlRight.Controls.Add(lblChip);
+            pnlRight.Controls.Add(lblWelcome);
+            pnlRight.Controls.Add(lblSub);
+            pnlRight.Controls.Add(lblNama);
+            pnlRight.Controls.Add(lblPassword);
+            pnlRight.Controls.Add(chkLihatPassword);
+            pnlRight.Controls.Add(btnLogin);
+            pnlRight.Controls.Add(btnExit);
+            pnlRight.Controls.Add(lblCopy);
+            pnlRight.Location = new Point(440, 0);
+            pnlRight.Name = "pnlRight";
+            pnlRight.Size = new Size(520, 580);
+            pnlRight.TabIndex = 0;
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(74, 292);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(376, 44);
+            txtPassword.TabIndex = 12;
+            // 
+            // txtNama
+            // 
+            txtNama.Location = new Point(74, 202);
+            txtNama.Name = "txtNama";
+            txtNama.Size = new Size(376, 44);
+            txtNama.TabIndex = 11;
+            // 
+            // btnLogin
+            // 
+            btnLogin.ColorEnd = Color.FromArgb(40, 175, 255);
+            btnLogin.ColorStart = Color.FromArgb(76, 102, 255);
+            btnLogin.CornerRadius = 25;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(70, 399);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(380, 53);
+            btnLogin.TabIndex = 8;
+            btnLogin.Text = "LOGIN";
+            btnLogin.Click += btnLogin_Click;
+            // 
+            // pnlChip
+            // 
+            pnlChip.BorderColor = Color.FromArgb(205, 215, 235);
+            pnlChip.CornerRadius = 24;
+            pnlChip.FillColor = Color.White;
+            pnlChip.FocusColor = Color.FromArgb(76, 102, 255);
+            pnlChip.Location = new Point(0, 0);
+            pnlChip.Name = "pnlChip";
+            pnlChip.Size = new Size(200, 100);
+            pnlChip.TabIndex = 0;
             // 
             // LoginAkun
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(620, 349);
-            Controls.Add(pictureBox1);
-            Controls.Add(Login);
-            ForeColor = Color.FromArgb(0, 192, 192);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(960, 580);
+            Controls.Add(pnlRight);
+            Controls.Add(pnlLeft);
             FormBorderStyle = FormBorderStyle.None;
-            MaximizeBox = false;
-            MdiChildrenMinimizedAnchorBottom = false;
-            MinimizeBox = false;
             Name = "LoginAkun";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
-            Load += LoginAkun_Load_1;
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            Login.ResumeLayout(false);
-            Login.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "SMK Mart - Login";
+            Load += LoginAkun_Load;
+            ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
+            pnlLeft.ResumeLayout(false);
+            pnlLeft.PerformLayout();
+            pnlRight.ResumeLayout(false);
+            pnlRight.PerformLayout();
             ResumeLayout(false);
+
+            // Sambungkan event sesuai nama method di LoginAkun.cs kamu, contoh:
+            // this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // this.chkLihat.CheckedChanged += new System.EventHandler(this.chkLihat_CheckedChanged);
         }
 
         #endregion
-        private CheckBox chkLihatPassword;
-        private Label label2;
-        private Label label4;
-        private Label lblExit;
-        private Label label10;
-        private Label label9;
-        private RoundedButton btnLogin;
-        private Label label7;
-        private Label label12;
-        private Label label11;
+
+        private SmkSoftPanel pnlRight;
+        private System.Windows.Forms.Label lblCopy;
+        private SmkRoundPanel pnlChip;
+        private System.Windows.Forms.Label lblChip;
+        private System.Windows.Forms.Button btnExit;
+        private SmkRoundButton btnLogin;
+        private System.Windows.Forms.CheckBox chkLihatPassword;
+        private System.Windows.Forms.Label lblIconPass;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblIconNama;
+        private System.Windows.Forms.Label lblNama;
+        private System.Windows.Forms.Label lblSub;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.PictureBox picLogo;
+        private SmkGradientPanel pnlLeft;
+        private System.Windows.Forms.Label lblTagline;
+        private System.Windows.Forms.Label lblHeadline;
         private RoundedTextBox txtPassword;
         private RoundedTextBox txtNama;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private RoundedPanel Login;
-        private PictureBox pictureBox1;
     }
 }

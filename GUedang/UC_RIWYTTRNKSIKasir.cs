@@ -50,5 +50,26 @@ namespace GUedang
         {
 
         }
+
+        private void btnCetakLaporan_Click_1(object sender, EventArgs e)
+        {
+            if (dgvRiwayatTransaksi.CurrentRow == null)
+            {
+                MessageBox.Show("Pilih transaksi di tabel dulu.", "Cetak Struk");
+                return;
+            }
+
+            string no = dgvRiwayatTransaksi.CurrentRow.Cells[0].Value?.ToString();
+            var t = PenjualanStore.Muat().FirstOrDefault(x => x.NoTransaksi == no);
+
+            if (t == null)
+            {
+                MessageBox.Show("Transaksi tidak ditemukan.", "Cetak Struk");
+                return;
+            }
+
+            StrukPrinter.Tampilkan(t);
+        }
     }
+    
 }

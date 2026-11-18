@@ -10,6 +10,7 @@ namespace GUedang
         public string Kode { get; set; }
         public string Nama { get; set; }
         public decimal Jumlah { get; set; }
+        public decimal HargaBeli { get; set; }
         public decimal Harga { get; set; }
         [JsonIgnore] public decimal Subtotal => Jumlah * Harga;
     }
@@ -22,5 +23,7 @@ namespace GUedang
         public List<ItemJual> Items { get; set; } = new List<ItemJual>();
         public decimal Total { get; set; }
         public decimal Bayar { get; set; }
+        public decimal HargaBeli { get; set; }
+        [JsonIgnore] public decimal Modal => Items.Sum(i => i.Jumlah * HargaBeli);
     }
 }

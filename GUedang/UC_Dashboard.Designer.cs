@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panelContent2 = new RoundedPanel();
             panel2 = new Panel();
             roundedPanel2 = new RoundedPanel();
@@ -110,7 +110,7 @@
             panel2.Controls.Add(roundedPanel4);
             panel2.Controls.Add(roundedPanel5);
             panel2.Location = new Point(2, 44);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(977, 85);
             panel2.TabIndex = 22;
@@ -122,7 +122,7 @@
             roundedPanel2.Controls.Add(label2);
             roundedPanel2.Controls.Add(lblJumlahKasir);
             roundedPanel2.Location = new Point(18, 15);
-            roundedPanel2.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel2.Margin = new Padding(2);
             roundedPanel2.Name = "roundedPanel2";
             roundedPanel2.Size = new Size(226, 63);
             roundedPanel2.TabIndex = 15;
@@ -170,7 +170,7 @@
             roundedPanel3.Controls.Add(label7);
             roundedPanel3.Controls.Add(lblJumlahGudang);
             roundedPanel3.Location = new Point(248, 16);
-            roundedPanel3.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel3.Margin = new Padding(2);
             roundedPanel3.Name = "roundedPanel3";
             roundedPanel3.Size = new Size(226, 63);
             roundedPanel3.TabIndex = 16;
@@ -218,7 +218,7 @@
             roundedPanel4.Controls.Add(label5);
             roundedPanel4.Controls.Add(lblBarangMenipis);
             roundedPanel4.Location = new Point(492, 16);
-            roundedPanel4.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel4.Margin = new Padding(2);
             roundedPanel4.Name = "roundedPanel4";
             roundedPanel4.Size = new Size(226, 63);
             roundedPanel4.TabIndex = 17;
@@ -269,7 +269,7 @@
             roundedPanel5.Controls.Add(lblBarangHabis);
             roundedPanel5.Controls.Add(label6);
             roundedPanel5.Location = new Point(735, 16);
-            roundedPanel5.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel5.Margin = new Padding(2);
             roundedPanel5.Name = "roundedPanel5";
             roundedPanel5.Size = new Size(226, 63);
             roundedPanel5.TabIndex = 18;
@@ -316,13 +316,13 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.RoyalBlue;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(roundedPanel7);
             panel1.Controls.Add(label17);
             panel1.Location = new Point(22, 126);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(410, 21);
             panel1.TabIndex = 21;
@@ -331,7 +331,7 @@
             // 
             roundedPanel7.BackColor = Color.Transparent;
             roundedPanel7.Location = new Point(-1, 20);
-            roundedPanel7.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel7.Margin = new Padding(2);
             roundedPanel7.Name = "roundedPanel7";
             roundedPanel7.Size = new Size(410, 227);
             roundedPanel7.TabIndex = 23;
@@ -360,7 +360,7 @@
             roundedPanel6.Controls.Add(label12);
             roundedPanel6.Controls.Add(label11);
             roundedPanel6.Location = new Point(465, 264);
-            roundedPanel6.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel6.Margin = new Padding(2);
             roundedPanel6.Name = "roundedPanel6";
             roundedPanel6.Size = new Size(514, 117);
             roundedPanel6.TabIndex = 20;
@@ -460,7 +460,7 @@
             roundedPanel1.Controls.Add(label8);
             roundedPanel1.Controls.Add(label4);
             roundedPanel1.Location = new Point(465, 133);
-            roundedPanel1.Margin = new Padding(2, 2, 2, 2);
+            roundedPanel1.Margin = new Padding(2);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.Size = new Size(514, 117);
             roundedPanel1.TabIndex = 19;
@@ -558,30 +558,30 @@
             dgvPengguna.BackgroundColor = Color.White;
             dgvPengguna.BorderStyle = BorderStyle.None;
             dgvPengguna.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvPengguna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvPengguna.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvPengguna.ColumnHeadersHeight = 40;
             dgvPengguna.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvPengguna.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.DimGray;
-            dataGridViewCellStyle4.Padding = new Padding(6);
-            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvPengguna.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.DimGray;
+            dataGridViewCellStyle2.Padding = new Padding(6);
+            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvPengguna.DefaultCellStyle = dataGridViewCellStyle2;
             dgvPengguna.EnableHeadersVisualStyles = false;
             dgvPengguna.GridColor = Color.Gainsboro;
             dgvPengguna.Location = new Point(22, 146);
-            dgvPengguna.Margin = new Padding(2, 2, 2, 2);
+            dgvPengguna.Margin = new Padding(2);
             dgvPengguna.MultiSelect = false;
             dgvPengguna.Name = "dgvPengguna";
             dgvPengguna.ReadOnly = true;

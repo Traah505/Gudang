@@ -114,6 +114,11 @@ namespace GUedang
             keranjang = new List<ItemJual>();
             txtUangDiterima.Text = "";
             RefreshKeranjang();
+            if (MessageBox.Show("Cetak struk?", "Struk", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                var terakhir = PenjualanStore.Muat().LastOrDefault();
+                if (terakhir != null) StrukPrinter.Tampilkan(terakhir);
+            }
         }
 
         private void Hitung()

@@ -41,8 +41,6 @@
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            label7 = new Label();
-            label6 = new Label();
             roundedButton1 = new RoundedButton();
             pictureBox2 = new PictureBox();
             label2 = new Label();
@@ -59,9 +57,10 @@
             // 
             panelKasirHalaman.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelKasirHalaman.BackColor = Color.WhiteSmoke;
-            panelKasirHalaman.Location = new Point(0, 72);
+            panelKasirHalaman.Location = new Point(0, 120);
+            panelKasirHalaman.Margin = new Padding(4, 5, 4, 5);
             panelKasirHalaman.Name = "panelKasirHalaman";
-            panelKasirHalaman.Size = new Size(761, 359);
+            panelKasirHalaman.Size = new Size(1087, 598);
             panelKasirHalaman.TabIndex = 7;
             // 
             // panelGradient2
@@ -172,48 +171,25 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label6);
             panel1.Controls.Add(roundedButton1);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblKasir1);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(761, 82);
+            panel1.Size = new Size(1087, 137);
             panel1.TabIndex = 6;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Black;
-            panel2.Location = new Point(297, 12);
+            panel2.Location = new Point(424, 20);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(5, 54);
+            panel2.Size = new Size(7, 90);
             panel2.TabIndex = 0;
-            // 
-            // label7
-            // 
-            label7.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold);
-            label7.ForeColor = Color.LightSkyBlue;
-            label7.Location = new Point(140, 17);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(73, 30);
-            label7.TabIndex = 21;
-            label7.Text = "Mart";
-            // 
-            // label6
-            // 
-            label6.BackColor = Color.White;
-            label6.Font = new Font("Segoe UI Semibold", 19F, FontStyle.Bold);
-            label6.ForeColor = Color.Navy;
-            label6.Location = new Point(82, 17);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(70, 30);
-            label6.TabIndex = 20;
-            label6.Text = "SMK";
             // 
             // roundedButton1
             // 
@@ -222,9 +198,10 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(619, 22);
+            roundedButton1.Location = new Point(884, 37);
+            roundedButton1.Margin = new Padding(4, 5, 4, 5);
             roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(139, 36);
+            roundedButton1.Size = new Size(199, 60);
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
@@ -233,10 +210,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(314, 21);
-            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Location = new Point(449, 35);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(46, 32);
+            pictureBox2.Size = new Size(66, 53);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
@@ -244,43 +220,43 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(82, 47);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(449, 102);
             label2.Name = "label2";
-            label2.Size = new Size(120, 15);
+            label2.Size = new Size(182, 25);
             label2.TabIndex = 5;
             label2.Text = "Selamat datang, Kasir";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(15, 17);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Location = new Point(15, -72);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(63, 45);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(278, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
             // lblKasir1
             // 
             lblKasir1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblKasir1.Location = new Point(365, 21);
+            lblKasir1.Location = new Point(521, 35);
+            lblKasir1.Margin = new Padding(4, 0, 4, 0);
             lblKasir1.Name = "lblKasir1";
-            lblKasir1.Size = new Size(93, 34);
+            lblKasir1.Size = new Size(133, 57);
             lblKasir1.TabIndex = 3;
             lblKasir1.Text = "Kasir ";
             lblKasir1.Click += lblKasir1_Click;
             // 
             // Kasir
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(panel1);
             Controls.Add(panelKasirHalaman);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Kasir";
-            Size = new Size(761, 431);
+            Size = new Size(1087, 718);
             Load += Kasir_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -305,8 +281,6 @@
         private PanelGradient panelGradient2;
         private Panel panel1;
         private Panel panel2;
-        private Label label7;
-        private Label label6;
         private RoundedButton roundedButton1;
         private PictureBox pictureBox2;
         private Label label2;

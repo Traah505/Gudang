@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panelRounded1 = new PanelRounded();
             dgvLaporanLaba = new DataGridView();
@@ -86,12 +86,10 @@
             panel1.Controls.Add(roundedPanel1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(2, 2);
-            panel1.Margin = new Padding(2);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(984, 406);
+            panel1.Size = new Size(1406, 677);
             panel1.TabIndex = 0;
- 
             // 
             // panelRounded1
             // 
@@ -99,10 +97,9 @@
             panelRounded1.BackColor = Color.Transparent;
             panelRounded1.Controls.Add(dgvLaporanLaba);
             panelRounded1.Controls.Add(label14);
-            panelRounded1.Location = new Point(18, 230);
-            panelRounded1.Margin = new Padding(2);
+            panelRounded1.Location = new Point(26, 383);
             panelRounded1.Name = "panelRounded1";
-            panelRounded1.Size = new Size(942, 142);
+            panelRounded1.Size = new Size(1346, 237);
             panelRounded1.TabIndex = 9;
             // 
             // dgvLaporanLaba
@@ -111,34 +108,33 @@
             dgvLaporanLaba.AllowUserToDeleteRows = false;
             dgvLaporanLaba.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLaporanLaba.BackgroundColor = Color.White;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.AliceBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.RoyalBlue;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvLaporanLaba.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvLaporanLaba.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvLaporanLaba.ColumnHeadersHeight = 40;
             dgvLaporanLaba.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colTransaksi, colPenjualan, colModal, colLaba });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.DarkSlateGray;
-            dataGridViewCellStyle4.SelectionBackColor = Color.LightSteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvLaporanLaba.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = Color.LightSteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvLaporanLaba.DefaultCellStyle = dataGridViewCellStyle2;
             dgvLaporanLaba.EnableHeadersVisualStyles = false;
-            dgvLaporanLaba.Location = new Point(13, 16);
-            dgvLaporanLaba.Margin = new Padding(2);
+            dgvLaporanLaba.Location = new Point(19, 27);
             dgvLaporanLaba.MultiSelect = false;
             dgvLaporanLaba.Name = "dgvLaporanLaba";
             dgvLaporanLaba.ReadOnly = true;
             dgvLaporanLaba.RowHeadersVisible = false;
             dgvLaporanLaba.RowHeadersWidth = 62;
             dgvLaporanLaba.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLaporanLaba.Size = new Size(909, 118);
+            dgvLaporanLaba.Size = new Size(1299, 197);
             dgvLaporanLaba.TabIndex = 15;
             // 
             // colNo
@@ -195,10 +191,9 @@
             label14.AutoSize = true;
             label14.Font = new Font("Calibri", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.MidnightBlue;
-            label14.Location = new Point(13, 0);
-            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Location = new Point(19, 0);
             label14.Name = "label14";
-            label14.Size = new Size(144, 17);
+            label14.Size = new Size(204, 24);
             label14.TabIndex = 14;
             label14.Text = "Rincian Laba Penjualan";
             // 
@@ -213,19 +208,17 @@
             roundedPanel5.Controls.Add(dtpTanggalAwal);
             roundedPanel5.Controls.Add(label12);
             roundedPanel5.Controls.Add(label5);
-            roundedPanel5.Location = new Point(15, 146);
-            roundedPanel5.Margin = new Padding(2);
+            roundedPanel5.Location = new Point(21, 243);
             roundedPanel5.Name = "roundedPanel5";
-            roundedPanel5.Size = new Size(944, 80);
+            roundedPanel5.Size = new Size(1349, 133);
             roundedPanel5.TabIndex = 8;
             // 
             // roundedPanel6
             // 
             roundedPanel6.BackColor = Color.Transparent;
-            roundedPanel6.Location = new Point(0, 94);
-            roundedPanel6.Margin = new Padding(2);
+            roundedPanel6.Location = new Point(0, 157);
             roundedPanel6.Name = "roundedPanel6";
-            roundedPanel6.Size = new Size(944, 133);
+            roundedPanel6.Size = new Size(1349, 222);
             roundedPanel6.TabIndex = 9;
             // 
             // btnTampilkanLaba
@@ -235,10 +228,9 @@
             btnTampilkanLaba.FlatAppearance.BorderSize = 0;
             btnTampilkanLaba.FlatStyle = FlatStyle.Flat;
             btnTampilkanLaba.ForeColor = Color.Black;
-            btnTampilkanLaba.Location = new Point(715, 38);
-            btnTampilkanLaba.Margin = new Padding(2);
+            btnTampilkanLaba.Location = new Point(1021, 63);
             btnTampilkanLaba.Name = "btnTampilkanLaba";
-            btnTampilkanLaba.Size = new Size(158, 26);
+            btnTampilkanLaba.Size = new Size(226, 43);
             btnTampilkanLaba.TabIndex = 13;
             btnTampilkanLaba.Text = "Tampilkan";
             btnTampilkanLaba.UseVisualStyleBackColor = false;
@@ -246,40 +238,36 @@
             // dtpTanggalAkhir
             // 
             dtpTanggalAkhir.Format = DateTimePickerFormat.Short;
-            dtpTanggalAkhir.Location = new Point(214, 46);
-            dtpTanggalAkhir.Margin = new Padding(2);
+            dtpTanggalAkhir.Location = new Point(306, 77);
             dtpTanggalAkhir.Name = "dtpTanggalAkhir";
-            dtpTanggalAkhir.Size = new Size(100, 23);
+            dtpTanggalAkhir.Size = new Size(141, 31);
             dtpTanggalAkhir.TabIndex = 12;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(214, 33);
-            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Location = new Point(306, 55);
             label13.Name = "label13";
-            label13.Size = new Size(64, 13);
+            label13.Size = new Size(98, 19);
             label13.TabIndex = 11;
             label13.Text = "Tanggal Akhir";
             // 
             // dtpTanggalAwal
             // 
             dtpTanggalAwal.Format = DateTimePickerFormat.Short;
-            dtpTanggalAwal.Location = new Point(21, 46);
-            dtpTanggalAwal.Margin = new Padding(2);
+            dtpTanggalAwal.Location = new Point(30, 77);
             dtpTanggalAwal.Name = "dtpTanggalAwal";
-            dtpTanggalAwal.Size = new Size(100, 23);
+            dtpTanggalAwal.Size = new Size(141, 31);
             dtpTanggalAwal.TabIndex = 10;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(21, 33);
-            label12.Margin = new Padding(2, 0, 2, 0);
+            label12.Location = new Point(30, 55);
             label12.Name = "label12";
-            label12.Size = new Size(62, 13);
+            label12.Size = new Size(96, 19);
             label12.TabIndex = 9;
             label12.Text = "Tanggal Awal";
             // 
@@ -287,10 +275,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(21, 9);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(30, 15);
             label5.Name = "label5";
-            label5.Size = new Size(71, 13);
+            label5.Size = new Size(104, 19);
             label5.TabIndex = 5;
             label5.Text = "Filter Laporan";
             // 
@@ -299,20 +286,18 @@
             roundedPanel4.BackColor = Color.Transparent;
             roundedPanel4.Controls.Add(lblPersentase);
             roundedPanel4.Controls.Add(label11);
-            roundedPanel4.Location = new Point(752, 61);
-            roundedPanel4.Margin = new Padding(2);
+            roundedPanel4.Location = new Point(1074, 102);
             roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(206, 74);
+            roundedPanel4.Size = new Size(294, 123);
             roundedPanel4.TabIndex = 7;
             // 
             // lblPersentase
             // 
             lblPersentase.AutoSize = true;
             lblPersentase.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPersentase.Location = new Point(15, 27);
-            lblPersentase.Margin = new Padding(2, 0, 2, 0);
+            lblPersentase.Location = new Point(21, 45);
             lblPersentase.Name = "lblPersentase";
-            lblPersentase.Size = new Size(39, 25);
+            lblPersentase.Size = new Size(57, 38);
             lblPersentase.TabIndex = 4;
             lblPersentase.Text = "0%";
             // 
@@ -321,10 +306,9 @@
             label11.AutoSize = true;
             label11.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(15, 14);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Location = new Point(21, 23);
             label11.Name = "label11";
-            label11.Size = new Size(116, 13);
+            label11.Size = new Size(171, 19);
             label11.TabIndex = 3;
             label11.Text = "Persentase Keuntungan";
             // 
@@ -334,10 +318,9 @@
             roundedPanel3.Controls.Add(lblTotalLaba);
             roundedPanel3.Controls.Add(label6);
             roundedPanel3.Controls.Add(label9);
-            roundedPanel3.Location = new Point(504, 61);
-            roundedPanel3.Margin = new Padding(2);
+            roundedPanel3.Location = new Point(720, 102);
             roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(206, 74);
+            roundedPanel3.Size = new Size(294, 123);
             roundedPanel3.TabIndex = 6;
             // 
             // lblTotalLaba
@@ -345,10 +328,9 @@
             lblTotalLaba.AutoSize = true;
             lblTotalLaba.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalLaba.ForeColor = Color.Black;
-            lblTotalLaba.Location = new Point(45, 26);
-            lblTotalLaba.Margin = new Padding(2, 0, 2, 0);
+            lblTotalLaba.Location = new Point(64, 43);
             lblTotalLaba.Name = "lblTotalLaba";
-            lblTotalLaba.Size = new Size(23, 25);
+            lblTotalLaba.Size = new Size(33, 38);
             lblTotalLaba.TabIndex = 4;
             lblTotalLaba.Text = "0";
             // 
@@ -357,10 +339,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(15, 26);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(21, 43);
             label6.Name = "label6";
-            label6.Size = new Size(36, 25);
+            label6.Size = new Size(52, 38);
             label6.TabIndex = 3;
             label6.Text = "Rp";
             // 
@@ -369,10 +350,9 @@
             label9.AutoSize = true;
             label9.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(15, 14);
-            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Location = new Point(21, 23);
             label9.Name = "label9";
-            label9.Size = new Size(52, 13);
+            label9.Size = new Size(79, 19);
             label9.TabIndex = 3;
             label9.Text = "Total Laba";
             // 
@@ -382,10 +362,9 @@
             roundedPanel2.Controls.Add(lblTotalBarangTerjual);
             roundedPanel2.Controls.Add(label7);
             roundedPanel2.Controls.Add(label8);
-            roundedPanel2.Location = new Point(260, 61);
-            roundedPanel2.Margin = new Padding(2);
+            roundedPanel2.Location = new Point(371, 102);
             roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(206, 74);
+            roundedPanel2.Size = new Size(294, 123);
             roundedPanel2.TabIndex = 5;
             // 
             // lblTotalBarangTerjual
@@ -393,10 +372,9 @@
             lblTotalBarangTerjual.AutoSize = true;
             lblTotalBarangTerjual.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalBarangTerjual.ForeColor = Color.SeaGreen;
-            lblTotalBarangTerjual.Location = new Point(45, 26);
-            lblTotalBarangTerjual.Margin = new Padding(2, 0, 2, 0);
+            lblTotalBarangTerjual.Location = new Point(64, 43);
             lblTotalBarangTerjual.Name = "lblTotalBarangTerjual";
-            lblTotalBarangTerjual.Size = new Size(23, 25);
+            lblTotalBarangTerjual.Size = new Size(33, 38);
             lblTotalBarangTerjual.TabIndex = 4;
             lblTotalBarangTerjual.Text = "0";
             // 
@@ -405,10 +383,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.SeaGreen;
-            label7.Location = new Point(15, 26);
-            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Location = new Point(21, 43);
             label7.Name = "label7";
-            label7.Size = new Size(36, 25);
+            label7.Size = new Size(52, 38);
             label7.TabIndex = 3;
             label7.Text = "Rp";
             // 
@@ -416,10 +393,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(15, 14);
-            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Location = new Point(21, 23);
             label8.Name = "label8";
-            label8.Size = new Size(127, 13);
+            label8.Size = new Size(193, 19);
             label8.TabIndex = 3;
             label8.Text = "Total Modal Barang Terjual";
             // 
@@ -429,10 +405,9 @@
             roundedPanel1.Controls.Add(lblTotalPenjualan);
             roundedPanel1.Controls.Add(label4);
             roundedPanel1.Controls.Add(label3);
-            roundedPanel1.Location = new Point(15, 61);
-            roundedPanel1.Margin = new Padding(2);
+            roundedPanel1.Location = new Point(21, 102);
             roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(206, 74);
+            roundedPanel1.Size = new Size(294, 123);
             roundedPanel1.TabIndex = 2;
             // 
             // lblTotalPenjualan
@@ -440,10 +415,9 @@
             lblTotalPenjualan.AutoSize = true;
             lblTotalPenjualan.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalPenjualan.ForeColor = Color.RoyalBlue;
-            lblTotalPenjualan.Location = new Point(45, 26);
-            lblTotalPenjualan.Margin = new Padding(2, 0, 2, 0);
+            lblTotalPenjualan.Location = new Point(64, 43);
             lblTotalPenjualan.Name = "lblTotalPenjualan";
-            lblTotalPenjualan.Size = new Size(23, 25);
+            lblTotalPenjualan.Size = new Size(33, 38);
             lblTotalPenjualan.TabIndex = 4;
             lblTotalPenjualan.Text = "0";
             // 
@@ -452,10 +426,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.RoyalBlue;
-            label4.Location = new Point(15, 26);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(21, 43);
             label4.Name = "label4";
-            label4.Size = new Size(36, 25);
+            label4.Size = new Size(52, 38);
             label4.TabIndex = 3;
             label4.Text = "Rp";
             // 
@@ -463,10 +436,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(15, 14);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(21, 23);
             label3.Name = "label3";
-            label3.Size = new Size(77, 13);
+            label3.Size = new Size(115, 19);
             label3.TabIndex = 3;
             label3.Text = "Total Penjualan";
             // 
@@ -474,10 +446,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(15, 32);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(21, 53);
             label2.Name = "label2";
-            label2.Size = new Size(201, 13);
+            label2.Size = new Size(295, 19);
             label2.TabIndex = 1;
             label2.Text = "Ringkasan Keuntungan penjualan SMK MArt";
             // 
@@ -486,21 +457,19 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RoyalBlue;
-            label1.Location = new Point(15, 10);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(21, 17);
             label1.Name = "label1";
-            label1.Size = new Size(126, 25);
+            label1.Size = new Size(190, 38);
             label1.TabIndex = 0;
             label1.Text = "Laporan Laba";
             // 
             // UC_LaporanLaba
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Margin = new Padding(2);
             Name = "UC_LaporanLaba";
-            Size = new Size(986, 381);
+            Size = new Size(1409, 635);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelRounded1.ResumeLayout(false);

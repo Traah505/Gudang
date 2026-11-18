@@ -102,7 +102,14 @@ namespace GUedang
                 DashboardLogin.Show();
                 this.Hide();
 
-               
+                if (Session.UserAktif != null)
+                {
+                    AktivitasStore.Catat(
+                        Session.UserAktif.Nama,
+                        Session.UserAktif.Role.ToString(),
+                        "Logout"
+                    );
+                }
 
             }
         }

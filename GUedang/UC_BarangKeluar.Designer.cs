@@ -88,7 +88,7 @@
             // 
             panel1.BackColor = Color.RoyalBlue;
             panel1.Controls.Add(label8);
-            panel1.ForeColor = SystemColors.ControlText;
+            panel1.ForeColor = Color.AliceBlue;
             panel1.Location = new Point(29, 308);
             panel1.Name = "panel1";
             panel1.Size = new Size(930, 43);
@@ -99,7 +99,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(30, 0);
+            label8.Location = new Point(12, 0);
             label8.Name = "label8";
             label8.Size = new Size(235, 30);
             label8.TabIndex = 11;
@@ -124,9 +124,9 @@
             dgvRiwayatKeluar.BackgroundColor = Color.White;
             dgvRiwayatKeluar.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.BackColor = Color.AliceBlue;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.RoyalBlue;
             dataGridViewCellStyle2.SelectionBackColor = Color.RoyalBlue;
             dataGridViewCellStyle2.SelectionForeColor = Color.White;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;

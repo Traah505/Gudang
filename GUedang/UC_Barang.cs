@@ -138,6 +138,15 @@ namespace GUedang
             {
                 MessageBox.Show("Gagal menyimpan data:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            
+            
+                AktivitasStore.Catat(
+                    Session.UserAktif.Nama,
+                    Session.UserAktif.Role.ToString(),
+                    "Mengubah Barang"
+                );
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)

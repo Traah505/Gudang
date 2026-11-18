@@ -110,11 +110,21 @@ namespace GUedang
 
             if (!ok)
             {
-                MessageBox.Show(pesan, "Tambah User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(pesan, "Tambah User",
+       MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            MessageBox.Show(pesan, "Tambah User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Catat jika akun berhasil ditambahkan
+            AktivitasStore.Catat(
+                Session.UserAktif.Nama,
+                Session.UserAktif.Role.ToString(),
+                "Tambah akun: " + nama + " (" + role + ")"
+            );
+
+            MessageBox.Show(pesan, "Tambah User",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             KosongkanForm();
             MuatGrid();
         }
@@ -151,6 +161,14 @@ namespace GUedang
                     if (konfirmasi != DialogResult.Yes) return;
 
                     ok = UserStore.Hapus(id, out pesan);
+                    if (ok)
+                    {
+                        AktivitasStore.Catat(
+                            Session.UserAktif.Nama,
+                            Session.UserAktif.Role.ToString(),
+                            "Hapus akun: " + nama
+                        );
+                    }
                 }
                 else if (kolom == "colStatus")     // klik Status = aktif / nonaktif
                 {
@@ -197,6 +215,12 @@ namespace GUedang
             txtNama.Text = "";
             txtPassword.Text = "";
             cmbJenis.SelectedIndex = -1;
+
+
+            
+            
+             
+            
         }
 
         private void UC_User_Load_1(object sender, EventArgs e)

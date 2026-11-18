@@ -63,9 +63,19 @@ namespace GUedang
             DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hasil == DialogResult.Yes)
             {
+                Sesi.Logout();
                 LoginAkun DashboardLogin = new LoginAkun();
                 DashboardLogin.Show();
                 this.Hide();
+
+                if (Session.UserAktif != null)
+                {
+                    AktivitasStore.Catat(
+                        Session.UserAktif.Nama,
+                        Session.UserAktif.Role.ToString(),
+                        "Logout"
+                    );
+                }
 
             }
         }

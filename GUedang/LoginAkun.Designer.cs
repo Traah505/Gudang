@@ -173,12 +173,13 @@ namespace GUedang
             // 
             picLogo.BackColor = Color.Transparent;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(95, 28);
+            picLogo.Location = new Point(89, 30);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(146, 90);
+            picLogo.Size = new Size(146, 88);
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
+            picLogo.Click += picLogo_Click;
             // 
             // lblTagline
             // 

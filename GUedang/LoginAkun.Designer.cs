@@ -46,10 +46,9 @@ namespace GUedang
             lblCopy.BackColor = Color.Transparent;
             lblCopy.Font = new Font("Segoe UI", 8.5F);
             lblCopy.ForeColor = Color.FromArgb(150, 160, 182);
-            lblCopy.Location = new Point(100, 870);
-            lblCopy.Margin = new Padding(4, 0, 4, 0);
+            lblCopy.Location = new Point(70, 522);
             lblCopy.Name = "lblCopy";
-            lblCopy.Size = new Size(543, 33);
+            lblCopy.Size = new Size(380, 20);
             lblCopy.TabIndex = 10;
             lblCopy.Text = "© 2026 SMK Mart  •  Gudang · Stok · Penjualan";
             lblCopy.TextAlign = ContentAlignment.MiddleCenter;
@@ -60,10 +59,9 @@ namespace GUedang
             lblChip.BackColor = Color.Transparent;
             lblChip.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblChip.ForeColor = Color.FromArgb(76, 102, 255);
-            lblChip.Location = new Point(70, 58);
-            lblChip.Margin = new Padding(4, 0, 4, 0);
+            lblChip.Location = new Point(49, 35);
             lblChip.Name = "lblChip";
-            lblChip.Size = new Size(160, 28);
+            lblChip.Size = new Size(112, 19);
             lblChip.TabIndex = 0;
             lblChip.Text = "●  LOGIN AKUN";
             // 
@@ -77,10 +75,9 @@ namespace GUedang
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnExit.ForeColor = Color.FromArgb(220, 70, 90);
-            btnExit.Location = new Point(100, 763);
-            btnExit.Margin = new Padding(4, 5, 4, 5);
+            btnExit.Location = new Point(70, 458);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(543, 53);
+            btnExit.Size = new Size(380, 32);
             btnExit.TabIndex = 9;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = false;
@@ -93,10 +90,9 @@ namespace GUedang
             chkLihatPassword.Cursor = Cursors.Hand;
             chkLihatPassword.Font = new Font("Segoe UI", 9F);
             chkLihatPassword.ForeColor = Color.FromArgb(110, 122, 148);
-            chkLihatPassword.Location = new Point(106, 597);
-            chkLihatPassword.Margin = new Padding(4, 5, 4, 5);
+            chkLihatPassword.Location = new Point(74, 358);
             chkLihatPassword.Name = "chkLihatPassword";
-            chkLihatPassword.Size = new Size(155, 29);
+            chkLihatPassword.Size = new Size(105, 19);
             chkLihatPassword.TabIndex = 7;
             chkLihatPassword.Text = "Lihat Password";
             chkLihatPassword.UseVisualStyleBackColor = true;
@@ -119,10 +115,9 @@ namespace GUedang
             lblPassword.BackColor = Color.Transparent;
             lblPassword.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             lblPassword.ForeColor = Color.FromArgb(60, 72, 100);
-            lblPassword.Location = new Point(103, 453);
-            lblPassword.Margin = new Padding(4, 0, 4, 0);
+            lblPassword.Location = new Point(72, 272);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(97, 25);
+            lblPassword.Size = new Size(66, 17);
             lblPassword.TabIndex = 5;
             lblPassword.Text = "Password";
             // 
@@ -144,10 +139,9 @@ namespace GUedang
             lblNama.BackColor = Color.Transparent;
             lblNama.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             lblNama.ForeColor = Color.FromArgb(60, 72, 100);
-            lblNama.Location = new Point(103, 303);
-            lblNama.Margin = new Padding(4, 0, 4, 0);
+            lblNama.Location = new Point(72, 182);
             lblNama.Name = "lblNama";
-            lblNama.Size = new Size(64, 25);
+            lblNama.Size = new Size(44, 17);
             lblNama.TabIndex = 3;
             lblNama.Text = "Nama";
             // 
@@ -157,10 +151,9 @@ namespace GUedang
             lblSub.BackColor = Color.Transparent;
             lblSub.Font = new Font("Segoe UI", 10F);
             lblSub.ForeColor = Color.FromArgb(110, 122, 148);
-            lblSub.Location = new Point(100, 227);
-            lblSub.Margin = new Padding(4, 0, 4, 0);
+            lblSub.Location = new Point(70, 136);
             lblSub.Name = "lblSub";
-            lblSub.Size = new Size(291, 28);
+            lblSub.Size = new Size(204, 19);
             lblSub.TabIndex = 2;
             lblSub.Text = "Silakan login untuk melanjutkan";
             // 
@@ -170,10 +163,9 @@ namespace GUedang
             lblWelcome.BackColor = Color.Transparent;
             lblWelcome.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             lblWelcome.ForeColor = Color.FromArgb(22, 41, 94);
-            lblWelcome.Location = new Point(94, 150);
-            lblWelcome.Margin = new Padding(4, 0, 4, 0);
+            lblWelcome.Location = new Point(66, 90);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(369, 60);
+            lblWelcome.Size = new Size(252, 41);
             lblWelcome.TabIndex = 1;
             lblWelcome.Text = "Selamat Datang!";
             // 
@@ -188,6 +180,7 @@ namespace GUedang
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
+            picLogo.Click += picLogo_Click;
             // 
             // lblTagline
             // 
@@ -195,10 +188,9 @@ namespace GUedang
             lblTagline.BackColor = Color.Transparent;
             lblTagline.Font = new Font("Segoe UI", 10.5F);
             lblTagline.ForeColor = Color.FromArgb(226, 236, 255);
-            lblTagline.Location = new Point(57, 303);
-            lblTagline.Margin = new Padding(4, 0, 4, 0);
+            lblTagline.Location = new Point(40, 182);
             lblTagline.Name = "lblTagline";
-            lblTagline.Size = new Size(320, 60);
+            lblTagline.Size = new Size(213, 38);
             lblTagline.TabIndex = 1;
             lblTagline.Text = "Pantau gudang, stok barang, dan\r\npenjualan dalam satu aplikasi.";
             // 
@@ -208,10 +200,9 @@ namespace GUedang
             lblHeadline.BackColor = Color.Transparent;
             lblHeadline.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblHeadline.ForeColor = Color.White;
-            lblHeadline.Location = new Point(51, 230);
-            lblHeadline.Margin = new Padding(4, 0, 4, 0);
+            lblHeadline.Location = new Point(36, 138);
             lblHeadline.Name = "lblHeadline";
-            lblHeadline.Size = new Size(495, 54);
+            lblHeadline.Size = new Size(342, 37);
             lblHeadline.TabIndex = 0;
             lblHeadline.Text = "Kelola Toko Lebih Mudah";
             // 
@@ -225,9 +216,8 @@ namespace GUedang
             pnlLeft.FooterText = "Gudang   •   Stok   •   Penjualan";
             pnlLeft.Location = new Point(0, 0);
             pnlLeft.LogoCard = new Rectangle(28, 26, 280, 94);
-            pnlLeft.Margin = new Padding(4, 5, 4, 5);
             pnlLeft.Name = "pnlLeft";
-            pnlLeft.Size = new Size(629, 967);
+            pnlLeft.Size = new Size(440, 580);
             pnlLeft.TabIndex = 1;
             // 
             // pnlRight
@@ -247,29 +237,26 @@ namespace GUedang
             pnlRight.Controls.Add(btnLogin);
             pnlRight.Controls.Add(btnExit);
             pnlRight.Controls.Add(lblCopy);
-            pnlRight.Location = new Point(629, 0);
-            pnlRight.Margin = new Padding(4, 5, 4, 5);
+            pnlRight.Location = new Point(440, 0);
             pnlRight.Name = "pnlRight";
-            pnlRight.Size = new Size(743, 967);
+            pnlRight.Size = new Size(520, 580);
             pnlRight.TabIndex = 0;
             // 
             // txtPassword
             // 
             txtPassword.BorderThickness = 2;
-            txtPassword.Location = new Point(106, 483);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Location = new Point(74, 290);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(537, 73);
+            txtPassword.Size = new Size(376, 44);
             txtPassword.TabIndex = 12;
             // 
             // txtNama
             // 
             txtNama.BackgroundImageLayout = ImageLayout.Zoom;
             txtNama.BorderThickness = 2;
-            txtNama.Location = new Point(106, 337);
-            txtNama.Margin = new Padding(4, 5, 4, 5);
+            txtNama.Location = new Point(74, 202);
             txtNama.Name = "txtNama";
-            txtNama.Size = new Size(537, 73);
+            txtNama.Size = new Size(376, 44);
             txtNama.TabIndex = 11;
             // 
             // btnLogin
@@ -280,10 +267,9 @@ namespace GUedang
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(100, 665);
-            btnLogin.Margin = new Padding(4, 5, 4, 5);
+            btnLogin.Location = new Point(70, 399);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(543, 88);
+            btnLogin.Size = new Size(380, 53);
             btnLogin.TabIndex = 8;
             btnLogin.Text = "LOGIN";
             btnLogin.Click += btnLogin_Click;
@@ -301,14 +287,13 @@ namespace GUedang
             // 
             // LoginAkun
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1371, 967);
+            ClientSize = new Size(960, 570);
             Controls.Add(pnlRight);
             Controls.Add(pnlLeft);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "LoginAkun";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SMK Mart - Login";

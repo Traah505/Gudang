@@ -84,6 +84,7 @@ namespace GUedang
             btnExit.TabIndex = 9;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // chkLihatPassword
             // 
@@ -180,10 +181,10 @@ namespace GUedang
             // 
             picLogo.BackColor = Color.Transparent;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(26, 14);
+            picLogo.Location = new Point(57, 26);
             picLogo.Margin = new Padding(4, 5, 4, 5);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(297, 157);
+            picLogo.Size = new Size(217, 97);
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;

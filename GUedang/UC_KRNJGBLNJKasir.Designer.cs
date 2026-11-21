@@ -699,7 +699,7 @@
             cmbMetode.Font = new Font("Segoe UI", 10F);
             cmbMetode.FormattingEnabled = true;
             cmbMetode.Items.AddRange(new object[] { "Tunai", "QRIS", "Transfer" });
-            cmbMetode.Location = new Point(225, 122);
+            cmbMetode.Location = new Point(225, 121);
             cmbMetode.Margin = new Padding(0);
             cmbMetode.Name = "cmbMetode";
             cmbMetode.Size = new Size(277, 25);

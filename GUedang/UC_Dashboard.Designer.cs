@@ -881,6 +881,7 @@ namespace GUedang
             panel2.Name = "panel2";
             panel2.Size = new Size(7, 72);
             panel2.TabIndex = 4;
+            panel2.Paint += panel2_Paint;
             // 
             // lblGudangKet
             // 

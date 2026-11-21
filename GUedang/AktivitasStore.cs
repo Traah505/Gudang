@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using Newtonsoft.Json;
-public class DataAktivitas
+public class DataLogAktivitas
 {
     public DateTime Waktu { get; set; }
     public string Nama { get; set; }
@@ -11,28 +11,37 @@ public class DataAktivitas
     public string Aktivitas { get; set; }
 }
 
-public static class AktivitasStore
+public class AktivitasStore
 {
     private static string filePath =
         Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
         "aktivitas.json");
 
-    public static List<DataAktivitas> AmbilSemua()
+    public static List<DataLogAktivitas> AmbilSemua()
     {
         if (!File.Exists(filePath))
-            return new List<DataAktivitas>();
+            return new List<DataLogAktivitas>();
 
         string json = File.ReadAllText(filePath);
 
-        return JsonConvert.DeserializeObject<List<DataAktivitas>>(json)
-               ?? new List<DataAktivitas>();
+        return JsonConvert.DeserializeObject<List<DataLogAktivitas>>(json)
+               ?? new List<DataLogAktivitas>();
     }
-
+    public static void BersihkanSemua()
+    {
+        File.WriteAllText(
+            filePath,
+            JsonConvert.SerializeObject(
+                new List<DataLogAktivitas>(),
+                Newtonsoft.Json.Formatting.Indented
+            )
+        );
+    }
     public static void Catat(string nama, string peran, string aktivitas)
     {
-        List<DataAktivitas> data = AmbilSemua();
+        List<DataLogAktivitas> data = AmbilSemua();
 
-        data.Add(new DataAktivitas
+        data.Add(new DataLogAktivitas
         {
             Waktu = DateTime.Now,
             Nama = nama,
@@ -42,4 +51,5 @@ public static class AktivitasStore
         File.WriteAllText(filePath,
     JsonConvert.SerializeObject(data, Newtonsoft.Json.Formatting.Indented));
     }
+   
 }

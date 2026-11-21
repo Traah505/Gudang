@@ -217,10 +217,10 @@ namespace GUedang
             cmbJenis.SelectedIndex = -1;
 
 
-            
-            
-             
-            
+
+
+
+
         }
 
         private void UC_User_Load_1(object sender, EventArgs e)
@@ -271,7 +271,10 @@ namespace GUedang
             txtKonfGP.Text = "";
         }
 
-        
+        private void roundedPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

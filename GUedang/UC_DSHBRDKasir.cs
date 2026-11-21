@@ -1,68 +1,160 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace GUedang
 {
     public partial class UC_DSHBRDKasir : UserControl
     {
+        private static readonly CultureInfo Id = new CultureInfo("id-ID");
+
+        /// <summary>Isi dari form login, mis. dashboard.NamaKasir = "Ditra2";</summary>
+        [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string NamaKasir { get; set; } = "Kasir";
+
+        // Event supaya form utama yang mengatur perpindahan halaman.
+        public event EventHandler TransaksiBaruClicked;
+        public event EventHandler KeranjangClicked;
+        public event EventHandler RiwayatClicked;
+
         public UC_DSHBRDKasir()
         {
             InitializeComponent();
-            Load += (s, e) => MuatDashboard();
-            VisibleChanged += (s, e) => { if (Visible) MuatDashboard(); };
+
+            UiStyle.ApplyGrid(dgvTransaksi);
+            colTotal.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            btnRefresh.Click += (s, e) => LoadData();
+            btnTransaksiBaru.Click += (s, e) => TransaksiBaruClicked?.Invoke(this, EventArgs.Empty);
+            btnKeranjang.Click += (s, e) => KeranjangClicked?.Invoke(this, EventArgs.Empty);
+            btnRiwayat.Click += (s, e) => RiwayatClicked?.Invoke(this, EventArgs.Empty);
+            timerJam.Tick += (s, e) => UpdateJam();
         }
 
-        private void MuatDashboard()
+        private bool IsDesigner
         {
-            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
+            get { return LicenseManager.UsageMode == LicenseUsageMode.Designtime || DesignMode; }
+        }
 
-            if (dgvTransaksi.Columns.Count == 0)
-            {
-                dgvTransaksi.AutoGenerateColumns = false;
-                dgvTransaksi.AllowUserToAddRows = false;
-                dgvTransaksi.ReadOnly = true;
-                dgvTransaksi.RowHeadersVisible = false;
-                dgvTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dgvTransaksi.Columns.Add("colNo", "No Transaksi");
-                dgvTransaksi.Columns.Add("colWaktu", "Waktu");
-                dgvTransaksi.Columns.Add("colKasir", "Kasir");
-                dgvTransaksi.Columns.Add("colTotal", "Total");
-            }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            if (IsDesigner) return;
 
-            var hariIni = PenjualanStore.Muat()
-                .Where(t => t.Waktu.Date == DateTime.Today)
-                .OrderByDescending(t => t.Waktu).ToList();
+            UpdateJam();
+            timerJam.Start();
+            LoadData();
+        }
 
-            lblPendapatan.Text = hariIni.Sum(t => t.Total).ToString("N0");
-            lblJumlahTransaksi.Text = hariIni.Count.ToString();
-            lblItemTerjual.Text = hariIni.Sum(t => t.Items.Sum(i => i.Jumlah)).ToString("0.##");
+        // ---------------------------------------------------------------- UI
 
+        private void UpdateJam()
+        {
+            DateTime now = DateTime.Now;
+            lblJam.Text = now.ToString("HH:mm:ss");
+            lblTanggal.Text = now.ToString("dddd, dd MMMM yyyy", Id);
+            lblSapaan.Text = "Selamat " + Sapaan(now.Hour) + ", " + NamaKasir;
+        }
+
+        private static string Sapaan(int jam)
+        {
+            if (jam < 11) return "Pagi";
+            if (jam < 15) return "Siang";
+            if (jam < 18) return "Sore";
+            return "Malam";
+        }
+
+        private static string Rupiah(decimal nilai)
+        {
+            return string.Format(Id, "Rp {0:N0}", nilai);
+        }
+
+        /// <summary>Muat ulang semua data dashboard. Dipanggil saat load dan tombol Refresh.</summary>
+        public void LoadData()
+        {
+            if (IsDesigner) return;
+
+            decimal pendapatan; int jumlahTransaksi; int itemTerjual;
+            GetRingkasanHariIni(out pendapatan, out jumlahTransaksi, out itemTerjual);
+
+            int itemKeranjang; decimal totalKeranjang;
+            GetKeranjangAktif(out itemKeranjang, out totalKeranjang);
+
+            decimal rata = jumlahTransaksi > 0 ? pendapatan / jumlahTransaksi : 0;
+
+            // Kartu atas
+            lblPendapatanNilai.Text = Rupiah(pendapatan);
+            lblTransaksiNilai.Text = jumlahTransaksi.ToString(Id);
+            lblTerjualNilai.Text = itemTerjual.ToString(Id);
+            lblKeranjangKartuNilai.Text = itemKeranjang.ToString(Id);
+
+            // Keranjang saat ini  (catatan: "Rp" hanya ditulis SEKALI, lewat Rupiah())
+            lblItemNilai.Text = itemKeranjang.ToString(Id);
+            lblTotalBelanjaNilai.Text = Rupiah(totalKeranjang);
+
+            // Ringkasan
+            lblRingkasanPendapatanNilai.Text = Rupiah(pendapatan);
+            lblRingkasanTransaksiNilai.Text = jumlahTransaksi.ToString(Id);
+            lblRingkasanRataNilai.Text = Rupiah(rata);
+
+            // Tabel transaksi
             dgvTransaksi.Rows.Clear();
-            foreach (var t in hariIni.Take(10))
-                dgvTransaksi.Rows.Add(t.NoTransaksi, t.Waktu.ToString("HH:mm"), t.Kasir, t.Total.ToString("N0"));
-
-            // "Keranjang Belanja Hari Ini" = total semua belanja hari ini
-            lblKeranjangItem.Text = hariIni.Sum(t => t.Items.Count).ToString();
-            lblKeranjangTotal.Text = "Rp " + hariIni.Sum(t => t.Total).ToString("N0");
-        }
-        
-
-
-
-        private void roundedPanel2_Paint(object sender, PaintEventArgs e) { }
-        private void panelKasir_Paint(object sender, PaintEventArgs e) { }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            foreach (DataRow r in GetTransaksiHariIni().Rows)
+            {
+                dgvTransaksi.Rows.Add(
+                    r["no_transaksi"],
+                    ((DateTime)r["waktu"]).ToString("HH:mm", Id),
+                    r["kasir"],
+                    Rupiah(Convert.ToDecimal(r["total"])));
+            }
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
+        // ------------------------------------------------------------- DATA
+        // TODO: ganti isi 3 method di bawah dengan query database kamu.
+        // Sementara berisi data contoh supaya tampilan langsung bisa dicoba.
 
+        private void GetRingkasanHariIni(out decimal pendapatan, out int jumlahTransaksi, out int itemTerjual)
+        {
+            // Contoh SQL:
+            // SELECT IFNULL(SUM(total),0), COUNT(*)
+            //   FROM transaksi
+            //  WHERE DATE(waktu) = CURDATE() AND id_kasir = @idKasir;
+            // SELECT IFNULL(SUM(d.qty),0)
+            //   FROM detail_transaksi d JOIN transaksi t ON t.id = d.id_transaksi
+            //  WHERE DATE(t.waktu) = CURDATE() AND t.id_kasir = @idKasir;
+            pendapatan = 1320000;
+            jumlahTransaksi = 18;
+            itemTerjual = 64;
+        }
+
+        private void GetKeranjangAktif(out int item, out decimal total)
+        {
+            // Isi dari keranjang yang sedang dibuka kasir (belum dibayar).
+            item = 3;
+            total = 45500;
+        }
+
+        private DataTable GetTransaksiHariIni()
+        {
+            // Contoh SQL:
+            // SELECT no_transaksi, waktu, nama_kasir AS kasir, total
+            //   FROM transaksi
+            //  WHERE DATE(waktu) = CURDATE() AND id_kasir = @idKasir
+            //  ORDER BY waktu DESC;
+            var dt = new DataTable();
+            dt.Columns.Add("no_transaksi", typeof(string));
+            dt.Columns.Add("waktu", typeof(DateTime));
+            dt.Columns.Add("kasir", typeof(string));
+            dt.Columns.Add("total", typeof(decimal));
+
+            DateTime hariIni = DateTime.Today;
+            dt.Rows.Add("TRX-0018", hariIni.AddHours(17).AddMinutes(42), NamaKasir, 73500m);
+            dt.Rows.Add("TRX-0017", hariIni.AddHours(17).AddMinutes(10), NamaKasir, 112000m);
+            dt.Rows.Add("TRX-0016", hariIni.AddHours(16).AddMinutes(25), NamaKasir, 48000m);
+            dt.Rows.Add("TRX-0015", hariIni.AddHours(15).AddMinutes(51), NamaKasir, 25500m);
+            return dt;
         }
     }
 }

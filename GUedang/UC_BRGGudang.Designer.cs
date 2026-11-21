@@ -2,15 +2,8 @@
 {
     partial class UC_BRGGudang
     {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,523 +15,879 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            roundedPanel1 = new RoundedPanel();
+            tlpRoot = new TableLayoutPanel();
+            pnlJudul = new RoundedPanelUI();
             dtpTanggal = new DateTimePicker();
-            panel1 = new Panel();
-            label2 = new Label();
-            roundedPanel2 = new RoundedPanel();
-            label11 = new Label();
-            txtHargaBeli = new CustomTextBox();
-            label9 = new Label();
-            btnSimpan = new RoundedButton();
-            txtKeterangan = new CustomTextBox();
-            label8 = new Label();
-            numJumlah = new NumericUpDown();
-            label10 = new Label();
-            btnCari = new Button();
-            txtNamaAtauKode = new CustomTextBox();
-            panel2 = new Panel();
-            label5 = new Label();
-            roundedPanel4 = new RoundedPanel();
-            lblTotalNilai = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            roundedPanel3 = new RoundedPanel();
-            label4 = new Label();
-            lblTotalBarang = new Label();
-            lbl = new Label();
-            dgvBarang = new DataGridView();
+            chkSemua = new CheckBox();
+            lblSub = new Label();
+            lblJudul = new Label();
+            tlpContent = new TableLayoutPanel();
+            tlpStats = new TableLayoutPanel();
+            cardQty = new RoundedPanelUI();
+            lblQtyKet = new Label();
+            lblQtyNilai = new Label();
+            lblQtyJudul = new Label();
+            cardRp = new RoundedPanelUI();
+            lblRpKet = new Label();
+            lblRpNilai = new Label();
+            lblRpJudul = new Label();
+            cardTrx = new RoundedPanelUI();
+            lblTrxKet = new Label();
+            lblTrxNilai = new Label();
+            lblTrxJudul = new Label();
+            pnlInput = new RoundedPanelUI();
+            tlpInput = new TableLayoutPanel();
+            lblCari = new Label();
+            lblJumlah = new Label();
+            lblHarga = new Label();
+            lblSupplier = new Label();
+            lblKet = new Label();
+            txtCari = new TextBox();
+            btnCari = new RoundedButtonUI();
+            nudJumlah = new NumericUpDown();
+            txtHarga = new TextBox();
+            txtSupplier = new TextBox();
+            txtKeterangan = new TextBox();
+            btnSimpan = new RoundedButtonUI();
+            lblInfoBarang = new Label();
+            lblTotalHarga = new Label();
+            lblInputJudul = new Label();
+            pnlRiwayat = new RoundedPanelUI();
+            tlpRiwayat = new TableLayoutPanel();
+            tlpToolbar = new TableLayoutPanel();
+            lblRiwayatJudul = new Label();
+            txtCariRiwayat = new TextBox();
+            btnExport = new RoundedButtonUI();
+            btnBatal = new RoundedButtonUI();
+            dgvRiwayat = new DataGridView();
             colNo = new DataGridViewTextBoxColumn();
             colTanggal = new DataGridViewTextBoxColumn();
             colKode = new DataGridViewTextBoxColumn();
-            colNamaBarang = new DataGridViewTextBoxColumn();
+            colNama = new DataGridViewTextBoxColumn();
             colJumlah = new DataGridViewTextBoxColumn();
-            colHargaBeli = new DataGridViewTextBoxColumn();
+            colHarga = new DataGridViewTextBoxColumn();
+            colTotal = new DataGridViewTextBoxColumn();
+            colSupplier = new DataGridViewTextBoxColumn();
             colKeterangan = new DataGridViewTextBoxColumn();
-            label1 = new Label();
-            roundedPanel1.SuspendLayout();
-            panel1.SuspendLayout();
-            roundedPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numJumlah).BeginInit();
-            panel2.SuspendLayout();
-            roundedPanel4.SuspendLayout();
-            roundedPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBarang).BeginInit();
+            tlpRoot.SuspendLayout();
+            pnlJudul.SuspendLayout();
+            tlpContent.SuspendLayout();
+            tlpStats.SuspendLayout();
+            cardQty.SuspendLayout();
+            cardRp.SuspendLayout();
+            cardTrx.SuspendLayout();
+            pnlInput.SuspendLayout();
+            tlpInput.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudJumlah).BeginInit();
+            pnlRiwayat.SuspendLayout();
+            tlpRiwayat.SuspendLayout();
+            tlpToolbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRiwayat).BeginInit();
             SuspendLayout();
             // 
-            // roundedPanel1
+            // tlpRoot
             // 
-            roundedPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            roundedPanel1.BackColor = Color.Transparent;
-            roundedPanel1.Controls.Add(dtpTanggal);
-            roundedPanel1.Controls.Add(panel1);
-            roundedPanel1.Controls.Add(roundedPanel2);
-            roundedPanel1.Controls.Add(dgvBarang);
-            roundedPanel1.Controls.Add(label1);
-            roundedPanel1.Location = new Point(2, 2);
-            roundedPanel1.Margin = new Padding(2);
-            roundedPanel1.Name = "roundedPanel1";
-            roundedPanel1.Size = new Size(723, 381);
-            roundedPanel1.TabIndex = 0;
+            tlpRoot.ColumnCount = 1;
+            tlpRoot.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpRoot.Controls.Add(pnlJudul, 0, 0);
+            tlpRoot.Controls.Add(tlpContent, 0, 1);
+            tlpRoot.Dock = DockStyle.Fill;
+            tlpRoot.Location = new Point(0, 0);
+            tlpRoot.Margin = new Padding(0);
+            tlpRoot.Name = "tlpRoot";
+            tlpRoot.Padding = new Padding(19, 18, 19, 18);
+            tlpRoot.RowCount = 2;
+            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 95F));
+            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpRoot.Size = new Size(1283, 808);
+            tlpRoot.TabIndex = 0;
+            // 
+            // pnlJudul
+            // 
+            pnlJudul.AccentColor = Color.Transparent;
+            pnlJudul.BackColor = Color.White;
+            pnlJudul.BorderColor = Color.FromArgb(214, 228, 245);
+            pnlJudul.Controls.Add(dtpTanggal);
+            pnlJudul.Controls.Add(chkSemua);
+            pnlJudul.Controls.Add(lblSub);
+            pnlJudul.Controls.Add(lblJudul);
+            pnlJudul.Dock = DockStyle.Fill;
+            pnlJudul.Location = new Point(19, 18);
+            pnlJudul.Margin = new Padding(0, 0, 0, 14);
+            pnlJudul.Name = "pnlJudul";
+            pnlJudul.Radius = 18;
+            pnlJudul.Size = new Size(1245, 81);
+            pnlJudul.TabIndex = 0;
             // 
             // dtpTanggal
             // 
-            dtpTanggal.CalendarForeColor = Color.DarkGray;
+            dtpTanggal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dtpTanggal.Font = new Font("Segoe UI", 9.5F);
             dtpTanggal.Format = DateTimePickerFormat.Short;
-            dtpTanggal.Location = new Point(573, 4);
-            dtpTanggal.Margin = new Padding(2);
+            dtpTanggal.Location = new Point(1049, 25);
+            dtpTanggal.Margin = new Padding(4, 3, 4, 3);
             dtpTanggal.Name = "dtpTanggal";
-            dtpTanggal.Size = new Size(88, 23);
-            dtpTanggal.TabIndex = 4;
+            dtpTanggal.Size = new Size(163, 24);
+            dtpTanggal.TabIndex = 0;
             // 
-            // panel1
+            // chkSemua
             // 
-            panel1.BackColor = Color.RoyalBlue;
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(15, 170);
-            panel1.Margin = new Padding(2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(692, 23);
-            panel1.TabIndex = 3;
+            chkSemua.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            chkSemua.AutoSize = true;
+            chkSemua.BackColor = Color.Transparent;
+            chkSemua.Font = new Font("Segoe UI", 9F);
+            chkSemua.ForeColor = Color.FromArgb(90, 110, 140);
+            chkSemua.Location = new Point(913, 30);
+            chkSemua.Margin = new Padding(4, 3, 4, 3);
+            chkSemua.Name = "chkSemua";
+            chkSemua.Size = new Size(105, 19);
+            chkSemua.TabIndex = 1;
+            chkSemua.Text = "Semua tanggal";
+            chkSemua.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblSub
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(2, 0);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(151, 19);
-            label2.TabIndex = 0;
-            label2.Text = "Riwayat Barang Masuk";
+            lblSub.AutoSize = true;
+            lblSub.BackColor = Color.Transparent;
+            lblSub.Font = new Font("Segoe UI", 9.5F);
+            lblSub.ForeColor = Color.FromArgb(90, 110, 140);
+            lblSub.Location = new Point(28, 51);
+            lblSub.Margin = new Padding(4, 0, 4, 0);
+            lblSub.Name = "lblSub";
+            lblSub.Size = new Size(460, 17);
+            lblSub.TabIndex = 2;
+            lblSub.Text = "Catat barang yang diterima. Stok dan harga beli terakhir diperbarui otomatis.";
             // 
-            // roundedPanel2
+            // lblJudul
             // 
-            roundedPanel2.BackColor = Color.Transparent;
-            roundedPanel2.Controls.Add(label11);
-            roundedPanel2.Controls.Add(txtHargaBeli);
-            roundedPanel2.Controls.Add(label9);
-            roundedPanel2.Controls.Add(btnSimpan);
-            roundedPanel2.Controls.Add(txtKeterangan);
-            roundedPanel2.Controls.Add(label8);
-            roundedPanel2.Controls.Add(numJumlah);
-            roundedPanel2.Controls.Add(label10);
-            roundedPanel2.Controls.Add(btnCari);
-            roundedPanel2.Controls.Add(txtNamaAtauKode);
-            roundedPanel2.Controls.Add(panel2);
-            roundedPanel2.Controls.Add(roundedPanel4);
-            roundedPanel2.Controls.Add(roundedPanel3);
-            roundedPanel2.Location = new Point(25, 32);
-            roundedPanel2.Margin = new Padding(2);
-            roundedPanel2.Name = "roundedPanel2";
-            roundedPanel2.Size = new Size(682, 135);
-            roundedPanel2.TabIndex = 2;
+            lblJudul.AutoSize = true;
+            lblJudul.BackColor = Color.Transparent;
+            lblJudul.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
+            lblJudul.ForeColor = Color.FromArgb(13, 47, 110);
+            lblJudul.Location = new Point(26, 9);
+            lblJudul.Margin = new Padding(4, 0, 4, 0);
+            lblJudul.Name = "lblJudul";
+            lblJudul.Size = new Size(153, 30);
+            lblJudul.TabIndex = 3;
+            lblJudul.Text = "Barang Masuk";
             // 
-            // label11
+            // tlpContent
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(17, 83);
-            label11.Margin = new Padding(2, 0, 2, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(146, 15);
-            label11.TabIndex = 22;
-            label11.Text = "Masukan Nama atau Kode";
+            tlpContent.ColumnCount = 1;
+            tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpContent.Controls.Add(tlpStats, 0, 0);
+            tlpContent.Controls.Add(pnlInput, 0, 1);
+            tlpContent.Controls.Add(pnlRiwayat, 0, 2);
+            tlpContent.Dock = DockStyle.Fill;
+            tlpContent.Location = new Point(19, 113);
+            tlpContent.Margin = new Padding(0);
+            tlpContent.Name = "tlpContent";
+            tlpContent.RowCount = 3;
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 134F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 164F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpContent.Size = new Size(1245, 677);
+            tlpContent.TabIndex = 1;
             // 
-            // txtHargaBeli
+            // tlpStats
             // 
-            txtHargaBeli.BackColor = Color.White;
-            txtHargaBeli.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtHargaBeli.Location = new Point(472, 106);
-            txtHargaBeli.Margin = new Padding(2);
-            txtHargaBeli.Name = "txtHargaBeli";
-            txtHargaBeli.Padding = new Padding(7, 4, 7, 4);
-            txtHargaBeli.Size = new Size(78, 25);
-            txtHargaBeli.TabIndex = 21;
+            tlpStats.ColumnCount = 3;
+            tlpStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3F));
+            tlpStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3F));
+            tlpStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.4F));
+            tlpStats.Controls.Add(cardQty, 0, 0);
+            tlpStats.Controls.Add(cardRp, 1, 0);
+            tlpStats.Controls.Add(cardTrx, 2, 0);
+            tlpStats.Dock = DockStyle.Fill;
+            tlpStats.Location = new Point(0, 0);
+            tlpStats.Margin = new Padding(0, 0, 0, 14);
+            tlpStats.Name = "tlpStats";
+            tlpStats.RowCount = 1;
+            tlpStats.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpStats.Size = new Size(1245, 120);
+            tlpStats.TabIndex = 0;
             // 
-            // label9
+            // cardQty
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(472, 83);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(61, 15);
-            label9.TabIndex = 20;
-            label9.Text = "Harga Beli";
+            cardQty.AccentColor = Color.FromArgb(30, 136, 229);
+            cardQty.BackColor = Color.White;
+            cardQty.BorderColor = Color.FromArgb(214, 228, 245);
+            cardQty.Controls.Add(lblQtyKet);
+            cardQty.Controls.Add(lblQtyNilai);
+            cardQty.Controls.Add(lblQtyJudul);
+            cardQty.Dock = DockStyle.Fill;
+            cardQty.Location = new Point(0, 0);
+            cardQty.Margin = new Padding(0, 0, 14, 0);
+            cardQty.Name = "cardQty";
+            cardQty.Radius = 18;
+            cardQty.Size = new Size(400, 120);
+            cardQty.TabIndex = 0;
+            // 
+            // lblQtyKet
+            // 
+            lblQtyKet.AutoSize = true;
+            lblQtyKet.BackColor = Color.Transparent;
+            lblQtyKet.Font = new Font("Segoe UI", 8.5F);
+            lblQtyKet.ForeColor = Color.FromArgb(120, 135, 160);
+            lblQtyKet.Location = new Point(35, 78);
+            lblQtyKet.Margin = new Padding(4, 0, 4, 0);
+            lblQtyKet.Name = "lblQtyKet";
+            lblQtyKet.Size = new Size(88, 15);
+            lblQtyKet.TabIndex = 0;
+            lblQtyKet.Text = "Tanggal terpilih";
+            // 
+            // lblQtyNilai
+            // 
+            lblQtyNilai.AutoSize = true;
+            lblQtyNilai.BackColor = Color.Transparent;
+            lblQtyNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            lblQtyNilai.ForeColor = Color.FromArgb(24, 94, 224);
+            lblQtyNilai.Location = new Point(33, 37);
+            lblQtyNilai.Margin = new Padding(4, 0, 4, 0);
+            lblQtyNilai.Name = "lblQtyNilai";
+            lblQtyNilai.Size = new Size(112, 32);
+            lblQtyNilai.TabIndex = 1;
+            lblQtyNilai.Text = "0 Barang";
+            // 
+            // lblQtyJudul
+            // 
+            lblQtyJudul.AutoSize = true;
+            lblQtyJudul.BackColor = Color.Transparent;
+            lblQtyJudul.Font = new Font("Segoe UI", 9.5F);
+            lblQtyJudul.ForeColor = Color.FromArgb(90, 110, 140);
+            lblQtyJudul.Location = new Point(35, 16);
+            lblQtyJudul.Margin = new Padding(4, 0, 4, 0);
+            lblQtyJudul.Name = "lblQtyJudul";
+            lblQtyJudul.Size = new Size(123, 17);
+            lblQtyJudul.TabIndex = 2;
+            lblQtyJudul.Text = "Total Barang Masuk";
+            // 
+            // cardRp
+            // 
+            cardRp.AccentColor = Color.FromArgb(46, 160, 100);
+            cardRp.BackColor = Color.White;
+            cardRp.BorderColor = Color.FromArgb(214, 228, 245);
+            cardRp.Controls.Add(lblRpKet);
+            cardRp.Controls.Add(lblRpNilai);
+            cardRp.Controls.Add(lblRpJudul);
+            cardRp.Dock = DockStyle.Fill;
+            cardRp.Location = new Point(414, 0);
+            cardRp.Margin = new Padding(0, 0, 14, 0);
+            cardRp.Name = "cardRp";
+            cardRp.Radius = 18;
+            cardRp.Size = new Size(400, 120);
+            cardRp.TabIndex = 1;
+            // 
+            // lblRpKet
+            // 
+            lblRpKet.AutoSize = true;
+            lblRpKet.BackColor = Color.Transparent;
+            lblRpKet.Font = new Font("Segoe UI", 8.5F);
+            lblRpKet.ForeColor = Color.FromArgb(120, 135, 160);
+            lblRpKet.Location = new Point(35, 78);
+            lblRpKet.Margin = new Padding(4, 0, 4, 0);
+            lblRpKet.Name = "lblRpKet";
+            lblRpKet.Size = new Size(109, 15);
+            lblRpKet.TabIndex = 0;
+            lblRpKet.Text = "Jumlah x harga beli";
+            // 
+            // lblRpNilai
+            // 
+            lblRpNilai.AutoSize = true;
+            lblRpNilai.BackColor = Color.Transparent;
+            lblRpNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            lblRpNilai.ForeColor = Color.FromArgb(40, 140, 90);
+            lblRpNilai.Location = new Point(33, 37);
+            lblRpNilai.Margin = new Padding(4, 0, 4, 0);
+            lblRpNilai.Name = "lblRpNilai";
+            lblRpNilai.Size = new Size(63, 32);
+            lblRpNilai.TabIndex = 1;
+            lblRpNilai.Text = "Rp 0";
+            // 
+            // lblRpJudul
+            // 
+            lblRpJudul.AutoSize = true;
+            lblRpJudul.BackColor = Color.Transparent;
+            lblRpJudul.Font = new Font("Segoe UI", 9.5F);
+            lblRpJudul.ForeColor = Color.FromArgb(90, 110, 140);
+            lblRpJudul.Location = new Point(35, 16);
+            lblRpJudul.Margin = new Padding(4, 0, 4, 0);
+            lblRpJudul.Name = "lblRpJudul";
+            lblRpJudul.Size = new Size(108, 17);
+            lblRpJudul.TabIndex = 2;
+            lblRpJudul.Text = "Total Nilai Masuk";
+            // 
+            // cardTrx
+            // 
+            cardTrx.AccentColor = Color.FromArgb(126, 87, 194);
+            cardTrx.BackColor = Color.White;
+            cardTrx.BorderColor = Color.FromArgb(214, 228, 245);
+            cardTrx.Controls.Add(lblTrxKet);
+            cardTrx.Controls.Add(lblTrxNilai);
+            cardTrx.Controls.Add(lblTrxJudul);
+            cardTrx.Dock = DockStyle.Fill;
+            cardTrx.Location = new Point(828, 0);
+            cardTrx.Margin = new Padding(0);
+            cardTrx.Name = "cardTrx";
+            cardTrx.Radius = 18;
+            cardTrx.Size = new Size(417, 120);
+            cardTrx.TabIndex = 2;
+            // 
+            // lblTrxKet
+            // 
+            lblTrxKet.AutoSize = true;
+            lblTrxKet.BackColor = Color.Transparent;
+            lblTrxKet.Font = new Font("Segoe UI", 8.5F);
+            lblTrxKet.ForeColor = Color.FromArgb(120, 135, 160);
+            lblTrxKet.Location = new Point(35, 78);
+            lblTrxKet.Margin = new Padding(4, 0, 4, 0);
+            lblTrxKet.Name = "lblTrxKet";
+            lblTrxKet.Size = new Size(109, 15);
+            lblTrxKet.TabIndex = 0;
+            lblTrxKet.Text = "Entri barang masuk";
+            // 
+            // lblTrxNilai
+            // 
+            lblTrxNilai.AutoSize = true;
+            lblTrxNilai.BackColor = Color.Transparent;
+            lblTrxNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
+            lblTrxNilai.ForeColor = Color.FromArgb(126, 87, 194);
+            lblTrxNilai.Location = new Point(33, 37);
+            lblTrxNilai.Margin = new Padding(4, 0, 4, 0);
+            lblTrxNilai.Name = "lblTrxNilai";
+            lblTrxNilai.Size = new Size(27, 32);
+            lblTrxNilai.TabIndex = 1;
+            lblTrxNilai.Text = "0";
+            // 
+            // lblTrxJudul
+            // 
+            lblTrxJudul.AutoSize = true;
+            lblTrxJudul.BackColor = Color.Transparent;
+            lblTrxJudul.Font = new Font("Segoe UI", 9.5F);
+            lblTrxJudul.ForeColor = Color.FromArgb(90, 110, 140);
+            lblTrxJudul.Location = new Point(35, 16);
+            lblTrxJudul.Margin = new Padding(4, 0, 4, 0);
+            lblTrxJudul.Name = "lblTrxJudul";
+            lblTrxJudul.Size = new Size(105, 17);
+            lblTrxJudul.TabIndex = 2;
+            lblTrxJudul.Text = "Jumlah Transaksi";
+            // 
+            // pnlInput
+            // 
+            pnlInput.AccentColor = Color.Transparent;
+            pnlInput.BackColor = Color.White;
+            pnlInput.BorderColor = Color.FromArgb(214, 228, 245);
+            pnlInput.Controls.Add(tlpInput);
+            pnlInput.Controls.Add(lblInputJudul);
+            pnlInput.Dock = DockStyle.Fill;
+            pnlInput.Location = new Point(0, 134);
+            pnlInput.Margin = new Padding(0, 0, 0, 14);
+            pnlInput.Name = "pnlInput";
+            pnlInput.Padding = new Padding(23, 12, 23, 9);
+            pnlInput.Radius = 18;
+            pnlInput.Size = new Size(1245, 150);
+            pnlInput.TabIndex = 1;
+            // 
+            // tlpInput
+            // 
+            tlpInput.ColumnCount = 7;
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 89F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 128F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 175F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26F));
+            tlpInput.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 141F));
+            tlpInput.Controls.Add(lblCari, 0, 0);
+            tlpInput.Controls.Add(lblJumlah, 2, 0);
+            tlpInput.Controls.Add(lblHarga, 3, 0);
+            tlpInput.Controls.Add(lblSupplier, 4, 0);
+            tlpInput.Controls.Add(lblKet, 5, 0);
+            tlpInput.Controls.Add(txtCari, 0, 1);
+            tlpInput.Controls.Add(btnCari, 1, 1);
+            tlpInput.Controls.Add(nudJumlah, 2, 1);
+            tlpInput.Controls.Add(txtHarga, 3, 1);
+            tlpInput.Controls.Add(txtSupplier, 4, 1);
+            tlpInput.Controls.Add(txtKeterangan, 5, 1);
+            tlpInput.Controls.Add(btnSimpan, 6, 1);
+            tlpInput.Controls.Add(lblInfoBarang, 0, 2);
+            tlpInput.Controls.Add(lblTotalHarga, 4, 2);
+            tlpInput.Dock = DockStyle.Fill;
+            tlpInput.Location = new Point(23, 44);
+            tlpInput.Margin = new Padding(0);
+            tlpInput.Name = "tlpInput";
+            tlpInput.RowCount = 3;
+            tlpInput.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tlpInput.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tlpInput.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            tlpInput.Size = new Size(1199, 97);
+            tlpInput.TabIndex = 0;
+            // 
+            // lblCari
+            // 
+            lblCari.BackColor = Color.Transparent;
+            tlpInput.SetColumnSpan(lblCari, 2);
+            lblCari.Dock = DockStyle.Fill;
+            lblCari.Font = new Font("Segoe UI", 9F);
+            lblCari.ForeColor = Color.FromArgb(90, 110, 140);
+            lblCari.Location = new Point(0, 0);
+            lblCari.Margin = new Padding(0);
+            lblCari.Name = "lblCari";
+            lblCari.Size = new Size(345, 25);
+            lblCari.TabIndex = 0;
+            lblCari.Text = "Cari barang (kode / nama)";
+            lblCari.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // lblJumlah
+            // 
+            lblJumlah.BackColor = Color.Transparent;
+            lblJumlah.Dock = DockStyle.Fill;
+            lblJumlah.Font = new Font("Segoe UI", 9F);
+            lblJumlah.ForeColor = Color.FromArgb(90, 110, 140);
+            lblJumlah.Location = new Point(345, 0);
+            lblJumlah.Margin = new Padding(0);
+            lblJumlah.Name = "lblJumlah";
+            lblJumlah.Size = new Size(128, 25);
+            lblJumlah.TabIndex = 1;
+            lblJumlah.Text = "Jumlah";
+            lblJumlah.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // lblHarga
+            // 
+            lblHarga.BackColor = Color.Transparent;
+            lblHarga.Dock = DockStyle.Fill;
+            lblHarga.Font = new Font("Segoe UI", 9F);
+            lblHarga.ForeColor = Color.FromArgb(90, 110, 140);
+            lblHarga.Location = new Point(473, 0);
+            lblHarga.Margin = new Padding(0);
+            lblHarga.Name = "lblHarga";
+            lblHarga.Size = new Size(175, 25);
+            lblHarga.TabIndex = 2;
+            lblHarga.Text = "Harga beli (Rp)";
+            lblHarga.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // lblSupplier
+            // 
+            lblSupplier.BackColor = Color.Transparent;
+            lblSupplier.Dock = DockStyle.Fill;
+            lblSupplier.Font = new Font("Segoe UI", 9F);
+            lblSupplier.ForeColor = Color.FromArgb(90, 110, 140);
+            lblSupplier.Location = new Point(648, 0);
+            lblSupplier.Margin = new Padding(0);
+            lblSupplier.Name = "lblSupplier";
+            lblSupplier.Size = new Size(187, 25);
+            lblSupplier.TabIndex = 3;
+            lblSupplier.Text = "Supplier";
+            lblSupplier.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // lblKet
+            // 
+            lblKet.BackColor = Color.Transparent;
+            lblKet.Dock = DockStyle.Fill;
+            lblKet.Font = new Font("Segoe UI", 9F);
+            lblKet.ForeColor = Color.FromArgb(90, 110, 140);
+            lblKet.Location = new Point(835, 0);
+            lblKet.Margin = new Padding(0);
+            lblKet.Name = "lblKet";
+            lblKet.Size = new Size(222, 25);
+            lblKet.TabIndex = 4;
+            lblKet.Text = "Keterangan";
+            lblKet.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // txtCari
+            // 
+            txtCari.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCari.Font = new Font("Segoe UI", 10F);
+            txtCari.Location = new Point(0, 25);
+            txtCari.Margin = new Padding(0, 0, 7, 0);
+            txtCari.Name = "txtCari";
+            txtCari.PlaceholderText = "Ketik kode atau nama barang...";
+            txtCari.Size = new Size(249, 25);
+            txtCari.TabIndex = 5;
+            // 
+            // btnCari
+            // 
+            btnCari.BackColor = Color.FromArgb(30, 136, 229);
+            btnCari.BorderColor = Color.Transparent;
+            btnCari.FlatStyle = FlatStyle.Flat;
+            btnCari.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
+            btnCari.ForeColor = Color.White;
+            btnCari.HoverColor = Color.FromArgb(21, 101, 192);
+            btnCari.Location = new Point(256, 25);
+            btnCari.Margin = new Padding(0, 0, 14, 0);
+            btnCari.Name = "btnCari";
+            btnCari.Size = new Size(75, 31);
+            btnCari.TabIndex = 6;
+            btnCari.Text = "Cari";
+            btnCari.UseVisualStyleBackColor = false;
+            // 
+            // nudJumlah
+            // 
+            nudJumlah.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            nudJumlah.Font = new Font("Segoe UI", 10F);
+            nudJumlah.Location = new Point(345, 25);
+            nudJumlah.Margin = new Padding(0, 0, 14, 0);
+            nudJumlah.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            nudJumlah.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudJumlah.Name = "nudJumlah";
+            nudJumlah.Size = new Size(114, 25);
+            nudJumlah.TabIndex = 7;
+            nudJumlah.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // txtHarga
+            // 
+            txtHarga.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtHarga.Font = new Font("Segoe UI", 10F);
+            txtHarga.Location = new Point(473, 25);
+            txtHarga.Margin = new Padding(0, 0, 14, 0);
+            txtHarga.Name = "txtHarga";
+            txtHarga.Size = new Size(161, 25);
+            txtHarga.TabIndex = 8;
+            txtHarga.TextAlign = HorizontalAlignment.Right;
+            // 
+            // txtSupplier
+            // 
+            txtSupplier.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtSupplier.Font = new Font("Segoe UI", 10F);
+            txtSupplier.Location = new Point(648, 25);
+            txtSupplier.Margin = new Padding(0, 0, 14, 0);
+            txtSupplier.Name = "txtSupplier";
+            txtSupplier.Size = new Size(173, 25);
+            txtSupplier.TabIndex = 9;
+            // 
+            // txtKeterangan
+            // 
+            txtKeterangan.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtKeterangan.Font = new Font("Segoe UI", 10F);
+            txtKeterangan.Location = new Point(835, 25);
+            txtKeterangan.Margin = new Padding(0, 0, 14, 0);
+            txtKeterangan.Name = "txtKeterangan";
+            txtKeterangan.Size = new Size(208, 25);
+            txtKeterangan.TabIndex = 10;
             // 
             // btnSimpan
             // 
             btnSimpan.BackColor = Color.RoyalBlue;
-            btnSimpan.FlatAppearance.BorderSize = 0;
+            btnSimpan.BorderColor = Color.Transparent;
             btnSimpan.FlatStyle = FlatStyle.Flat;
+            btnSimpan.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnSimpan.ForeColor = Color.White;
-            btnSimpan.Location = new Point(588, 71);
-            btnSimpan.Margin = new Padding(2);
+            btnSimpan.HoverColor = Color.FromArgb(21, 101, 192);
+            btnSimpan.Location = new Point(1057, 25);
+            btnSimpan.Margin = new Padding(0);
             btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(71, 38);
-            btnSimpan.TabIndex = 19;
-            btnSimpan.Text = "💾Simpan";
+            btnSimpan.Size = new Size(140, 35);
+            btnSimpan.TabIndex = 11;
+            btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = false;
-            btnSimpan.Click += btnSimpan_Click;
             // 
-            // txtKeterangan
+            // lblInfoBarang
             // 
-            txtKeterangan.BackColor = Color.White;
-            txtKeterangan.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtKeterangan.Location = new Point(339, 105);
-            txtKeterangan.Margin = new Padding(2);
-            txtKeterangan.Name = "txtKeterangan";
-            txtKeterangan.Padding = new Padding(7, 4, 7, 4);
-            txtKeterangan.Size = new Size(129, 25);
-            txtKeterangan.TabIndex = 18;
+            lblInfoBarang.BackColor = Color.Transparent;
+            tlpInput.SetColumnSpan(lblInfoBarang, 4);
+            lblInfoBarang.Dock = DockStyle.Fill;
+            lblInfoBarang.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblInfoBarang.ForeColor = Color.FromArgb(30, 136, 229);
+            lblInfoBarang.Location = new Point(0, 64);
+            lblInfoBarang.Margin = new Padding(0);
+            lblInfoBarang.Name = "lblInfoBarang";
+            lblInfoBarang.Size = new Size(648, 33);
+            lblInfoBarang.TabIndex = 12;
+            lblInfoBarang.Text = "Barang belum dipilih";
+            lblInfoBarang.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // lblTotalHarga
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(339, 83);
-            label8.Margin = new Padding(2, 0, 2, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(67, 15);
-            label8.TabIndex = 17;
-            label8.Text = "Ketarangan";
+            lblTotalHarga.BackColor = Color.Transparent;
+            tlpInput.SetColumnSpan(lblTotalHarga, 3);
+            lblTotalHarga.Dock = DockStyle.Fill;
+            lblTotalHarga.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            lblTotalHarga.ForeColor = Color.FromArgb(40, 140, 90);
+            lblTotalHarga.Location = new Point(648, 64);
+            lblTotalHarga.Margin = new Padding(0);
+            lblTotalHarga.Name = "lblTotalHarga";
+            lblTotalHarga.Size = new Size(551, 33);
+            lblTotalHarga.TabIndex = 13;
+            lblTotalHarga.Text = "Total: Rp 0";
+            lblTotalHarga.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // numJumlah
+            // lblInputJudul
             // 
-            numJumlah.BackColor = Color.White;
-            numJumlah.Location = new Point(272, 105);
-            numJumlah.Margin = new Padding(2);
-            numJumlah.Name = "numJumlah";
-            numJumlah.Size = new Size(63, 23);
-            numJumlah.TabIndex = 16;
-            numJumlah.TextAlign = HorizontalAlignment.Center;
+            lblInputJudul.BackColor = Color.Transparent;
+            lblInputJudul.Dock = DockStyle.Top;
+            lblInputJudul.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblInputJudul.ForeColor = Color.FromArgb(13, 47, 110);
+            lblInputJudul.Location = new Point(23, 12);
+            lblInputJudul.Margin = new Padding(4, 0, 4, 0);
+            lblInputJudul.Name = "lblInputJudul";
+            lblInputJudul.Size = new Size(1199, 32);
+            lblInputJudul.TabIndex = 1;
+            lblInputJudul.Text = "Input Barang Masuk";
+            lblInputJudul.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // pnlRiwayat
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(273, 83);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(45, 15);
-            label10.TabIndex = 15;
-            label10.Text = "Jumlah";
+            pnlRiwayat.AccentColor = Color.Transparent;
+            pnlRiwayat.BackColor = Color.White;
+            pnlRiwayat.BorderColor = Color.FromArgb(214, 228, 245);
+            pnlRiwayat.Controls.Add(tlpRiwayat);
+            pnlRiwayat.Dock = DockStyle.Fill;
+            pnlRiwayat.Location = new Point(0, 298);
+            pnlRiwayat.Margin = new Padding(0);
+            pnlRiwayat.Name = "pnlRiwayat";
+            pnlRiwayat.Padding = new Padding(23, 16, 23, 18);
+            pnlRiwayat.Radius = 18;
+            pnlRiwayat.Size = new Size(1245, 379);
+            pnlRiwayat.TabIndex = 2;
             // 
-            // btnCari
+            // tlpRiwayat
             // 
-            btnCari.BackColor = Color.RoyalBlue;
-            btnCari.ForeColor = Color.White;
-            btnCari.Location = new Point(222, 100);
-            btnCari.Margin = new Padding(2);
-            btnCari.Name = "btnCari";
-            btnCari.Size = new Size(38, 26);
-            btnCari.TabIndex = 14;
-            btnCari.Text = "🔍︎";
-            btnCari.UseVisualStyleBackColor = false;
+            tlpRiwayat.ColumnCount = 1;
+            tlpRiwayat.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpRiwayat.Controls.Add(tlpToolbar, 0, 0);
+            tlpRiwayat.Controls.Add(dgvRiwayat, 0, 1);
+            tlpRiwayat.Dock = DockStyle.Fill;
+            tlpRiwayat.Location = new Point(23, 16);
+            tlpRiwayat.Margin = new Padding(0);
+            tlpRiwayat.Name = "tlpRiwayat";
+            tlpRiwayat.RowCount = 2;
+            tlpRiwayat.RowStyles.Add(new RowStyle(SizeType.Absolute, 51F));
+            tlpRiwayat.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpRiwayat.Size = new Size(1199, 345);
+            tlpRiwayat.TabIndex = 0;
             // 
-            // txtNamaAtauKode
+            // tlpToolbar
             // 
-            txtNamaAtauKode.BackColor = Color.White;
-            txtNamaAtauKode.Font = new Font("Calibri Light", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNamaAtauKode.Location = new Point(11, 100);
-            txtNamaAtauKode.Margin = new Padding(2);
-            txtNamaAtauKode.Name = "txtNamaAtauKode";
-            txtNamaAtauKode.Padding = new Padding(7, 4, 7, 4);
-            txtNamaAtauKode.Size = new Size(249, 26);
-            txtNamaAtauKode.TabIndex = 13;
-            txtNamaAtauKode.Tag = "Masukan Nama Barang";
+            tlpToolbar.ColumnCount = 4;
+            tlpToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 268F));
+            tlpToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpToolbar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 163F));
+            tlpToolbar.Controls.Add(lblRiwayatJudul, 0, 0);
+            tlpToolbar.Controls.Add(txtCariRiwayat, 1, 0);
+            tlpToolbar.Controls.Add(btnExport, 2, 0);
+            tlpToolbar.Controls.Add(btnBatal, 3, 0);
+            tlpToolbar.Dock = DockStyle.Fill;
+            tlpToolbar.Location = new Point(0, 0);
+            tlpToolbar.Margin = new Padding(0);
+            tlpToolbar.Name = "tlpToolbar";
+            tlpToolbar.RowCount = 1;
+            tlpToolbar.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpToolbar.Size = new Size(1199, 51);
+            tlpToolbar.TabIndex = 0;
             // 
-            // panel2
+            // lblRiwayatJudul
             // 
-            panel2.BackColor = Color.RoyalBlue;
-            panel2.Controls.Add(label5);
-            panel2.Location = new Point(2, 61);
-            panel2.Margin = new Padding(2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(158, 23);
-            panel2.TabIndex = 4;
+            lblRiwayatJudul.BackColor = Color.Transparent;
+            lblRiwayatJudul.Dock = DockStyle.Fill;
+            lblRiwayatJudul.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblRiwayatJudul.ForeColor = Color.FromArgb(13, 47, 110);
+            lblRiwayatJudul.Location = new Point(0, 0);
+            lblRiwayatJudul.Margin = new Padding(0);
+            lblRiwayatJudul.Name = "lblRiwayatJudul";
+            lblRiwayatJudul.Size = new Size(628, 51);
+            lblRiwayatJudul.TabIndex = 0;
+            lblRiwayatJudul.Text = "Riwayat Barang Masuk";
+            lblRiwayatJudul.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // txtCariRiwayat
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(15, 0);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(134, 19);
-            label5.TabIndex = 0;
-            label5.Text = "Input Barang Masuk";
+            txtCariRiwayat.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCariRiwayat.Font = new Font("Segoe UI", 10F);
+            txtCariRiwayat.Location = new Point(628, 10);
+            txtCariRiwayat.Margin = new Padding(0, 10, 12, 0);
+            txtCariRiwayat.Name = "txtCariRiwayat";
+            txtCariRiwayat.PlaceholderText = "Cari di riwayat...";
+            txtCariRiwayat.Size = new Size(256, 25);
+            txtCariRiwayat.TabIndex = 1;
             // 
-            // roundedPanel4
+            // btnExport
             // 
-            roundedPanel4.BackColor = Color.Transparent;
-            roundedPanel4.Controls.Add(lblTotalNilai);
-            roundedPanel4.Controls.Add(label6);
-            roundedPanel4.Controls.Add(label7);
-            roundedPanel4.Location = new Point(334, 4);
-            roundedPanel4.Margin = new Padding(2);
-            roundedPanel4.Name = "roundedPanel4";
-            roundedPanel4.Size = new Size(301, 53);
-            roundedPanel4.TabIndex = 3;
-            roundedPanel4.Paint += roundedPanel4_Paint;
+            btnExport.BackColor = Color.RoyalBlue;
+            btnExport.BorderColor = Color.FromArgb(30, 136, 229);
+            btnExport.Dock = DockStyle.Fill;
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnExport.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
+            btnExport.ForeColor = Color.White;
+            btnExport.HoverColor = Color.FromArgb(225, 240, 255);
+            btnExport.Location = new Point(896, 6);
+            btnExport.Margin = new Padding(0, 6, 12, 6);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(128, 39);
+            btnExport.TabIndex = 2;
+            btnExport.Text = "Print";
+            btnExport.UseVisualStyleBackColor = false;
             // 
-            // lblTotalNilai
+            // btnBatal
             // 
-            lblTotalNilai.AutoSize = true;
-            lblTotalNilai.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalNilai.ForeColor = Color.ForestGreen;
-            lblTotalNilai.Location = new Point(53, 19);
-            lblTotalNilai.Margin = new Padding(2, 0, 2, 0);
-            lblTotalNilai.Name = "lblTotalNilai";
-            lblTotalNilai.Size = new Size(19, 21);
-            lblTotalNilai.TabIndex = 2;
-            lblTotalNilai.Text = "0";
+            btnBatal.BackColor = Color.FromArgb(214, 69, 65);
+            btnBatal.BorderColor = Color.FromArgb(214, 69, 65);
+            btnBatal.Dock = DockStyle.Fill;
+            btnBatal.FlatStyle = FlatStyle.Flat;
+            btnBatal.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
+            btnBatal.ForeColor = Color.White;
+            btnBatal.HoverColor = Color.FromArgb(253, 236, 235);
+            btnBatal.Location = new Point(1036, 6);
+            btnBatal.Margin = new Padding(0, 6, 0, 6);
+            btnBatal.Name = "btnBatal";
+            btnBatal.Size = new Size(163, 39);
+            btnBatal.TabIndex = 3;
+            btnBatal.Text = "Batalkan Entri";
+            btnBatal.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // dgvRiwayat
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.ForestGreen;
-            label6.Location = new Point(26, 19);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(30, 21);
-            label6.TabIndex = 1;
-            label6.Text = "Rp";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.ForestGreen;
-            label7.Location = new Point(26, 4);
-            label7.Margin = new Padding(2, 0, 2, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(98, 15);
-            label7.TabIndex = 0;
-            label7.Text = "Total Nilai Masuk";
-            // 
-            // roundedPanel3
-            // 
-            roundedPanel3.BackColor = Color.Transparent;
-            roundedPanel3.Controls.Add(label4);
-            roundedPanel3.Controls.Add(lblTotalBarang);
-            roundedPanel3.Controls.Add(lbl);
-            roundedPanel3.Location = new Point(19, 4);
-            roundedPanel3.Margin = new Padding(2);
-            roundedPanel3.Name = "roundedPanel3";
-            roundedPanel3.Size = new Size(301, 53);
-            roundedPanel3.TabIndex = 0;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.RoyalBlue;
-            label4.Location = new Point(41, 19);
-            label4.Margin = new Padding(2, 0, 2, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(61, 21);
-            label4.TabIndex = 2;
-            label4.Text = "Barang";
-            // 
-            // lblTotalBarang
-            // 
-            lblTotalBarang.AutoSize = true;
-            lblTotalBarang.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalBarang.ForeColor = Color.RoyalBlue;
-            lblTotalBarang.Location = new Point(26, 19);
-            lblTotalBarang.Margin = new Padding(2, 0, 2, 0);
-            lblTotalBarang.Name = "lblTotalBarang";
-            lblTotalBarang.Size = new Size(19, 21);
-            lblTotalBarang.TabIndex = 1;
-            lblTotalBarang.Text = "0";
-            // 
-            // lbl
-            // 
-            lbl.AutoSize = true;
-            lbl.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.ForeColor = Color.RoyalBlue;
-            lbl.Location = new Point(26, 4);
-            lbl.Margin = new Padding(2, 0, 2, 0);
-            lbl.Name = "lbl";
-            lbl.Size = new Size(111, 15);
-            lbl.TabIndex = 0;
-            lbl.Text = "Total Barang Masuk";
-            // 
-            // dgvBarang
-            // 
-            dgvBarang.AllowUserToAddRows = false;
-            dgvBarang.AllowUserToDeleteRows = false;
-            dgvBarang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvBarang.BackgroundColor = Color.White;
-            dgvBarang.BorderStyle = BorderStyle.None;
-            dgvBarang.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.Padding = new Padding(8);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvBarang.ColumnHeadersHeight = 45;
-            dgvBarang.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colKode, colNamaBarang, colJumlah, colHargaBeli, colKeterangan });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvBarang.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvBarang.EnableHeadersVisualStyles = false;
-            dgvBarang.GridColor = Color.Gainsboro;
-            dgvBarang.Location = new Point(15, 197);
-            dgvBarang.Margin = new Padding(2);
-            dgvBarang.MultiSelect = false;
-            dgvBarang.Name = "dgvBarang";
-            dgvBarang.ReadOnly = true;
-            dgvBarang.RowHeadersVisible = false;
-            dgvBarang.RowHeadersWidth = 62;
-            dgvBarang.RowTemplate.Height = 38;
-            dgvBarang.Size = new Size(692, 174);
-            dgvBarang.TabIndex = 1;
-            dgvBarang.CellContentClick += dgvBarang_CellContentClick;
+            dgvRiwayat.Columns.AddRange(new DataGridViewColumn[] { colNo, colTanggal, colKode, colNama, colJumlah, colHarga, colTotal, colSupplier, colKeterangan });
+            dgvRiwayat.Dock = DockStyle.Fill;
+            dgvRiwayat.Location = new Point(0, 51);
+            dgvRiwayat.Margin = new Padding(0);
+            dgvRiwayat.Name = "dgvRiwayat";
+            dgvRiwayat.Size = new Size(1199, 294);
+            dgvRiwayat.TabIndex = 1;
             // 
             // colNo
             // 
-            colNo.FillWeight = 65F;
+            colNo.FillWeight = 6F;
             colNo.HeaderText = "No";
-            colNo.MinimumWidth = 8;
             colNo.Name = "colNo";
-            colNo.ReadOnly = true;
             // 
             // colTanggal
             // 
+            colTanggal.FillWeight = 14F;
             colTanggal.HeaderText = "Tanggal";
-            colTanggal.MinimumWidth = 8;
             colTanggal.Name = "colTanggal";
-            colTanggal.ReadOnly = true;
             // 
             // colKode
             // 
+            colKode.FillWeight = 11F;
             colKode.HeaderText = "Kode Barang";
-            colKode.MinimumWidth = 8;
             colKode.Name = "colKode";
-            colKode.ReadOnly = true;
             // 
-            // colNamaBarang
+            // colNama
             // 
-            colNamaBarang.FillWeight = 130F;
-            colNamaBarang.HeaderText = "Nama Barang";
-            colNamaBarang.MinimumWidth = 8;
-            colNamaBarang.Name = "colNamaBarang";
-            colNamaBarang.ReadOnly = true;
+            colNama.FillWeight = 19F;
+            colNama.HeaderText = "Nama Barang";
+            colNama.Name = "colNama";
             // 
             // colJumlah
             // 
-            colJumlah.FillWeight = 115F;
+            colJumlah.FillWeight = 8F;
             colJumlah.HeaderText = "Jumlah";
-            colJumlah.MinimumWidth = 8;
             colJumlah.Name = "colJumlah";
-            colJumlah.ReadOnly = true;
             // 
-            // colHargaBeli
+            // colHarga
             // 
-            colHargaBeli.FillWeight = 90F;
-            colHargaBeli.HeaderText = "Harga Beli";
-            colHargaBeli.MinimumWidth = 8;
-            colHargaBeli.Name = "colHargaBeli";
-            colHargaBeli.ReadOnly = true;
+            colHarga.FillWeight = 11F;
+            colHarga.HeaderText = "Harga Beli";
+            colHarga.Name = "colHarga";
+            // 
+            // colTotal
+            // 
+            colTotal.FillWeight = 11F;
+            colTotal.HeaderText = "Total";
+            colTotal.Name = "colTotal";
+            // 
+            // colSupplier
+            // 
+            colSupplier.FillWeight = 13F;
+            colSupplier.HeaderText = "Supplier";
+            colSupplier.Name = "colSupplier";
             // 
             // colKeterangan
             // 
+            colKeterangan.FillWeight = 14F;
             colKeterangan.HeaderText = "Keterangan";
-            colKeterangan.MinimumWidth = 8;
             colKeterangan.Name = "colKeterangan";
-            colKeterangan.ReadOnly = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(15, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(156, 25);
-            label1.TabIndex = 0;
-            label1.Text = "📥Barang Masuk";
             // 
             // UC_BRGGudang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            Controls.Add(roundedPanel1);
+            BackColor = Color.FromArgb(234, 243, 252);
+            Controls.Add(tlpRoot);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "UC_BRGGudang";
-            Size = new Size(727, 385);
-            roundedPanel1.ResumeLayout(false);
-            roundedPanel1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            roundedPanel2.ResumeLayout(false);
-            roundedPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numJumlah).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            roundedPanel4.ResumeLayout(false);
-            roundedPanel4.PerformLayout();
-            roundedPanel3.ResumeLayout(false);
-            roundedPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvBarang).EndInit();
+            Size = new Size(1283, 808);
+            tlpRoot.ResumeLayout(false);
+            pnlJudul.ResumeLayout(false);
+            pnlJudul.PerformLayout();
+            tlpContent.ResumeLayout(false);
+            tlpStats.ResumeLayout(false);
+            cardQty.ResumeLayout(false);
+            cardQty.PerformLayout();
+            cardRp.ResumeLayout(false);
+            cardRp.PerformLayout();
+            cardTrx.ResumeLayout(false);
+            cardTrx.PerformLayout();
+            pnlInput.ResumeLayout(false);
+            tlpInput.ResumeLayout(false);
+            tlpInput.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudJumlah).EndInit();
+            pnlRiwayat.ResumeLayout(false);
+            tlpRiwayat.ResumeLayout(false);
+            tlpToolbar.ResumeLayout(false);
+            tlpToolbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRiwayat).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private RoundedPanel roundedPanel1;
-        private DataGridView dgvBarang;
-        private Label label1;
-        private Panel panel1;
-        private Label label2;
-        private RoundedPanel roundedPanel2;
-        private DataGridViewTextBoxColumn colNo;
-        private DataGridViewTextBoxColumn colTanggal;
-        private DataGridViewTextBoxColumn colKode;
-        private DataGridViewTextBoxColumn colNamaBarang;
-        private DataGridViewTextBoxColumn colJumlah;
-        private DataGridViewTextBoxColumn colHargaBeli;
-        private DataGridViewTextBoxColumn colKeterangan;
-        private RoundedPanel roundedPanel3;
-        private Label lblTotalBarang;
-        private Label lbl;
-        private Panel panel2;
-        private Label label5;
-        private RoundedPanel roundedPanel4;
-        private Label lblTotalNilai;
-        private Label label6;
-        private Label label7;
-        private Label label4;
-        private Label label11;
-        private CustomTextBox txtHargaBeli;
-        private Label label9;
-        private RoundedButton btnSimpan;
-        private CustomTextBox txtKeterangan;
-        private Label label8;
-        private NumericUpDown numJumlah;
-        private Label label10;
-        private Button btnCari;
-        private CustomTextBox txtNamaAtauKode;
-        private DateTimePicker dtpTanggal;
+        private System.Windows.Forms.TableLayoutPanel tlpRoot;
+        private RoundedPanelUI pnlJudul;
+        private System.Windows.Forms.DateTimePicker dtpTanggal;
+        private System.Windows.Forms.CheckBox chkSemua;
+        private System.Windows.Forms.Label lblSub;
+        private System.Windows.Forms.Label lblJudul;
+        private System.Windows.Forms.TableLayoutPanel tlpContent;
+        private System.Windows.Forms.TableLayoutPanel tlpStats;
+        private RoundedPanelUI cardQty;
+        private System.Windows.Forms.Label lblQtyKet;
+        private System.Windows.Forms.Label lblQtyNilai;
+        private System.Windows.Forms.Label lblQtyJudul;
+        private RoundedPanelUI cardRp;
+        private System.Windows.Forms.Label lblRpKet;
+        private System.Windows.Forms.Label lblRpNilai;
+        private System.Windows.Forms.Label lblRpJudul;
+        private RoundedPanelUI cardTrx;
+        private System.Windows.Forms.Label lblTrxKet;
+        private System.Windows.Forms.Label lblTrxNilai;
+        private System.Windows.Forms.Label lblTrxJudul;
+        private RoundedPanelUI pnlInput;
+        private System.Windows.Forms.TableLayoutPanel tlpInput;
+        private System.Windows.Forms.Label lblCari;
+        private System.Windows.Forms.Label lblJumlah;
+        private System.Windows.Forms.Label lblHarga;
+        private System.Windows.Forms.Label lblSupplier;
+        private System.Windows.Forms.Label lblKet;
+        private System.Windows.Forms.TextBox txtCari;
+        private RoundedButtonUI btnCari;
+        private System.Windows.Forms.NumericUpDown nudJumlah;
+        private System.Windows.Forms.TextBox txtHarga;
+        private System.Windows.Forms.TextBox txtSupplier;
+        private System.Windows.Forms.TextBox txtKeterangan;
+        private RoundedButtonUI btnSimpan;
+        private System.Windows.Forms.Label lblInfoBarang;
+        private System.Windows.Forms.Label lblTotalHarga;
+        private System.Windows.Forms.Label lblInputJudul;
+        private RoundedPanelUI pnlRiwayat;
+        private System.Windows.Forms.TableLayoutPanel tlpRiwayat;
+        private System.Windows.Forms.TableLayoutPanel tlpToolbar;
+        private System.Windows.Forms.Label lblRiwayatJudul;
+        private System.Windows.Forms.TextBox txtCariRiwayat;
+        private RoundedButtonUI btnExport;
+        private RoundedButtonUI btnBatal;
+        private System.Windows.Forms.DataGridView dgvRiwayat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTanggal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNama;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colJumlah;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKeterangan;
     }
 }

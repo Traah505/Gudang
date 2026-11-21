@@ -128,7 +128,7 @@
             panelGudang.BackColor = Color.Transparent;
             panelGudang.Location = new Point(147, 3);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(706, 423);
+            panelGudang.Size = new Size(482, 423);
             panelGudang.TabIndex = 2;
             // 
             // UC_Gudang
@@ -139,7 +139,7 @@
             Controls.Add(panelGudang);
             Controls.Add(panel1);
             Name = "UC_Gudang";
-            Size = new Size(885, 435);
+            Size = new Size(661, 435);
             Load += UC_Gudang_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);

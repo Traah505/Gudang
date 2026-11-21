@@ -180,7 +180,7 @@ namespace GUedang
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
-            picLogo.Click += picLogo_Click;
+            
             // 
             // lblTagline
             // 

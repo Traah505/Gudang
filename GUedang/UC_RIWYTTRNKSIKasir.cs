@@ -15,7 +15,7 @@ namespace GUedang
             InitializeComponent();
 
 
-            
+
         }
 
         private void btnCetakLaporan_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace GUedang
 
         private void MuatRiwayat()
         {
-           
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -45,8 +45,13 @@ namespace GUedang
 
         private void btnCetakLaporan_Click_1(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void tlpContent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
-    
+
 }

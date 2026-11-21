@@ -7,7 +7,6 @@ using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
 
-
 namespace GUedang
 {
     [DataContract]
@@ -15,10 +14,11 @@ namespace GUedang
     {
         [DataMember(Order = 1)] public int Id { get; set; }
         [DataMember(Order = 2)] public string Nama { get; set; }
-        [DataMember(Order = 3)] public string Role { get; set; }   
+        [DataMember(Order = 3)] public string Role { get; set; }
         [DataMember(Order = 4)] public bool Aktif { get; set; }
         [DataMember(Order = 5)] public string Salt { get; set; }
         [DataMember(Order = 6)] public string PasswordHash { get; set; }
+        [DataMember(Order = 7)] public string Dibuat { get; set; }   // BARU: yyyy-MM-dd HH:mm
     }
 
     public static class Roles
@@ -27,11 +27,11 @@ namespace GUedang
         public const string Kasir = "Kasir";
         public const string Gudang = "Gudang";
 
-        
+        // hanya role pekerja yang boleh dipilih saat tambah user (Admin tidak ada di sini)
         public static readonly string[] Semua = { Kasir, Gudang };
     }
 
-    
+    // menyimpan user yang sedang login
     public static class Session
     {
         public static UserAkun UserAktif { get; set; }
@@ -42,11 +42,10 @@ namespace GUedang
         private const int Iterations = 10000;
         public const int MinPanjangPassword = 4;
 
-        
         private static readonly string FilePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "users.json");
 
-        
+        // ---------- baca / tulis file ----------
 
         public static List<UserAkun> Muat()
         {
@@ -160,6 +159,38 @@ namespace GUedang
             return user;
         }
 
+        public static bool GantiPassword(string nama, string lama, string baru, out string pesan)
+        {
+            var daftar = Muat();
+            var u = daftar.FirstOrDefault(x =>
+                x.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase));
+
+            if (u == null) { pesan = "User tidak ditemukan."; return false; }
+            if (u.PasswordHash != Hash(lama, Convert.FromBase64String(u.Salt))) { pesan = "Kata sandi lama salah."; return false; }
+            if (baru.Length < MinPanjangPassword)
+            { pesan = "Kata sandi baru minimal " + MinPanjangPassword + " karakter."; return false; }
+
+            u.PasswordHash = Hash(baru, Convert.FromBase64String(u.Salt));
+            Simpan(daftar);
+            pesan = "Kata sandi berhasil diganti.";
+            return true;
+        }
+
+        // BARU: admin mereset password user lain dengan password sementara acak
+        public static bool ResetPassword(int id, out string passwordBaru, out string pesan)
+        {
+            passwordBaru = null;
+            var daftar = Muat();
+            var u = daftar.FirstOrDefault(x => x.Id == id);
+            if (u == null) { pesan = "User tidak ditemukan."; return false; }
+
+            passwordBaru = BuatPasswordSementara();
+            u.PasswordHash = Hash(passwordBaru, Convert.FromBase64String(u.Salt));
+            Simpan(daftar);
+            pesan = "Password direset.";
+            return true;
+        }
+
         // ---------- helper ----------
 
         private static bool AdminTerakhir(List<UserAkun> daftar, UserAkun user)
@@ -181,7 +212,8 @@ namespace GUedang
                 Role = role,
                 Aktif = true,
                 Salt = Convert.ToBase64String(salt),
-                PasswordHash = Hash(password, salt)
+                PasswordHash = Hash(password, salt),
+                Dibuat = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
             };
         }
 
@@ -190,20 +222,19 @@ namespace GUedang
             using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations))
                 return Convert.ToBase64String(pbkdf2.GetBytes(32));
         }
-        public static bool GantiPassword(string nama, string lama, string baru, out string pesan)
+
+        // Password acak 8 karakter (tanpa karakter yang mirip seperti 0/O dan 1/l)
+        private static string BuatPasswordSementara()
         {
-            var daftar = Muat();
-            var u = daftar.FirstOrDefault(x =>
-                x.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase));
+            const string huruf = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789";
+            var bytes = new byte[8];
+            using (var rng = new RNGCryptoServiceProvider())
+                rng.GetBytes(bytes);
 
-            if (u == null) { pesan = "User tidak ditemukan."; return false; }
-            if (u.PasswordHash != Hash(lama, Convert.FromBase64String(u.Salt))) { pesan = "Kata sandi lama salah."; return false; }
-            if (baru.Length < 4) { pesan = "Kata sandi baru minimal 4 karakter."; return false; }
-
-            u.PasswordHash = Hash(baru, Convert.FromBase64String(u.Salt));
-            Simpan(daftar);   // pakai method simpan yang sudah kamu punya
-            pesan = "Kata sandi berhasil diganti.";
-            return true;
+            var sb = new StringBuilder();
+            foreach (byte b in bytes)
+                sb.Append(huruf[b % huruf.Length]);
+            return sb.ToString();
         }
     }
 }

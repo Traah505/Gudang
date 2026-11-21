@@ -15,15 +15,20 @@ namespace GUedang
         public UC_Barang()
         {
             InitializeComponent();
-            
+
         }
-        
+
         private void UC_Barang_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void tlpRoot_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpForm_Paint(object sender, PaintEventArgs e)
         {
 
         }

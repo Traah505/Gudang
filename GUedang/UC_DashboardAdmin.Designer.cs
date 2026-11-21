@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            roundedButtonLaba = new RoundedButton();
             roundedButtonLaporanAktivitas = new RoundedButton();
             roundedButtonRiwayat = new RoundedButton();
             roundedButtonBarang = new RoundedButton();
@@ -44,7 +45,6 @@
             colJenis = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
             colAksi = new DataGridViewButtonColumn();
-            roundedButtonLaba = new RoundedButton();
             panel1.SuspendLayout();
             panelContent2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRequestUser).BeginInit();
@@ -67,6 +67,21 @@
             panel1.Size = new Size(201, 587);
             panel1.TabIndex = 0;
             // 
+            // roundedButtonLaba
+            // 
+            roundedButtonLaba.BackColor = Color.Navy;
+            roundedButtonLaba.FlatAppearance.BorderSize = 0;
+            roundedButtonLaba.FlatStyle = FlatStyle.Flat;
+            roundedButtonLaba.ForeColor = Color.White;
+            roundedButtonLaba.Location = new Point(23, 486);
+            roundedButtonLaba.Margin = new Padding(4, 5, 4, 5);
+            roundedButtonLaba.Name = "roundedButtonLaba";
+            roundedButtonLaba.Size = new Size(203, 67);
+            roundedButtonLaba.TabIndex = 7;
+            roundedButtonLaba.Text = "Laporan Laba";
+            roundedButtonLaba.UseVisualStyleBackColor = false;
+            roundedButtonLaba.Click += roundedButtonLaba_Click;
+            // 
             // roundedButtonLaporanAktivitas
             // 
             roundedButtonLaporanAktivitas.BackColor = Color.Navy;
@@ -78,7 +93,7 @@
             roundedButtonLaporanAktivitas.Name = "roundedButtonLaporanAktivitas";
             roundedButtonLaporanAktivitas.Size = new Size(203, 67);
             roundedButtonLaporanAktivitas.TabIndex = 6;
-            roundedButtonLaporanAktivitas.Text = "Laporan Aktivitas";
+            roundedButtonLaporanAktivitas.Text = "Log Aktivitas";
             roundedButtonLaporanAktivitas.UseVisualStyleBackColor = false;
             roundedButtonLaporanAktivitas.Click += roundedButtonLaporanAktivitas_Click;
             // 
@@ -177,26 +192,26 @@
             dgvRequestUser.BackgroundColor = Color.WhiteSmoke;
             dgvRequestUser.BorderStyle = BorderStyle.None;
             dgvRequestUser.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRequestUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRequestUser.ColumnHeadersHeight = 40;
             dgvRequestUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvRequestUser.Columns.AddRange(new DataGridViewColumn[] { colNo, colNama, colJenis, colStatus, colAksi });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = Color.DimGray;
-            dataGridViewCellStyle4.Padding = new Padding(6);
-            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.DimGray;
+            dataGridViewCellStyle2.Padding = new Padding(6);
+            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRequestUser.DefaultCellStyle = dataGridViewCellStyle2;
             dgvRequestUser.EnableHeadersVisualStyles = false;
             dgvRequestUser.GridColor = Color.Gainsboro;
             dgvRequestUser.Location = new Point(-607, -438);
@@ -250,21 +265,6 @@
             colAksi.MinimumWidth = 8;
             colAksi.Name = "colAksi";
             colAksi.ReadOnly = true;
-            // 
-            // roundedButtonLaba
-            // 
-            roundedButtonLaba.BackColor = Color.Navy;
-            roundedButtonLaba.FlatAppearance.BorderSize = 0;
-            roundedButtonLaba.FlatStyle = FlatStyle.Flat;
-            roundedButtonLaba.ForeColor = Color.White;
-            roundedButtonLaba.Location = new Point(23, 486);
-            roundedButtonLaba.Margin = new Padding(4, 5, 4, 5);
-            roundedButtonLaba.Name = "roundedButtonLaba";
-            roundedButtonLaba.Size = new Size(203, 67);
-            roundedButtonLaba.TabIndex = 7;
-            roundedButtonLaba.Text = "Laporan Laba";
-            roundedButtonLaba.UseVisualStyleBackColor = false;
-            roundedButtonLaba.Click += roundedButtonLaba_Click;
             // 
             // UC_DashboardAdmin
             // 

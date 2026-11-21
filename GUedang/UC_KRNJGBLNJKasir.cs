@@ -9,139 +9,33 @@ namespace GUedang
     public partial class UC_KRNJGBLNJKasir : UserControl   // samakan nama class dengan file-mu
     {
       
-        private List<ItemJual> keranjang = new List<ItemJual>();
+        
 
         public UC_KRNJGBLNJKasir()
         {
             InitializeComponent();
 
-            Load += UC_Keranjang_Load;
-            dgvBarang.CellClick += dgvBarang_CellClick;
-            dgvBarang.CellDoubleClick += dgvBarang_CellDoubleClick;   // klik 2x = tambah ke keranjang
-            txtUangDiterima.TextChanged += (s, e) => Hitung();
-            btnBayar.Click += btnBayar_Click;
-            btnBatal.Click += (s, e) => KosongkanKeranjang();
-            btnHapusSemua.Click += (s, e) => KosongkanKeranjang();
-            btnTambah.Click += btnTambah_Click;
-            numJumlah.ValueChanged += (s, e) => { if (numJumlah.Value < 0) numJumlah.Value = 0; };  
+           
         }
 
         private void UC_Keranjang_Load(object sender, EventArgs e)
         {
-            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
-
-            foreach (var g in new[] { dgvBarang, dgvKeranjang })
-            {
-                g.AutoGenerateColumns = false;
-                g.AllowUserToAddRows = false;
-                g.ReadOnly = true;
-                g.RowHeadersVisible = false;
-                g.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                g.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                g.Columns.Clear();
-            }
-
-            dgvBarang.Columns.Add("colNo", "No");
-            dgvBarang.Columns.Add("colKode", "Kode Barang");
-            dgvBarang.Columns.Add("colNama", "Nama Barang");
-            dgvBarang.Columns.Add("colHarga", "Harga");
-            dgvBarang.Columns.Add("colKategori", "Kategori");
-            dgvBarang.Columns.Add("colStok", "Stok");
-
-            dgvKeranjang.Columns.Add("colNama", "Nama Barang");
-            dgvKeranjang.Columns.Add("colJumlah", "Jumlah");
-            dgvKeranjang.Columns.Add("colHarga", "Harga");
-
-            MuatBarang();
-            Hitung();
+            
         }
 
-        private void MuatBarang()
-        {
-            dgvBarang.Rows.Clear();
-            int no = 1;
-            foreach (var b in BarangStore.Muat().Where(x => x.Stok > 0))
-                dgvBarang.Rows.Add(no++, b.KodeBarang, b.NamaBarang, b.HargaJual, b.Kategori, b.Stok);
-        }
-
-        private void dgvBarang_CellClick(object s, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            var r = dgvBarang.Rows[e.RowIndex];
-            txtKodeKasir.Text = r.Cells[1].Value?.ToString();
-            txtNamaKasir.Text = r.Cells[2].Value?.ToString();
-            textKategoriKasir.Text = r.Cells[4].Value?.ToString();
-            numJumlah.Value = 1;
-        }
-
-        private void dgvBarang_CellDoubleClick(object s, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || numJumlah.Value <= 0) return;
-            var r = dgvBarang.Rows[e.RowIndex];
-            string kode = r.Cells[1].Value.ToString();
-            decimal harga = Convert.ToDecimal(r.Cells[3].Value);
-            decimal stok = Convert.ToDecimal(r.Cells[5].Value);
-
-            var ada = keranjang.FirstOrDefault(i => i.Kode == kode);
-            decimal sudah = ada?.Jumlah ?? 0;
-            if (sudah + numJumlah.Value > stok)
-            {
-                MessageBox.Show("Stok tidak cukup (sisa " + stok.ToString("0.##") + ").");
-                return;
-            }
-
-            if (ada != null) ada.Jumlah += numJumlah.Value;
-            else keranjang.Add(new ItemJual
-            {
-                Kode = kode,
-                Nama = r.Cells[2].Value.ToString(),
-                Jumlah = numJumlah.Value,
-                Harga = harga
-            });
-            RefreshKeranjang();
-        }
+        
+        
 
         private void RefreshKeranjang()
         {
-            dgvKeranjang.Rows.Clear();
-            foreach (var i in keranjang)
-                dgvKeranjang.Rows.Add(i.Nama, i.Jumlah.ToString("0.##"), i.Subtotal.ToString("N0"));
-            Hitung();
+            
         }
 
-        private void KosongkanKeranjang()
-        {
-            keranjang = new List<ItemJual>();
-            txtUangDiterima.Text = "";
-            RefreshKeranjang();
-            if (MessageBox.Show("Cetak struk?", "Struk", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                var terakhir = PenjualanStore.Muat().LastOrDefault();
-                if (terakhir != null) StrukPrinter.Tampilkan(terakhir);
-            }
-        }
-
-        private void Hitung()
-        {
-            decimal total = keranjang.Sum(i => i.Subtotal);
-            lblSubtotal.Text =  total.ToString("N0");
-            lblNominalTotalBelanja.Text =  total.ToString("N0");
-            lblTotalBayar.Text =  total.ToString("N0");
-            decimal.TryParse(txtUangDiterima.Text, out decimal uang);
-            lblKembalian.Text = Math.Max(0, uang - total).ToString("N0");
-        }
+        
 
         private void btnBayar_Click(object s, EventArgs e)
         {
-            decimal.TryParse(txtUangDiterima.Text, out decimal uang);
-            bool ok = PenjualanStore.Bayar(Sesi.NamaUser, keranjang, uang, out string pesan);
-            MessageBox.Show(pesan, "Pembayaran", MessageBoxButtons.OK,
-                ok ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
-            if (ok)
-            {
-                KosongkanKeranjang();
-                MuatBarang();
-            }
+           
         }
         
 
@@ -165,54 +59,16 @@ namespace GUedang
 
         }
 
-            private void TambahKeKeranjang(string kode, decimal jumlah)
-        {
-            if (string.IsNullOrEmpty(kode))
-            {
-                MessageBox.Show("Pilih barang di tabel dulu.");
-                return;
-            }
-            if (jumlah <= 0)
-            {
-                MessageBox.Show("Jumlah harus lebih dari 0.");
-                return;
-            }
-
-            var b = BarangStore.Muat().FirstOrDefault(x =>
-                x.KodeBarang.Equals(kode, StringComparison.OrdinalIgnoreCase));
-            if (b == null) { MessageBox.Show("Barang tidak ditemukan."); return; }
-
-            var ada = keranjang.FirstOrDefault(i => i.Kode == b.KodeBarang);
-            decimal sudah = ada?.Jumlah ?? 0;
-            if (sudah + jumlah > b.Stok)
-            {
-                MessageBox.Show("Stok tidak cukup (sisa " + b.Stok.ToString("0.##") + ").");
-                return;
-            }
-
-            if (ada != null) ada.Jumlah += jumlah;
-            else keranjang.Add(new ItemJual
-            {
-                Kode = b.KodeBarang,
-                Nama = b.NamaBarang,
-                Jumlah = jumlah,
-                Harga = b.HargaJual
-            });
-
-            RefreshKeranjang();
-            numJumlah.Value = 1;
-        }
+           
 
         private void btnTambah_Click(object s, EventArgs e)
         {
-            TambahKeKeranjang(txtKodeKasir.Text.Trim(), numJumlah.Value);
+            
         }
 
         private void dgvBarang_CellContentClick(object s, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-            string kode = dgvBarang.Rows[e.RowIndex].Cells[1].Value?.ToString();
-            TambahKeKeranjang(kode, numJumlah.Value);
+           
         }
     }
     

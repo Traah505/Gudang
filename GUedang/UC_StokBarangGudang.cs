@@ -14,11 +14,18 @@ namespace GUedang
         public UC_StokBarangGudang()
         {
             InitializeComponent();
-            
+
         }
 
-        
-        
+        private void nudMinBaru_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDetailStok_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

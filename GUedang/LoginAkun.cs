@@ -97,10 +97,20 @@ namespace GUedang
 
             if (user == null)
             {
-                MessageBox.Show(pesan, "Login gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Text = "";
-                txtPassword.Focus();
-                return;
+{
+                    AktivitasStore.Catat(
+                        nama,
+                        "Tidak diketahui",
+                        "Percobaan login gagal: " + pesan
+                    );
+
+                    MessageBox.Show(pesan, "Login gagal",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtPassword.Text = "";
+                    txtPassword.Focus();
+                    return;
+                }
             }
 
             Session.UserAktif = user;

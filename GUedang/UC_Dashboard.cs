@@ -360,14 +360,10 @@ namespace GUedang
 
             StyleTombol(btnRefresh, Biru, Color.White, BiruTua);
             btnRefresh.CornerRadius = 19;
-            StyleTombol(btnTambahBarang, Biru, Color.White, BiruTua);
-            StyleTombol(btnTransaksi, Biru, Color.White, BiruTua);
-            StyleTombol(btnLaporan, BiruTua, Color.White, Color.FromArgb(8, 50, 120));
-            StyleTombol(btnOpname, BiruTua, Color.White, Color.FromArgb(8, 50, 120));
-            StyleTombol(btnExport, Color.White, Biru, BiruMuda, true);
+
 
             toolTip1.SetToolTip(btnRefresh, "Muat ulang data dashboard");
-            toolTip1.SetToolTip(btnExport, "Simpan daftar barang menipis ke file CSV");
+
             toolTip1.SetToolTip(txtCari, "Cari nama atau status pengguna");
         }
 
@@ -478,6 +474,21 @@ namespace GUedang
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvPengguna_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblJam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tblKanan_Paint(object sender, PaintEventArgs e)
         {
 
         }

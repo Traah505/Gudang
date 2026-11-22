@@ -17,6 +17,8 @@
 
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tlpRoot = new TableLayoutPanel();
             pnlJudul = new RoundedPanelUI();
             lblSub = new Label();
@@ -49,6 +51,7 @@
             lblAdjJudul = new Label();
             pnlDetail = new RoundedPanelUI();
             tlpDetail = new TableLayoutPanel();
+            lblTerakhir = new Label();
             tlpMini = new TableLayoutPanel();
             pnlMiniStatus = new RoundedPanelUI();
             lblMiniStatusJudul = new Label();
@@ -57,8 +60,8 @@
             lblMiniMinJudul = new Label();
             lblMiniMinNilai = new Label();
             lblDetailStok = new Label();
-            lblDetailNama = new Label();
             lblDetailJudul = new Label();
+            lblDetailNama = new Label();
             pnlFilter = new RoundedPanelUI();
             lblRingkasan = new Label();
             txtCari = new TextBox();
@@ -66,7 +69,6 @@
             cmbStatus = new ComboBox();
             btnReset = new RoundedButtonUI();
             btnExport = new RoundedButtonUI();
-            lblTerakhir = new Label();
             tlpRoot.SuspendLayout();
             pnlJudul.SuspendLayout();
             tlpContent.SuspendLayout();
@@ -123,7 +125,7 @@
             lblSub.BackColor = Color.Transparent;
             lblSub.Font = new Font("Segoe UI", 9.5F);
             lblSub.ForeColor = Color.FromArgb(90, 110, 140);
-            lblSub.Location = new Point(37, 51);
+            lblSub.Location = new Point(37, 45);
             lblSub.Margin = new Padding(6, 0, 6, 0);
             lblSub.Name = "lblSub";
             lblSub.Size = new Size(636, 25);
@@ -179,12 +181,37 @@
             // 
             // dgvStok
             // 
-            dgvStok.ColumnHeadersHeight = 34;
+            dgvStok.AllowUserToAddRows = false;
+            dgvStok.AllowUserToDeleteRows = false;
+            dgvStok.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvStok.BackgroundColor = Color.White;
+            dgvStok.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.RoyalBlue;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvStok.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvStok.ColumnHeadersHeight = 40;
+            dgvStok.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvStok.Columns.AddRange(new DataGridViewColumn[] { colNo, colKode, colNama, colKategori, colStok, colMin, colNilai, colStatus });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvStok.DefaultCellStyle = dataGridViewCellStyle4;
             dgvStok.Dock = DockStyle.Fill;
+            dgvStok.EnableHeadersVisualStyles = false;
             dgvStok.Location = new Point(33, 92);
             dgvStok.Margin = new Padding(0);
+            dgvStok.MultiSelect = false;
             dgvStok.Name = "dgvStok";
+            dgvStok.RowHeadersVisible = false;
             dgvStok.RowHeadersWidth = 62;
             dgvStok.Size = new Size(1088, 956);
             dgvStok.TabIndex = 0;
@@ -195,7 +222,6 @@
             colNo.HeaderText = "No";
             colNo.MinimumWidth = 8;
             colNo.Name = "colNo";
-            colNo.Width = 150;
             // 
             // colKode
             // 
@@ -203,7 +229,6 @@
             colKode.HeaderText = "Kode";
             colKode.MinimumWidth = 8;
             colKode.Name = "colKode";
-            colKode.Width = 150;
             // 
             // colNama
             // 
@@ -211,7 +236,6 @@
             colNama.HeaderText = "Nama Barang";
             colNama.MinimumWidth = 8;
             colNama.Name = "colNama";
-            colNama.Width = 150;
             // 
             // colKategori
             // 
@@ -219,7 +243,6 @@
             colKategori.HeaderText = "Kategori";
             colKategori.MinimumWidth = 8;
             colKategori.Name = "colKategori";
-            colKategori.Width = 150;
             // 
             // colStok
             // 
@@ -227,7 +250,6 @@
             colStok.HeaderText = "Stok";
             colStok.MinimumWidth = 8;
             colStok.Name = "colStok";
-            colStok.Width = 150;
             // 
             // colMin
             // 
@@ -235,7 +257,6 @@
             colMin.HeaderText = "Minimum";
             colMin.MinimumWidth = 8;
             colMin.Name = "colMin";
-            colMin.Width = 150;
             // 
             // colNilai
             // 
@@ -243,7 +264,6 @@
             colNilai.HeaderText = "Nilai (Rp)";
             colNilai.MinimumWidth = 8;
             colNilai.Name = "colNilai";
-            colNilai.Width = 150;
             // 
             // colStatus
             // 
@@ -251,7 +271,6 @@
             colStatus.HeaderText = "Status";
             colStatus.MinimumWidth = 8;
             colStatus.Name = "colStatus";
-            colStatus.Width = 150;
             // 
             // lblTabelJudul
             // 
@@ -509,6 +528,19 @@
             tlpDetail.Size = new Size(556, 103);
             tlpDetail.TabIndex = 0;
             // 
+            // lblTerakhir
+            // 
+            lblTerakhir.BackColor = Color.Transparent;
+            lblTerakhir.Font = new Font("Segoe UI", 8.5F);
+            lblTerakhir.ForeColor = Color.FromArgb(90, 110, 140);
+            lblTerakhir.Location = new Point(0, 135);
+            lblTerakhir.Margin = new Padding(0);
+            lblTerakhir.Name = "lblTerakhir";
+            lblTerakhir.Size = new Size(540, 8);
+            lblTerakhir.TabIndex = 2;
+            lblTerakhir.Text = "-";
+            lblTerakhir.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // tlpMini
             // 
             tlpMini.ColumnCount = 2;
@@ -619,19 +651,6 @@
             lblDetailStok.TextAlign = ContentAlignment.MiddleLeft;
             lblDetailStok.Click += lblDetailStok_Click;
             // 
-            // lblDetailNama
-            // 
-            lblDetailNama.BackColor = Color.Transparent;
-            lblDetailNama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            lblDetailNama.ForeColor = Color.FromArgb(13, 47, 110);
-            lblDetailNama.Location = new Point(33, 38);
-            lblDetailNama.Margin = new Padding(0);
-            lblDetailNama.Name = "lblDetailNama";
-            lblDetailNama.Size = new Size(540, 32);
-            lblDetailNama.TabIndex = 0;
-            lblDetailNama.Text = "Pilih barang di tabel";
-            lblDetailNama.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // lblDetailJudul
             // 
             lblDetailJudul.BackColor = Color.Transparent;
@@ -644,6 +663,19 @@
             lblDetailJudul.TabIndex = 1;
             lblDetailJudul.Text = "Detail Persediaan";
             lblDetailJudul.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblDetailNama
+            // 
+            lblDetailNama.BackColor = Color.Transparent;
+            lblDetailNama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            lblDetailNama.ForeColor = Color.FromArgb(13, 47, 110);
+            lblDetailNama.Location = new Point(33, 38);
+            lblDetailNama.Margin = new Padding(0);
+            lblDetailNama.Name = "lblDetailNama";
+            lblDetailNama.Size = new Size(540, 32);
+            lblDetailNama.TabIndex = 0;
+            lblDetailNama.Text = "Pilih barang di tabel";
+            lblDetailNama.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pnlFilter
             // 
@@ -743,19 +775,6 @@
             btnExport.TabIndex = 5;
             btnExport.Text = "Print";
             btnExport.UseVisualStyleBackColor = false;
-            // 
-            // lblTerakhir
-            // 
-            lblTerakhir.BackColor = Color.Transparent;
-            lblTerakhir.Font = new Font("Segoe UI", 8.5F);
-            lblTerakhir.ForeColor = Color.FromArgb(90, 110, 140);
-            lblTerakhir.Location = new Point(0, 135);
-            lblTerakhir.Margin = new Padding(0);
-            lblTerakhir.Name = "lblTerakhir";
-            lblTerakhir.Size = new Size(540, 8);
-            lblTerakhir.TabIndex = 2;
-            lblTerakhir.Text = "-";
-            lblTerakhir.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // UC_StokBarangGudang
             // 

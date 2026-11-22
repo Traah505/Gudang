@@ -18,6 +18,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tlpRoot = new TableLayoutPanel();
             pnlHeader = new RoundedPanelUI();
             btnRefresh = new RoundedButtonUI();
@@ -58,10 +62,6 @@
             colStok = new DataGridViewTextBoxColumn();
             colMin = new DataGridViewTextBoxColumn();
             lblPerhatianPanelJudul = new Label();
-            flowAksi = new FlowLayoutPanel();
-            btnBarangMasuk = new RoundedButtonUI();
-            btnBarangKeluar = new RoundedButtonUI();
-            btnStokBarang = new RoundedButtonUI();
             timerJam = new System.Windows.Forms.Timer(components);
             tlpRoot.SuspendLayout();
             pnlHeader.SuspendLayout();
@@ -75,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvAktivitas).BeginInit();
             pnlPerhatian.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPerhatian).BeginInit();
-            flowAksi.SuspendLayout();
             SuspendLayout();
             // 
             // tlpRoot
@@ -85,18 +84,17 @@
             tlpRoot.Controls.Add(pnlHeader, 0, 0);
             tlpRoot.Controls.Add(tlpCards, 0, 1);
             tlpRoot.Controls.Add(tlpContent, 0, 2);
-            tlpRoot.Controls.Add(flowAksi, 0, 3);
             tlpRoot.Dock = DockStyle.Fill;
             tlpRoot.Location = new Point(0, 0);
-            tlpRoot.Margin = new Padding(4, 3, 4, 3);
+            tlpRoot.Margin = new Padding(6, 5, 6, 5);
             tlpRoot.Name = "tlpRoot";
-            tlpRoot.Padding = new Padding(19, 18, 19, 14);
+            tlpRoot.Padding = new Padding(27, 30, 27, 23);
             tlpRoot.RowCount = 4;
-            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 108F));
-            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 134F));
+            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 180F));
+            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 223F));
             tlpRoot.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
-            tlpRoot.Size = new Size(1283, 808);
+            tlpRoot.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tlpRoot.Size = new Size(1833, 1347);
             tlpRoot.TabIndex = 0;
             tlpRoot.Paint += tlpRoot_Paint;
             // 
@@ -111,11 +109,11 @@
             pnlHeader.Controls.Add(lblSapaan);
             pnlHeader.Controls.Add(lblJudul);
             pnlHeader.Dock = DockStyle.Fill;
-            pnlHeader.Location = new Point(19, 18);
-            pnlHeader.Margin = new Padding(0, 0, 0, 14);
+            pnlHeader.Location = new Point(27, 30);
+            pnlHeader.Margin = new Padding(0, 0, 0, 23);
             pnlHeader.Name = "pnlHeader";
             pnlHeader.Radius = 20;
-            pnlHeader.Size = new Size(1245, 94);
+            pnlHeader.Size = new Size(1779, 157);
             pnlHeader.TabIndex = 0;
             // 
             // btnRefresh
@@ -127,10 +125,10 @@
             btnRefresh.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnRefresh.ForeColor = Color.White;
             btnRefresh.HoverColor = Color.FromArgb(240, 245, 252);
-            btnRefresh.Location = new Point(1089, 27);
-            btnRefresh.Margin = new Padding(4, 3, 4, 3);
+            btnRefresh.Location = new Point(1556, 45);
+            btnRefresh.Margin = new Padding(6, 5, 6, 5);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(128, 42);
+            btnRefresh.Size = new Size(183, 70);
             btnRefresh.TabIndex = 4;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = false;
@@ -141,10 +139,10 @@
             lblTanggal.BackColor = Color.Transparent;
             lblTanggal.Font = new Font("Segoe UI", 9F);
             lblTanggal.ForeColor = Color.FromArgb(90, 110, 140);
-            lblTanggal.Location = new Point(769, 53);
-            lblTanggal.Margin = new Padding(4, 0, 4, 0);
+            lblTanggal.Location = new Point(1099, 88);
+            lblTanggal.Margin = new Padding(6, 0, 6, 0);
             lblTanggal.Name = "lblTanggal";
-            lblTanggal.Size = new Size(292, 23);
+            lblTanggal.Size = new Size(417, 38);
             lblTanggal.TabIndex = 3;
             lblTanggal.Text = "Kamis, 19 November 2026";
             lblTanggal.TextAlign = ContentAlignment.MiddleRight;
@@ -155,10 +153,10 @@
             lblJam.BackColor = Color.Transparent;
             lblJam.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
             lblJam.ForeColor = Color.FromArgb(24, 94, 224);
-            lblJam.Location = new Point(816, 12);
-            lblJam.Margin = new Padding(4, 0, 4, 0);
+            lblJam.Location = new Point(1166, 20);
+            lblJam.Margin = new Padding(6, 0, 6, 0);
             lblJam.Name = "lblJam";
-            lblJam.Size = new Size(245, 37);
+            lblJam.Size = new Size(350, 62);
             lblJam.TabIndex = 2;
             lblJam.Text = "00:00:00";
             lblJam.TextAlign = ContentAlignment.MiddleRight;
@@ -169,10 +167,10 @@
             lblSapaan.BackColor = Color.Transparent;
             lblSapaan.Font = new Font("Segoe UI", 9.5F);
             lblSapaan.ForeColor = Color.FromArgb(90, 110, 140);
-            lblSapaan.Location = new Point(31, 55);
-            lblSapaan.Margin = new Padding(4, 0, 4, 0);
+            lblSapaan.Location = new Point(44, 92);
+            lblSapaan.Margin = new Padding(6, 0, 6, 0);
             lblSapaan.Name = "lblSapaan";
-            lblSapaan.Size = new Size(153, 17);
+            lblSapaan.Size = new Size(221, 25);
             lblSapaan.TabIndex = 1;
             lblSapaan.Text = "Selamat Datang, Gudang";
             // 
@@ -182,10 +180,10 @@
             lblJudul.BackColor = Color.Transparent;
             lblJudul.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblJudul.ForeColor = Color.FromArgb(13, 47, 110);
-            lblJudul.Location = new Point(28, 14);
-            lblJudul.Margin = new Padding(4, 0, 4, 0);
+            lblJudul.Location = new Point(40, 23);
+            lblJudul.Margin = new Padding(6, 0, 6, 0);
             lblJudul.Name = "lblJudul";
-            lblJudul.Size = new Size(225, 32);
+            lblJudul.Size = new Size(340, 48);
             lblJudul.TabIndex = 0;
             lblJudul.Text = "Dashboard Gudang";
             // 
@@ -201,12 +199,12 @@
             tlpCards.Controls.Add(cardStok, 2, 0);
             tlpCards.Controls.Add(cardPerhatian, 3, 0);
             tlpCards.Dock = DockStyle.Fill;
-            tlpCards.Location = new Point(19, 126);
+            tlpCards.Location = new Point(27, 210);
             tlpCards.Margin = new Padding(0);
             tlpCards.Name = "tlpCards";
             tlpCards.RowCount = 1;
             tlpCards.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpCards.Size = new Size(1245, 134);
+            tlpCards.Size = new Size(1779, 223);
             tlpCards.TabIndex = 1;
             // 
             // cardMasuk
@@ -219,10 +217,10 @@
             cardMasuk.Controls.Add(lblMasukJudul);
             cardMasuk.Dock = DockStyle.Fill;
             cardMasuk.Location = new Point(0, 0);
-            cardMasuk.Margin = new Padding(0, 0, 14, 14);
+            cardMasuk.Margin = new Padding(0, 0, 20, 23);
             cardMasuk.Name = "cardMasuk";
             cardMasuk.Radius = 18;
-            cardMasuk.Size = new Size(297, 120);
+            cardMasuk.Size = new Size(424, 200);
             cardMasuk.TabIndex = 0;
             // 
             // lblMasukKet
@@ -231,10 +229,10 @@
             lblMasukKet.BackColor = Color.Transparent;
             lblMasukKet.Font = new Font("Segoe UI", 8.5F);
             lblMasukKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblMasukKet.Location = new Point(35, 78);
-            lblMasukKet.Margin = new Padding(4, 0, 4, 0);
+            lblMasukKet.Location = new Point(50, 130);
+            lblMasukKet.Margin = new Padding(6, 0, 6, 0);
             lblMasukKet.Name = "lblMasukKet";
-            lblMasukKet.Size = new Size(76, 15);
+            lblMasukKet.Size = new Size(110, 23);
             lblMasukKet.TabIndex = 2;
             lblMasukKet.Text = "Unit diterima";
             // 
@@ -244,10 +242,10 @@
             lblMasukNilai.BackColor = Color.Transparent;
             lblMasukNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblMasukNilai.ForeColor = Color.FromArgb(24, 94, 224);
-            lblMasukNilai.Location = new Point(33, 37);
-            lblMasukNilai.Margin = new Padding(4, 0, 4, 0);
+            lblMasukNilai.Location = new Point(47, 62);
+            lblMasukNilai.Margin = new Padding(6, 0, 6, 0);
             lblMasukNilai.Name = "lblMasukNilai";
-            lblMasukNilai.Size = new Size(27, 32);
+            lblMasukNilai.Size = new Size(40, 48);
             lblMasukNilai.TabIndex = 1;
             lblMasukNilai.Text = "0";
             // 
@@ -257,10 +255,10 @@
             lblMasukJudul.BackColor = Color.Transparent;
             lblMasukJudul.Font = new Font("Segoe UI", 9.5F);
             lblMasukJudul.ForeColor = Color.FromArgb(90, 110, 140);
-            lblMasukJudul.Location = new Point(35, 16);
-            lblMasukJudul.Margin = new Padding(4, 0, 4, 0);
+            lblMasukJudul.Location = new Point(50, 27);
+            lblMasukJudul.Margin = new Padding(6, 0, 6, 0);
             lblMasukJudul.Name = "lblMasukJudul";
-            lblMasukJudul.Size = new Size(136, 17);
+            lblMasukJudul.Size = new Size(198, 25);
             lblMasukJudul.TabIndex = 0;
             lblMasukJudul.Text = "Barang Masuk Hari Ini";
             // 
@@ -273,11 +271,11 @@
             cardKeluar.Controls.Add(lblKeluarNilai);
             cardKeluar.Controls.Add(lblKeluarJudul);
             cardKeluar.Dock = DockStyle.Fill;
-            cardKeluar.Location = new Point(311, 0);
-            cardKeluar.Margin = new Padding(0, 0, 14, 14);
+            cardKeluar.Location = new Point(444, 0);
+            cardKeluar.Margin = new Padding(0, 0, 20, 23);
             cardKeluar.Name = "cardKeluar";
             cardKeluar.Radius = 18;
-            cardKeluar.Size = new Size(297, 120);
+            cardKeluar.Size = new Size(424, 200);
             cardKeluar.TabIndex = 1;
             // 
             // lblKeluarKet
@@ -286,10 +284,10 @@
             lblKeluarKet.BackColor = Color.Transparent;
             lblKeluarKet.Font = new Font("Segoe UI", 8.5F);
             lblKeluarKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblKeluarKet.Location = new Point(35, 78);
-            lblKeluarKet.Margin = new Padding(4, 0, 4, 0);
+            lblKeluarKet.Location = new Point(50, 130);
+            lblKeluarKet.Margin = new Padding(6, 0, 6, 0);
             lblKeluarKet.Name = "lblKeluarKet";
-            lblKeluarKet.Size = new Size(93, 15);
+            lblKeluarKet.Size = new Size(134, 23);
             lblKeluarKet.TabIndex = 2;
             lblKeluarKet.Text = "Unit dikeluarkan";
             // 
@@ -299,10 +297,10 @@
             lblKeluarNilai.BackColor = Color.Transparent;
             lblKeluarNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblKeluarNilai.ForeColor = Color.FromArgb(40, 140, 90);
-            lblKeluarNilai.Location = new Point(33, 37);
-            lblKeluarNilai.Margin = new Padding(4, 0, 4, 0);
+            lblKeluarNilai.Location = new Point(47, 62);
+            lblKeluarNilai.Margin = new Padding(6, 0, 6, 0);
             lblKeluarNilai.Name = "lblKeluarNilai";
-            lblKeluarNilai.Size = new Size(27, 32);
+            lblKeluarNilai.Size = new Size(40, 48);
             lblKeluarNilai.TabIndex = 1;
             lblKeluarNilai.Text = "0";
             // 
@@ -312,10 +310,10 @@
             lblKeluarJudul.BackColor = Color.Transparent;
             lblKeluarJudul.Font = new Font("Segoe UI", 9.5F);
             lblKeluarJudul.ForeColor = Color.FromArgb(90, 110, 140);
-            lblKeluarJudul.Location = new Point(35, 16);
-            lblKeluarJudul.Margin = new Padding(4, 0, 4, 0);
+            lblKeluarJudul.Location = new Point(50, 27);
+            lblKeluarJudul.Margin = new Padding(6, 0, 6, 0);
             lblKeluarJudul.Name = "lblKeluarJudul";
-            lblKeluarJudul.Size = new Size(135, 17);
+            lblKeluarJudul.Size = new Size(197, 25);
             lblKeluarJudul.TabIndex = 0;
             lblKeluarJudul.Text = "Barang Keluar Hari Ini";
             // 
@@ -328,11 +326,11 @@
             cardStok.Controls.Add(lblStokNilai);
             cardStok.Controls.Add(lblStokJudul);
             cardStok.Dock = DockStyle.Fill;
-            cardStok.Location = new Point(622, 0);
-            cardStok.Margin = new Padding(0, 0, 14, 14);
+            cardStok.Location = new Point(888, 0);
+            cardStok.Margin = new Padding(0, 0, 20, 23);
             cardStok.Name = "cardStok";
             cardStok.Radius = 18;
-            cardStok.Size = new Size(297, 120);
+            cardStok.Size = new Size(424, 200);
             cardStok.TabIndex = 2;
             // 
             // lblStokKet
@@ -341,10 +339,10 @@
             lblStokKet.BackColor = Color.Transparent;
             lblStokKet.Font = new Font("Segoe UI", 8.5F);
             lblStokKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblStokKet.Location = new Point(35, 78);
-            lblStokKet.Margin = new Padding(4, 0, 4, 0);
+            lblStokKet.Location = new Point(50, 130);
+            lblStokKet.Margin = new Padding(6, 0, 6, 0);
             lblStokKet.Name = "lblStokKet";
-            lblStokKet.Size = new Size(110, 15);
+            lblStokKet.Size = new Size(160, 23);
             lblStokKet.TabIndex = 2;
             lblStokKet.Text = "Total semua barang";
             // 
@@ -354,10 +352,10 @@
             lblStokNilai.BackColor = Color.Transparent;
             lblStokNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblStokNilai.ForeColor = Color.FromArgb(0, 150, 170);
-            lblStokNilai.Location = new Point(33, 37);
-            lblStokNilai.Margin = new Padding(4, 0, 4, 0);
+            lblStokNilai.Location = new Point(47, 62);
+            lblStokNilai.Margin = new Padding(6, 0, 6, 0);
             lblStokNilai.Name = "lblStokNilai";
-            lblStokNilai.Size = new Size(27, 32);
+            lblStokNilai.Size = new Size(40, 48);
             lblStokNilai.TabIndex = 1;
             lblStokNilai.Text = "0";
             // 
@@ -367,10 +365,10 @@
             lblStokJudul.BackColor = Color.Transparent;
             lblStokJudul.Font = new Font("Segoe UI", 9.5F);
             lblStokJudul.ForeColor = Color.FromArgb(90, 110, 140);
-            lblStokJudul.Location = new Point(35, 16);
-            lblStokJudul.Margin = new Padding(4, 0, 4, 0);
+            lblStokJudul.Location = new Point(50, 27);
+            lblStokJudul.Margin = new Padding(6, 0, 6, 0);
             lblStokJudul.Name = "lblStokJudul";
-            lblStokJudul.Size = new Size(79, 17);
+            lblStokJudul.Size = new Size(114, 25);
             lblStokJudul.TabIndex = 0;
             lblStokJudul.Text = "Stok Saat Ini";
             // 
@@ -383,11 +381,11 @@
             cardPerhatian.Controls.Add(lblPerhatianNilai);
             cardPerhatian.Controls.Add(lblPerhatianJudul);
             cardPerhatian.Dock = DockStyle.Fill;
-            cardPerhatian.Location = new Point(933, 0);
-            cardPerhatian.Margin = new Padding(0, 0, 0, 14);
+            cardPerhatian.Location = new Point(1332, 0);
+            cardPerhatian.Margin = new Padding(0, 0, 0, 23);
             cardPerhatian.Name = "cardPerhatian";
             cardPerhatian.Radius = 18;
-            cardPerhatian.Size = new Size(312, 120);
+            cardPerhatian.Size = new Size(447, 200);
             cardPerhatian.TabIndex = 3;
             // 
             // lblPerhatianKet
@@ -396,10 +394,10 @@
             lblPerhatianKet.BackColor = Color.Transparent;
             lblPerhatianKet.Font = new Font("Segoe UI", 8.5F);
             lblPerhatianKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblPerhatianKet.Location = new Point(35, 78);
-            lblPerhatianKet.Margin = new Padding(4, 0, 4, 0);
+            lblPerhatianKet.Location = new Point(50, 130);
+            lblPerhatianKet.Margin = new Padding(6, 0, 6, 0);
             lblPerhatianKet.Name = "lblPerhatianKet";
-            lblPerhatianKet.Size = new Size(114, 15);
+            lblPerhatianKet.Size = new Size(163, 23);
             lblPerhatianKet.TabIndex = 2;
             lblPerhatianKet.Text = "Stok menipis / habis";
             // 
@@ -409,10 +407,10 @@
             lblPerhatianNilai.BackColor = Color.Transparent;
             lblPerhatianNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblPerhatianNilai.ForeColor = Color.FromArgb(126, 87, 194);
-            lblPerhatianNilai.Location = new Point(33, 37);
-            lblPerhatianNilai.Margin = new Padding(4, 0, 4, 0);
+            lblPerhatianNilai.Location = new Point(47, 62);
+            lblPerhatianNilai.Margin = new Padding(6, 0, 6, 0);
             lblPerhatianNilai.Name = "lblPerhatianNilai";
-            lblPerhatianNilai.Size = new Size(27, 32);
+            lblPerhatianNilai.Size = new Size(40, 48);
             lblPerhatianNilai.TabIndex = 1;
             lblPerhatianNilai.Text = "0";
             // 
@@ -422,10 +420,10 @@
             lblPerhatianJudul.BackColor = Color.Transparent;
             lblPerhatianJudul.Font = new Font("Segoe UI", 9.5F);
             lblPerhatianJudul.ForeColor = Color.FromArgb(90, 110, 140);
-            lblPerhatianJudul.Location = new Point(35, 16);
-            lblPerhatianJudul.Margin = new Padding(4, 0, 4, 0);
+            lblPerhatianJudul.Location = new Point(50, 27);
+            lblPerhatianJudul.Margin = new Padding(6, 0, 6, 0);
             lblPerhatianJudul.Name = "lblPerhatianJudul";
-            lblPerhatianJudul.Size = new Size(95, 17);
+            lblPerhatianJudul.Size = new Size(140, 25);
             lblPerhatianJudul.TabIndex = 0;
             lblPerhatianJudul.Text = "Perlu Perhatian";
             // 
@@ -436,13 +434,12 @@
             tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42F));
             tlpContent.Controls.Add(pnlAktivitas, 0, 0);
             tlpContent.Controls.Add(pnlPerhatian, 1, 0);
-            tlpContent.Dock = DockStyle.Fill;
-            tlpContent.Location = new Point(19, 260);
-            tlpContent.Margin = new Padding(0, 0, 0, 14);
+            tlpContent.Location = new Point(27, 433);
+            tlpContent.Margin = new Padding(0, 0, 0, 23);
             tlpContent.Name = "tlpContent";
             tlpContent.RowCount = 1;
             tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpContent.Size = new Size(1245, 453);
+            tlpContent.Size = new Size(1779, 836);
             tlpContent.TabIndex = 2;
             // 
             // pnlAktivitas
@@ -454,52 +451,83 @@
             pnlAktivitas.Controls.Add(lblAktivitasJudul);
             pnlAktivitas.Dock = DockStyle.Fill;
             pnlAktivitas.Location = new Point(0, 0);
-            pnlAktivitas.Margin = new Padding(0, 0, 14, 0);
+            pnlAktivitas.Margin = new Padding(0, 0, 20, 0);
             pnlAktivitas.Name = "pnlAktivitas";
-            pnlAktivitas.Padding = new Padding(23, 16, 23, 18);
+            pnlAktivitas.Padding = new Padding(33, 27, 33, 30);
             pnlAktivitas.Radius = 18;
-            pnlAktivitas.Size = new Size(708, 453);
+            pnlAktivitas.Size = new Size(1011, 836);
             pnlAktivitas.TabIndex = 0;
             // 
             // dgvAktivitas
             // 
+            dgvAktivitas.AllowUserToAddRows = false;
+            dgvAktivitas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
+            dgvAktivitas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvAktivitas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAktivitas.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvAktivitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvAktivitas.ColumnHeadersHeight = 40;
+            dgvAktivitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvAktivitas.Columns.AddRange(new DataGridViewColumn[] { colWaktu, colJenis, colBarang, colJumlah, colStokAkhir });
             dgvAktivitas.Dock = DockStyle.Fill;
-            dgvAktivitas.Location = new Point(23, 55);
-            dgvAktivitas.Margin = new Padding(4, 3, 4, 3);
+            dgvAktivitas.EnableHeadersVisualStyles = false;
+            dgvAktivitas.Location = new Point(33, 92);
+            dgvAktivitas.Margin = new Padding(6, 5, 6, 5);
+            dgvAktivitas.MultiSelect = false;
             dgvAktivitas.Name = "dgvAktivitas";
-            dgvAktivitas.Size = new Size(662, 380);
+            dgvAktivitas.ReadOnly = true;
+            dgvAktivitas.RowHeadersVisible = false;
+            dgvAktivitas.RowHeadersWidth = 62;
+            dgvAktivitas.Size = new Size(945, 714);
             dgvAktivitas.TabIndex = 1;
             // 
             // colWaktu
             // 
             colWaktu.FillWeight = 24F;
             colWaktu.HeaderText = "Waktu";
+            colWaktu.MinimumWidth = 8;
             colWaktu.Name = "colWaktu";
+            colWaktu.ReadOnly = true;
             // 
             // colJenis
             // 
             colJenis.FillWeight = 16F;
             colJenis.HeaderText = "Jenis";
+            colJenis.MinimumWidth = 8;
             colJenis.Name = "colJenis";
+            colJenis.ReadOnly = true;
             // 
             // colBarang
             // 
             colBarang.FillWeight = 30F;
             colBarang.HeaderText = "Nama Barang";
+            colBarang.MinimumWidth = 8;
             colBarang.Name = "colBarang";
+            colBarang.ReadOnly = true;
             // 
             // colJumlah
             // 
             colJumlah.FillWeight = 14F;
             colJumlah.HeaderText = "Jumlah";
+            colJumlah.MinimumWidth = 8;
             colJumlah.Name = "colJumlah";
+            colJumlah.ReadOnly = true;
             // 
             // colStokAkhir
             // 
             colStokAkhir.FillWeight = 16F;
             colStokAkhir.HeaderText = "Stok Akhir";
+            colStokAkhir.MinimumWidth = 8;
             colStokAkhir.Name = "colStokAkhir";
+            colStokAkhir.ReadOnly = true;
             // 
             // lblAktivitasJudul
             // 
@@ -507,10 +535,10 @@
             lblAktivitasJudul.Dock = DockStyle.Top;
             lblAktivitasJudul.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             lblAktivitasJudul.ForeColor = Color.FromArgb(13, 47, 110);
-            lblAktivitasJudul.Location = new Point(23, 16);
-            lblAktivitasJudul.Margin = new Padding(4, 0, 4, 0);
+            lblAktivitasJudul.Location = new Point(33, 27);
+            lblAktivitasJudul.Margin = new Padding(6, 0, 6, 0);
             lblAktivitasJudul.Name = "lblAktivitasJudul";
-            lblAktivitasJudul.Size = new Size(662, 39);
+            lblAktivitasJudul.Size = new Size(945, 65);
             lblAktivitasJudul.TabIndex = 0;
             lblAktivitasJudul.Text = "Aktivitas Gudang Terakhir";
             lblAktivitasJudul.TextAlign = ContentAlignment.MiddleLeft;
@@ -523,47 +551,83 @@
             pnlPerhatian.Controls.Add(dgvPerhatian);
             pnlPerhatian.Controls.Add(lblPerhatianPanelJudul);
             pnlPerhatian.Dock = DockStyle.Fill;
-            pnlPerhatian.Location = new Point(722, 0);
+            pnlPerhatian.Location = new Point(1031, 0);
             pnlPerhatian.Margin = new Padding(0);
             pnlPerhatian.Name = "pnlPerhatian";
-            pnlPerhatian.Padding = new Padding(23, 16, 23, 18);
+            pnlPerhatian.Padding = new Padding(33, 27, 33, 30);
             pnlPerhatian.Radius = 18;
-            pnlPerhatian.Size = new Size(523, 453);
+            pnlPerhatian.Size = new Size(748, 836);
             pnlPerhatian.TabIndex = 1;
             // 
             // dgvPerhatian
             // 
+            dgvPerhatian.AllowUserToAddRows = false;
+            dgvPerhatian.AllowUserToDeleteRows = false;
+            dgvPerhatian.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPerhatian.BackgroundColor = Color.White;
+            dgvPerhatian.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Honeydew;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.SeaGreen;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkGreen;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvPerhatian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvPerhatian.ColumnHeadersHeight = 40;
+            dgvPerhatian.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvPerhatian.Columns.AddRange(new DataGridViewColumn[] { colKode, colNama, colStok, colMin });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Honeydew;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Green;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvPerhatian.DefaultCellStyle = dataGridViewCellStyle4;
             dgvPerhatian.Dock = DockStyle.Fill;
-            dgvPerhatian.Location = new Point(23, 55);
-            dgvPerhatian.Margin = new Padding(4, 3, 4, 3);
+            dgvPerhatian.EnableHeadersVisualStyles = false;
+            dgvPerhatian.Location = new Point(33, 92);
+            dgvPerhatian.Margin = new Padding(6, 5, 6, 5);
+            dgvPerhatian.MultiSelect = false;
             dgvPerhatian.Name = "dgvPerhatian";
-            dgvPerhatian.Size = new Size(477, 380);
+            dgvPerhatian.ReadOnly = true;
+            dgvPerhatian.RowHeadersVisible = false;
+            dgvPerhatian.RowHeadersWidth = 62;
+            dgvPerhatian.Size = new Size(682, 714);
             dgvPerhatian.TabIndex = 1;
             // 
             // colKode
             // 
             colKode.FillWeight = 22F;
             colKode.HeaderText = "Kode";
+            colKode.MinimumWidth = 8;
             colKode.Name = "colKode";
+            colKode.ReadOnly = true;
             // 
             // colNama
             // 
             colNama.FillWeight = 42F;
             colNama.HeaderText = "Nama Barang";
+            colNama.MinimumWidth = 8;
             colNama.Name = "colNama";
+            colNama.ReadOnly = true;
             // 
             // colStok
             // 
             colStok.FillWeight = 18F;
             colStok.HeaderText = "Stok";
+            colStok.MinimumWidth = 8;
             colStok.Name = "colStok";
+            colStok.ReadOnly = true;
             // 
             // colMin
             // 
             colMin.FillWeight = 18F;
             colMin.HeaderText = "Min";
+            colMin.MinimumWidth = 8;
             colMin.Name = "colMin";
+            colMin.ReadOnly = true;
             // 
             // lblPerhatianPanelJudul
             // 
@@ -571,76 +635,13 @@
             lblPerhatianPanelJudul.Dock = DockStyle.Top;
             lblPerhatianPanelJudul.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             lblPerhatianPanelJudul.ForeColor = Color.FromArgb(13, 47, 110);
-            lblPerhatianPanelJudul.Location = new Point(23, 16);
-            lblPerhatianPanelJudul.Margin = new Padding(4, 0, 4, 0);
+            lblPerhatianPanelJudul.Location = new Point(33, 27);
+            lblPerhatianPanelJudul.Margin = new Padding(6, 0, 6, 0);
             lblPerhatianPanelJudul.Name = "lblPerhatianPanelJudul";
-            lblPerhatianPanelJudul.Size = new Size(477, 39);
+            lblPerhatianPanelJudul.Size = new Size(682, 65);
             lblPerhatianPanelJudul.TabIndex = 0;
             lblPerhatianPanelJudul.Text = "Stok Perlu Perhatian";
             lblPerhatianPanelJudul.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // flowAksi
-            // 
-            flowAksi.BackColor = Color.FromArgb(234, 243, 252);
-            flowAksi.Controls.Add(btnBarangMasuk);
-            flowAksi.Controls.Add(btnBarangKeluar);
-            flowAksi.Controls.Add(btnStokBarang);
-            flowAksi.Dock = DockStyle.Fill;
-            flowAksi.Location = new Point(19, 727);
-            flowAksi.Margin = new Padding(0);
-            flowAksi.Name = "flowAksi";
-            flowAksi.Padding = new Padding(0, 7, 0, 0);
-            flowAksi.Size = new Size(1245, 67);
-            flowAksi.TabIndex = 3;
-            flowAksi.WrapContents = false;
-            // 
-            // btnBarangMasuk
-            // 
-            btnBarangMasuk.BackColor = Color.FromArgb(30, 136, 229);
-            btnBarangMasuk.BorderColor = Color.Transparent;
-            btnBarangMasuk.FlatStyle = FlatStyle.Flat;
-            btnBarangMasuk.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            btnBarangMasuk.ForeColor = Color.White;
-            btnBarangMasuk.HoverColor = Color.FromArgb(21, 101, 192);
-            btnBarangMasuk.Location = new Point(0, 7);
-            btnBarangMasuk.Margin = new Padding(0, 0, 14, 0);
-            btnBarangMasuk.Name = "btnBarangMasuk";
-            btnBarangMasuk.Size = new Size(210, 46);
-            btnBarangMasuk.TabIndex = 0;
-            btnBarangMasuk.Text = "+ Barang Masuk";
-            btnBarangMasuk.UseVisualStyleBackColor = false;
-            // 
-            // btnBarangKeluar
-            // 
-            btnBarangKeluar.BackColor = Color.FromArgb(30, 136, 229);
-            btnBarangKeluar.BorderColor = Color.Transparent;
-            btnBarangKeluar.FlatStyle = FlatStyle.Flat;
-            btnBarangKeluar.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            btnBarangKeluar.ForeColor = Color.White;
-            btnBarangKeluar.HoverColor = Color.FromArgb(21, 101, 192);
-            btnBarangKeluar.Location = new Point(224, 7);
-            btnBarangKeluar.Margin = new Padding(0, 0, 14, 0);
-            btnBarangKeluar.Name = "btnBarangKeluar";
-            btnBarangKeluar.Size = new Size(210, 46);
-            btnBarangKeluar.TabIndex = 1;
-            btnBarangKeluar.Text = "Barang Keluar";
-            btnBarangKeluar.UseVisualStyleBackColor = false;
-            // 
-            // btnStokBarang
-            // 
-            btnStokBarang.BackColor = Color.White;
-            btnStokBarang.BorderColor = Color.FromArgb(30, 136, 229);
-            btnStokBarang.FlatStyle = FlatStyle.Flat;
-            btnStokBarang.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            btnStokBarang.ForeColor = Color.FromArgb(30, 136, 229);
-            btnStokBarang.HoverColor = Color.FromArgb(225, 240, 255);
-            btnStokBarang.Location = new Point(448, 7);
-            btnStokBarang.Margin = new Padding(0);
-            btnStokBarang.Name = "btnStokBarang";
-            btnStokBarang.Size = new Size(210, 46);
-            btnStokBarang.TabIndex = 2;
-            btnStokBarang.Text = "Stok Barang";
-            btnStokBarang.UseVisualStyleBackColor = false;
             // 
             // timerJam
             // 
@@ -648,13 +649,13 @@
             // 
             // UC_DSHBRDGudang
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(234, 243, 252);
             Controls.Add(tlpRoot);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(6, 5, 6, 5);
             Name = "UC_DSHBRDGudang";
-            Size = new Size(1283, 808);
+            Size = new Size(1833, 1347);
             tlpRoot.ResumeLayout(false);
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
@@ -672,7 +673,6 @@
             ((System.ComponentModel.ISupportInitialize)dgvAktivitas).EndInit();
             pnlPerhatian.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPerhatian).EndInit();
-            flowAksi.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -718,10 +718,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStok;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMin;
         private System.Windows.Forms.Label lblPerhatianPanelJudul;
-        private System.Windows.Forms.FlowLayoutPanel flowAksi;
-        private RoundedButtonUI btnBarangMasuk;
-        private RoundedButtonUI btnBarangKeluar;
-        private RoundedButtonUI btnStokBarang;
         private System.Windows.Forms.Timer timerJam;
     }
 }

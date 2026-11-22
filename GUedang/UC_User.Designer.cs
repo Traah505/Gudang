@@ -220,7 +220,7 @@
             lblTotalKet.BackColor = Color.Transparent;
             lblTotalKet.Font = new Font("Segoe UI", 8.5F);
             lblTotalKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblTotalKet.Location = new Point(102, 83);
+            lblTotalKet.Location = new Point(102, 73);
             lblTotalKet.Margin = new Padding(6, 0, 6, 0);
             lblTotalKet.Name = "lblTotalKet";
             lblTotalKet.Size = new Size(104, 23);
@@ -233,7 +233,7 @@
             lblTotalNilai.BackColor = Color.Transparent;
             lblTotalNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblTotalNilai.ForeColor = Color.FromArgb(24, 94, 224);
-            lblTotalNilai.Location = new Point(50, 62);
+            lblTotalNilai.Location = new Point(50, 52);
             lblTotalNilai.Margin = new Padding(6, 0, 6, 0);
             lblTotalNilai.Name = "lblTotalNilai";
             lblTotalNilai.Size = new Size(40, 48);
@@ -275,7 +275,7 @@
             lblKasirKet.BackColor = Color.Transparent;
             lblKasirKet.Font = new Font("Segoe UI", 8.5F);
             lblKasirKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblKasirKet.Location = new Point(87, 87);
+            lblKasirKet.Location = new Point(87, 77);
             lblKasirKet.Margin = new Padding(6, 0, 6, 0);
             lblKasirKet.Name = "lblKasirKet";
             lblKasirKet.Size = new Size(109, 23);
@@ -288,7 +288,7 @@
             lblKasirNilai.BackColor = Color.Transparent;
             lblKasirNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblKasirNilai.ForeColor = Color.FromArgb(40, 140, 90);
-            lblKasirNilai.Location = new Point(50, 62);
+            lblKasirNilai.Location = new Point(50, 52);
             lblKasirNilai.Margin = new Padding(6, 0, 6, 0);
             lblKasirNilai.Name = "lblKasirNilai";
             lblKasirNilai.Size = new Size(40, 48);
@@ -330,7 +330,7 @@
             lblGudangKet.BackColor = Color.Transparent;
             lblGudangKet.Font = new Font("Segoe UI", 8.5F);
             lblGudangKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblGudangKet.Location = new Point(102, 83);
+            lblGudangKet.Location = new Point(102, 73);
             lblGudangKet.Margin = new Padding(6, 0, 6, 0);
             lblGudangKet.Name = "lblGudangKet";
             lblGudangKet.Size = new Size(134, 23);
@@ -343,7 +343,7 @@
             lblGudangNilai.BackColor = Color.Transparent;
             lblGudangNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblGudangNilai.ForeColor = Color.FromArgb(0, 150, 170);
-            lblGudangNilai.Location = new Point(50, 62);
+            lblGudangNilai.Location = new Point(50, 52);
             lblGudangNilai.Margin = new Padding(6, 0, 6, 0);
             lblGudangNilai.Name = "lblGudangNilai";
             lblGudangNilai.Size = new Size(40, 48);
@@ -385,7 +385,7 @@
             lblNonaktifKet.BackColor = Color.Transparent;
             lblNonaktifKet.Font = new Font("Segoe UI", 8.5F);
             lblNonaktifKet.ForeColor = Color.FromArgb(120, 135, 160);
-            lblNonaktifKet.Location = new Point(99, 83);
+            lblNonaktifKet.Location = new Point(99, 73);
             lblNonaktifKet.Margin = new Padding(6, 0, 6, 0);
             lblNonaktifKet.Name = "lblNonaktifKet";
             lblNonaktifKet.Size = new Size(128, 23);
@@ -398,7 +398,7 @@
             lblNonaktifNilai.BackColor = Color.Transparent;
             lblNonaktifNilai.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
             lblNonaktifNilai.ForeColor = Color.FromArgb(210, 50, 50);
-            lblNonaktifNilai.Location = new Point(47, 62);
+            lblNonaktifNilai.Location = new Point(47, 56);
             lblNonaktifNilai.Margin = new Padding(6, 0, 6, 0);
             lblNonaktifNilai.Name = "lblNonaktifNilai";
             lblNonaktifNilai.Size = new Size(40, 48);

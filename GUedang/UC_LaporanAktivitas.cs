@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 
@@ -16,6 +17,7 @@ namespace GUedang
         public UC_LaporanAktivitas()
         {
             InitializeComponent();
+            MulaiJamRealTime();
             cmbPeriode.SelectedIndexChanged += cmbPeriode_SelectedIndexChanged;
             cmbPeran.SelectedIndexChanged += cmbPeran_SelectedIndexChanged;
             dtpDari.ValueChanged += FilterBerubah;
@@ -30,6 +32,8 @@ namespace GUedang
 
         }
         private void TampilkanAktivitas()
+
+            
         {
             List<DataLogAktivitas> data = AktivitasStore.AmbilSemua();
 
@@ -139,6 +143,14 @@ namespace GUedang
         {
             TampilkanAktivitas();
         }
+        private void UpdateJam()
+        {
+            DateTime now = DateTime.Now;
+            lblJam.Text = now.ToString("HH:mm:ss");
+
+            CultureInfo cultureIndo = new CultureInfo("id-ID");
+            lblTanggal.Text = now.ToString("dddd, dd MMMM yyyy", cultureIndo);
+        }
         private void btnBersihkan_Click(object sender, EventArgs e)
         {
             DialogResult hasil = MessageBox.Show(
@@ -167,6 +179,18 @@ namespace GUedang
                 TampilkanAktivitas();
             }
         }
-       
+        private void MulaiJamRealTime()
+        {
+            _timerJam = new System.Windows.Forms.Timer();
+            _timerJam.Interval = 1000; // 1000 ms = 1 detik
+            _timerJam.Tick += (s, e) => UpdateJam();
+            _timerJam.Start();
+
+            UpdateJam(); // panggil langsung agar tidak menunggu 1 detik pertama
+        }
+        private void _timerJam_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

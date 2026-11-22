@@ -27,9 +27,7 @@ namespace GUedang
             colTotal.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             btnRefresh.Click += (s, e) => LoadData();
-            btnTransaksiBaru.Click += (s, e) => TransaksiBaruClicked?.Invoke(this, EventArgs.Empty);
-            btnKeranjang.Click += (s, e) => KeranjangClicked?.Invoke(this, EventArgs.Empty);
-            btnRiwayat.Click += (s, e) => RiwayatClicked?.Invoke(this, EventArgs.Empty);
+           
             timerJam.Tick += (s, e) => UpdateJam();
         }
 
@@ -155,6 +153,11 @@ namespace GUedang
             dt.Rows.Add("TRX-0016", hariIni.AddHours(16).AddMinutes(25), NamaKasir, 48000m);
             dt.Rows.Add("TRX-0015", hariIni.AddHours(15).AddMinutes(51), NamaKasir, 25500m);
             return dt;
+        }
+
+        private void flowAksi_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

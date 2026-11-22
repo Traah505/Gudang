@@ -13,10 +13,13 @@ namespace GUedang
         public UC_BRGGudang()
         {
             InitializeComponent();
-            
+
         }
 
-        
+        private void tlpContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    
+
 }

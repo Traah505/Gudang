@@ -32,5 +32,11 @@ namespace GUedang
         {
 
         }
+
+        private void txtKategori_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }  

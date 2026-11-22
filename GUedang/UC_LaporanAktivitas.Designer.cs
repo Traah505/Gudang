@@ -17,8 +17,9 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tlpRoot = new TableLayoutPanel();
             pnlJudul = new RoundedPanelUI();
             lblJam = new Label();
@@ -53,11 +54,12 @@
             btnBersihkan = new RoundedButtonUI();
             pnlTabel = new RoundedPanelUI();
             dgvLog = new DataGridView();
+            lblTabelJudul = new Label();
             colWaktu = new DataGridViewTextBoxColumn();
             colNama = new DataGridViewTextBoxColumn();
             colPeran = new DataGridViewTextBoxColumn();
             colAktivitas = new DataGridViewTextBoxColumn();
-            lblTabelJudul = new Label();
+            _timerJam = new System.Windows.Forms.Timer(components);
             tlpRoot.SuspendLayout();
             pnlJudul.SuspendLayout();
             tlpContent.SuspendLayout();
@@ -177,7 +179,6 @@
             tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpContent.Size = new Size(1779, 1320);
             tlpContent.TabIndex = 1;
-            
             // 
             // tlpStats
             // 
@@ -544,25 +545,24 @@
             dgvLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvLog.BackgroundColor = Color.White;
             dgvLog.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.AliceBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.RoyalBlue;
+            dataGridViewCellStyle3.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvLog.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvLog.ColumnHeadersHeight = 40;
             dgvLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.SlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.MidnightBlue;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvLog.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = Color.SlateGray;
+            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle4.SelectionForeColor = Color.MidnightBlue;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvLog.DefaultCellStyle = dataGridViewCellStyle4;
             dgvLog.Dock = DockStyle.Fill;
             dgvLog.EnableHeadersVisualStyles = false;
             dgvLog.Location = new Point(33, 92);
@@ -575,38 +575,6 @@
             dgvLog.RowTemplate.Height = 38;
             dgvLog.Size = new Size(1713, 901);
             dgvLog.TabIndex = 0;
-            // 
-            // colWaktu
-            // 
-            colWaktu.FillWeight = 20F;
-            colWaktu.HeaderText = "Waktu";
-            colWaktu.MinimumWidth = 8;
-            colWaktu.Name = "colWaktu";
-            colWaktu.ReadOnly = true;
-            // 
-            // colNama
-            // 
-            colNama.FillWeight = 22F;
-            colNama.HeaderText = "Nama";
-            colNama.MinimumWidth = 8;
-            colNama.Name = "colNama";
-            colNama.ReadOnly = true;
-            // 
-            // colPeran
-            // 
-            colPeran.FillWeight = 14F;
-            colPeran.HeaderText = "Peran";
-            colPeran.MinimumWidth = 8;
-            colPeran.Name = "colPeran";
-            colPeran.ReadOnly = true;
-            // 
-            // colAktivitas
-            // 
-            colAktivitas.FillWeight = 44F;
-            colAktivitas.HeaderText = "Aktivitas";
-            colAktivitas.MinimumWidth = 8;
-            colAktivitas.Name = "colAktivitas";
-            colAktivitas.ReadOnly = true;
             // 
             // lblTabelJudul
             // 
@@ -621,6 +589,48 @@
             lblTabelJudul.TabIndex = 1;
             lblTabelJudul.Text = "Daftar Aktivitas";
             lblTabelJudul.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // colWaktu
+            // 
+            colWaktu.FillWeight = 20F;
+            colWaktu.HeaderText = "Waktu";
+            colWaktu.MinimumWidth = 8;
+            colWaktu.Name = "colWaktu";
+            colWaktu.ReadOnly = true;
+            colWaktu.Width = 150;
+            // 
+            // colNama
+            // 
+            colNama.FillWeight = 22F;
+            colNama.HeaderText = "Nama";
+            colNama.MinimumWidth = 8;
+            colNama.Name = "colNama";
+            colNama.ReadOnly = true;
+            colNama.Width = 150;
+            // 
+            // colPeran
+            // 
+            colPeran.FillWeight = 14F;
+            colPeran.HeaderText = "Peran";
+            colPeran.MinimumWidth = 8;
+            colPeran.Name = "colPeran";
+            colPeran.ReadOnly = true;
+            colPeran.Width = 150;
+            // 
+            // colAktivitas
+            // 
+            colAktivitas.FillWeight = 44F;
+            colAktivitas.HeaderText = "Aktivitas";
+            colAktivitas.MinimumWidth = 8;
+            colAktivitas.Name = "colAktivitas";
+            colAktivitas.ReadOnly = true;
+            colAktivitas.Width = 150;
+            // 
+            // _timerJam
+            // 
+            _timerJam.Enabled = true;
+            _timerJam.Interval = 1000;
+            _timerJam.Tick += _timerJam_Tick;
             // 
             // UC_LaporanAktivitas
             // 
@@ -692,5 +702,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPeran;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAktivitas;
         private System.Windows.Forms.Label lblTabelJudul;
+        private System.Windows.Forms.Timer _timerJam;
     }
 }

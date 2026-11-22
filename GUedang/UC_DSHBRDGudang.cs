@@ -39,9 +39,7 @@ namespace GUedang
             dgvPerhatian.CellFormatting += dgvPerhatian_CellFormatting;
 
             btnRefresh.Click += (s, e) => LoadData();
-            btnBarangMasuk.Click += (s, e) => BarangMasukClicked?.Invoke(this, EventArgs.Empty);
-            btnBarangKeluar.Click += (s, e) => BarangKeluarClicked?.Invoke(this, EventArgs.Empty);
-            btnStokBarang.Click += (s, e) => StokBarangClicked?.Invoke(this, EventArgs.Empty);
+           
             timerJam.Tick += (s, e) => UpdateJam();
         }
 

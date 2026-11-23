@@ -64,6 +64,7 @@
             pnlChart = new RoundedPanelUI();
             lblTerbaik = new Label();
             lblChartJudul = new Label();
+            mBCLaba = new MiniBarChartUI();
             tlpRoot.SuspendLayout();
             pnlJudul.SuspendLayout();
             tlpContent.SuspendLayout();
@@ -647,6 +648,7 @@
             pnlChart.AccentColor = Color.Transparent;
             pnlChart.BackColor = Color.White;
             pnlChart.BorderColor = Color.FromArgb(214, 228, 245);
+            pnlChart.Controls.Add(mBCLaba);
             pnlChart.Controls.Add(lblTerbaik);
             pnlChart.Controls.Add(lblChartJudul);
             pnlChart.Dock = DockStyle.Fill;
@@ -685,6 +687,17 @@
             lblChartJudul.TabIndex = 2;
             lblChartJudul.Text = "Grafik Laba";
             lblChartJudul.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // mBCLaba
+            // 
+            mBCLaba.AccessibleDescription = "Laba";
+            mBCLaba.BackColor = Color.White;
+            mBCLaba.BarColor = Color.FromArgb(30, 136, 229);
+            mBCLaba.Location = new Point(204, 676);
+            mBCLaba.Name = "mBCLaba";
+            mBCLaba.Size = new Size(112, 34);
+            mBCLaba.TabIndex = 3;
+            mBCLaba.Text = "miniBarChartui1";
             // 
             // UC_LaporanLaba
             // 
@@ -764,5 +777,6 @@
         private MiniBarChartUI chartLaba;
         private System.Windows.Forms.Label lblTerbaik;
         private System.Windows.Forms.Label lblChartJudul;
+        private MiniBarChartUI mBCLaba;
     }
 }

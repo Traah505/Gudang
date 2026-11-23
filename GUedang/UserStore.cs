@@ -40,7 +40,7 @@ namespace GUedang
     public static class UserStore
     {
         private const int Iterations = 10000;
-        public const int MinPanjangPassword = 4;
+        public const int MinPanjangPassword = 6;
 
         private static readonly string FilePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "users.json");

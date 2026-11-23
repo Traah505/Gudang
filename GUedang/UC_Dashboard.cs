@@ -1,5 +1,4 @@
-﻿using GUedang;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +15,6 @@ namespace GUedang
 {
     public partial class UC_Dashboard : UserControl
     {
-        // ====== PALET WARNA BIRU - PUTIH ======
         private static readonly Color Biru = Color.FromArgb(30, 100, 220);
         private static readonly Color BiruTua = Color.FromArgb(13, 71, 161);
         private static readonly Color BiruMuda = Color.FromArgb(232, 242, 255);
@@ -25,47 +23,58 @@ namespace GUedang
 
         private static readonly CultureInfo ID = new CultureInfo("id-ID");
 
-        // ====== DATA ======
         private DataTable _dtPengguna;
         private DataTable _dtStokMenipis;
         private List<KeyValuePair<string, decimal>> _penjualan7Hari = new List<KeyValuePair<string, decimal>>();
         private Rectangle[] _barRects = new Rectangle[0];
         private int _barHover = -1;
 
-        // ====== EVENT (dipakai Form utama untuk pindah halaman) ======
         public event EventHandler TambahBarangClicked;
         public event EventHandler TransaksiBaruClicked;
         public event EventHandler LaporanClicked;
         public event EventHandler OpnameClicked;
 
         private string _namaAdmin = "Admin";
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string NamaAdmin
         {
             get { return _namaAdmin; }
             set { _namaAdmin = value; UpdateSalam(); }
         }
+
         public UC_Dashboard()
         {
             InitializeComponent();
 
-            // Double buffer supaya grafik tidak berkedip
             typeof(Panel).InvokeMember("DoubleBuffered",
                 BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic,
                 null, panelChart, new object[] { true });
+
+            if (!DesignMode && LicenseManager.UsageMode != LicenseUsageMode.Designtime)
+            {
+                JsonStore.DataChanged += OnJsonDataChanged;
+                this.Disposed += (s, e) => JsonStore.DataChanged -= OnJsonDataChanged;
+            }
         }
 
-        // =====================================================
-        //  LOAD
-        // =====================================================
+        private void OnJsonDataChanged(object sender, EventArgs e)
+        {
+            if (IsDisposed || !IsHandleCreated) return;
+            if (InvokeRequired)
+                BeginInvoke(new Action(MuatData));
+            else
+                MuatData();
+        }
+
         private void UC_Dashboard_Load(object sender, EventArgs e)
         {
             if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime) return;
 
             StyleSemua();
 
-            cmbJenis.Items.AddRange(new object[] { "Semua", "Admin", "Kasir", "Petugas Gudang" });
+            cmbJenis.Items.Clear();
+            cmbJenis.Items.AddRange(new object[] { "Semua", Roles.Admin, Roles.Kasir, Roles.Gudang });
             cmbJenis.SelectedIndex = 0;
 
             MuatData();
@@ -74,41 +83,39 @@ namespace GUedang
             timerRefresh.Start();
         }
 
-        // =====================================================
-        //  MUAT DATA
-        // =====================================================
         public void MuatData()
         {
-            _dtPengguna = AmbilPengguna();
-            _dtStokMenipis = AmbilStokMenipis();
-            _penjualan7Hari = AmbilPenjualan7Hari();
+            var db = JsonStore.Load();
+            var daftarUser = UserStore.Muat();
+
+            _dtPengguna = AmbilPengguna(daftarUser);
+            _dtStokMenipis = AmbilStokMenipis(db);
+            _penjualan7Hari = AmbilPenjualan7Hari(db);
 
             dgvPengguna.DataSource = _dtPengguna.DefaultView;
             dgvStokMenipis.DataSource = _dtStokMenipis;
             FormatKolomGrid();
             FilterPengguna_Changed(null, EventArgs.Empty);
 
-            // ---- Kartu statistik ----
-            int kasir = _dtPengguna.AsEnumerable().Count(r => r.Field<string>("Jenis") == "Kasir");
-            int gudang = _dtPengguna.AsEnumerable().Count(r => r.Field<string>("Jenis") == "Petugas Gudang");
-            int menipis = _dtStokMenipis.AsEnumerable().Count(r => r.Field<int>("Stok") > 0);
-            int habis = _dtStokMenipis.AsEnumerable().Count(r => r.Field<int>("Stok") == 0);
+            int kasir = daftarUser.Count(u => u.Role == Roles.Kasir);
+            int gudang = daftarUser.Count(u => u.Role == Roles.Gudang);
+            int menipis = db.Barang.Count(b => b.Stok > 0 && b.Stok <= b.Minimum);
+            int habis = db.Barang.Count(b => b.Stok <= 0);
 
             lblKasirNilai.Text = kasir.ToString();
             lblGudangNilai.Text = gudang.ToString();
             lblMenipisNilai.Text = menipis.ToString();
             lblHabisNilai.Text = habis.ToString();
 
-            // ---- Penjualan hari ini ----
-            decimal pendapatan; int transaksi;
-            AmbilPenjualanHariIni(out pendapatan, out transaksi);
+            decimal pendapatan;
+            int transaksi;
+            AmbilPenjualanHariIni(db, out pendapatan, out transaksi);
             lblPendapatanNilai.Text = Rupiah(pendapatan);
             lblTransaksiNilai.Text = transaksi.ToString("N0", ID);
             lblRataNilai.Text = Rupiah(transaksi > 0 ? pendapatan / transaksi : 0);
 
-            // ---- Aktivitas gudang ----
             int masuk, keluar, stok;
-            AmbilAktivitasGudang(out masuk, out keluar, out stok);
+            AmbilAktivitasGudang(db, out masuk, out keluar, out stok);
             lblMasukNilai.Text = masuk.ToString("N0", ID);
             lblKeluarNilai.Text = keluar.ToString("N0", ID);
             lblStokNilai.Text = stok.ToString("N0", ID);
@@ -117,17 +124,7 @@ namespace GUedang
             panelChart.Invalidate();
         }
 
-        // =====================================================
-        //  SUMBER DATA
-        //  Sekarang masih DATA CONTOH supaya langsung jalan.
-        //  Ganti isi method-method ini dengan query database kamu
-        //  (SqlClient / MySql / SQLite, dst).
-        //  Contoh query:
-        //   Pengguna  : SELECT ROW_NUMBER() OVER(ORDER BY nama) AS No, nama, jenis, status FROM akun
-        //   Menipis   : SELECT kode, nama, stok, stok_min FROM barang WHERE stok <= stok_min
-        //   Penjualan : SELECT SUM(total), COUNT(*) FROM transaksi WHERE CAST(tanggal AS date) = CAST(GETDATE() AS date)
-        // =====================================================
-        private DataTable AmbilPengguna()
+        private DataTable AmbilPengguna(List<UserAkun> daftarUser)
         {
             var dt = new DataTable();
             dt.Columns.Add("No", typeof(int));
@@ -135,16 +132,15 @@ namespace GUedang
             dt.Columns.Add("Jenis", typeof(string));
             dt.Columns.Add("Status", typeof(string));
 
-            dt.Rows.Add(1, "Administrator", "Admin", "Aktif");
-            dt.Rows.Add(2, "Siti Aminah", "Kasir", "Aktif");
-            dt.Rows.Add(3, "Budi Santoso", "Kasir", "Aktif");
-            dt.Rows.Add(4, "Rina Wulandari", "Kasir", "Nonaktif");
-            dt.Rows.Add(5, "Agus Salim", "Petugas Gudang", "Aktif");
-            dt.Rows.Add(6, "Dewi Lestari", "Petugas Gudang", "Aktif");
+            int no = 1;
+            foreach (var u in daftarUser.OrderBy(x => x.Id))
+            {
+                dt.Rows.Add(no++, u.Nama, u.Role, u.Aktif ? "Aktif" : "Nonaktif");
+            }
             return dt;
         }
 
-        private DataTable AmbilStokMenipis()
+        private DataTable AmbilStokMenipis(DatabaseJson db)
         {
             var dt = new DataTable();
             dt.Columns.Add("Kode", typeof(string));
@@ -152,41 +148,43 @@ namespace GUedang
             dt.Columns.Add("Stok", typeof(int));
             dt.Columns.Add("Min", typeof(int));
 
-            dt.Rows.Add("BRG-001", "Beras 5 Kg", 4, 10);
-            dt.Rows.Add("BRG-014", "Minyak Goreng 2L", 0, 12);
-            dt.Rows.Add("BRG-023", "Gula Pasir 1 Kg", 6, 15);
-            dt.Rows.Add("BRG-031", "Telur Ayam 1 Kg", 0, 8);
-            dt.Rows.Add("BRG-044", "Kopi Sachet", 3, 20);
+            foreach (var b in db.Barang.Where(x => x.Stok <= x.Minimum).OrderBy(x => x.Stok).ThenBy(x => x.Kode))
+            {
+                dt.Rows.Add(b.Kode, b.Nama, b.Stok, b.Minimum);
+            }
             return dt;
         }
 
-        private List<KeyValuePair<string, decimal>> AmbilPenjualan7Hari()
+        private List<KeyValuePair<string, decimal>> AmbilPenjualan7Hari(DatabaseJson db)
         {
             var list = new List<KeyValuePair<string, decimal>>();
-            decimal[] contoh = { 1250000, 1800000, 950000, 2100000, 1650000, 2450000, 1320000 };
             for (int i = 6; i >= 0; i--)
             {
                 DateTime d = DateTime.Today.AddDays(-i);
-                list.Add(new KeyValuePair<string, decimal>(
-                    d.ToString("ddd", ID), contoh[6 - i]));
+                decimal totalHari = db.Transaksi
+                    .Where(t => t.Tanggal.Date == d.Date)
+                    .Sum(t => t.TotalHarga);
+
+                list.Add(new KeyValuePair<string, decimal>(d.ToString("ddd", ID), totalHari));
             }
             return list;
         }
 
-        private void AmbilPenjualanHariIni(out decimal pendapatan, out int transaksi)
+        private void AmbilPenjualanHariIni(DatabaseJson db, out decimal pendapatan, out int transaksi)
         {
-            pendapatan = _penjualan7Hari.Count > 0 ? _penjualan7Hari.Last().Value : 0;
-            transaksi = 18;
+            var hariIni = db.Transaksi.Where(t => t.Tanggal.Date == DateTime.Today).ToList();
+            pendapatan = hariIni.Sum(t => t.TotalHarga);
+            transaksi = hariIni.Count;
         }
 
-        private void AmbilAktivitasGudang(out int masuk, out int keluar, out int stok)
+        private void AmbilAktivitasGudang(DatabaseJson db, out int masuk, out int keluar, out int stok)
         {
-            masuk = 120; keluar = 85; stok = 1460;
+            var riwayatHariIni = db.RiwayatGudang.Where(r => r.TanggalWaktu.Date == DateTime.Today).ToList();
+            masuk = riwayatHariIni.Where(r => r.JenisTransaksi == "Barang Masuk").Sum(r => r.Jumlah);
+            keluar = riwayatHariIni.Where(r => r.JenisTransaksi == "Barang Keluar").Sum(r => r.Jumlah);
+            stok = db.Barang.Sum(b => b.Stok);
         }
 
-        // =====================================================
-        //  FILTER PENGGUNA (cari + jenis)
-        // =====================================================
         private void FilterPengguna_Changed(object sender, EventArgs e)
         {
             if (_dtPengguna == null) return;
@@ -203,9 +201,6 @@ namespace GUedang
             _dtPengguna.DefaultView.RowFilter = string.Join(" AND ", filter);
         }
 
-        // =====================================================
-        //  JAM, SALAM, REFRESH
-        // =====================================================
         private void timerJam_Tick(object sender, EventArgs e) { UpdateJam(); }
 
         private void UpdateJam()
@@ -219,19 +214,19 @@ namespace GUedang
         {
             int jam = DateTime.Now.Hour;
             string sapaan = jam < 11 ? "Selamat Pagi" : jam < 15 ? "Selamat Siang" : jam < 18 ? "Selamat Sore" : "Selamat Malam";
-            lblSalam.Text = sapaan + ", " + _namaAdmin;
+            string namaAktif = Session.UserAktif != null && !string.IsNullOrWhiteSpace(Session.UserAktif.Nama)
+                ? Session.UserAktif.Nama
+                : _namaAdmin;
+            lblSalam.Text = sapaan + ", " + namaAktif;
         }
 
         private void timerRefresh_Tick(object sender, EventArgs e) { MuatData(); }
         private void btnRefresh_Click(object sender, EventArgs e) { MuatData(); }
 
-        // =====================================================
-        //  TOMBOL AKSI CEPAT
-        // =====================================================
-        private void btnTambahBarang_Click(object sender, EventArgs e) { if (TambahBarangClicked != null) TambahBarangClicked(this, e); }
-        private void btnTransaksi_Click(object sender, EventArgs e) { if (TransaksiBaruClicked != null) TransaksiBaruClicked(this, e); }
-        private void btnLaporan_Click(object sender, EventArgs e) { if (LaporanClicked != null) LaporanClicked(this, e); }
-        private void btnOpname_Click(object sender, EventArgs e) { if (OpnameClicked != null) OpnameClicked(this, e); }
+        private void btnTambahBarang_Click(object sender, EventArgs e) { TambahBarangClicked?.Invoke(this, e); }
+        private void btnTransaksi_Click(object sender, EventArgs e) { TransaksiBaruClicked?.Invoke(this, e); }
+        private void btnLaporan_Click(object sender, EventArgs e) { LaporanClicked?.Invoke(this, e); }
+        private void btnOpname_Click(object sender, EventArgs e) { OpnameClicked?.Invoke(this, e); }
 
         private void btnExport_Click(object sender, EventArgs e)
         {
@@ -251,9 +246,6 @@ namespace GUedang
             }
         }
 
-        // =====================================================
-        //  GRAFIK BATANG PENJUALAN (digambar manual, tanpa library)
-        // =====================================================
         private void panelChart_Resize(object sender, EventArgs e) { panelChart.Invalidate(); }
 
         private void panelChart_Paint(object sender, PaintEventArgs e)
@@ -269,14 +261,13 @@ namespace GUedang
             if (plot.Width <= 20 || plot.Height <= 20) return;
 
             decimal max = _penjualan7Hari.Max(x => x.Value);
-            if (max <= 0) max = 1;
+            if (max <= 0) max = 100000m;
             max = BulatkanAtas(max);
 
             using (var fontKecil = new Font("Segoe UI", 8F))
             using (var sikatTeks = new SolidBrush(Color.FromArgb(100, 120, 160)))
             using (var penGaris = new Pen(BiruGaris) { DashStyle = DashStyle.Dash })
             {
-                // garis bantu horizontal
                 for (int i = 0; i <= 4; i++)
                 {
                     int y = plot.Bottom - (int)(plot.Height * i / 4.0);
@@ -308,12 +299,10 @@ namespace GUedang
                     using (GraphicsPath pb = GfxUtil.RoundTop(bar, Math.Min(8, bar.Width / 2)))
                         g.FillPath(br, pb);
 
-                    // label hari
                     string hari = _penjualan7Hari[i].Key;
                     SizeF sh = g.MeasureString(hari, fontKecil);
                     g.DrawString(hari, fontKecil, sikatTeks, x + lebar / 2 - sh.Width / 2, plot.Bottom + 5);
 
-                    // nilai di atas batang saat hover
                     if (hover)
                     {
                         string v = Rupiah(nilai);
@@ -350,9 +339,6 @@ namespace GUedang
             if (_barHover != -1) { _barHover = -1; panelChart.Invalidate(); }
         }
 
-        // =====================================================
-        //  STYLE (tema biru-putih)
-        // =====================================================
         private void StyleSemua()
         {
             StyleGrid(dgvPengguna);
@@ -361,9 +347,7 @@ namespace GUedang
             StyleTombol(btnRefresh, Biru, Color.White, BiruTua);
             btnRefresh.CornerRadius = 19;
 
-
             toolTip1.SetToolTip(btnRefresh, "Muat ulang data dashboard");
-
             toolTip1.SetToolTip(txtCari, "Cari nama atau status pengguna");
         }
 
@@ -421,7 +405,6 @@ namespace GUedang
             if (dgvStokMenipis.Columns.Contains("Stok")) dgvStokMenipis.Columns["Stok"].FillWeight = 16;
             if (dgvStokMenipis.Columns.Contains("Min")) dgvStokMenipis.Columns["Min"].FillWeight = 16;
 
-            // Tandai stok habis dengan teks tebal biru tua
             dgvStokMenipis.CellFormatting -= dgvStokMenipis_CellFormatting;
             dgvStokMenipis.CellFormatting += dgvStokMenipis_CellFormatting;
             dgvPengguna.CellFormatting -= dgvPengguna_CellFormatting;
@@ -449,9 +432,6 @@ namespace GUedang
             e.CellStyle.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
         }
 
-        // =====================================================
-        //  HELPER
-        // =====================================================
         private static string Rupiah(decimal v) { return "Rp " + v.ToString("N0", ID); }
 
         private static string Singkat(decimal v)
@@ -464,33 +444,18 @@ namespace GUedang
         private static decimal BulatkanAtas(decimal v)
         {
             double pangkat = Math.Pow(10, Math.Floor(Math.Log10((double)v)));
-            double hasil = Math.Ceiling((double)v / pangkat * 2) / 2 * pangkat; // kelipatan 0,5 x 10^n
+            double hasil = Math.Ceiling((double)v / pangkat * 2) / 2 * pangkat;
             return (decimal)hasil;
         }
 
-        private void dgvStokMenipis_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dgvStokMenipis_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void panel2_Paint(object sender, PaintEventArgs e) { }
+        private void dgvPengguna_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void lblJam_Click(object sender, EventArgs e) { }
+        private void tblKanan_Paint(object sender, PaintEventArgs e) { }
+        private void tblKiri_Paint(object sender, PaintEventArgs e) { }   
+        private void panelBody_Paint(object sender, PaintEventArgs e) { }
 
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvPengguna_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblJam_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tblKanan_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
+
 }

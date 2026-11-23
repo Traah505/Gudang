@@ -6,31 +6,16 @@ using System.Windows.Forms;
 
 namespace GUedang
 {
-    public partial class UC_KRNJGBLNJKasir : UserControl   // samakan nama class dengan file-mu
+    public partial class UC_KRNJGBLNJKasir : UserControl
     {
-
-
-
+        
         public UC_KRNJGBLNJKasir()
         {
             InitializeComponent();
-
-
         }
 
-        private void UC_Keranjang_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void RefreshKeranjang()
-        {
-
-        }
-
+       
+        
 
 
         private void btnBayar_Click(object s, EventArgs e)

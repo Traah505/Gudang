@@ -97,7 +97,7 @@ namespace GUedang
 
             if (user == null)
             {
-{
+                {
                     AktivitasStore.Catat(
                         nama,
                         "Tidak diketahui",
@@ -125,6 +125,11 @@ namespace GUedang
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlRight_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

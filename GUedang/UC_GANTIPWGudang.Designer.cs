@@ -78,6 +78,7 @@
             tlpRoot.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpRoot.Size = new Size(1283, 629);
             tlpRoot.TabIndex = 0;
+            tlpRoot.Paint += tlpRoot_Paint;
             // 
             // pnlJudul
             // 
@@ -331,6 +332,7 @@
             btnSimpan.TabIndex = 0;
             btnSimpan.Text = "Simpan Password";
             btnSimpan.UseVisualStyleBackColor = false;
+            btnSimpan.Click += btnSimpan_Click_1;
             // 
             // btnBatal
             // 

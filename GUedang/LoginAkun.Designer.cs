@@ -180,7 +180,6 @@ namespace GUedang
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
-            
             // 
             // lblTagline
             // 
@@ -241,6 +240,7 @@ namespace GUedang
             pnlRight.Name = "pnlRight";
             pnlRight.Size = new Size(520, 580);
             pnlRight.TabIndex = 0;
+            pnlRight.Paint += pnlRight_Paint;
             // 
             // txtPassword
             // 

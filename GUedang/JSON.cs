@@ -1,188 +1,239 @@
 ﻿using System;
-using System.Data;
-using System.Globalization;
+using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Windows.Forms;
+using System.Linq;
+using Newtonsoft.Json;
 
 namespace GUedang
 {
-    /// <summary>
-    /// Penyimpanan data ke file JSON (tanpa database).
-    /// Setiap tabel disimpan sebagai satu file array JSON di folder <see cref="Folder"/>:
-    ///   barang.json, mutasi.json, transaksi.json, transaksi_detail.json, pengguna.json, aktivitas.json
-    /// </summary>
     public static class JsonStore
     {
-        /// <summary>
-        /// Folder tempat file JSON disimpan. Bisa diganti sebelum form pertama dibuka (mis. di Program.cs):
-        ///   JsonStore.Folder = @"C:\SMKMart\Data";
-        /// </summary>
-        public static string Folder = Path.Combine(AppContext.BaseDirectory, "Data");
+        private static readonly string FolderData = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DataJson");
+        private static readonly string FileDb = Path.Combine(FolderData, "database_smkmart.json");
+        private static readonly object _lock = new object();
 
-        /// <summary>
-        /// true  = jika file JSON belum ada, isi dengan data contoh (untuk mencoba tampilan).
-        /// false = mulai dari data kosong (untuk pemakaian sebenarnya). Atur ke false di Program.cs.
-        /// </summary>
-        public static bool DataContoh = true;
+        public static event EventHandler DataChanged;
 
-        private static readonly object Kunci = new object();
-        private static readonly CultureInfo Inv = CultureInfo.InvariantCulture;
-
-        /// <summary>
-        /// Baca file JSON ke DataTable dengan kolom sesuai <paramref name="skema"/>.
-        /// Mengembalikan null jika file belum ada. Kolom yang tidak ada di file diisi nilai bawaan.
-        /// Jika file rusak, salinannya disimpan dengan akhiran .rusak-… dan null dikembalikan.
-        /// </summary>
-        public static DataTable Muat(string namaFile, DataTable skema)
+        public static DatabaseJson Load()
         {
-            lock (Kunci)
+            lock (_lock)
             {
-                string path = Path.Combine(Folder, namaFile);
-                if (!File.Exists(path)) return null;
+                if (!Directory.Exists(FolderData))
+                    Directory.CreateDirectory(FolderData);
 
-                try
+                if (!File.Exists(FileDb))
                 {
-                    string isi = File.ReadAllText(path, Encoding.UTF8);
-                    DataTable hasil = skema.Clone();
-                    if (isi.Trim().Length == 0) return hasil;
-
-                    using (JsonDocument doc = JsonDocument.Parse(isi))
-                    {
-                        if (doc.RootElement.ValueKind != JsonValueKind.Array)
-                            throw new JsonException("Isi file harus berupa array [ ... ].");
-
-                        foreach (JsonElement el in doc.RootElement.EnumerateArray())
-                        {
-                            DataRow row = hasil.NewRow();
-                            foreach (DataColumn c in hasil.Columns) row[c] = Ambil(el, c);
-                            hasil.Rows.Add(row);
-                        }
-                    }
-                    hasil.AcceptChanges();
-                    return hasil;
+                    var seed = BuatDataAwal();
+                    SimpanInternal(seed);
+                    return seed;
                 }
-                catch (Exception ex)
-                {
-                    string cadangan = path + ".rusak-" + DateTime.Now.ToString("yyyyMMdd-HHmmss");
-                    try { File.Copy(path, cadangan, true); } catch { }
-                    MessageBox.Show("File data \"" + namaFile + "\" tidak bisa dibaca:\n" + ex.Message +
-                        "\n\nSalinannya disimpan di:\n" + cadangan +
-                        "\n\nUntuk file ini aplikasi memakai data kosong.",
-                        "Data JSON", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return null;
-                }
+
+                string json = File.ReadAllText(FileDb);
+                if (string.IsNullOrWhiteSpace(json))
+                    return BuatDataAwal();
+
+                var db = JsonConvert.DeserializeObject<DatabaseJson>(json) ?? new DatabaseJson();
+                db.Barang ??= new List<BarangItem>();
+                db.Transaksi ??= new List<TransaksiItem>();
+                db.RiwayatGudang ??= new List<RiwayatGudangItem>();
+                db.LogAktivitas ??= new List<LogAktivitasItem>();
+                return db;
             }
         }
 
-        /// <summary>Simpan DataTable ke file JSON. File lama dicadangkan sebagai .bak.</summary>
-        public static void Simpan(string namaFile, DataTable tabel)
+        public static void Save(DatabaseJson db)
         {
-            lock (Kunci)
+            lock (_lock)
             {
-                try
-                {
-                    Directory.CreateDirectory(Folder);
-                    string path = Path.Combine(Folder, namaFile);
-                    string tmp = path + ".tmp";
-
-                    var opsi = new JsonWriterOptions { Indented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
-                    using (FileStream fs = File.Create(tmp))
-                    using (var w = new Utf8JsonWriter(fs, opsi))
-                    {
-                        w.WriteStartArray();
-                        foreach (DataRow r in tabel.Rows)
-                        {
-                            w.WriteStartObject();
-                            foreach (DataColumn c in tabel.Columns)
-                            {
-                                object v = r[c];
-                                if (v == null || v == DBNull.Value) { w.WriteNull(c.ColumnName); continue; }
-
-                                if (c.DataType == typeof(int)) w.WriteNumber(c.ColumnName, Convert.ToInt32(v));
-                                else if (c.DataType == typeof(decimal)) w.WriteNumber(c.ColumnName, Convert.ToDecimal(v));
-                                else if (c.DataType == typeof(DateTime)) w.WriteString(c.ColumnName, ((DateTime)v).ToString("yyyy-MM-ddTHH:mm:ss", Inv));
-                                else w.WriteString(c.ColumnName, Convert.ToString(v, Inv));
-                            }
-                            w.WriteEndObject();
-                        }
-                        w.WriteEndArray();
-                    }
-
-                    if (File.Exists(path)) File.Copy(path, path + ".bak", true);
-                    File.Move(tmp, path, true);
-                }
-                catch (Exception ex)
-                {
-                    throw new InvalidOperationException("Gagal menyimpan file " + namaFile + ": " + ex.Message);
-                }
+                SimpanInternal(db);
             }
+            DataChanged?.Invoke(null, EventArgs.Empty);
         }
 
-        // ------------------------------------------------------------ konversi
-
-        private static object Ambil(JsonElement el, DataColumn c)
+        private static void SimpanInternal(DatabaseJson db)
         {
-            JsonElement p = default(JsonElement);
-            bool ada = false;
-            if (el.ValueKind == JsonValueKind.Object)
-            {
-                foreach (JsonProperty prop in el.EnumerateObject())
-                {
-                    if (string.Equals(prop.Name, c.ColumnName, StringComparison.OrdinalIgnoreCase))
-                    {
-                        p = prop.Value;
-                        ada = true;
-                        break;
-                    }
-                }
-            }
-
-            Type t = c.DataType;
-            if (!ada || p.ValueKind == JsonValueKind.Null || p.ValueKind == JsonValueKind.Undefined) return Bawaan(t);
-
-            try
-            {
-                if (t == typeof(string))
-                    return p.ValueKind == JsonValueKind.String ? p.GetString() : p.ToString();
-
-                if (t == typeof(int))
-                {
-                    if (p.ValueKind == JsonValueKind.Number) return (int)Math.Round(p.GetDecimal());
-                    int n;
-                    return int.TryParse(p.GetString(), NumberStyles.Any, Inv, out n) ? n : 0;
-                }
-
-                if (t == typeof(decimal))
-                {
-                    if (p.ValueKind == JsonValueKind.Number) return p.GetDecimal();
-                    decimal d;
-                    return decimal.TryParse(p.GetString(), NumberStyles.Any, Inv, out d) ? d : 0m;
-                }
-
-                if (t == typeof(DateTime))
-                {
-                    DateTime tgl;
-                    if (p.ValueKind == JsonValueKind.String && DateTime.TryParse(p.GetString(), Inv, DateTimeStyles.None, out tgl)) return tgl;
-                    return DateTime.Today;
-                }
-            }
-            catch
-            {
-                // nilai tidak cocok dengan tipe kolom: pakai nilai bawaan
-            }
-            return Bawaan(t);
+            if (!Directory.Exists(FolderData))
+                Directory.CreateDirectory(FolderData);
+            File.WriteAllText(FileDb, JsonConvert.SerializeObject(db, Formatting.Indented));
         }
 
-        private static object Bawaan(Type t)
+        public static void CatatLog(string role, string namaUser, string aktivitas)
         {
-            if (t == typeof(string)) return "";
-            if (t == typeof(int)) return 0;
-            if (t == typeof(decimal)) return 0m;
-            if (t == typeof(DateTime)) return DateTime.Today;
-            return DBNull.Value;
+            var db = Load();
+            db.LogAktivitas.Insert(0, new LogAktivitasItem
+            {
+                Waktu = DateTime.Now,
+                Role = role,
+                NamaUser = namaUser,
+                Aktivitas = aktivitas
+            });
+            Save(db);
+        }
+
+        public static bool ProsesTransaksiKasir(
+            string kodeTransaksi,
+            string namaKasir,
+            string metodeBayar,
+            decimal diskonNominal,
+            decimal uangDiterima,
+            List<DetailTransaksiItem> keranjang,
+            out string pesanError)
+        {
+            pesanError = "";
+            var db = Load();
+
+            foreach (var item in keranjang)
+            {
+                var brg = db.Barang.FirstOrDefault(b => b.Kode.Equals(item.KodeBarang, StringComparison.OrdinalIgnoreCase));
+                if (brg == null)
+                {
+                    pesanError = $"Barang {item.KodeBarang} tidak ditemukan.";
+                    return false;
+                }
+                if (brg.Stok < item.Qty)
+                {
+                    pesanError = $"Stok {brg.Nama} tidak cukup (tersedia: {brg.Stok}).";
+                    return false;
+                }
+            }
+
+            foreach (var item in keranjang)
+            {
+                var brg = db.Barang.First(b => b.Kode.Equals(item.KodeBarang, StringComparison.OrdinalIgnoreCase));
+                brg.Stok -= item.Qty;
+                item.HargaModal = brg.HargaBeli;
+                item.HargaSatuan = brg.HargaJual;
+                item.Subtotal = item.Qty * brg.HargaJual;
+
+                db.RiwayatGudang.Insert(0, new RiwayatGudangItem
+                {
+                    TanggalWaktu = DateTime.Now,
+                    JenisTransaksi = "Barang Keluar",
+                    KodeBarang = brg.Kode,
+                    NamaBarang = brg.Nama,
+                    Jumlah = item.Qty,
+                    HargaSatuan = brg.HargaBeli,
+                    TotalNilai = item.Qty * brg.HargaBeli,
+                    StokAkhir = brg.Stok,
+                    SupplierTujuan = "Penjualan Kasir",
+                    Keterangan = $"Transaksi {kodeTransaksi}",
+                    Petugas = namaKasir
+                });
+            }
+
+            decimal subtotal = keranjang.Sum(x => x.Subtotal);
+            decimal diskonValid = Math.Max(0, Math.Min(diskonNominal, subtotal));
+            decimal totalAkhir = subtotal - diskonValid;
+            decimal kembalian = Math.Max(0, uangDiterima - totalAkhir);
+
+            db.Transaksi.Insert(0, new TransaksiItem
+            {
+                KodeTransaksi = kodeTransaksi,
+                Tanggal = DateTime.Now,
+                NamaKasir = namaKasir,
+                MetodeBayar = string.IsNullOrWhiteSpace(metodeBayar) ? "Tunai" : metodeBayar,
+                Subtotal = subtotal,
+                Diskon = diskonValid,
+                TotalHarga = totalAkhir,
+                UangDiterima = uangDiterima,
+                Kembalian = kembalian,
+                Items = keranjang
+            });
+
+            db.LogAktivitas.Insert(0, new LogAktivitasItem
+            {
+                Waktu = DateTime.Now,
+                Role = Roles.Kasir,
+                NamaUser = namaKasir,
+                Aktivitas = $"Transaksi {kodeTransaksi} ({metodeBayar}) total Rp {totalAkhir:N0}"
+            });
+
+            Save(db);
+            return true;
+        }
+
+        public static bool ProsesGudang(
+            string jenisTransaksi,
+            string kodeBarang,
+            int jumlah,
+            decimal? hargaBeliBaru,
+            string supplierTujuan,
+            string keterangan,
+            string petugas,
+            out string pesanError)
+        {
+            pesanError = "";
+            var db = Load();
+            var brg = db.Barang.FirstOrDefault(b => b.Kode.Equals(kodeBarang, StringComparison.OrdinalIgnoreCase));
+            if (brg == null)
+            {
+                pesanError = "Barang tidak ditemukan.";
+                return false;
+            }
+
+            if (jenisTransaksi == "Barang Masuk")
+            {
+                brg.Stok += jumlah;
+                if (hargaBeliBaru.HasValue && hargaBeliBaru.Value > 0)
+                    brg.HargaBeli = hargaBeliBaru.Value;
+            }
+            else if (jenisTransaksi == "Barang Keluar")
+            {
+                if (brg.Stok < jumlah)
+                {
+                    pesanError = $"Stok tidak mencukupi. Sisa stok: {brg.Stok}";
+                    return false;
+                }
+                brg.Stok -= jumlah;
+            }
+            else if (jenisTransaksi == "Penyesuaian")
+            {
+                brg.Stok = Math.Max(0, jumlah);
+            }
+
+            decimal hargaAcuan = (jenisTransaksi == "Barang Masuk" && hargaBeliBaru.HasValue && hargaBeliBaru.Value > 0)
+                ? hargaBeliBaru.Value
+                : brg.HargaBeli;
+
+            db.RiwayatGudang.Insert(0, new RiwayatGudangItem
+            {
+                TanggalWaktu = DateTime.Now,
+                JenisTransaksi = jenisTransaksi,
+                KodeBarang = brg.Kode,
+                NamaBarang = brg.Nama,
+                Jumlah = jumlah,
+                HargaSatuan = hargaAcuan,
+                TotalNilai = jumlah * hargaAcuan,
+                StokAkhir = brg.Stok,
+                SupplierTujuan = supplierTujuan ?? "",
+                Keterangan = keterangan ?? "",
+                Petugas = petugas
+            });
+
+            db.LogAktivitas.Insert(0, new LogAktivitasItem
+            {
+                Waktu = DateTime.Now,
+                Role = Roles.Gudang,
+                NamaUser = petugas,
+                Aktivitas = $"{jenisTransaksi} {brg.Nama} ({jumlah}) -> Stok akhir: {brg.Stok}"
+            });
+
+            Save(db);
+            return true;
+        }
+
+        private static DatabaseJson BuatDataAwal()
+        {
+            var db = new DatabaseJson();
+            db.Barang.AddRange(new[]
+            {
+                new BarangItem { Kode = "BRG-001", Nama = "Beras 5 Kg", Kategori = "Sembako", HargaBeli = 65000, HargaJual = 72000, Stok = 4, Minimum = 10 },
+                new BarangItem { Kode = "BRG-014", Nama = "Minyak Goreng 2L", Kategori = "Sembako", HargaBeli = 32000, HargaJual = 36000, Stok = 0, Minimum = 12 },
+                new BarangItem { Kode = "BRG-023", Nama = "Gula Pasir 1 Kg", Kategori = "Sembako", HargaBeli = 15000, HargaJual = 18000, Stok = 6, Minimum = 15 },
+                new BarangItem { Kode = "BRG-031", Nama = "Telur Ayam 1 Kg", Kategori = "Sembako", HargaBeli = 24000, HargaJual = 27500, Stok = 0, Minimum = 8 },
+                new BarangItem { Kode = "BRG-044", Nama = "Kopi Sachet", Kategori = "Minuman", HargaBeli = 1200, HargaJual = 2000, Stok = 3, Minimum = 20 }
+            });
+            return db;
         }
     }
 }

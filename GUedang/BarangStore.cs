@@ -101,12 +101,8 @@ namespace GUedang
         /// Ubah stok (delta negatif = berkurang, mis. saat penjualan).
         /// Mengembalikan false jika barang tidak ada atau stok jadi minus.
         /// </summary>
-        public static bool UbahStok(string kode, int delta,
-                            string jenis = "", string pihak = "", string keterangan = "")
+        public static bool UbahStok(string kode, int delta)
         {
-            string nama;
-            int stokAkhir;
-
             lock (_lock)
             {
                 var list = Load();
@@ -115,17 +111,30 @@ namespace GUedang
                 if (b == null || b.Stok + delta < 0) return false;
                 b.Stok += delta;
                 Save(list);
-                nama = b.Nama;
-                stokAkhir = b.Stok;
             }
+            DataChanged?.Invoke();
+            return true;
+        }
 
-            // di luar lock supaya tidak saling mengunci
-            if (jenis != "")
+        /// <summary>
+        /// Dipanggil GUDANG saat barang masuk: stok bertambah, dan harga beli
+        /// diperbarui ke harga beli terakhir (jika diisi).
+        /// </summary>
+        public static bool TambahStok(string kode, int jumlah, decimal? hargaBeliBaru = null)
+        {
+            if (jumlah <= 0) return false;
+
+            lock (_lock)
             {
-                int jumlah = jenis == "Penyesuaian" ? delta : Math.Abs(delta);
-                StoreRiwayatGudang.Catat(jenis, kode, nama, jumlah, stokAkhir, pihak, keterangan);
-            }
+                var list = Load();
+                var b = list.FirstOrDefault(x =>
+                    x.Kode.Equals(kode, StringComparison.OrdinalIgnoreCase));
+                if (b == null) return false;
 
+                b.Stok += jumlah;
+                if (hargaBeliBaru is > 0) b.HargaBeli = hargaBeliBaru.Value;
+                Save(list);
+            }
             DataChanged?.Invoke();
             return true;
         }

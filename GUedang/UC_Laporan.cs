@@ -54,13 +54,25 @@ namespace GUedang
             txtKasir.TextChanged += (s, ev) => Muat();
             btnTampilkan.Click += (s, ev) => { if (!IsPeriodeManual()) ApplyRentang(); Muat(); };
             dgvTrx.SelectionChanged += dgvTrx_SelectionChanged;
+            dgvTrx.CellDoubleClick += (s, ev) =>
+            {
+                if (ev.RowIndex >= 0) TampilStruk();
+            };
 
             Muat();
         }
 
         // ================= PERIODE =================
         private bool IsPeriodeManual() => cmbRentang.SelectedItem?.ToString() == "Pilih manual";
-
+        private void TampilStruk()
+        {
+            if (dgvTrx.SelectedRows.Count == 0 || dgvTrx.SelectedRows[0].Tag is not Transaksi t)
+            {
+                MessageBox.Show("Pilih transaksi dulu.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            StrukHelper.Tampilkan(FindForm(), t);
+        }
         private void ApplyRentang()
         {
             DateTime today = DateTime.Today;

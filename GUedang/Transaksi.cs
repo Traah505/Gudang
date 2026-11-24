@@ -19,10 +19,17 @@ namespace GUedang
         public string Kode { get; set; } = "";
         public DateTime Tanggal { get; set; } = DateTime.Now;
         public string Kasir { get; set; } = "";
+
+        public decimal Diskon { get; set; }            // dalam rupiah
+        public string Metode { get; set; } = "Tunai";  // Tunai | QRIS | Transfer
+        public decimal Bayar { get; set; }
+        public decimal Kembali { get; set; }
+
         public List<DetailTransaksi> Detail { get; set; } = new();
 
-        [JsonIgnore] public decimal Total => Detail.Sum(d => d.Subtotal);
+        [JsonIgnore] public decimal Subtotal => Detail.Sum(d => d.Subtotal);   // sebelum diskon
+        [JsonIgnore] public decimal Total => Subtotal - Diskon;                // yang dibayar pelanggan
         [JsonIgnore] public int TotalItem => Detail.Sum(d => d.Qty);
-        [JsonIgnore] public decimal Laba => Detail.Sum(d => d.Laba);
+        [JsonIgnore] public decimal Laba => Detail.Sum(d => d.Laba) - Diskon;
     }
 }

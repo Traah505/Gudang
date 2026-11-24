@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,12 @@ namespace GUedang
         {
             InitializeComponent();
             lblKasir1.Text = Sesi.NamaUser;
+
             UC_Kasir dashoardKasir = new UC_Kasir();
             dashoardKasir.Dock = DockStyle.Fill;
+            dashoardKasir.NamaKasir = Sesi.NamaUser;   // <-- ini tempatnya
+            
             panelKasirHalaman.Controls.Add(dashoardKasir);
-
         }
 
         private void panelKasirHalaman_Paint(object sender, PaintEventArgs e)

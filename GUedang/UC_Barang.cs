@@ -17,8 +17,15 @@ namespace GUedang
             Load += UC_Barang_Load;
             BarangStore.DataChanged += OnDataChanged;
             Disposed += (s, e) => BarangStore.DataChanged -= OnDataChanged;
-        }
+            nudStok.Enabled = false;
+            nudStok.Value = 0;
 
+        }
+        private void btnBaru_Click(object sender, EventArgs e)
+        {
+            // ... kode reset form yang sudah ada
+            nudStok.Value = 0;
+        }
         private void OnDataChanged()
         {
             if (IsHandleCreated && !IsDisposed)
@@ -191,6 +198,8 @@ namespace GUedang
                 b.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase) && b.Kode != txtKode.Text);
             if (kembar) { Peringatan("Barang dengan nama tersebut sudah ada.", txtNama); return; }
 
+            var lama = BarangStore.GetByKode(txtKode.Text);
+
             var barang = new Barang
             {
                 Kode = txtKode.Text,
@@ -199,7 +208,7 @@ namespace GUedang
                 Satuan = satuan,
                 HargaBeli = beli,
                 HargaJual = jual,
-                Stok = (int)nudStok.Value,
+                Stok = lama?.Stok ?? 0,          // barang baru = 0, edit = stok tidak berubah
                 StokMinimum = (int)nudMin.Value
             };
 

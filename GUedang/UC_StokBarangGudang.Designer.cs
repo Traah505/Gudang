@@ -68,7 +68,6 @@
             cmbKategori = new ComboBox();
             cmbStatus = new ComboBox();
             btnReset = new RoundedButtonUI();
-            btnExport = new RoundedButtonUI();
             tlpRoot.SuspendLayout();
             pnlJudul.SuspendLayout();
             tlpContent.SuspendLayout();
@@ -689,7 +688,6 @@
             pnlFilter.Controls.Add(cmbKategori);
             pnlFilter.Controls.Add(cmbStatus);
             pnlFilter.Controls.Add(btnReset);
-            pnlFilter.Controls.Add(btnExport);
             pnlFilter.Location = new Point(0, 0);
             pnlFilter.Margin = new Padding(0, 0, 0, 23);
             pnlFilter.Name = "pnlFilter";
@@ -761,22 +759,6 @@
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = false;
             // 
-            // btnExport
-            // 
-            btnExport.BackColor = Color.RoyalBlue;
-            btnExport.BorderColor = Color.FromArgb(30, 136, 229);
-            btnExport.FlatStyle = FlatStyle.Flat;
-            btnExport.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            btnExport.ForeColor = Color.White;
-            btnExport.HoverColor = Color.FromArgb(225, 240, 255);
-            btnExport.Location = new Point(1107, 23);
-            btnExport.Margin = new Padding(6, 5, 6, 5);
-            btnExport.Name = "btnExport";
-            btnExport.Size = new Size(183, 48);
-            btnExport.TabIndex = 5;
-            btnExport.Text = "Print";
-            btnExport.UseVisualStyleBackColor = false;
-            // 
             // UC_StokBarangGudang
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -823,7 +805,6 @@
         private System.Windows.Forms.ComboBox cmbKategori;
         private System.Windows.Forms.ComboBox cmbStatus;
         private RoundedButtonUI btnReset;
-        private RoundedButtonUI btnExport;
         private RoundedPanelUI pnlTabel;
         private System.Windows.Forms.DataGridView dgvStok;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNo;

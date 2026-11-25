@@ -94,7 +94,7 @@ namespace GUedang
         {
             if (_loading) return;
 
-            var semua = BarangStore.GetAll();
+            var semua = BarangStore.GetAll().Where(b => b.Stok > 0).ToList();
 
             // isi combo kategori (hanya jika daftar kategori berubah)
             var kats = semua.Select(b => b.Kategori)

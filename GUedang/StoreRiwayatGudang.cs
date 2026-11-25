@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GUedang
 {
@@ -13,12 +14,25 @@ namespace GUedang
         public string KodeBarang { get; set; } = "";
         public string NamaBarang { get; set; } = "";
 
-        // Masuk/Keluar: selalu positif. Penyesuaian: selisih (boleh negatif).
+        // Masuk/Keluar: positif. Penyesuaian: selisih (boleh negatif).
         public int Jumlah { get; set; }
 
         public int StokAkhir { get; set; }
         public string Pihak { get; set; } = "";       // Supplier / Tujuan
         public string Keterangan { get; set; } = "";
+        public string Oleh { get; set; } = "";        // username pelaku
+
+        /// <summary>Jumlah dengan tanda: Masuk +, Keluar -, Penyesuaian apa adanya.</summary>
+        [JsonIgnore]
+        public int JumlahBertanda => Jenis switch
+        {
+            "Masuk" => Math.Abs(Jumlah),
+            "Keluar" => -Math.Abs(Jumlah),
+            _ => Jumlah
+        };
+
+        [JsonIgnore]
+        public int StokAwal => StokAkhir - JumlahBertanda;
     }
 
     public static class StoreRiwayatGudang
@@ -27,6 +41,9 @@ namespace GUedang
         private static readonly string _folder = Path.Combine(AppContext.BaseDirectory, "Data");
         private static readonly string _file = Path.Combine(_folder, "riwayat_gudang.json");
         private static readonly JsonSerializerOptions _opt = new() { WriteIndented = true };
+
+        /// <summary>Isi saat login berhasil, mis. StoreRiwayatGudang.PenggunaAktif = username;</summary>
+        public static string PenggunaAktif { get; set; } = "";
 
         public static List<RiwayatGudang> Semua()
         {
@@ -51,15 +68,6 @@ namespace GUedang
             File.WriteAllText(_file, JsonSerializer.Serialize(data, _opt));
         }
 
-        /// <summary>
-        /// Panggil dari form lain tiap kali stok berubah.
-        /// Contoh:
-        ///   StoreRiwayatGudang.Catat("Masuk", b.Kode, b.Nama, 20, b.Stok, "PT Sumber Jaya", "Restock");
-        ///   StoreRiwayatGudang.Catat("Keluar", b.Kode, b.Nama, 2, b.Stok, "Kasir", "Penjualan #INV001");
-        ///   StoreRiwayatGudang.Catat("Penyesuaian", b.Kode, b.Nama, -3, b.Stok, "-", "Barang rusak");
-        /// </summary>
-        /// 
-
         public static void Catat(string jenis, string kode, string nama, int jumlah,
                                  int stokAkhir, string pihak = "", string keterangan = "")
         {
@@ -75,7 +83,8 @@ namespace GUedang
                     Jumlah = jumlah,
                     StokAkhir = stokAkhir,
                     Pihak = pihak,
-                    Keterangan = keterangan
+                    Keterangan = keterangan,
+                    Oleh = PenggunaAktif
                 });
                 Simpan(data);
             }

@@ -6,6 +6,7 @@ namespace GUedang
     /// Penyimpanan data barang ke file JSON (Data/barang.json di folder aplikasi).
     /// Static + lock supaya aman dipakai dari banyak form/modul
     /// (kasir, riwayat gudang, laporan) tanpa data saling menimpa.
+    /// Perubahan stok otomatis dicatat ke StoreRiwayatGudang.
     /// </summary>
     public static class BarangStore
     {
@@ -100,9 +101,15 @@ namespace GUedang
         /// <summary>
         /// Ubah stok (delta negatif = berkurang, mis. saat penjualan).
         /// Mengembalikan false jika barang tidak ada atau stok jadi minus.
+        /// Jika 'jenis' diisi ("Keluar" / "Penyesuaian" / "Masuk"), otomatis dicatat ke riwayat gudang.
+        /// Untuk Penyesuaian, jumlah yang dicatat = delta (boleh negatif).
         /// </summary>
-        public static bool UbahStok(string kode, int delta)
+        public static bool UbahStok(string kode, int delta,
+                                    string jenis = "", string pihak = "", string keterangan = "")
         {
+            string nama;
+            int stokAkhir;
+
             lock (_lock)
             {
                 var list = Load();
@@ -111,18 +118,31 @@ namespace GUedang
                 if (b == null || b.Stok + delta < 0) return false;
                 b.Stok += delta;
                 Save(list);
+                nama = b.Nama;
+                stokAkhir = b.Stok;
             }
+
+            if (jenis != "")
+            {
+                int jumlah = jenis == "Penyesuaian" ? delta : Math.Abs(delta);
+                StoreRiwayatGudang.Catat(jenis, kode, nama, jumlah, stokAkhir, pihak, keterangan);
+            }
+
             DataChanged?.Invoke();
             return true;
         }
 
         /// <summary>
-        /// Dipanggil GUDANG saat barang masuk: stok bertambah, dan harga beli
-        /// diperbarui ke harga beli terakhir (jika diisi).
+        /// Barang masuk (restock). Otomatis dicatat sebagai "Masuk" di riwayat gudang.
+        /// Parameter pihak (supplier) dan keterangan opsional, form lama tetap bisa memanggil tanpa keduanya.
         /// </summary>
-        public static bool TambahStok(string kode, int jumlah, decimal? hargaBeliBaru = null)
+        public static bool TambahStok(string kode, int jumlah, decimal? hargaBeliBaru = null,
+                                      string pihak = "", string keterangan = "")
         {
             if (jumlah <= 0) return false;
+
+            string nama;
+            int stokAkhir;
 
             lock (_lock)
             {
@@ -134,7 +154,11 @@ namespace GUedang
                 b.Stok += jumlah;
                 if (hargaBeliBaru is > 0) b.HargaBeli = hargaBeliBaru.Value;
                 Save(list);
+                nama = b.Nama;
+                stokAkhir = b.Stok;
             }
+
+            StoreRiwayatGudang.Catat("Masuk", kode, nama, jumlah, stokAkhir, pihak, keterangan);
             DataChanged?.Invoke();
             return true;
         }

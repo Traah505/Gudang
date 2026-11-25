@@ -11,29 +11,32 @@ namespace GUedang
         {
             InitializeComponent();
 
-            // Isi awal (di screenshot cmbRentang masih kosong)
             _loading = true;
             cmbRentang.SelectedIndex = 0;   // Hari ini
             cmbJenis.SelectedIndex = 0;     // Semua jenis
             _loading = false;
 
-            // Event
             cmbRentang.SelectedIndexChanged += cmbRentang_SelectedIndexChanged;
             dtpDari.ValueChanged += Tanggal_ValueChanged;
             dtpSampai.ValueChanged += Tanggal_ValueChanged;
             cmbJenis.SelectedIndexChanged += (s, e) => MuatData();
             txtCari.TextChanged += (s, e) => MuatData();
             dgvRiwayat.CellFormatting += dgvRiwayat_CellFormatting;
+            dgvRiwayat.CellDoubleClick += dgvRiwayat_CellDoubleClick;
             VisibleChanged += (s, e) => { if (Visible) MuatData(); };
+            HandleCreated += (s, e) => { BarangStore.DataChanged -= OnDataChanged; BarangStore.DataChanged += OnDataChanged; };
+            HandleDestroyed += (s, e) => BarangStore.DataChanged -= OnDataChanged;
 
             TerapkanRentang();
-
-            BarangStore.DataChanged += () => { if (IsHandleCreated) BeginInvoke(new Action(MuatData)); };
         }
 
-        // Dipanggil designer: tlpRoot.Paint += tlpRoot_Paint;
-        // (hapus method ini kalau sudah ada di file lain)
+        // Dirujuk designer (hapus jika sudah ada di file lain)
         private void tlpRoot_Paint(object? sender, PaintEventArgs e) { }
+
+        private void OnDataChanged()
+        {
+            if (IsHandleCreated && !IsDisposed) BeginInvoke(new Action(MuatData));
+        }
 
         // ================= FILTER TANGGAL =================
         private void cmbRentang_SelectedIndexChanged(object? sender, EventArgs e)
@@ -102,19 +105,13 @@ namespace GUedang
                 .OrderByDescending(x => x.Waktu)
                 .ToList();
 
-            // Tabel
             dgvRiwayat.Rows.Clear();
             int no = 1;
             foreach (var x in data)
             {
-                string jumlahTeks = x.Jenis switch
-                {
-                    "Masuk" => "+" + x.Jumlah,
-                    "Keluar" => "-" + Math.Abs(x.Jumlah),
-                    _ => x.Jumlah > 0 ? "+" + x.Jumlah : x.Jumlah.ToString()
-                };
+                string jumlahTeks = x.JumlahBertanda > 0 ? "+" + x.JumlahBertanda : x.JumlahBertanda.ToString();
 
-                dgvRiwayat.Rows.Add(
+                int idx = dgvRiwayat.Rows.Add(
                     no++,
                     x.Waktu.ToString("dd/MM/yyyy HH:mm", _id),
                     x.Jenis,
@@ -123,22 +120,28 @@ namespace GUedang
                     x.StokAkhir,
                     string.IsNullOrWhiteSpace(x.Pihak) ? "-" : x.Pihak,
                     string.IsNullOrWhiteSpace(x.Keterangan) ? "-" : x.Keterangan);
+
+                dgvRiwayat.Rows[idx].Tag = x.Id;   // untuk buka Kartu Stok
             }
 
-            // Kartu statistik (mengikuti filter tanggal, bukan filter jenis/cari)
             var periode = semua.Where(x => x.Waktu >= dari && x.Waktu <= sampai).ToList();
             lblMasukNilai.Text = periode.Where(x => x.Jenis == "Masuk").Sum(x => Math.Abs(x.Jumlah)).ToString("N0", _id);
             lblKeluarNilai.Text = periode.Where(x => x.Jenis == "Keluar").Sum(x => Math.Abs(x.Jumlah)).ToString("N0", _id);
             lblOpnameNilai.Text = periode.Count(x => x.Jenis == "Penyesuaian").ToString("N0", _id);
-            lblStokNilai.Text = HitungStokSaatIni(semua).ToString("N0", _id);
+            lblStokNilai.Text = BarangStore.GetAll().Sum(b => b.Stok).ToString("N0", _id);
         }
 
-        private int HitungStokSaatIni(List<RiwayatGudang> semua)
+        // ================= KLIK 2X => KARTU STOK =================
+        private void dgvRiwayat_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
         {
-            return BarangStore.GetAll().Sum(b => b.Stok);
-            return semua
-                .GroupBy(x => string.IsNullOrEmpty(x.KodeBarang) ? x.NamaBarang : x.KodeBarang)
-                .Sum(g => g.OrderByDescending(x => x.Waktu).First().StokAkhir);
+            if (e.RowIndex < 0) return;
+
+            string? idBaris = dgvRiwayat.Rows[e.RowIndex].Tag as string;
+            var entri = StoreRiwayatGudang.Semua().FirstOrDefault(x => x.Id == idBaris);
+            if (entri == null) return;
+
+            using var f = new FormKartuStok(entri.KodeBarang, entri.NamaBarang, entri.Id);
+            f.ShowDialog(FindForm());
         }
 
         // ================= WARNA KOLOM JENIS & JUMLAH =================

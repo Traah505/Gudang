@@ -42,8 +42,13 @@ namespace GUedang
         private static readonly string _file = Path.Combine(_folder, "riwayat_gudang.json");
         private static readonly JsonSerializerOptions _opt = new() { WriteIndented = true };
 
-        /// <summary>Isi saat login berhasil, mis. StoreRiwayatGudang.PenggunaAktif = username;</summary>
+        /// <summary>Boleh diisi saat login. Jika kosong, nama diambil dari Session.UserAktif.</summary>
         public static string PenggunaAktif { get; set; } = "";
+
+        // nama pelaku yang dicatat di kolom Petugas
+        private static string Pelaku =>
+            !string.IsNullOrWhiteSpace(PenggunaAktif) ? PenggunaAktif
+            : (Session.UserAktif?.Nama ?? "");
 
         public static List<RiwayatGudang> Semua()
         {
@@ -68,6 +73,37 @@ namespace GUedang
             File.WriteAllText(_file, JsonSerializer.Serialize(data, _opt));
         }
 
+        /// <summary>
+        /// Jika entri yang baru saja dibuat otomatis (mis. oleh BarangStore) sudah ada,
+        /// lengkapi Supplier/Tujuan, Keterangan, dan Petugasnya. Jika belum ada, buat entri baru.
+        /// Aman dipakai tanpa takut tercatat dobel.
+        /// </summary>
+        public static void CatatAtauPerbarui(string jenis, string kode, string nama, int jumlah,
+                                             int stokAkhir, string pihak = "", string keterangan = "")
+        {
+            lock (_lock)
+            {
+                var data = Semua();
+                var cocok = data.LastOrDefault(x =>
+                    x.Jenis == jenis &&
+                    x.KodeBarang.Equals(kode, StringComparison.OrdinalIgnoreCase) &&
+                    Math.Abs(x.Jumlah) == Math.Abs(jumlah) &&
+                    (DateTime.Now - x.Waktu).TotalSeconds < 10);
+
+                if (cocok != null)
+                {
+                    cocok.Pihak = pihak;
+                    cocok.Keterangan = keterangan;
+                    if (string.IsNullOrWhiteSpace(cocok.Oleh)) cocok.Oleh = Pelaku;
+                    Simpan(data);
+                }
+                else
+                {
+                    Catat(jenis, kode, nama, jumlah, stokAkhir, pihak, keterangan);
+                }
+            }
+        }
+
         public static void Catat(string jenis, string kode, string nama, int jumlah,
                                  int stokAkhir, string pihak = "", string keterangan = "")
         {
@@ -84,7 +120,7 @@ namespace GUedang
                     StokAkhir = stokAkhir,
                     Pihak = pihak,
                     Keterangan = keterangan,
-                    Oleh = PenggunaAktif
+                    Oleh = Pelaku
                 });
                 Simpan(data);
             }

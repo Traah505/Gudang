@@ -11,6 +11,13 @@ namespace GUedang
         {
             InitializeComponent();
 
+           
+
+            // lebar kolom (urutan sama dengan kolom di tabel, Petugas paling akhir)
+            double[] bobot = { 5, 15, 11, 17, 8, 9, 13, 13, 10 };
+            for (int i = 0; i < bobot.Length && i < dgvRiwayat.Columns.Count; i++)
+                dgvRiwayat.Columns[i].FillWeight = (float)bobot[i];
+
             _loading = true;
             cmbRentang.SelectedIndex = 0;   // Hari ini
             cmbJenis.SelectedIndex = 0;     // Semua jenis
@@ -112,14 +119,18 @@ namespace GUedang
                 string jumlahTeks = x.JumlahBertanda > 0 ? "+" + x.JumlahBertanda : x.JumlahBertanda.ToString();
 
                 int idx = dgvRiwayat.Rows.Add(
-                    no++,
-                    x.Waktu.ToString("dd/MM/yyyy HH:mm", _id),
-                    x.Jenis,
-                    x.NamaBarang,
-                    jumlahTeks,
-                    x.StokAkhir,
-                    string.IsNullOrWhiteSpace(x.Pihak) ? "-" : x.Pihak,
-                    string.IsNullOrWhiteSpace(x.Keterangan) ? "-" : x.Keterangan);
+     no++,
+     x.Waktu.ToString("dd/MM/yyyy HH:mm", _id),
+     x.Jenis,
+     x.NamaBarang,
+     jumlahTeks,
+     x.StokAkhir,
+     string.IsNullOrWhiteSpace(x.Pihak) ? "-" : x.Pihak,
+     string.IsNullOrWhiteSpace(x.Keterangan) ? "-" : x.Keterangan,
+     string.IsNullOrWhiteSpace(x.Oleh) ? "-" : x.Oleh);      // <- kolom baru
+
+                dgvRiwayat.Rows[idx].Cells["colPetugas"].Value =
+     string.IsNullOrWhiteSpace(x.Oleh) ? "-" : x.Oleh;
 
                 dgvRiwayat.Rows[idx].Tag = x.Id;   // untuk buka Kartu Stok
             }

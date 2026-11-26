@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUedang
@@ -15,7 +16,7 @@ namespace GUedang
         private static readonly Color Merah = Color.FromArgb(210, 50, 50);
         private static readonly Color Oranye = Color.FromArgb(220, 130, 10);
 
-        /// <summary>Isi dari form login, mis. dashboard.NamaPetugas = "Gudang";</summary>
+        /// <summary>Cadangan jika Session belum terisi.</summary>
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string NamaPetugas { get; set; } = "Gudang";
 
@@ -23,6 +24,17 @@ namespace GUedang
         public event EventHandler BarangMasukClicked;
         public event EventHandler BarangKeluarClicked;
         public event EventHandler StokBarangClicked;
+
+        // nama petugas yang sedang login (untuk sapaan)
+        private string PetugasAktif
+        {
+            get
+            {
+                if (Session.UserAktif != null && !string.IsNullOrWhiteSpace(Session.UserAktif.Nama))
+                    return Session.UserAktif.Nama;
+                return NamaPetugas;
+            }
+        }
 
         public UC_DSHBRDGudang()
         {
@@ -39,8 +51,23 @@ namespace GUedang
             dgvPerhatian.CellFormatting += dgvPerhatian_CellFormatting;
 
             btnRefresh.Click += (s, e) => LoadData();
-           
             timerJam.Tick += (s, e) => UpdateJam();
+
+            if (!IsDesigner)
+            {
+                // refresh otomatis saat stok berubah
+                BarangStore.DataChanged += OnDataBerubah;
+                Disposed += (s, e) => BarangStore.DataChanged -= OnDataBerubah;
+
+                // refresh setiap halaman ini ditampilkan lagi
+                VisibleChanged += (s, e) => { if (Visible) LoadData(); };
+            }
+        }
+
+        private void OnDataBerubah()
+        {
+            if (IsHandleCreated && !IsDisposed)
+                BeginInvoke(new Action(LoadData));
         }
 
         private bool IsDesigner
@@ -63,9 +90,9 @@ namespace GUedang
         private void UpdateJam()
         {
             DateTime now = DateTime.Now;
-            lblJam.Text = now.ToString("HH:mm:ss");
+            lblJam.Text = now.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
             lblTanggal.Text = now.ToString("dddd, dd MMMM yyyy", Id);
-            lblSapaan.Text = "Selamat " + Sapaan(now.Hour) + ", " + NamaPetugas;
+            lblSapaan.Text = "Selamat " + Sapaan(now.Hour) + ", " + PetugasAktif;
         }
 
         private static string Sapaan(int jam)
@@ -76,41 +103,73 @@ namespace GUedang
             return "Malam";
         }
 
-        /// <summary>Muat ulang semua data dashboard. Dipanggil saat load dan tombol Refresh.</summary>
+        /// <summary>Muat ulang semua data dashboard.</summary>
         public void LoadData()
         {
             if (IsDesigner) return;
 
-            int masuk, keluar, stok;
-            GetRingkasanHariIni(out masuk, out keluar, out stok);
+            var barang = BarangStore.GetAll();
+            var masukSemua = BarangMasukStore.GetAll();
+            var keluarSemua = BarangKeluarStore.GetAll();
 
-            DataTable perhatian = GetStokPerhatian();
+            // ringkasan hari ini
+            int masuk = masukSemua.Where(x => x.Tanggal.Date == DateTime.Today).Sum(x => x.Jumlah);
+            int keluar = keluarSemua.Where(x => x.Tanggal.Date == DateTime.Today).Sum(x => x.Jumlah);
+            int stok = barang.Sum(b => b.Stok);
+
+            // barang yang perlu perhatian: stok <= stok minimum (termasuk habis)
+            var perhatian = barang.Where(b => b.Stok <= b.StokMinimum)
+                                  .OrderBy(b => b.Stok).ThenBy(b => b.Kode)
+                                  .ToList();
 
             lblMasukNilai.Text = masuk.ToString("N0", Id);
             lblKeluarNilai.Text = keluar.ToString("N0", Id);
             lblStokNilai.Text = stok.ToString("N0", Id);
-            lblPerhatianNilai.Text = perhatian.Rows.Count.ToString(Id);
+            lblPerhatianNilai.Text = perhatian.Count.ToString("N0", Id);
 
-            // Aktivitas terakhir
-            dgvAktivitas.Rows.Clear();
-            foreach (DataRow r in GetAktivitasTerakhir().Rows)
-            {
-                string jenis = r["jenis"].ToString();
-                int jumlah = Convert.ToInt32(r["jumlah"]);
-                string teksJumlah = (jumlah > 0 ? "+" : "") + jumlah.ToString(Id);
-
-                dgvAktivitas.Rows.Add(
-                    ((DateTime)r["waktu"]).ToString("dd/MM HH:mm", Id),
-                    jenis,
-                    r["nama_barang"],
-                    teksJumlah,
-                    r["stok_akhir"]);
-            }
+            IsiAktivitas(barang, masukSemua, keluarSemua);
 
             // Stok perlu perhatian
             dgvPerhatian.Rows.Clear();
-            foreach (DataRow r in perhatian.Rows)
-                dgvPerhatian.Rows.Add(r["kode"], r["nama_barang"], r["stok"], r["stok_min"]);
+            foreach (var b in perhatian)
+                dgvPerhatian.Rows.Add(b.Kode, b.Nama, b.Stok, b.StokMinimum);
+            dgvPerhatian.ClearSelection();
+        }
+
+        // 10 aktivitas terbaru (masuk + keluar). Stok akhir dihitung mundur dari stok sekarang.
+        private void IsiAktivitas(List<Barang> barang, List<BarangMasuk> masukSemua, List<BarangKeluar> keluarSemua)
+        {
+            var kejadian = new List<(DateTime waktu, string kode, string nama, string jenis, int delta)>();
+            foreach (var m in masukSemua)
+                kejadian.Add((m.Tanggal, m.Kode, m.Nama, "Masuk", m.Jumlah));
+            foreach (var k in keluarSemua)
+                kejadian.Add((k.Tanggal, k.Kode, k.Nama, "Keluar", -k.Jumlah));
+
+            kejadian = kejadian.OrderByDescending(x => x.waktu).ToList();
+
+            // sisa stok per barang saat ini, dikurangi mundur tiap kejadian
+            var berjalan = barang.ToDictionary(b => b.Kode, b => b.Stok, StringComparer.OrdinalIgnoreCase);
+
+            dgvAktivitas.Rows.Clear();
+            int tampil = 0;
+            foreach (var x in kejadian)
+            {
+                int stokAkhir = berjalan.ContainsKey(x.kode) ? berjalan[x.kode] : 0;
+
+                if (tampil < 10)
+                {
+                    string teksJumlah = (x.delta > 0 ? "+" : "") + x.delta.ToString("N0", Id);
+                    dgvAktivitas.Rows.Add(
+                        x.waktu.ToString("dd/MM HH:mm", CultureInfo.InvariantCulture),
+                        x.jenis, x.nama, teksJumlah, stokAkhir);
+                    tampil++;
+                }
+
+                // mundurkan stok untuk kejadian sebelumnya
+                if (berjalan.ContainsKey(x.kode))
+                    berjalan[x.kode] = stokAkhir - x.delta;
+            }
+            dgvAktivitas.ClearSelection();
         }
 
         // Warna kolom Jenis & Jumlah: hijau = masuk, merah = keluar
@@ -135,57 +194,7 @@ namespace GUedang
                 e.CellStyle.ForeColor = (stok == 0) ? Merah : Oranye;
         }
 
-        // ------------------------------------------------------------- DATA
-        // TODO: ganti isi 3 method di bawah dengan query database kamu.
-        // Sementara berisi data contoh supaya tampilan langsung bisa dicoba.
-
-        private void GetRingkasanHariIni(out int masuk, out int keluar, out int stok)
-        {
-            // Contoh SQL:
-            // SELECT IFNULL(SUM(jumlah),0) FROM barang_masuk  WHERE DATE(tanggal) = CURDATE();
-            // SELECT IFNULL(SUM(jumlah),0) FROM barang_keluar WHERE DATE(tanggal) = CURDATE();
-            // SELECT IFNULL(SUM(stok),0)   FROM barang;
-            masuk = 0;
-            keluar = 0;
-            stok = 358;
-        }
-
-        private DataTable GetAktivitasTerakhir()
-        {
-            // Contoh SQL (gabungan masuk + keluar, urut waktu terbaru, LIMIT 10):
-            // SELECT m.tanggal AS waktu, 'Masuk' AS jenis, b.nama_barang, m.jumlah, b.stok AS stok_akhir
-            //   FROM barang_masuk m JOIN barang b ON b.id = m.id_barang
-            // UNION ALL
-            // SELECT k.tanggal, 'Keluar', b.nama_barang, -k.jumlah, b.stok
-            //   FROM barang_keluar k JOIN barang b ON b.id = k.id_barang
-            // ORDER BY waktu DESC LIMIT 10;
-            var dt = new DataTable();
-            dt.Columns.Add("waktu", typeof(DateTime));
-            dt.Columns.Add("jenis", typeof(string));
-            dt.Columns.Add("nama_barang", typeof(string));
-            dt.Columns.Add("jumlah", typeof(int));
-            dt.Columns.Add("stok_akhir", typeof(int));
-
-            dt.Rows.Add(new DateTime(2026, 11, 18, 11, 16, 0), "Keluar", "KFC", -2, 38);
-            dt.Rows.Add(new DateTime(2026, 11, 14, 18, 57, 0), "Masuk", "KFC", 20, 40);
-            return dt;
-        }
-
-        private DataTable GetStokPerhatian()
-        {
-            // Contoh SQL:
-            // SELECT kode, nama_barang, stok, stok_min FROM barang
-            //  WHERE stok <= stok_min ORDER BY stok ASC;
-            var dt = new DataTable();
-            dt.Columns.Add("kode", typeof(string));
-            dt.Columns.Add("nama_barang", typeof(string));
-            dt.Columns.Add("stok", typeof(int));
-            dt.Columns.Add("stok_min", typeof(int));
-
-            dt.Rows.Add("BRG-014", "Minyak Goreng 2L", 0, 12);
-            dt.Rows.Add("BRG-001", "Beras 5 Kg", 4, 10);
-            return dt;
-        }
+        // handler yang dirujuk Designer
         private void tlpRoot_Paint(object sender, PaintEventArgs e)
         {
             // Garis pemisah header

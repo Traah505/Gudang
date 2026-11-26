@@ -1,4 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿
 
 namespace GUedang
 {
@@ -117,12 +117,24 @@ namespace GUedang
 
             int jumlah = (int)nudJumlah.Value;
             decimal harga = ParseRupiah(txtHarga.Text);
+
+            // semua validasi DULU, sebelum stok diubah
             if (harga <= 0)
             {
                 MessageBox.Show("Harga beli harus diisi.");
                 txtHarga.Focus();
                 return;
             }
+            if (string.IsNullOrWhiteSpace(txtSupplier.Text))
+            {
+                MessageBox.Show("Supplier wajib diisi.", "Validasi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSupplier.Focus();
+                return;
+            }
+
+            string supplier = txtSupplier.Text.Trim();
+            string keterangan = txtKeterangan.Text.Trim();
 
             if (!BarangStore.TambahStok(_terpilih.Kode, jumlah, harga))
             {
@@ -130,6 +142,13 @@ namespace GUedang
                 return;
             }
 
+            int stokAkhir = BarangStore.GetByKode(_terpilih.Kode)?.Stok ?? 0;
+
+            // lengkapi riwayat yang dibaca halaman Riwayat Gudang (admin)
+            StoreRiwayatGudang.CatatAtauPerbarui("Masuk", _terpilih.Kode, _terpilih.Nama,
+                jumlah, stokAkhir, supplier, keterangan);
+
+            // riwayat khusus halaman Barang Masuk
             BarangMasukStore.Tambah(new BarangMasuk
             {
                 Tanggal = DateTime.Now,
@@ -137,8 +156,8 @@ namespace GUedang
                 Nama = _terpilih.Nama,
                 Jumlah = jumlah,
                 HargaBeli = harga,
-                Supplier = txtSupplier.Text.Trim(),
-                Keterangan = txtKeterangan.Text.Trim(),
+                Supplier = supplier,
+                Keterangan = keterangan,
                 Petugas = Session.UserAktif?.Nama ?? ""
             });
 
@@ -184,7 +203,7 @@ namespace GUedang
             lblTrxNilai.Text = data.Count.ToString();
         }
 
-        // handler yang direferensikan Designer
+        //faza gay
         private void tlpRoot_Paint(object? sender, PaintEventArgs e) { }
         private void tlpContent_Paint(object? sender, PaintEventArgs e) { }
     }

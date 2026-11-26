@@ -94,6 +94,7 @@ namespace GUedang
         {
             if (_loading) return;
 
+            // hanya barang yang stoknya sudah diisi gudang (stok > 0)
             var semua = BarangStore.GetAll().Where(b => b.Stok > 0).ToList();
 
             // isi combo kategori (hanya jika daftar kategori berubah)
@@ -135,8 +136,6 @@ namespace GUedang
                 int i = dgvProduk.Rows.Add(no++, b.Kode, b.Nama,
                     b.HargaJual.ToString("N0", _id), b.Kategori, b.Stok);
                 dgvProduk.Rows[i].Tag = b;
-                if (b.Stok <= 0)
-                    dgvProduk.Rows[i].DefaultCellStyle.ForeColor = Color.Firebrick;   // stok habis
             }
 
             dgvProduk.ClearSelection();
@@ -405,7 +404,7 @@ namespace GUedang
                 txtBayar.Focus();
                 return;
             }
-           
+
             var trx = new Transaksi
             {
                 Kode = TransaksiStore.BuatKode(),
@@ -423,7 +422,7 @@ namespace GUedang
                         KodeBarang = x.Kode,
                         NamaBarang = x.Nama,
                         Harga = x.Harga,
-                        HargaBeli = brg?.HargaBeli ?? 0,   // sesuaikan nama properti di class Barang
+                        HargaBeli = brg?.HargaBeli ?? 0,
                         Qty = x.Qty
                     };
                 }).ToList()
@@ -440,14 +439,13 @@ namespace GUedang
             Kosongkan(false);
             MuatProduk();
 
-            // tampilkan struk, lalu pindah ke Riwayat Transaksi
+            // tampilkan struk
             StrukHelper.Tampilkan(FindForm(), trx);
-            TransaksiSelesai?.Invoke(trx);
+
+            // DIMATIKAN: kasir tetap di halaman Keranjang belanja setelah struk ditutup.
+            // Hapus tanda // di bawah kalau ingin pindah otomatis ke Riwayat Transaksi lagi.
+            // TransaksiSelesai?.Invoke(trx);
         }
-
-
-
-        
 
         // ================= HELPER =================
         private string Rp(decimal nilai) => "Rp " + nilai.ToString("N0", _id);
@@ -482,6 +480,7 @@ namespace GUedang
         }
 
         public event Action<Transaksi>? TransaksiSelesai;
+
         // handler yang dirujuk Designer (hapus jika sudah ada di file Anda)
         private void tlpRoot_Paint(object? sender, PaintEventArgs e) { }
     }

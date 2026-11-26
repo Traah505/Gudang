@@ -52,6 +52,7 @@
             txtCari = new TextBox();
             pnlTabel = new RoundedPanelUI();
             dgvRiwayat = new DataGridView();
+            lblTabelJudul = new Label();
             colNo = new DataGridViewTextBoxColumn();
             colWaktu = new DataGridViewTextBoxColumn();
             colJenis = new DataGridViewTextBoxColumn();
@@ -60,7 +61,7 @@
             colStokAkhir = new DataGridViewTextBoxColumn();
             colPihak = new DataGridViewTextBoxColumn();
             colKeterangan = new DataGridViewTextBoxColumn();
-            lblTabelJudul = new Label();
+            colPetugas = new DataGridViewTextBoxColumn();
             tlpRoot.SuspendLayout();
             pnlJudul.SuspendLayout();
             tlpContent.SuspendLayout();
@@ -524,7 +525,7 @@
             dgvRiwayat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRiwayat.ColumnHeadersHeight = 40;
             dgvRiwayat.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRiwayat.Columns.AddRange(new DataGridViewColumn[] { colNo, colWaktu, colJenis, colNama, colJumlah, colStokAkhir, colPihak, colKeterangan });
+            dgvRiwayat.Columns.AddRange(new DataGridViewColumn[] { colNo, colWaktu, colJenis, colNama, colJumlah, colStokAkhir, colPihak, colKeterangan, colPetugas });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.AliceBlue;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -545,70 +546,6 @@
             dgvRiwayat.Size = new Size(1713, 920);
             dgvRiwayat.TabIndex = 0;
             // 
-            // colNo
-            // 
-            colNo.FillWeight = 6F;
-            colNo.HeaderText = "No";
-            colNo.MinimumWidth = 8;
-            colNo.Name = "colNo";
-            colNo.ReadOnly = true;
-            // 
-            // colWaktu
-            // 
-            colWaktu.FillWeight = 15F;
-            colWaktu.HeaderText = "Tanggal Waktu";
-            colWaktu.MinimumWidth = 8;
-            colWaktu.Name = "colWaktu";
-            colWaktu.ReadOnly = true;
-            // 
-            // colJenis
-            // 
-            colJenis.FillWeight = 12F;
-            colJenis.HeaderText = "Jenis Transaksi";
-            colJenis.MinimumWidth = 8;
-            colJenis.Name = "colJenis";
-            colJenis.ReadOnly = true;
-            // 
-            // colNama
-            // 
-            colNama.FillWeight = 21F;
-            colNama.HeaderText = "Nama Barang";
-            colNama.MinimumWidth = 8;
-            colNama.Name = "colNama";
-            colNama.ReadOnly = true;
-            // 
-            // colJumlah
-            // 
-            colJumlah.FillWeight = 9F;
-            colJumlah.HeaderText = "Jumlah";
-            colJumlah.MinimumWidth = 8;
-            colJumlah.Name = "colJumlah";
-            colJumlah.ReadOnly = true;
-            // 
-            // colStokAkhir
-            // 
-            colStokAkhir.FillWeight = 9F;
-            colStokAkhir.HeaderText = "Stok Akhir";
-            colStokAkhir.MinimumWidth = 8;
-            colStokAkhir.Name = "colStokAkhir";
-            colStokAkhir.ReadOnly = true;
-            // 
-            // colPihak
-            // 
-            colPihak.FillWeight = 15F;
-            colPihak.HeaderText = "Supplier / Tujuan";
-            colPihak.MinimumWidth = 8;
-            colPihak.Name = "colPihak";
-            colPihak.ReadOnly = true;
-            // 
-            // colKeterangan
-            // 
-            colKeterangan.FillWeight = 13F;
-            colKeterangan.HeaderText = "Keterangan";
-            colKeterangan.MinimumWidth = 8;
-            colKeterangan.Name = "colKeterangan";
-            colKeterangan.ReadOnly = true;
-            // 
             // lblTabelJudul
             // 
             lblTabelJudul.BackColor = Color.Transparent;
@@ -622,6 +559,78 @@
             lblTabelJudul.TabIndex = 1;
             lblTabelJudul.Text = "Riwayat Pergerakan Stok";
             lblTabelJudul.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // colNo
+            // 
+            colNo.FillWeight = 5.140187F;
+            colNo.HeaderText = "No";
+            colNo.MinimumWidth = 8;
+            colNo.Name = "colNo";
+            colNo.ReadOnly = true;
+            // 
+            // colWaktu
+            // 
+            colWaktu.FillWeight = 12.9698639F;
+            colWaktu.HeaderText = "Tanggal Waktu";
+            colWaktu.MinimumWidth = 8;
+            colWaktu.Name = "colWaktu";
+            colWaktu.ReadOnly = true;
+            // 
+            // colJenis
+            // 
+            colJenis.FillWeight = 10.3982143F;
+            colJenis.HeaderText = "Jenis Transaksi";
+            colJenis.MinimumWidth = 8;
+            colJenis.Name = "colJenis";
+            colJenis.ReadOnly = true;
+            // 
+            // colNama
+            // 
+            colNama.FillWeight = 18.105772F;
+            colNama.HeaderText = "Nama Barang";
+            colNama.MinimumWidth = 8;
+            colNama.Name = "colNama";
+            colNama.ReadOnly = true;
+            // 
+            // colJumlah
+            // 
+            colJumlah.FillWeight = 7.82730055F;
+            colJumlah.HeaderText = "Jumlah";
+            colJumlah.MinimumWidth = 8;
+            colJumlah.Name = "colJumlah";
+            colJumlah.ReadOnly = true;
+            // 
+            // colStokAkhir
+            // 
+            colStokAkhir.FillWeight = 7.70826054F;
+            colStokAkhir.HeaderText = "Stok Akhir";
+            colStokAkhir.MinimumWidth = 8;
+            colStokAkhir.Name = "colStokAkhir";
+            colStokAkhir.ReadOnly = true;
+            // 
+            // colPihak
+            // 
+            colPihak.FillWeight = 12.9678841F;
+            colPihak.HeaderText = "Supplier / Tujuan";
+            colPihak.MinimumWidth = 8;
+            colPihak.Name = "colPihak";
+            colPihak.ReadOnly = true;
+            // 
+            // colKeterangan
+            // 
+            colKeterangan.FillWeight = 11.2144527F;
+            colKeterangan.HeaderText = "Keterangan";
+            colKeterangan.MinimumWidth = 8;
+            colKeterangan.Name = "colKeterangan";
+            colKeterangan.ReadOnly = true;
+            // 
+            // colPetugas
+            // 
+            colPetugas.FillWeight = 113.66806F;
+            colPetugas.HeaderText = "Petugas";
+            colPetugas.MinimumWidth = 8;
+            colPetugas.Name = "colPetugas";
+            colPetugas.ReadOnly = true;
             // 
             // UC_RiwayatGudang
             // 
@@ -686,14 +695,15 @@
         private System.Windows.Forms.TextBox txtCari;
         private RoundedPanelUI pnlTabel;
         private System.Windows.Forms.DataGridView dgvRiwayat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colWaktu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colJenis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNama;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colJumlah;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStokAkhir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPihak;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKeterangan;
         private System.Windows.Forms.Label lblTabelJudul;
+        private DataGridViewTextBoxColumn colNo;
+        private DataGridViewTextBoxColumn colWaktu;
+        private DataGridViewTextBoxColumn colJenis;
+        private DataGridViewTextBoxColumn colNama;
+        private DataGridViewTextBoxColumn colJumlah;
+        private DataGridViewTextBoxColumn colStokAkhir;
+        private DataGridViewTextBoxColumn colPihak;
+        private DataGridViewTextBoxColumn colKeterangan;
+        private DataGridViewTextBoxColumn colPetugas;
     }
 }

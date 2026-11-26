@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUedang
@@ -10,7 +10,7 @@ namespace GUedang
     {
         private static readonly CultureInfo Id = new CultureInfo("id-ID");
 
-        /// <summary>Isi dari form login, mis. dashboard.NamaKasir = "Ditra2";</summary>
+        /// <summary>Cadangan jika Session belum terisi.</summary>
         [Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string NamaKasir { get; set; } = "Kasir";
 
@@ -19,16 +19,50 @@ namespace GUedang
         public event EventHandler KeranjangClicked;
         public event EventHandler RiwayatClicked;
 
+        // nama kasir yang sedang login (dipakai untuk filter & sapaan)
+        private string KasirAktif
+        {
+            get
+            {
+                if (Session.UserAktif != null && !string.IsNullOrWhiteSpace(Session.UserAktif.Nama))
+                    return Session.UserAktif.Nama;
+                return NamaKasir;
+            }
+        }
+
         public UC_DSHBRDKasir()
         {
             InitializeComponent();
 
+            foreach (var l in new[] { lblItemNilai, lblTotalBelanjaNilai })
+            {
+                l.AutoSize = true;
+                l.MaximumSize = Size.Empty;
+            }
+
             UiStyle.ApplyGrid(dgvTransaksi);
             colTotal.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            // ganti tulisan yang lama (tidak perlu buka Designer)
+            GantiTeks("Item di Keranjang", "Transaksi Terakhir");
+            GantiTeks("Belum dibayar", "Jam transaksi terakhir");
+            GantiTeks("Keranjang Belanja Saat Ini", "Transaksi Terakhir Hari Ini");
+
             btnRefresh.Click += (s, e) => LoadData();
-           
             timerJam.Tick += (s, e) => UpdateJam();
+
+            // otomatis refresh saat ada transaksi baru
+            if (!IsDesigner)
+            {
+                TransaksiStore.DataChanged += OnDataBerubah;
+                Disposed += (s, e) => TransaksiStore.DataChanged -= OnDataBerubah;
+            }
+        }
+
+        private void OnDataBerubah()
+        {
+            if (IsHandleCreated && !IsDisposed)
+                BeginInvoke(new Action(LoadData));
         }
 
         private bool IsDesigner
@@ -51,9 +85,9 @@ namespace GUedang
         private void UpdateJam()
         {
             DateTime now = DateTime.Now;
-            lblJam.Text = now.ToString("HH:mm:ss");
+            lblJam.Text = now.ToString("HH:mm:ss", CultureInfo.InvariantCulture);
             lblTanggal.Text = now.ToString("dddd, dd MMMM yyyy", Id);
-            lblSapaan.Text = "Selamat " + Sapaan(now.Hour) + ", " + NamaKasir;
+            lblSapaan.Text = "Selamat " + Sapaan(now.Hour) + ", " + KasirAktif;
         }
 
         private static string Sapaan(int jam)
@@ -69,90 +103,76 @@ namespace GUedang
             return string.Format(Id, "Rp {0:N0}", nilai);
         }
 
-        /// <summary>Muat ulang semua data dashboard. Dipanggil saat load dan tombol Refresh.</summary>
+        /// <summary>Muat ulang semua data dashboard. Dipanggil saat load, tombol Refresh, dan setelah transaksi.</summary>
         public void LoadData()
         {
             if (IsDesigner) return;
 
-            decimal pendapatan; int jumlahTransaksi; int itemTerjual;
-            GetRingkasanHariIni(out pendapatan, out jumlahTransaksi, out itemTerjual);
+            // transaksi hari ini milik kasir yang login, terbaru di atas
+            var hariIni = TransaksiStore.GetByPeriode(DateTime.Today, DateTime.Today)
+                .Where(t => t.Kasir.Equals(KasirAktif, StringComparison.OrdinalIgnoreCase))
+                .OrderByDescending(t => t.Tanggal)
+                .ToList();
 
-            int itemKeranjang; decimal totalKeranjang;
-            GetKeranjangAktif(out itemKeranjang, out totalKeranjang);
-
+            decimal pendapatan = hariIni.Sum(t => t.Total);
+            int jumlahTransaksi = hariIni.Count;
+            int itemTerjual = hariIni.Sum(t => t.TotalItem);
             decimal rata = jumlahTransaksi > 0 ? pendapatan / jumlahTransaksi : 0;
+
+            var terakhir = hariIni.FirstOrDefault();
 
             // Kartu atas
             lblPendapatanNilai.Text = Rupiah(pendapatan);
-            lblTransaksiNilai.Text = jumlahTransaksi.ToString(Id);
-            lblTerjualNilai.Text = itemTerjual.ToString(Id);
-            lblKeranjangKartuNilai.Text = itemKeranjang.ToString(Id);
+            lblTransaksiNilai.Text = jumlahTransaksi.ToString("N0", Id);
+            lblTerjualNilai.Text = itemTerjual.ToString("N0", Id);
+            lblKeranjangKartuNilai.Text = terakhir != null
+                ? terakhir.Tanggal.ToString("HH:mm", CultureInfo.InvariantCulture)
+                : "-";
 
-            // Keranjang saat ini  (catatan: "Rp" hanya ditulis SEKALI, lewat Rupiah())
-            lblItemNilai.Text = itemKeranjang.ToString(Id);
-            lblTotalBelanjaNilai.Text = Rupiah(totalKeranjang);
+            // Panel "Transaksi Terakhir Hari Ini"
+            lblItemNilai.Text = terakhir != null ? terakhir.TotalItem.ToString("N0", Id) : "0";
+            lblTotalBelanjaNilai.Text = Rupiah(terakhir != null ? terakhir.Total : 0);
 
-            // Ringkasan
+            // Ringkasan penjualan hari ini
             lblRingkasanPendapatanNilai.Text = Rupiah(pendapatan);
-            lblRingkasanTransaksiNilai.Text = jumlahTransaksi.ToString(Id);
+            lblRingkasanTransaksiNilai.Text = jumlahTransaksi.ToString("N0", Id);
             lblRingkasanRataNilai.Text = Rupiah(rata);
 
-            // Tabel transaksi
+            // Tabel transaksi hari ini
             dgvTransaksi.Rows.Clear();
-            foreach (DataRow r in GetTransaksiHariIni().Rows)
+            foreach (var t in hariIni)
             {
                 dgvTransaksi.Rows.Add(
-                    r["no_transaksi"],
-                    ((DateTime)r["waktu"]).ToString("HH:mm", Id),
-                    r["kasir"],
-                    Rupiah(Convert.ToDecimal(r["total"])));
+                    t.Kode,
+                    t.Tanggal.ToString("HH:mm", CultureInfo.InvariantCulture),
+                    t.Kasir,
+                    Rupiah(t.Total));
             }
+            dgvTransaksi.ClearSelection();
+
+            UpdateJam();
         }
 
-        // ------------------------------------------------------------- DATA
-        // TODO: ganti isi 3 method di bawah dengan query database kamu.
-        // Sementara berisi data contoh supaya tampilan langsung bisa dicoba.
+        // ------------------------------------------------------------ HELPER
 
-        private void GetRingkasanHariIni(out decimal pendapatan, out int jumlahTransaksi, out int itemTerjual)
+        /// <summary>Cari Label (di mana pun letaknya) yang tulisannya persis sama, lalu ganti.</summary>
+        private void GantiTeks(string lama, string baru)
         {
-            // Contoh SQL:
-            // SELECT IFNULL(SUM(total),0), COUNT(*)
-            //   FROM transaksi
-            //  WHERE DATE(waktu) = CURDATE() AND id_kasir = @idKasir;
-            // SELECT IFNULL(SUM(d.qty),0)
-            //   FROM detail_transaksi d JOIN transaksi t ON t.id = d.id_transaksi
-            //  WHERE DATE(t.waktu) = CURDATE() AND t.id_kasir = @idKasir;
-            pendapatan = 1320000;
-            jumlahTransaksi = 18;
-            itemTerjual = 64;
+            var lbl = CariLabel(this, lama);
+            if (lbl != null) lbl.Text = baru;
         }
 
-        private void GetKeranjangAktif(out int item, out decimal total)
+        private static Label CariLabel(Control induk, string teks)
         {
-            // Isi dari keranjang yang sedang dibuka kasir (belum dibayar).
-            item = 3;
-            total = 45500;
-        }
+            foreach (Control c in induk.Controls)
+            {
+                var l = c as Label;
+                if (l != null && l.Text == teks) return l;
 
-        private DataTable GetTransaksiHariIni()
-        {
-            // Contoh SQL:
-            // SELECT no_transaksi, waktu, nama_kasir AS kasir, total
-            //   FROM transaksi
-            //  WHERE DATE(waktu) = CURDATE() AND id_kasir = @idKasir
-            //  ORDER BY waktu DESC;
-            var dt = new DataTable();
-            dt.Columns.Add("no_transaksi", typeof(string));
-            dt.Columns.Add("waktu", typeof(DateTime));
-            dt.Columns.Add("kasir", typeof(string));
-            dt.Columns.Add("total", typeof(decimal));
-
-            DateTime hariIni = DateTime.Today;
-            dt.Rows.Add("TRX-0018", hariIni.AddHours(17).AddMinutes(42), NamaKasir, 73500m);
-            dt.Rows.Add("TRX-0017", hariIni.AddHours(17).AddMinutes(10), NamaKasir, 112000m);
-            dt.Rows.Add("TRX-0016", hariIni.AddHours(16).AddMinutes(25), NamaKasir, 48000m);
-            dt.Rows.Add("TRX-0015", hariIni.AddHours(15).AddMinutes(51), NamaKasir, 25500m);
-            return dt;
+                var hasil = CariLabel(c, teks);
+                if (hasil != null) return hasil;
+            }
+            return null;
         }
 
         private void flowAksi_Paint(object sender, PaintEventArgs e)

@@ -131,6 +131,11 @@ namespace GUedang
         {
 
         }
+
+        private void picLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

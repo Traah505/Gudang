@@ -72,12 +72,13 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, -72);
+            pictureBox1.Location = new Point(-35, -22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(279, 282);
+            pictureBox1.Size = new Size(309, 282);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -138,8 +139,8 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
             Controls.Add(panelGudang);
+            Controls.Add(panel1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Gudang";
             Size = new Size(1087, 782);

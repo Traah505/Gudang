@@ -55,7 +55,7 @@ namespace GUedang
 
         private void lblGudang_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void roundedButton1_Click(object sender, EventArgs e)
@@ -78,6 +78,11 @@ namespace GUedang
                 }
 
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

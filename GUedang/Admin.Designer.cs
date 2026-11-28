@@ -78,12 +78,13 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(17, -67);
+            pictureBox1.Location = new Point(-24, -27);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(278, 281);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Size = new Size(256, 285);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -134,9 +135,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(191, 3);
+            pictureBox3.Location = new Point(193, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(893, 131);
+            pictureBox3.Size = new Size(891, 131);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;

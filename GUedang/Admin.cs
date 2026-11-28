@@ -53,7 +53,7 @@ namespace GUedang
                     c.BackColor = Color.Transparent;
             }
         }
-        
+
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -156,6 +156,11 @@ namespace GUedang
         }
 
         private void roundedPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

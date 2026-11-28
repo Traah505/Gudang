@@ -31,19 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             lblAdmin = new Label();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             roundedButton1 = new RoundedButton();
             pictureBox2 = new PictureBox();
             label2 = new Label();
+            pictureBox3 = new PictureBox();
             panelContent = new Panel();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // lblAdmin
             // 
+            lblAdmin.BackColor = Color.Transparent;
             lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblAdmin.Location = new Point(521, 35);
             lblAdmin.Margin = new Padding(4, 0, 4, 0);
@@ -63,12 +66,24 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblAdmin);
+            panel1.Controls.Add(pictureBox3);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(1087, 137);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(17, -67);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(278, 281);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -97,6 +112,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(449, 35);
             pictureBox2.Name = "pictureBox2";
@@ -108,11 +124,22 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.White;
             label2.Location = new Point(449, 93);
             label2.Name = "label2";
             label2.Size = new Size(198, 25);
             label2.TabIndex = 5;
             label2.Text = "Selamat datang, Admin";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(191, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(893, 131);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
             // panelContent
             // 
@@ -124,16 +151,6 @@
             panelContent.Size = new Size(1083, 547);
             panelContent.TabIndex = 10;
             panelContent.Paint += panel3_Paint;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, -72);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(278, 281);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
             // 
             // Admin
             // 
@@ -148,8 +165,9 @@
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -163,5 +181,6 @@
         private RoundedButton roundedButton1;
         private Panel panel2;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

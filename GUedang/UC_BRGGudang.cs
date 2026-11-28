@@ -26,7 +26,7 @@ namespace GUedang
                 MuatRiwayat();
             };
             txtCariRiwayat.TextChanged += (s, e) => MuatRiwayat();
-            dgvRiwayat.CellClick += dgvRiwayat_CellClick;
+          
 
             MuatRiwayat();
         }
@@ -106,7 +106,7 @@ namespace GUedang
             lblTotalHarga.Text = $"Total: Rp {total:N0}";
         }
 
-        // ---------- simpan ----------
+        // ---------- bumbum ----------
         private void btnSimpan_Click(object? sender, EventArgs e)
         {
             if (_terpilih == null)
@@ -136,11 +136,19 @@ namespace GUedang
             string supplier = txtSupplier.Text.Trim();
             string keterangan = txtKeterangan.Text.Trim();
 
+            // stok lama dibukukan dulu sebagai lapisan (dengan harga lamanya)
+            LapisanStokStore.Sinkronkan(_terpilih.Kode);
+
             if (!BarangStore.TambahStok(_terpilih.Kode, jumlah, harga))
             {
                 MessageBox.Show("Gagal menambah stok. Barang mungkin sudah dihapus admin.");
                 return;
             }
+
+            // stok baru = lapisan baru, antri di belakang stok lama
+            decimal hargaJual = BarangStore.GetByKode(_terpilih.Kode)?.HargaJual ?? 0;
+            LapisanStokStore.TambahLapisan(_terpilih.Kode, jumlah, harga, hargaJual,
+                "Barang masuk", supplier);
 
             int stokAkhir = BarangStore.GetByKode(_terpilih.Kode)?.Stok ?? 0;
 
@@ -203,7 +211,7 @@ namespace GUedang
             lblTrxNilai.Text = data.Count.ToString();
         }
 
-        //faza gay
+        
         private void tlpRoot_Paint(object? sender, PaintEventArgs e) { }
         private void tlpContent_Paint(object? sender, PaintEventArgs e) { }
     }

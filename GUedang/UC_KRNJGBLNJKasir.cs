@@ -5,13 +5,12 @@ namespace GUedang
 {
     public partial class UC_KRNJGBLNJKasir : UserControl
     {
+        // Keranjang hanya menyimpan kode + jumlah. Harga dihitung per lapisan stok (FIFO).
         private class ItemKeranjang
         {
             public string Kode = "";
             public string Nama = "";
-            public decimal Harga;
             public int Qty;
-            public decimal Subtotal => Harga * Qty;
         }
 
         private readonly CultureInfo _id = new("id-ID");
@@ -89,6 +88,17 @@ namespace GUedang
             txtKode.Focus();
         }
 
+        // ================= HARGA PER LAPISAN (FIFO) =================
+        // Jumlah di keranjang dibagi ke lapisan stok: stok lama dijual dulu.
+        // Lapisan yang harga jualnya sama digabung jadi satu baris.
+        private static List<(int Qty, decimal Harga)> BagiHarga(ItemKeranjang x)
+        {
+            return LapisanStokStore.HitungFifo(x.Kode, x.Qty)
+                .GroupBy(a => a.HargaJual)
+                .Select(g => (Qty: g.Sum(a => a.Qty), Harga: g.Key))
+                .ToList();
+        }
+
         // ================= DAFTAR BARANG =================
         private void MuatProduk()
         {
@@ -133,8 +143,10 @@ namespace GUedang
             int no = 1;
             foreach (var b in tampil)
             {
+                // harga yang tampil = harga lapisan yang sedang dijual (FIFO)
+                decimal hargaAktif = LapisanStokStore.HargaJualAktif(b.Kode);
                 int i = dgvProduk.Rows.Add(no++, b.Kode, b.Nama,
-                    b.HargaJual.ToString("N0", _id), b.Kategori, b.Stok);
+                    hargaAktif.ToString("N0", _id), b.Kategori, b.Stok);
                 dgvProduk.Rows[i].Tag = b;
             }
 
@@ -211,7 +223,6 @@ namespace GUedang
                 {
                     Kode = terbaru.Kode,
                     Nama = terbaru.Nama,
-                    Harga = terbaru.HargaJual,
                     Qty = qty
                 });
             else
@@ -225,8 +236,7 @@ namespace GUedang
         private ItemKeranjang? ItemTerpilih()
         {
             if (dgvKeranjang.SelectedRows.Count == 0) return null;
-            string kode = dgvKeranjang.SelectedRows[0].Cells[colKKode.Index].Value?.ToString() ?? "";
-            return _keranjang.FirstOrDefault(x => x.Kode == kode);
+            return dgvKeranjang.SelectedRows[0].Tag as ItemKeranjang;
         }
 
         private void UbahQty(int delta)
@@ -296,14 +306,21 @@ namespace GUedang
             pilihKode ??= ItemTerpilih()?.Kode;
 
             dgvKeranjang.Rows.Clear();
+            int barisPilih = -1;
             foreach (var x in _keranjang)
             {
-                int i = dgvKeranjang.Rows.Add(x.Kode, x.Nama, x.Qty,
-                    x.Harga.ToString("N0", _id), x.Subtotal.ToString("N0", _id));
-                if (x.Kode == pilihKode) dgvKeranjang.Rows[i].Selected = true;
+                // satu barang bisa tampil di beberapa baris kalau harganya berbeda (FIFO)
+                foreach (var (qty, harga) in BagiHarga(x))
+                {
+                    int i = dgvKeranjang.Rows.Add(x.Kode, x.Nama, qty,
+                        harga.ToString("N0", _id), (qty * harga).ToString("N0", _id));
+                    dgvKeranjang.Rows[i].Tag = x;
+                    if (barisPilih < 0 && x.Kode == pilihKode) barisPilih = i;
+                }
             }
-            if (pilihKode == null || !_keranjang.Any(x => x.Kode == pilihKode))
-                dgvKeranjang.ClearSelection();
+
+            dgvKeranjang.ClearSelection();
+            if (barisPilih >= 0) dgvKeranjang.Rows[barisPilih].Selected = true;
 
             Hitung();
         }
@@ -311,7 +328,7 @@ namespace GUedang
         // ================= HITUNG & BAYAR =================
         private void Hitung(out decimal subtotal, out decimal diskon, out decimal total)
         {
-            subtotal = _keranjang.Sum(x => x.Subtotal);
+            subtotal = _keranjang.Sum(x => BagiHarga(x).Sum(p => p.Qty * p.Harga));
             diskon = HitungDiskon(subtotal);
             total = subtotal - diskon;
         }
@@ -414,18 +431,16 @@ namespace GUedang
                 Metode = metode,
                 Bayar = bayar,
                 Kembali = bayar - total,
-                Detail = _keranjang.Select(x =>
-                {
-                    var brg = BarangStore.GetByKode(x.Kode);
-                    return new DetailTransaksi
+                // satu baris detail per lapisan stok (harga jual & harga beli sesuai lapisannya)
+                Detail = _keranjang.SelectMany(x =>
+                    LapisanStokStore.HitungFifo(x.Kode, x.Qty).Select(a => new DetailTransaksi
                     {
                         KodeBarang = x.Kode,
                         NamaBarang = x.Nama,
-                        Harga = x.Harga,
-                        HargaBeli = brg?.HargaBeli ?? 0,
-                        Qty = x.Qty
-                    };
-                }).ToList()
+                        Harga = a.HargaJual,
+                        HargaBeli = a.HargaBeli,
+                        Qty = a.Qty
+                    })).ToList()
             };
 
             // cek stok + kurangi stok + simpan, semua dilakukan oleh store
@@ -443,7 +458,6 @@ namespace GUedang
             StrukHelper.Tampilkan(FindForm(), trx);
 
             // DIMATIKAN: kasir tetap di halaman Keranjang belanja setelah struk ditutup.
-            // Hapus tanda // di bawah kalau ingin pindah otomatis ke Riwayat Transaksi lagi.
             // TransaksiSelesai?.Invoke(trx);
         }
 

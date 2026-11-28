@@ -517,7 +517,7 @@
             btnSemua.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnSemua.ForeColor = Color.White;
             btnSemua.HoverColor = Color.FromArgb(21, 101, 192);
-            btnSemua.Location = new Point(477, 0);
+            btnSemua.Location = new Point(476, 13);
             btnSemua.Margin = new Padding(6, 5, 6, 5);
             btnSemua.Name = "btnSemua";
             btnSemua.Size = new Size(133, 48);
@@ -533,7 +533,7 @@
             btnAman.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnAman.ForeColor = Color.White;
             btnAman.HoverColor = Color.Green;
-            btnAman.Location = new Point(619, 0);
+            btnAman.Location = new Point(621, 13);
             btnAman.Margin = new Padding(6, 5, 6, 5);
             btnAman.Name = "btnAman";
             btnAman.Size = new Size(133, 48);
@@ -549,7 +549,7 @@
             btnMenipis.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnMenipis.ForeColor = Color.White;
             btnMenipis.HoverColor = Color.DarkGoldenrod;
-            btnMenipis.Location = new Point(763, 2);
+            btnMenipis.Location = new Point(764, 13);
             btnMenipis.Margin = new Padding(6, 5, 6, 5);
             btnMenipis.Name = "btnMenipis";
             btnMenipis.Size = new Size(150, 48);
@@ -565,7 +565,7 @@
             btnHabis.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnHabis.ForeColor = Color.White;
             btnHabis.HoverColor = Color.Brown;
-            btnHabis.Location = new Point(926, 0);
+            btnHabis.Location = new Point(926, 13);
             btnHabis.Margin = new Padding(6, 5, 6, 5);
             btnHabis.Name = "btnHabis";
             btnHabis.Size = new Size(133, 48);
@@ -772,8 +772,8 @@
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 17F));
-            tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 308F));
             tlpForm.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
@@ -920,7 +920,7 @@
             lblBeli.Location = new Point(0, 256);
             lblBeli.Margin = new Padding(0);
             lblBeli.Name = "lblBeli";
-            lblBeli.Size = new Size(264, 42);
+            lblBeli.Size = new Size(264, 35);
             lblBeli.TabIndex = 12;
             lblBeli.Text = "Harga beli (Rp)";
             lblBeli.TextAlign = ContentAlignment.BottomLeft;
@@ -933,7 +933,7 @@
             lblJual.Location = new Point(265, 256);
             lblJual.Margin = new Padding(0);
             lblJual.Name = "lblJual";
-            lblJual.Size = new Size(261, 42);
+            lblJual.Size = new Size(261, 35);
             lblJual.TabIndex = 13;
             lblJual.Text = "Harga jual (Rp)";
             lblJual.TextAlign = ContentAlignment.BottomLeft;
@@ -942,7 +942,7 @@
             // 
             txtBeli.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtBeli.Font = new Font("Segoe UI", 10F);
-            txtBeli.Location = new Point(0, 301);
+            txtBeli.Location = new Point(0, 291);
             txtBeli.Margin = new Padding(0, 0, 13, 0);
             txtBeli.Name = "txtBeli";
             txtBeli.Size = new Size(252, 34);
@@ -953,7 +953,7 @@
             // 
             txtJual.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtJual.Font = new Font("Segoe UI", 10F);
-            txtJual.Location = new Point(265, 301);
+            txtJual.Location = new Point(265, 291);
             txtJual.Margin = new Padding(0);
             txtJual.Name = "txtJual";
             txtJual.Size = new Size(274, 34);

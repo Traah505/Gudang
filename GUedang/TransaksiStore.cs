@@ -68,24 +68,32 @@ namespace GUedang
                 if (list.Any(t => t.Kode.Equals(trx.Kode, StringComparison.OrdinalIgnoreCase)))
                 { error = "Kode transaksi sudah ada."; return false; }
 
-                // 1. cek stok (jumlahkan jika barang yang sama muncul di beberapa baris)
+                // 1. jumlahkan qty per barang
                 var perBarang = trx.Detail.GroupBy(d => d.KodeBarang)
                                           .ToDictionary(g => g.Key, g => g.Sum(x => x.Qty));
+
+                // 2. cek stok, lalu bagi per lapisan stok (FIFO: stok lama dijual dulu)
+                var detailBaru = new List<DetailTransaksi>();
                 foreach (var (kode, qty) in perBarang)
                 {
                     var b = BarangStore.GetByKode(kode);
                     if (b == null) { error = $"Barang {kode} tidak ditemukan."; return false; }
                     if (b.Stok < qty) { error = $"Stok {b.Nama} tidak cukup (sisa {b.Stok})."; return false; }
-                }
 
-                // 2. lengkapi snapshot data barang
-                foreach (var d in trx.Detail)
-                {
-                    var b = BarangStore.GetByKode(d.KodeBarang)!;
-                    d.NamaBarang = b.Nama;
-                    d.HargaBeli = b.HargaBeli;
-                    if (d.Harga <= 0) d.Harga = b.HargaJual;
+                    var bagian = LapisanStokStore.HitungFifo(kode, qty);
+                    if (bagian.Sum(a => a.Qty) < qty) { error = $"Stok {b.Nama} tidak cukup."; return false; }
+
+                    foreach (var a in bagian)
+                        detailBaru.Add(new DetailTransaksi
+                        {
+                            KodeBarang = kode,
+                            NamaBarang = b.Nama,
+                            Harga = a.HargaJual,
+                            HargaBeli = a.HargaBeli,
+                            Qty = a.Qty
+                        });
                 }
+                trx.Detail = detailBaru;
 
                 // 3. kurangi stok (rollback jika ada yang gagal)
                 var berhasil = new List<(string kode, int qty)>();
@@ -100,6 +108,10 @@ namespace GUedang
                     berhasil.Add((kode, qty));
                 }
 
+                // 4. kurangi sisa di lapisan stok
+                foreach (var (kode, qty) in perBarang)
+                    LapisanStokStore.Konsumsi(kode, qty);
+
                 list.Add(trx);
                 Save(list);
             }
@@ -107,6 +119,8 @@ namespace GUedang
             DataChanged?.Invoke();
             return true;
         }
+
+       
 
         /// <summary>
         /// Untuk uji coba laporan sebelum kasir jadi: membuat transaksi acak

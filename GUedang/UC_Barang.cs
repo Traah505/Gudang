@@ -6,7 +6,7 @@ namespace GUedang
     public partial class UC_Barang : UserControl
     {
         private readonly CultureInfo _id = new("id-ID");
-        private string _filter = "Semua";  
+        private string _filter = "Semua";
         private Barang? _terpilih;          // barang yang sedang diedit (null = mode tambah)
         private bool _loading;
 
@@ -17,15 +17,13 @@ namespace GUedang
             Load += UC_Barang_Load;
             BarangStore.DataChanged += OnDataChanged;
             Disposed += (s, e) => BarangStore.DataChanged -= OnDataChanged;
-            nudStok.Enabled = false;
-            nudStok.Value = 0;
 
+            nudStok.Maximum = 100000;   // stok awal bisa diisi admin
         }
-        private void btnBaru_Click(object sender, EventArgs e)
-        {
-            // ... kode reset form yang sudah ada
-            nudStok.Value = 0;
-        }
+
+        // dipertahankan kalau masih dirujuk Designer
+        private void btnBaru_Click(object? sender, EventArgs e) { }
+
         private void OnDataChanged()
         {
             if (IsHandleCreated && !IsDisposed)
@@ -49,6 +47,7 @@ namespace GUedang
             dgvBarang.SelectionChanged += dgvBarang_SelectionChanged;
             dgvBarang.CellFormatting += dgvBarang_CellFormatting;
             dgvBarang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBarang.CellDoubleClick += dgvBarang_CellDoubleClick;
             btnSimpan.Click += btnSimpan_Click;
             btnReset.Click += (s, ev) => ResetForm();
             btnHapus.Click += btnHapus_Click;
@@ -134,6 +133,14 @@ namespace GUedang
                 IsiForm(b);
         }
 
+        // klik 2x baris barang -> antrian FIFO + riwayat stok masuk & perubahan harga
+        private void dgvBarang_CellDoubleClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || dgvBarang.Rows[e.RowIndex].Tag is not Barang b) return;
+            using var f = new FormRiwayatBarang(b.Kode, b.Nama);
+            f.ShowDialog(FindForm());
+        }
+
         // ================= FORM =================
         private void IsiForm(Barang b)
         {
@@ -146,6 +153,7 @@ namespace GUedang
             txtNama.Text = b.Nama;
             txtKategori.Text = b.Kategori;
             txtSatuan.Text = b.Satuan;
+            nudStok.Enabled = false;   // mode ubah: stok hanya ditampilkan
             nudStok.Value = Math.Min(b.Stok, nudStok.Maximum);
             nudMin.Value = Math.Min(b.StokMinimum, nudMin.Maximum);
             txtBeli.Text = b.HargaBeli.ToString("N0", _id);
@@ -164,6 +172,7 @@ namespace GUedang
             txtNama.Clear();
             txtKategori.Clear();
             txtSatuan.Clear();
+            nudStok.Enabled = true;    // mode tambah: admin boleh mengisi stok awal
             nudStok.Value = 0;
             nudMin.Value = 0;
             txtBeli.Clear();
@@ -181,24 +190,39 @@ namespace GUedang
             string satuan = txtSatuan.Text.Trim();
             decimal beli = ParseRupiah(txtBeli.Text);
             decimal jual = ParseRupiah(txtJual.Text);
+            int stokIsi = (int)nudStok.Value;   // stok yang diisi admin (hanya di mode tambah)
 
             if (nama.Length == 0) { Peringatan("Nama barang wajib diisi.", txtNama); return; }
-            if (kategori.Length == 0) { Peringatan("Kategori wajib diisi.", txtKategori); return; }
-            if (satuan.Length == 0) { Peringatan("Satuan wajib diisi (mis. pcs, dus, kg).", txtSatuan); return; }
             if (beli <= 0) { Peringatan("Harga beli harus lebih dari 0.", txtBeli); return; }
             if (jual <= 0) { Peringatan("Harga jual harus lebih dari 0.", txtJual); return; }
+
+            // nama sama dengan barang lain?
+            var sama = BarangStore.GetAll().FirstOrDefault(b =>
+                b.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase) && b.Kode != txtKode.Text);
+            if (sama != null)
+            {
+                if (_terpilih != null)
+                {
+                    Peringatan("Nama itu sudah dipakai barang lain.", txtNama);
+                    return;
+                }
+                // nama sama = barang yang sama dengan harga baru, masuk antrian FIFO
+                DaftarkanHargaBaru(sama, beli, jual, stokIsi);
+                return;
+            }
+
+            if (kategori.Length == 0) { Peringatan("Kategori wajib diisi.", txtKategori); return; }
+            if (satuan.Length == 0) { Peringatan("Satuan wajib diisi (mis. pcs, dus, kg).", txtSatuan); return; }
 
             if (jual < beli &&
                 MessageBox.Show("Harga jual lebih rendah dari harga beli (rugi). Tetap simpan?",
                     "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 return;
 
-            // cegah nama ganda (kode berbeda)
-            bool kembar = BarangStore.GetAll().Any(b =>
-                b.Nama.Equals(nama, StringComparison.OrdinalIgnoreCase) && b.Kode != txtKode.Text);
-            if (kembar) { Peringatan("Barang dengan nama tersebut sudah ada.", txtNama); return; }
-
             var lama = BarangStore.GetByKode(txtKode.Text);
+
+            // bukukan stok yang ada dengan harga lamanya sebelum harga berubah
+            if (lama != null) LapisanStokStore.Sinkronkan(lama.Kode);
 
             var barang = new Barang
             {
@@ -208,14 +232,89 @@ namespace GUedang
                 Satuan = satuan,
                 HargaBeli = beli,
                 HargaJual = jual,
-                Stok = lama?.Stok ?? 0,          // barang baru = 0, edit = stok tidak berubah
+                Stok = lama?.Stok ?? stokIsi,    // barang baru = stok awal dari admin, edit = stok tidak berubah
                 StokMinimum = (int)nudMin.Value
             };
 
             bool baru = _terpilih == null;
             BarangStore.Simpan(barang);
 
+            if (lama != null)
+            {
+                // harga jual naik/turun: berlaku untuk stok yang belum mulai terjual
+                if (lama.HargaJual != jual)
+                    LapisanStokStore.TerapkanHargaJual(lama.Kode, lama.HargaJual, jual);
+            }
+            else if (stokIsi > 0)
+            {
+                // stok awal dari admin = lapisan pertama di antrian FIFO
+                LapisanStokStore.TambahLapisan(barang.Kode, stokIsi, beli, jual, "Stok awal", "Diinput admin");
+                StoreRiwayatGudang.CatatAtauPerbarui("Masuk", barang.Kode, barang.Nama,
+                    stokIsi, stokIsi, "Stok awal (admin)", "");
+            }
+
             MessageBox.Show(baru ? "Barang berhasil ditambahkan." : "Barang berhasil diperbarui.",
+                "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ResetForm();
+            MuatData();
+        }
+
+        // nama sama = barang yang sama dengan harga baru. Stok yang diisi (jika ada)
+        // jadi lapisan baru, antri di belakang stok lama.
+        private void DaftarkanHargaBaru(Barang ada, decimal beli, decimal jual, int stok)
+        {
+            if (stok == 0 && ada.HargaBeli == beli && ada.HargaJual == jual)
+            {
+                MessageBox.Show($"Harga {ada.Nama} sama dengan harga yang sedang berlaku, dan stok tambahan 0. Tidak ada yang berubah.",
+                    "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string pesan =
+                $"\"{ada.Nama}\" sudah ada ({ada.Kode}).\n\n" +
+                "Daftarkan sebagai harga baru?\n" +
+                $"Harga beli : Rp {ada.HargaBeli.ToString("N0", _id)}  →  Rp {beli.ToString("N0", _id)}\n" +
+                $"Harga jual : Rp {ada.HargaJual.ToString("N0", _id)}  →  Rp {jual.ToString("N0", _id)}\n";
+            if (stok > 0)
+                pesan += $"Tambah stok: +{stok} {ada.Satuan}\n";
+            pesan += "\nStok yang ada tetap dijual dengan harga lama sampai habis.\n" +
+                     "Stok baru memakai harga ini dan antri di belakangnya.";
+
+            if (MessageBox.Show(pesan, "Harga baru (FIFO)",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            // kunci stok lama dengan harga lamanya dulu
+            LapisanStokStore.Sinkronkan(ada.Kode);
+
+            decimal beliLama = ada.HargaBeli;
+            decimal jualLama = ada.HargaJual;
+
+            ada.HargaBeli = beli;
+            ada.HargaJual = jual;
+            BarangStore.Simpan(ada);
+
+            if (jual != jualLama || beli != beliLama)
+            {
+                string ket = $"harga beli Rp {beliLama.ToString("N0", _id)} → Rp {beli.ToString("N0", _id)}";
+                ket += stok > 0 ? $"; +{stok} {ada.Satuan} masuk dengan harga ini"
+                                : "; berlaku untuk stok yang masuk berikutnya";
+                LapisanStokStore.DaftarkanHargaBaru(ada.Kode, jualLama, jual, ket);
+            }
+
+            if (stok > 0)
+            {
+                BarangStore.TambahStok(ada.Kode, stok, beli);
+                LapisanStokStore.TambahLapisan(ada.Kode, stok, beli, jual, "Tambah stok", "Diinput admin");
+                int stokAkhir = BarangStore.GetByKode(ada.Kode)?.Stok ?? 0;
+                StoreRiwayatGudang.CatatAtauPerbarui("Masuk", ada.Kode, ada.Nama,
+                    stok, stokAkhir, "Tambah stok (admin)", "");
+            }
+
+            MessageBox.Show(stok > 0
+                    ? $"Harga baru {ada.Nama} terdaftar dan +{stok} {ada.Satuan} masuk ke antrian FIFO."
+                    : $"Harga baru {ada.Nama} terdaftar.\nStok barunya dicatat gudang lewat Barang Masuk.",
                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ResetForm();
@@ -236,6 +335,7 @@ namespace GUedang
                 return;
 
             BarangStore.Hapus(_terpilih.Kode);
+            LapisanStokStore.HapusBarang(_terpilih.Kode);
             ResetForm();
             MuatData();
         }
@@ -281,7 +381,6 @@ namespace GUedang
         }
 
         // ================= handler yang dirujuk Designer =================
-        // (hapus yang sudah ada di file Anda agar tidak dobel)
         private void tlpRoot_Paint(object? sender, PaintEventArgs e) { }
         private void tlpContent_Paint(object? sender, PaintEventArgs e) { }
         private void tlpForm_Paint(object? sender, PaintEventArgs e) { }

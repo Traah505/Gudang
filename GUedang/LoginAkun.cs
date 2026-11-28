@@ -136,6 +136,11 @@ namespace GUedang
         {
 
         }
+
+        private void chkLihatPassword_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

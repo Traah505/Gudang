@@ -320,5 +320,15 @@ namespace GUedang
             MessageBox.Show(pesan, "SMK Mart", MessageBoxButtons.OK,
                 berhasil ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
+
+        private void tlpTambah_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ChkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = !ChkBox1.Checked;
+        }
     }
 }

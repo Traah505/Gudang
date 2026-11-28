@@ -288,6 +288,7 @@
             chkTampil.TabIndex = 7;
             chkTampil.Text = "Tampilkan password";
             chkTampil.UseVisualStyleBackColor = true;
+            chkTampil.CheckedChanged += chkTampil_CheckedChanged;
             // 
             // lblInfo
             // 

@@ -157,7 +157,7 @@ namespace GUedang
             return r["password"].ToString() == DataPengguna.Hash(passwordLama);
         }
 
-        
+
         /// <summary>SHA-256 dalam format hex. Pakai hanya jika login kamu juga memakai SHA-256.</summary>
         public static string Hash(string teks)
         {
@@ -172,6 +172,13 @@ namespace GUedang
         private void tlpRoot_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void chkTampil_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLama.UseSystemPasswordChar = !chkTampil.Checked;
+            txtBaru.UseSystemPasswordChar = !chkTampil.Checked;
+            txtKonf.UseSystemPasswordChar = !chkTampil.Checked;
         }
     }
 }

@@ -80,18 +80,7 @@ namespace GUedang
             }
         }
 
-        private void roundedButton1_Click_1(object sender, EventArgs e)
-        {
-            DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (hasil == DialogResult.Yes)
-            {
-                LoginAkun DashboardLogin = new LoginAkun();
-                DashboardLogin.Show();
-                this.Hide();
-
-
-            }
-        }
+    
 
         private void lblKasir_Click(object sender, EventArgs e)
         {
@@ -108,11 +97,7 @@ namespace GUedang
             DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hasil == DialogResult.Yes)
             {
-
                 Sesi.Logout();
-                LoginAkun DashboardLogin = new LoginAkun();
-                DashboardLogin.Show();
-                this.Hide();
 
                 if (Session.UserAktif != null)
                 {
@@ -121,6 +106,14 @@ namespace GUedang
                         Session.UserAktif.Role.ToString(),
                         "Logout"
                     );
+                }
+                Form admin = this.FindForm();
+                LoginAkun dashboardLogin = new LoginAkun();
+                dashboardLogin.Show();
+
+                if (admin != null)
+                {
+                    admin.Close();
                 }
 
             }

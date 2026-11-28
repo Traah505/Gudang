@@ -19,7 +19,7 @@ namespace GUedang
             panelGudang.Controls.Clear();
             panelGudang.Controls.Add(dashboardAdmin);
 
-            lblGudang .BackColor = Color.Transparent;
+            lblGudang.BackColor = Color.Transparent;
             pictureBox2.BackColor = Color.Transparent;
             label2.BackColor = Color.Transparent;
 
@@ -89,9 +89,6 @@ namespace GUedang
             if (hasil == DialogResult.Yes)
             {
                 Sesi.Logout();
-                LoginAkun DashboardLogin = new LoginAkun();
-                DashboardLogin.Show();
-                this.Hide();
 
                 if (Session.UserAktif != null)
                 {
@@ -101,11 +98,23 @@ namespace GUedang
                         "Logout"
                     );
                 }
+                Form admin = this.FindForm();
+                LoginAkun dashboardLogin = new LoginAkun();
+                dashboardLogin.Show();
 
+                if (admin != null)
+                {
+                    admin.Close();
+                }
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

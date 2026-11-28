@@ -189,7 +189,12 @@ namespace GUedang
 
         }
 
-        
+        private void chkTampil_CheckedChanged(object sender, EventArgs e)
+        {
+            txtLama.UseSystemPasswordChar = !chkTampil.Checked;
+            txtBaru.UseSystemPasswordChar = !chkTampil.Checked;
+            txtKonf.UseSystemPasswordChar = !chkTampil.Checked;
+        }
     }
 
 }

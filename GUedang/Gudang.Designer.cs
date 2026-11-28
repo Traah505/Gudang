@@ -48,10 +48,9 @@
             // 
             panelGudang.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelGudang.BackColor = Color.WhiteSmoke;
-            panelGudang.Location = new Point(0, 120);
-            panelGudang.Margin = new Padding(4, 5, 4, 5);
+            panelGudang.Location = new Point(0, 72);
             panelGudang.Name = "panelGudang";
-            panelGudang.Size = new Size(1087, 662);
+            panelGudang.Size = new Size(761, 397);
             panelGudang.TabIndex = 0;
             panelGudang.Paint += panel1_Paint;
             // 
@@ -67,17 +66,17 @@
             panel1.Controls.Add(lblGudang);
             panel1.Controls.Add(pictureBox3);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1087, 125);
+            panel1.Size = new Size(761, 75);
             panel1.TabIndex = 6;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-35, -22);
+            pictureBox1.Location = new Point(-24, -19);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(247, 282);
+            pictureBox1.Size = new Size(173, 169);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -86,10 +85,9 @@
             // panel2
             // 
             panel2.BackColor = Color.Black;
-            panel2.Location = new Point(424, 20);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(297, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(7, 90);
+            panel2.Size = new Size(5, 54);
             panel2.TabIndex = 0;
             // 
             // roundedButton1
@@ -99,10 +97,9 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(870, 32);
-            roundedButton1.Margin = new Padding(4, 5, 4, 5);
+            roundedButton1.Location = new Point(609, 19);
             roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(199, 60);
+            roundedButton1.Size = new Size(139, 36);
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
@@ -112,9 +109,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(449, 35);
+            pictureBox2.Location = new Point(314, 21);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 53);
+            pictureBox2.Size = new Size(46, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
@@ -123,9 +121,10 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Location = new Point(449, 92);
+            label2.Location = new Point(314, 55);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(270, 25);
+            label2.Size = new Size(179, 15);
             label2.TabIndex = 5;
             label2.Text = "Selamat datang,Petugas Gudang";
             // 
@@ -133,10 +132,9 @@
             // 
             lblGudang.BackColor = Color.Transparent;
             lblGudang.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblGudang.Location = new Point(521, 35);
-            lblGudang.Margin = new Padding(4, 0, 4, 0);
+            lblGudang.Location = new Point(365, 21);
             lblGudang.Name = "lblGudang";
-            lblGudang.Size = new Size(355, 57);
+            lblGudang.Size = new Size(248, 34);
             lblGudang.TabIndex = 3;
             lblGudang.Text = "Gudang ";
             lblGudang.Click += lblGudang_Click;
@@ -145,22 +143,23 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-35, 3);
+            pictureBox3.Location = new Point(-24, 2);
+            pictureBox3.Margin = new Padding(2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1119, 119);
+            pictureBox3.Size = new Size(783, 71);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // Gudang
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelGudang);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Gudang";
-            Size = new Size(1087, 782);
+            Size = new Size(761, 469);
             Load += Gudang_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

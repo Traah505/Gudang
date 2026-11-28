@@ -48,10 +48,9 @@
             // 
             lblAdmin.BackColor = Color.Transparent;
             lblAdmin.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblAdmin.Location = new Point(521, 35);
-            lblAdmin.Margin = new Padding(4, 0, 4, 0);
+            lblAdmin.Location = new Point(365, 21);
             lblAdmin.Name = "lblAdmin";
-            lblAdmin.Size = new Size(132, 58);
+            lblAdmin.Size = new Size(92, 35);
             lblAdmin.TabIndex = 3;
             lblAdmin.Text = "Admin ";
             lblAdmin.Click += label2_Click;
@@ -68,9 +67,8 @@
             panel1.Controls.Add(lblAdmin);
             panel1.Controls.Add(pictureBox3);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1384, 138);
+            panel1.Size = new Size(969, 83);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
@@ -78,10 +76,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-24, -28);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Location = new Point(-17, -17);
+            pictureBox1.Margin = new Padding(1, 1, 1, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(256, 285);
+            pictureBox1.Size = new Size(179, 171);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -90,10 +88,9 @@
             // panel2
             // 
             panel2.BackColor = Color.Black;
-            panel2.Location = new Point(424, 20);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(297, 12);
             panel2.Name = "panel2";
-            panel2.Size = new Size(8, 90);
+            panel2.Size = new Size(6, 54);
             panel2.TabIndex = 0;
             // 
             // roundedButton1
@@ -103,10 +100,9 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(1176, 32);
-            roundedButton1.Margin = new Padding(4, 5, 4, 5);
+            roundedButton1.Location = new Point(823, 19);
             roundedButton1.Name = "roundedButton1";
-            roundedButton1.Size = new Size(199, 60);
+            roundedButton1.Size = new Size(139, 36);
             roundedButton1.TabIndex = 7;
             roundedButton1.Text = "Keluar";
             roundedButton1.UseVisualStyleBackColor = false;
@@ -116,10 +112,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(449, 35);
-            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Location = new Point(314, 21);
+            pictureBox2.Margin = new Padding(1, 1, 1, 1);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(66, 52);
+            pictureBox2.Size = new Size(46, 31);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
@@ -128,45 +124,44 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(449, 92);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(314, 55);
+            label2.Margin = new Padding(1, 0, 1, 0);
             label2.Name = "label2";
-            label2.Size = new Size(198, 25);
+            label2.Size = new Size(131, 15);
             label2.TabIndex = 5;
             label2.Text = "Selamat datang, Admin";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(196, 0);
-            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Location = new Point(137, 0);
+            pictureBox3.Margin = new Padding(1, 1, 1, 1);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1186, 131);
+            pictureBox3.Size = new Size(830, 79);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // panelContent
             // 
             panelContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContent.BackColor = Color.WhiteSmoke;
-            panelContent.Location = new Point(-1, 122);
-            panelContent.Margin = new Padding(4, 5, 4, 5);
+            panelContent.Location = new Point(-1, 73);
             panelContent.Name = "panelContent";
-            panelContent.Size = new Size(1379, 548);
+            panelContent.Size = new Size(965, 329);
             panelContent.TabIndex = 10;
             panelContent.Paint += panel3_Paint;
             // 
             // Admin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             Controls.Add(panelContent);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Admin";
-            Size = new Size(1379, 668);
+            Size = new Size(965, 401);
             Load += Form2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -1,0 +1,112 @@
+[
+  {
+    "Tanggal": "2026-11-25T20:47:45.6226931+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 20,
+    "HargaBeli": 100000,
+    "Supplier": "Amrikutara",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-25T20:49:00.9053657+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 6,
+    "HargaBeli": 100000,
+    "Supplier": "",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-25T22:36:11.1092906+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 8,
+    "HargaBeli": 100000,
+    "Supplier": "",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-25T22:36:42.381864+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Supplier": "",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-26T08:02:30.7858942+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1345,
+    "HargaBeli": 100000,
+    "Supplier": "aldo factory",
+    "Keterangan": "mantap",
+    "Petugas": "haegdey"
+  },
+  {
+    "Tanggal": "2026-11-26T18:55:03.3517694+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Supplier": "aldo factory",
+    "Keterangan": "mantap",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-26T19:04:24.7299345+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Supplier": "aldo factory",
+    "Keterangan": "mantap",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-26T19:18:03.959672+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Supplier": "aldo factory",
+    "Keterangan": "mantap",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-26T19:23:23.545138+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Supplier": "aldo factory",
+    "Keterangan": "mantap",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-27T10:48:33.9646864+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 4,
+    "HargaBeli": 100000,
+    "Supplier": "ditra",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-28T09:37:51.9975406+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 2,
+    "HargaBeli": 100000,
+    "Supplier": "PT AMBA",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  }
+]

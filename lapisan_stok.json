@@ -1,0 +1,36 @@
+{
+  "Lapisan": [
+    {
+      "Id": "45fdf60bb9ca4113aa0adcce4c266870",
+      "Kode": "BRG-001",
+      "Tanggal": "2026-11-28T09:34:06.6584373+07:00",
+      "JumlahAwal": 360,
+      "Sisa": 360,
+      "HargaBeli": 100000,
+      "HargaJual": 1000000,
+      "Sumber": "Stok awal",
+      "Keterangan": "Stok yang sudah ada sebelum FIFO"
+    },
+    {
+      "Id": "0947596a0ad043559c8ee7314bdd019e",
+      "Kode": "BRG-001",
+      "Tanggal": "2026-11-28T09:37:51.9872231+07:00",
+      "JumlahAwal": 2,
+      "Sisa": 2,
+      "HargaBeli": 100000,
+      "HargaJual": 1000000,
+      "Sumber": "Barang masuk",
+      "Keterangan": "PT AMBA"
+    }
+  ],
+  "Peristiwa": [
+    {
+      "Tanggal": "2026-11-28T09:46:13.4721755+07:00",
+      "Kode": "BRG-001",
+      "Jenis": "Harga baru",
+      "HargaLama": 1000000,
+      "HargaBaru": 2000000,
+      "Keterangan": "harga beli Rp 100.000 \u2192 Rp 200.000; berlaku untuk stok yang masuk berikutnya"
+    }
+  ]
+}

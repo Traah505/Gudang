@@ -1,0 +1,12 @@
+[
+  {
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Kategori": "Makanan",
+    "Satuan": "pcs",
+    "HargaBeli": 200000,
+    "HargaJual": 2000000,
+    "Stok": 362,
+    "StokMinimum": 5
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Tanggal": "2026-11-25T21:09:03.8793538+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1,
+    "HargaBeli": 100000,
+    "Tujuan": "Lainnya",
+    "Keterangan": "dipangan farosy",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-25T22:37:00.3876637+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 7,
+    "HargaBeli": 100000,
+    "Tujuan": "Lainnya",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-25T22:56:12.4799095+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 3,
+    "HargaBeli": 100000,
+    "Tujuan": "Lainnya",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  },
+  {
+    "Tanggal": "2026-11-26T18:47:41.2937203+07:00",
+    "Kode": "BRG-001",
+    "Nama": "kfc",
+    "Jumlah": 1000,
+    "HargaBeli": 100000,
+    "Tujuan": "Lainnya",
+    "Keterangan": "",
+    "Petugas": "bumbum8D"
+  }
+]

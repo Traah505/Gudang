@@ -1,0 +1,290 @@
+[
+  {
+    "Waktu": "2026-11-17T21:37:06.9989845+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-17T21:46:03.2437796+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-17T21:48:45.3576951+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-17T21:50:58.5812426+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:07:08.5176665+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:14:15.5734226+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:14:35.1723679+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-18T21:14:45.2579154+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:18:53.0179461+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:21:33.9239188+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-18T21:22:55.6677352+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:28:47.5508596+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:30:34.486531+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-18T21:30:43.5201987+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:43:51.3241084+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:48:38.3713566+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:49:01.421405+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Tambah akun: bumbum (Kasir)"
+  },
+  {
+    "Waktu": "2026-11-18T21:52:13.6359178+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:52:19.5723544+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Hapus akun: bumbum"
+  },
+  {
+    "Waktu": "2026-11-18T21:56:21.8108291+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T21:56:41.2971756+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Tambah akun: bumbum (Kasir)"
+  },
+  {
+    "Waktu": "2026-11-18T21:56:58.3900338+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-18T21:57:18.348687+07:00",
+    "Nama": "bumbum",
+    "Peran": "Kasir",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T22:00:47.5567553+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-18T22:00:59.6157533+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T12:49:43.571394+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T12:53:37.9637399+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T12:55:29.0738496+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T12:57:16.1357685+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:02:31.9237091+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:04:09.5401796+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:05:40.8101041+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:10:30.4316413+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:12:07.353037+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T13:14:43.024387+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:21:38.3026894+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:23:46.2675074+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T13:25:22.9525204+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:26:23.6817119+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:27:00.170585+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T13:29:53.8160822+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:30:13.8161596+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T13:31:54.2898476+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:33:27.9241354+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-19T13:33:50.9259064+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Logout"
+  },
+  {
+    "Waktu": "2026-11-19T14:03:33.4540139+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-21T13:44:47.6885784+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  },
+  {
+    "Waktu": "2026-11-26T07:49:05.8720642+07:00",
+    "Nama": "admin",
+    "Peran": "Admin",
+    "Aktivitas": "Login"
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "Kode": "TRX-20261124-001",
+    "Tanggal": "2026-11-24T21:06:25.9066525+07:00",
+    "Kasir": "kasir",
+    "Diskon": 0,
+    "Metode": "QRIS",
+    "Bayar": 20000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261124-002",
+    "Tanggal": "2026-11-24T22:09:52.8522656+07:00",
+    "Kasir": "kasir",
+    "Diskon": 4000,
+    "Metode": "Tunai",
+    "Bayar": 50000,
+    "Kembali": 14000,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 2
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261124-003",
+    "Tanggal": "2026-11-24T22:20:29.4487707+07:00",
+    "Kasir": "kasir",
+    "Diskon": 70000,
+    "Metode": "Transfer",
+    "Bayar": 70000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 7
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261124-004",
+    "Tanggal": "2026-11-24T22:25:05.5147231+07:00",
+    "Kasir": "kasir",
+    "Diskon": 0,
+    "Metode": "QRIS",
+    "Bayar": 20000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261124-005",
+    "Tanggal": "2026-11-24T22:51:17.4296465+07:00",
+    "Kasir": "kasir",
+    "Diskon": 18000,
+    "Metode": "Transfer",
+    "Bayar": 2000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261124-006",
+    "Tanggal": "2026-11-24T22:59:48.1095522+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 19800,
+    "Metode": "QRIS",
+    "Bayar": 200,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kentaki",
+        "Harga": 20000,
+        "HargaBeli": 10000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-001",
+    "Tanggal": "2026-11-26T07:27:41.0983778+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 50000,
+    "Metode": "Tunai",
+    "Bayar": 67676767,
+    "Kembali": 66726767,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-002",
+    "Tanggal": "2026-11-26T07:30:44.880742+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Tunai",
+    "Bayar": 1111111111111111110,
+    "Kembali": 1111111111110111110,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-003",
+    "Tanggal": "2026-11-26T07:31:16.3652336+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Tunai",
+    "Bayar": 2000000,
+    "Kembali": 1000000,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-004",
+    "Tanggal": "2026-11-26T07:31:41.691368+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Tunai",
+    "Bayar": 1000000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-005",
+    "Tanggal": "2026-11-26T18:44:51.9574631+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Transfer",
+    "Bayar": 3000000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 3
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-006",
+    "Tanggal": "2026-11-26T19:27:44.5191836+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Tunai",
+    "Bayar": 10000000000,
+    "Kembali": 9999000000,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261126-007",
+    "Tanggal": "2026-11-26T19:37:06.491121+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 0,
+    "Metode": "Transfer",
+    "Bayar": 1000000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  },
+  {
+    "Kode": "TRX-20261127-001",
+    "Tanggal": "2026-11-27T10:46:14.3788942+07:00",
+    "Kasir": "bumbum",
+    "Diskon": 100000,
+    "Metode": "Tunai",
+    "Bayar": 900000,
+    "Kembali": 0,
+    "Detail": [
+      {
+        "KodeBarang": "BRG-001",
+        "NamaBarang": "kfc",
+        "Harga": 1000000,
+        "HargaBeli": 100000,
+        "Qty": 1
+      }
+    ]
+  }
+]

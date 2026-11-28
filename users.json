@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "Nama": "admin",
+    "Role": "Admin",
+    "Aktif": true,
+    "Salt": "BAR2riwEksCvg0CV2mhGnw==",
+    "PasswordHash": "eTvb7VkWe+VVd32tglujz54HtSjK2e5ONJNUcNgZSKg=",
+    "Dibuat": null
+  },
+  {
+    "Id": 2,
+    "Nama": "bumbum",
+    "Role": "Kasir",
+    "Aktif": true,
+    "Salt": "DfQ6asbxihG35XOfTwdw3Q==",
+    "PasswordHash": "IHQX1j9oczleYh6rcDwkjsQSY85\/RyiIT93iiD7dRx4=",
+    "Dibuat": "2026-11-22 11:07"
+  },
+  {
+    "Id": 3,
+    "Nama": "bumbum8D",
+    "Role": "Gudang",
+    "Aktif": true,
+    "Salt": "qZCH6AfgGFIrmSSp\/2u1CQ==",
+    "PasswordHash": "vCHn6z\/3ZSC3FTlvLxqWsP0XMyW812GdWkW3RSpCT9M=",
+    "Dibuat": "2026-11-22 11:54"
+  },
+  {
+    "Id": 4,
+    "Nama": "bumbumkeren",
+    "Role": "Gudang",
+    "Aktif": true,
+    "Salt": "6wZWrt4zHfVUCreW81sLaw==",
+    "PasswordHash": "MXh7m9Rsm0+n+f0SEHJ8UO+pydo7dp1\/4yecGFKX+4w=",
+    "Dibuat": "2026-11-25 21:02"
+  },
+  {
+    "Id": 5,
+    "Nama": "haegdey",
+    "Role": "Gudang",
+    "Aktif": true,
+    "Salt": "oPj+j2ezryzIUmVWPCBnWw==",
+    "PasswordHash": "Y6yQSObn17qw7eBL7POo3pvH8khDJCDgoMyEA7v21tw=",
+    "Dibuat": "2026-11-26 08:01"
+  }
+]

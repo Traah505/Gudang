@@ -37,9 +37,11 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             lblGudang = new Label();
+            pictureBox3 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panelGudang
@@ -63,6 +65,7 @@
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblGudang);
+            panel1.Controls.Add(pictureBox3);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
@@ -74,7 +77,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-35, -22);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(309, 282);
+            pictureBox1.Size = new Size(247, 282);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
@@ -96,7 +99,7 @@
             roundedButton1.FlatAppearance.BorderSize = 0;
             roundedButton1.FlatStyle = FlatStyle.Flat;
             roundedButton1.ForeColor = Color.White;
-            roundedButton1.Location = new Point(884, 28);
+            roundedButton1.Location = new Point(870, 32);
             roundedButton1.Margin = new Padding(4, 5, 4, 5);
             roundedButton1.Name = "roundedButton1";
             roundedButton1.Size = new Size(199, 60);
@@ -107,6 +110,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(449, 35);
             pictureBox2.Name = "pictureBox2";
@@ -118,6 +122,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Location = new Point(449, 92);
             label2.Name = "label2";
             label2.Size = new Size(270, 25);
@@ -126,6 +131,7 @@
             // 
             // lblGudang
             // 
+            lblGudang.BackColor = Color.Transparent;
             lblGudang.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblGudang.Location = new Point(521, 35);
             lblGudang.Margin = new Padding(4, 0, 4, 0);
@@ -134,6 +140,17 @@
             lblGudang.TabIndex = 3;
             lblGudang.Text = "Gudang ";
             lblGudang.Click += lblGudang_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(-35, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(1119, 119);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 8;
+            pictureBox3.TabStop = false;
             // 
             // Gudang
             // 
@@ -149,6 +166,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -162,5 +180,6 @@
         private Label label2;
         private Label lblGudang;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

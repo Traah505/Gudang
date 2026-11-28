@@ -40,17 +40,19 @@
             label4 = new Label();
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             roundedButton1 = new RoundedButton();
             pictureBox2 = new PictureBox();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             lblKasir1 = new Label();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // panelKasirHalaman
@@ -170,17 +172,30 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(roundedButton1);
-            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblKasir1);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(pictureBox5);
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(1087, 137);
             panel1.TabIndex = 6;
+            panel1.Paint += panel1_Paint_1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-32, -53);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(279, 367);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel2
             // 
@@ -226,16 +241,6 @@
             label2.TabIndex = 5;
             label2.Text = "Selamat datang, Kasir";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(27, -72);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(279, 282);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // lblKasir1
             // 
             lblKasir1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -246,6 +251,17 @@
             lblKasir1.TabIndex = 3;
             lblKasir1.Text = "Kasir ";
             lblKasir1.Click += lblKasir1_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(71, 0);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(1016, 137);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 8;
+            pictureBox5.TabStop = false;
             // 
             // Kasir
             // 
@@ -262,8 +278,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
@@ -286,5 +303,6 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label lblKasir1;
+        private PictureBox pictureBox5;
     }
 }

@@ -18,6 +18,31 @@ namespace GUedang
             dashboardAdmin.Controls.Clear();
             panelGudang.Controls.Clear();
             panelGudang.Controls.Add(dashboardAdmin);
+
+            lblGudang .BackColor = Color.Transparent;
+            pictureBox2.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+
+            PindahkanKeLatar(pictureBox3,
+                pictureBox1,      // logo SMK Mart
+                pictureBox2,      // ikon user
+                lblGudang,         // nama admin
+                label2,           // "Selamat datang, ..."
+                panel2,           // garis pemisah hitam
+                roundedButton1);  // tombol Keluar
+        }
+
+        private static void PindahkanKeLatar(Control latar, params Control[] daftar)
+        {
+            foreach (var c in daftar)
+            {
+                Point posisi = latar.PointToClient(c.Parent!.PointToScreen(c.Location));
+                c.Parent = latar;
+                c.Location = posisi;
+
+                if (c is not Panel && c is not Button)
+                    c.BackColor = Color.Transparent;
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

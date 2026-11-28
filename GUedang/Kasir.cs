@@ -18,11 +18,30 @@ namespace GUedang
 
             UC_Kasir dashoardKasir = new UC_Kasir();
             dashoardKasir.Dock = DockStyle.Fill;
-            dashoardKasir.NamaKasir = Sesi.NamaUser;   // <-- ini tempatnya
-            
-            panelKasirHalaman.Controls.Add(dashoardKasir);
-        }
+            dashoardKasir.NamaKasir = Sesi.NamaUser;   // <-- ini 
 
+
+            lblKasir1.BackColor = Color.Transparent;
+            pictureBox2.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+
+
+
+            panelKasirHalaman.Controls.Add(dashoardKasir);
+           
+        }
+        private static void PindahkanKeLatar(Control latar, params Control[] daftar)
+        {
+            foreach (var c in daftar)
+            {
+                Point posisi = latar.PointToClient(c.Parent!.PointToScreen(c.Location));
+                c.Parent = latar;
+                c.Location = posisi;
+
+                if (c is not Panel && c is not Button)
+                    c.BackColor = Color.Transparent;
+            }
+        }
         private void panelKasirHalaman_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -76,7 +95,7 @@ namespace GUedang
 
         private void lblKasir_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -89,7 +108,7 @@ namespace GUedang
             DialogResult hasil = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (hasil == DialogResult.Yes)
             {
-                
+
                 Sesi.Logout();
                 LoginAkun DashboardLogin = new LoginAkun();
                 DashboardLogin.Show();
@@ -108,6 +127,16 @@ namespace GUedang
         }
 
         private void lblKasir1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }
